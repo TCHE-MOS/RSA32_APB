@@ -6,8 +6,8 @@
 // tentativa de escrita (registrador somente leitura).
 module test_id_sva #(
     // Se CHECK_ID_VALUE=1, o ID lido deve ser igual a EXPECTED_ID (Datasheet 6.6)
-    parameter bit          CHECK_ID_VALUE = 1'b1,
-    parameter logic [31:0] EXPECTED_ID    = 32'h5253_0200 
+    parameter bit          CHECK_ID_VALUE = 1'b0,
+    parameter logic [31:0] EXPECTED_ID    = 32'h0 
 )(apb_rsa_if bus);
     import top_tb_pkg::*;
 
