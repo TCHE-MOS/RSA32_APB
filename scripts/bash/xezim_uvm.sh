@@ -10,7 +10,7 @@ Uso: xezim_uvm.sh [--compile] [--no-waves] [--vcd] [-- argumentos_do_xezim]
 
 Executa a bancada UVM top_tb sobre amba_3_apb_rsa_apb_top com Xezim.
 Nucleo RSA utilizado: src/rsa32/v2/.
-Ordem das sequences: rsa_operation -> soft_reset -> corners_exp.
+Ordem das sequences: rsa_operation -> soft_reset -> corners_exp -> xz_values.
 Gera cobertura HTML e CSV automaticamente apos a simulacao (requer python3).
 
   --compile   Apenas compila e elabora; nao simula.
@@ -31,6 +31,10 @@ Variaveis de ambiente:
   MAX_TIME         Limite externo Xezim (padrao: auto, 10% acima do watchdog UVM).
 
 Campanha corners (argumentos apos --):
+  +XZ_VALUES_ONLY=1    Executa somente a campanha X/Z, sem operacoes RSA.
+                       Padrao: 0 (executa todas as sequences).
+                       X/Z varre os 4096 enderecos por byte em oito rotinas:
+                       X, Z, e X/Z por bit, nibble e byte nas duas ordens.
   +CORNERS_CASES=N      Limita a execucao aos primeiros N casos da campanha.
                        Padrao: soma das cotas CORNERS_CASES_EXP_* definidas
                        no header UVM/top_tb_pkg.svh. Zero desabilita uma largura.
@@ -143,11 +147,14 @@ for width in widths:
     if not match:
         raise SystemExit(f'Erro: {name} em top_tb_pkg.svh deve ser um literal inteiro nao negativo.')
     quotas.append(int(match[1]))
+xz_only = number('XZ_VALUES_ONLY', 0, 0)
+if xz_only not in (0, 1):
+    raise SystemExit('Erro: XZ_VALUES_ONLY deve ser 0 ou 1.')
 total_cases = sum(quotas)
-if not total_cases or total_cases > (1 << 31) - 1:
+if not xz_only and (not total_cases or total_cases > (1 << 31) - 1):
     raise SystemExit('Erro: a soma das cotas em top_tb_pkg.svh deve estar entre 1 e 2147483647.')
-cases = number('CORNERS_CASES', total_cases)
-if cases > total_cases:
+cases = number('CORNERS_CASES', total_cases, 0 if xz_only else 1)
+if not xz_only and cases > total_cases:
     raise SystemExit(f'Erro: CORNERS_CASES deve estar entre 1 e {total_cases}, conforme as cotas de top_tb_pkg.svh.')
 base = number('CORNERS_BASE_CYCLES', 1024)
 slope = number('CORNERS_CYCLES_PER_EXP', 256)
@@ -174,7 +181,15 @@ def case_cycles(index):
     # Transfer/setup/recovery allowance, separate from arithmetic latency.
     return 25_000 + operation
 
-cycles = 100_000 + sum(case_cycles(i) for i in range(cases))
+# Per address: read/write/read (three cycles each), plus one idle cycle.
+# Each pattern restores five registers and ends with four retention reads;
+# five final writes restore a known state after the entire campaign.
+addr_width = re.search(r'parameter integer ADDR_WIDTH\s*=\s*(\d+)\s*;', header)
+xz_patterns = re.search(r'parameter integer XZ_VALUES_PATTERN_COUNT\s*=\s*(\d+)\s*;', header)
+if not addr_width or not xz_patterns:
+    raise SystemExit('Erro: parametros da campanha X/Z ausentes em top_tb_pkg.svh.')
+xz_cycles = int(xz_patterns[1]) * ((1 << int(addr_width[1])) * 10 + 27) + 15
+cycles = 100_000 + xz_cycles + (0 if xz_only else sum(case_cycles(i) for i in range(cases)))
 derived_ns = (cycles + (cycles + 3) // 4) * clock_ns
 user_timeout = first('UVM_TIMEOUT', None)
 if user_timeout is not None:
@@ -283,7 +298,7 @@ printf 'Teste: %s | Seed: %s | Modo: %s\nLogs: %s\n' "$UVM_TESTNAME" "$UVM_SEED"
     printf '\n'
 } > "$BUILD_DIR/command.sh"
 if [[ "$MODE" == simulate ]]; then
-    printf 'Perfil EXTENSO | Watchdog UVM: %s ns | Limite Xezim: %s\n' "$CAMPAIGN_TIMEOUT_NS" "$MAX_TIME"
+    printf 'Campanha UVM (inclui X/Z) | Watchdog UVM: %s ns | Limite Xezim: %s\n' "$CAMPAIGN_TIMEOUT_NS" "$MAX_TIME"
 fi
 SIM_STATUS=0
 if [[ "$MODE" == simulate ]]; then
