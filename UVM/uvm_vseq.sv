@@ -61,7 +61,8 @@ task vseq::body();
         
     sequence_rsa_operation  sequence_rsa_operation_h;
     sequence_soft_reset     sequence_soft_reset_h;
-  
+    sequence_corners_exp    sequence_corners_exp_h;
+
     sequence_rsa_operation_h    = sequence_rsa_operation::type_id::create("sequence_rsa_operation_h");
     sequence_soft_reset_h       = sequence_soft_reset   ::type_id::create("sequence_soft_reset_h");
 
@@ -79,5 +80,17 @@ task vseq::body();
     sequence_soft_reset_h.start(sequencer_h);
     vif.sva_soft_reset_active = 1'b0;
     scoreboard::report_sequence_result("soft_reset");
+
+    sequence_corners_exp_h = sequence_corners_exp::type_id::create("sequence_corners_exp_h");
+    void'($value$plusargs("CORNERS_CASES=%d", sequence_corners_exp_h.num_testcases));
+    void'($value$plusargs("CORNERS_MAX_READS=%d", sequence_corners_exp_h.max_status_reads));
+    void'($value$plusargs("CORNERS_BASE_CYCLES=%d", sequence_corners_exp_h.base_cycles));
+    void'($value$plusargs("CORNERS_CYCLES_PER_EXP=%d", sequence_corners_exp_h.cycles_per_exp));
+    void'($value$plusargs("CORNERS_POLL_CYCLES=%d", sequence_corners_exp_h.poll_interval_cycles));
+    scoreboard::active_scenario = "corners_exp";
+    `uvm_info("SEQ_BEGIN", $sformatf("[corners_exp] INICIO | perfil=EXTENSO casos=%0d base_cycles=%0d cycles_per_exp=%0d read_cap=%0d",
+              sequence_corners_exp_h.num_testcases, sequence_corners_exp_h.base_cycles,
+              sequence_corners_exp_h.cycles_per_exp, sequence_corners_exp_h.max_status_reads), UVM_LOW)
+    sequence_corners_exp_h.start(sequencer_h);
 
 endtask

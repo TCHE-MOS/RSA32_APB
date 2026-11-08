@@ -1,0 +1,955 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+Warning: FST skips unsupported variable-length string variables: TABLE_BORDER, failure_details[0], failure_details[100], failure_details[101], failure_details[102], failure_details[103], failure_details[104], failure_details[105], failure_details[106], failure_details[107], failure_details[108], failure_details[109], failure_details[10], failure_details[110], failure_details[111], failure_details[112], failure_details[113], failure_details[114], failure_details[115], failure_details[116], failure_details[117], failure_details[118], failure_details[119], failure_details[11], failure_details[120], failure_details[121], failure_details[122], failure_details[123], failure_details[124], failure_details[125], failure_details[126], failure_details[127], failure_details[128], failure_details[129], failure_details[12], failure_details[130], failure_details[131], failure_details[132], failure_details[133], failure_details[134], failure_details[135], failure_details[136], failure_details[137], failure_details[138], failure_details[139], failure_details[13], failure_details[140], failure_details[141], failure_details[142], failure_details[143], failure_details[144], failure_details[145], failure_details[146], failure_details[147], failure_details[148], failure_details[149], failure_details[14], failure_details[150], failure_details[151], failure_details[152], failure_details[153], failure_details[154], failure_details[155], failure_details[156], failure_details[157], failure_details[158], failure_details[159], failure_details[15], failure_details[160], failure_details[161], failure_details[162], failure_details[163], failure_details[164], failure_details[165], failure_details[166], failure_details[167], failure_details[168], failure_details[169], failure_details[16], failure_details[170], failure_details[171], failure_details[172], failure_details[173], failure_details[174], failure_details[175], failure_details[176], failure_details[177], failure_details[178], failure_details[179], failure_details[17], failure_details[180], failure_details[181], failure_details[182], failure_details[183], failure_details[184], failure_details[185], failure_details[186], failure_details[187], failure_details[188], failure_details[189], failure_details[18], failure_details[190], failure_details[191], failure_details[192], failure_details[193], failure_details[194], failure_details[195], failure_details[196], failure_details[197], failure_details[198], failure_details[199], failure_details[19], failure_details[1], failure_details[200], failure_details[201], failure_details[202], failure_details[203], failure_details[204], failure_details[205], failure_details[206], failure_details[207], failure_details[208], failure_details[209], failure_details[20], failure_details[210], failure_details[211], failure_details[212], failure_details[213], failure_details[214], failure_details[215], failure_details[216], failure_details[217], failure_details[218], failure_details[219], failure_details[21], failure_details[220], failure_details[221], failure_details[222], failure_details[223], failure_details[224], failure_details[225], failure_details[226], failure_details[227], failure_details[228], failure_details[229], failure_details[22], failure_details[230], failure_details[231], failure_details[232], failure_details[233], failure_details[234], failure_details[235], failure_details[236], failure_details[237], failure_details[238], failure_details[239], failure_details[23], failure_details[240], failure_details[241], failure_details[242], failure_details[243], failure_details[244], failure_details[245], failure_details[246], failure_details[247], failure_details[248], failure_details[249], failure_details[24], failure_details[250], failure_details[251], failure_details[252], failure_details[253], failure_details[254], failure_details[255], failure_details[256], failure_details[257], failure_details[258], failure_details[259], failure_details[25], failure_details[260], failure_details[261], failure_details[262], failure_details[263], failure_details[264], failure_details[265], failure_details[266], failure_details[267], failure_details[268], failure_details[269], failure_details[26], failure_details[270], failure_details[271], failure_details[272], failure_details[273], failure_details[274], failure_details[275], failure_details[276], failure_details[277], failure_details[278], failure_details[279], failure_details[27], failure_details[280], failure_details[281], failure_details[282], failure_details[283], failure_details[284], failure_details[285], failure_details[286], failure_details[287], failure_details[288], failure_details[289], failure_details[28], failure_details[290], failure_details[291], failure_details[292], failure_details[293], failure_details[294], failure_details[295], failure_details[296], failure_details[297], failure_details[298], failure_details[299], failure_details[29], failure_details[2], failure_details[300], failure_details[301], failure_details[302], failure_details[303], failure_details[304], failure_details[305], failure_details[306], failure_details[307], failure_details[308], failure_details[309], failure_details[30], failure_details[310], failure_details[311], failure_details[312], failure_details[313], failure_details[314], failure_details[315], failure_details[316], failure_details[317], failure_details[318], failure_details[319], failure_details[31], failure_details[320], failure_details[321], failure_details[322], failure_details[323], failure_details[324], failure_details[325], failure_details[326], failure_details[327], failure_details[328], failure_details[329], failure_details[32], failure_details[330], failure_details[331], failure_details[332], failure_details[333], failure_details[334], failure_details[335], failure_details[336], failure_details[337], failure_details[338], failure_details[339], failure_details[33], failure_details[340], failure_details[341], failure_details[342], failure_details[343], failure_details[344], failure_details[345], failure_details[346], failure_details[347], failure_details[348], failure_details[349], failure_details[34], failure_details[350], failure_details[351], failure_details[352], failure_details[353], failure_details[354], failure_details[355], failure_details[356], failure_details[357], failure_details[358], failure_details[359], failure_details[35], failure_details[360], failure_details[361], failure_details[362], failure_details[363], failure_details[364], failure_details[365], failure_details[366], failure_details[367], failure_details[368], failure_details[369], failure_details[36], failure_details[370], failure_details[371], failure_details[372], failure_details[373], failure_details[374], failure_details[375], failure_details[376], failure_details[377], failure_details[378], failure_details[379], failure_details[37], failure_details[380], failure_details[381], failure_details[382], failure_details[383], failure_details[384], failure_details[385], failure_details[386], failure_details[387], failure_details[388], failure_details[389], failure_details[38], failure_details[390], failure_details[391], failure_details[392], failure_details[393], failure_details[394], failure_details[395], failure_details[396], failure_details[397], failure_details[398], failure_details[399], failure_details[39], failure_details[3], failure_details[400], failure_details[401], failure_details[402], failure_details[403], failure_details[404], failure_details[405], failure_details[406], failure_details[407], failure_details[408], failure_details[409], failure_details[40], failure_details[410], failure_details[411], failure_details[412], failure_details[413], failure_details[414], failure_details[415], failure_details[416], failure_details[417], failure_details[418], failure_details[419], failure_details[41], failure_details[420], failure_details[421], failure_details[422], failure_details[423], failure_details[424], failure_details[42], failure_details[43], failure_details[44], failure_details[45], failure_details[46], failure_details[47], failure_details[48], failure_details[49], failure_details[4], failure_details[50], failure_details[51], failure_details[52], failure_details[53], failure_details[54], failure_details[55], failure_details[56], failure_details[57], failure_details[58], failure_details[59], failure_details[5], failure_details[60], failure_details[61], failure_details[62], failure_details[63], failure_details[64], failure_details[65], failure_details[66], failure_details[67], failure_details[68], failure_details[69], failure_details[6], failure_details[70], failure_details[71], failure_details[72], failure_details[73], failure_details[74], failure_details[75], failure_details[76], failure_details[77], failure_details[78], failure_details[79], failure_details[7], failure_details[80], failure_details[81], failure_details[82], failure_details[83], failure_details[84], failure_details[85], failure_details[86], failure_details[87], failure_details[88], failure_details[89], failure_details[8], failure_details[90], failure_details[91], failure_details[92], failure_details[93], failure_details[94], failure_details[95], failure_details[96], failure_details[97], failure_details[98], failure_details[99], failure_details[9], scoreboard_phase, vcd_path
+[FST] dumping 537 signals (scopes=1)
+
+[TEST] amba_3_apb_rsa_apb_top | clock=10.000000 ns | dado=0x1234567b | rodadas=30
+[RESET] CTRL.SRST enviado; 5 clocks de espera concluidos.
+
+[SCB] Valores apos reset
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   1 |        160 | CTRL        | 0x000 | 0x00000002 | 0x00000000 | 0x00000000 | PASS   |
+|   2 |        190 | STATUS      | 0x004 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   3 |        220 | IER         | 0x008 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   4 |        250 | MSG         | 0x00c | --         | 0x00000000 | 0x00000000 | PASS   |
+|   5 |        280 | EXP         | 0x010 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   6 |        310 | MOD         | 0x014 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   7 |        340 | RESULT      | 0x018 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   8 |        370 | ID          | 0x01c | --         | 0x52530200 | 0x52530200 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  1/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   9 |        430 | IER         | 0x008 | 0x1234567b | 0x00000003 | 0x00000003 | PASS   |
+|  10 |        490 | MSG         | 0x00c | 0x1234567b | 0x1234567b | 0x1234567b | PASS   |
+|  11 |        550 | EXP         | 0x010 | 0xb791f3de | 0xb791f3de | 0xb791f3de | PASS   |
+|  12 |        610 | MOD         | 0x014 | 0x486e0c21 | 0x486e0c21 | 0x486e0c21 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  1/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  13 |        640 | IER         | 0x008 | 0x1234567b | 0x00000003 | 0x00000003 | PASS   |
+|  14 |        670 | MSG         | 0x00c | 0x1234567b | 0x1234567b | 0x1234567b | PASS   |
+|  15 |        700 | EXP         | 0x010 | 0xb791f3de | 0xb791f3de | 0xb791f3de | PASS   |
+|  16 |        730 | MOD         | 0x014 | 0x486e0c21 | 0x486e0c21 | 0x486e0c21 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  2/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  17 |        790 | IER         | 0x008 | 0xb06bd034 | 0x00000000 | 0x00000000 | PASS   |
+|  18 |        850 | MSG         | 0x00c | 0xb06bd034 | 0xb06bd034 | 0xb06bd034 | PASS   |
+|  19 |        910 | EXP         | 0x010 | 0x15ce7591 | 0x15ce7591 | 0x15ce7591 | PASS   |
+|  20 |        970 | MOD         | 0x014 | 0xea318a6e | 0xea318a6e | 0xea318a6e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  2/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  21 |       1000 | IER         | 0x008 | 0xb06bd034 | 0x00000000 | 0x00000000 | PASS   |
+|  22 |       1030 | MSG         | 0x00c | 0xb06bd034 | 0xb06bd034 | 0xb06bd034 | PASS   |
+|  23 |       1060 | EXP         | 0x010 | 0x15ce7591 | 0x15ce7591 | 0x15ce7591 | PASS   |
+|  24 |       1090 | MOD         | 0x014 | 0xea318a6e | 0xea318a6e | 0xea318a6e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  3/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  25 |       1150 | IER         | 0x008 | 0x4ea349ed | 0x00000001 | 0x00000001 | PASS   |
+|  26 |       1210 | MSG         | 0x00c | 0x4ea349ed | 0x4ea349ed | 0x4ea349ed | PASS   |
+|  27 |       1270 | EXP         | 0x010 | 0xeb06ec48 | 0xeb06ec48 | 0xeb06ec48 | PASS   |
+|  28 |       1330 | MOD         | 0x014 | 0x14f913b7 | 0x14f913b7 | 0x14f913b7 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  3/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  29 |       1360 | IER         | 0x008 | 0x4ea349ed | 0x00000001 | 0x00000001 | PASS   |
+|  30 |       1390 | MSG         | 0x00c | 0x4ea349ed | 0x4ea349ed | 0x4ea349ed | PASS   |
+|  31 |       1420 | EXP         | 0x010 | 0xeb06ec48 | 0xeb06ec48 | 0xeb06ec48 | PASS   |
+|  32 |       1450 | MOD         | 0x014 | 0x14f913b7 | 0x14f913b7 | 0x14f913b7 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  4/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  33 |       1510 | IER         | 0x008 | 0xecdac3a6 | 0x00000002 | 0x00000002 | PASS   |
+|  34 |       1570 | MSG         | 0x00c | 0xecdac3a6 | 0xecdac3a6 | 0xecdac3a6 | PASS   |
+|  35 |       1630 | EXP         | 0x010 | 0x497f6603 | 0x497f6603 | 0x497f6603 | PASS   |
+|  36 |       1690 | MOD         | 0x014 | 0xb68099fc | 0xb68099fc | 0xb68099fc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  4/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  37 |       1720 | IER         | 0x008 | 0xecdac3a6 | 0x00000002 | 0x00000002 | PASS   |
+|  38 |       1750 | MSG         | 0x00c | 0xecdac3a6 | 0xecdac3a6 | 0xecdac3a6 | PASS   |
+|  39 |       1780 | EXP         | 0x010 | 0x497f6603 | 0x497f6603 | 0x497f6603 | PASS   |
+|  40 |       1810 | MOD         | 0x014 | 0xb68099fc | 0xb68099fc | 0xb68099fc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  5/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  41 |       1870 | IER         | 0x008 | 0x8b123d5f | 0x00000003 | 0x00000003 | PASS   |
+|  42 |       1930 | MSG         | 0x00c | 0x8b123d5f | 0x8b123d5f | 0x8b123d5f | PASS   |
+|  43 |       1990 | EXP         | 0x010 | 0x2eb798fa | 0x2eb798fa | 0x2eb798fa | PASS   |
+|  44 |       2050 | MOD         | 0x014 | 0xd1486705 | 0xd1486705 | 0xd1486705 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  5/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  45 |       2080 | IER         | 0x008 | 0x8b123d5f | 0x00000003 | 0x00000003 | PASS   |
+|  46 |       2110 | MSG         | 0x00c | 0x8b123d5f | 0x8b123d5f | 0x8b123d5f | PASS   |
+|  47 |       2140 | EXP         | 0x010 | 0x2eb798fa | 0x2eb798fa | 0x2eb798fa | PASS   |
+|  48 |       2170 | MOD         | 0x014 | 0xd1486705 | 0xd1486705 | 0xd1486705 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  6/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  49 |       2230 | IER         | 0x008 | 0x2949b718 | 0x00000000 | 0x00000000 | PASS   |
+|  50 |       2290 | MSG         | 0x00c | 0x2949b718 | 0x2949b718 | 0x2949b718 | PASS   |
+|  51 |       2350 | EXP         | 0x010 | 0x8cec12bd | 0x8cec12bd | 0x8cec12bd | PASS   |
+|  52 |       2410 | MOD         | 0x014 | 0x7313ed42 | 0x7313ed42 | 0x7313ed42 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  6/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  53 |       2440 | IER         | 0x008 | 0x2949b718 | 0x00000000 | 0x00000000 | PASS   |
+|  54 |       2470 | MSG         | 0x00c | 0x2949b718 | 0x2949b718 | 0x2949b718 | PASS   |
+|  55 |       2500 | EXP         | 0x010 | 0x8cec12bd | 0x8cec12bd | 0x8cec12bd | PASS   |
+|  56 |       2530 | MOD         | 0x014 | 0x7313ed42 | 0x7313ed42 | 0x7313ed42 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  7/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  57 |       2590 | IER         | 0x008 | 0xc78130d1 | 0x00000001 | 0x00000001 | PASS   |
+|  58 |       2650 | MSG         | 0x00c | 0xc78130d1 | 0xc78130d1 | 0xc78130d1 | PASS   |
+|  59 |       2710 | EXP         | 0x010 | 0x62249574 | 0x62249574 | 0x62249574 | PASS   |
+|  60 |       2770 | MOD         | 0x014 | 0x9ddb6a8b | 0x9ddb6a8b | 0x9ddb6a8b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  7/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  61 |       2800 | IER         | 0x008 | 0xc78130d1 | 0x00000001 | 0x00000001 | PASS   |
+|  62 |       2830 | MSG         | 0x00c | 0xc78130d1 | 0xc78130d1 | 0xc78130d1 | PASS   |
+|  63 |       2860 | EXP         | 0x010 | 0x62249574 | 0x62249574 | 0x62249574 | PASS   |
+|  64 |       2890 | MOD         | 0x014 | 0x9ddb6a8b | 0x9ddb6a8b | 0x9ddb6a8b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  8/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  65 |       2950 | IER         | 0x008 | 0x65b8aa8a | 0x00000002 | 0x00000002 | PASS   |
+|  66 |       3010 | MSG         | 0x00c | 0x65b8aa8a | 0x65b8aa8a | 0x65b8aa8a | PASS   |
+|  67 |       3070 | EXP         | 0x010 | 0xc01d0f2f | 0xc01d0f2f | 0xc01d0f2f | PASS   |
+|  68 |       3130 | MOD         | 0x014 | 0x3fe2f0d0 | 0x3fe2f0d0 | 0x3fe2f0d0 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  8/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  69 |       3160 | IER         | 0x008 | 0x65b8aa8a | 0x00000002 | 0x00000002 | PASS   |
+|  70 |       3190 | MSG         | 0x00c | 0x65b8aa8a | 0x65b8aa8a | 0x65b8aa8a | PASS   |
+|  71 |       3220 | EXP         | 0x010 | 0xc01d0f2f | 0xc01d0f2f | 0xc01d0f2f | PASS   |
+|  72 |       3250 | MOD         | 0x014 | 0x3fe2f0d0 | 0x3fe2f0d0 | 0x3fe2f0d0 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  9/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  73 |       3310 | IER         | 0x008 | 0x03f02443 | 0x00000003 | 0x00000003 | PASS   |
+|  74 |       3370 | MSG         | 0x00c | 0x03f02443 | 0x03f02443 | 0x03f02443 | PASS   |
+|  75 |       3430 | EXP         | 0x010 | 0xa65581e6 | 0xa65581e6 | 0xa65581e6 | PASS   |
+|  76 |       3490 | MOD         | 0x014 | 0x59aa7e19 | 0x59aa7e19 | 0x59aa7e19 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada  9/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  77 |       3520 | IER         | 0x008 | 0x03f02443 | 0x00000003 | 0x00000003 | PASS   |
+|  78 |       3550 | MSG         | 0x00c | 0x03f02443 | 0x03f02443 | 0x03f02443 | PASS   |
+|  79 |       3580 | EXP         | 0x010 | 0xa65581e6 | 0xa65581e6 | 0xa65581e6 | PASS   |
+|  80 |       3610 | MOD         | 0x014 | 0x59aa7e19 | 0x59aa7e19 | 0x59aa7e19 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 10/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  81 |       3670 | IER         | 0x008 | 0xa2279dfc | 0x00000000 | 0x00000000 | PASS   |
+|  82 |       3730 | MSG         | 0x00c | 0xa2279dfc | 0xa2279dfc | 0xa2279dfc | PASS   |
+|  83 |       3790 | EXP         | 0x010 | 0x07823859 | 0x07823859 | 0x07823859 | PASS   |
+|  84 |       3850 | MOD         | 0x014 | 0xf87dc7a6 | 0xf87dc7a6 | 0xf87dc7a6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 10/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  85 |       3880 | IER         | 0x008 | 0xa2279dfc | 0x00000000 | 0x00000000 | PASS   |
+|  86 |       3910 | MSG         | 0x00c | 0xa2279dfc | 0xa2279dfc | 0xa2279dfc | PASS   |
+|  87 |       3940 | EXP         | 0x010 | 0x07823859 | 0x07823859 | 0x07823859 | PASS   |
+|  88 |       3970 | MOD         | 0x014 | 0xf87dc7a6 | 0xf87dc7a6 | 0xf87dc7a6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 11/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  89 |       4030 | IER         | 0x008 | 0x405f17b5 | 0x00000001 | 0x00000001 | PASS   |
+|  90 |       4090 | MSG         | 0x00c | 0x405f17b5 | 0x405f17b5 | 0x405f17b5 | PASS   |
+|  91 |       4150 | EXP         | 0x010 | 0xe5fab210 | 0xe5fab210 | 0xe5fab210 | PASS   |
+|  92 |       4210 | MOD         | 0x014 | 0x1a054def | 0x1a054def | 0x1a054def | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 11/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  93 |       4240 | IER         | 0x008 | 0x405f17b5 | 0x00000001 | 0x00000001 | PASS   |
+|  94 |       4270 | MSG         | 0x00c | 0x405f17b5 | 0x405f17b5 | 0x405f17b5 | PASS   |
+|  95 |       4300 | EXP         | 0x010 | 0xe5fab210 | 0xe5fab210 | 0xe5fab210 | PASS   |
+|  96 |       4330 | MOD         | 0x014 | 0x1a054def | 0x1a054def | 0x1a054def | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 12/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  97 |       4390 | IER         | 0x008 | 0xde96916e | 0x00000002 | 0x00000002 | PASS   |
+|  98 |       4450 | MSG         | 0x00c | 0xde96916e | 0xde96916e | 0xde96916e | PASS   |
+|  99 |       4510 | EXP         | 0x010 | 0x7b3334cb | 0x7b3334cb | 0x7b3334cb | PASS   |
+| 100 |       4570 | MOD         | 0x014 | 0x84cccb34 | 0x84cccb34 | 0x84cccb34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 12/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 101 |       4600 | IER         | 0x008 | 0xde96916e | 0x00000002 | 0x00000002 | PASS   |
+| 102 |       4630 | MSG         | 0x00c | 0xde96916e | 0xde96916e | 0xde96916e | PASS   |
+| 103 |       4660 | EXP         | 0x010 | 0x7b3334cb | 0x7b3334cb | 0x7b3334cb | PASS   |
+| 104 |       4690 | MOD         | 0x014 | 0x84cccb34 | 0x84cccb34 | 0x84cccb34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 13/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 105 |       4750 | IER         | 0x008 | 0x7cce0b27 | 0x00000003 | 0x00000003 | PASS   |
+| 106 |       4810 | MSG         | 0x00c | 0x7cce0b27 | 0x7cce0b27 | 0x7cce0b27 | PASS   |
+| 107 |       4870 | EXP         | 0x010 | 0xd96bae82 | 0xd96bae82 | 0xd96bae82 | PASS   |
+| 108 |       4930 | MOD         | 0x014 | 0x2694517d | 0x2694517d | 0x2694517d | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 13/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 109 |       4960 | IER         | 0x008 | 0x7cce0b27 | 0x00000003 | 0x00000003 | PASS   |
+| 110 |       4990 | MSG         | 0x00c | 0x7cce0b27 | 0x7cce0b27 | 0x7cce0b27 | PASS   |
+| 111 |       5020 | EXP         | 0x010 | 0xd96bae82 | 0xd96bae82 | 0xd96bae82 | PASS   |
+| 112 |       5050 | MOD         | 0x014 | 0x2694517d | 0x2694517d | 0x2694517d | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 14/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 113 |       5110 | IER         | 0x008 | 0x1b0584e0 | 0x00000000 | 0x00000000 | PASS   |
+| 114 |       5170 | MSG         | 0x00c | 0x1b0584e0 | 0x1b0584e0 | 0x1b0584e0 | PASS   |
+| 115 |       5230 | EXP         | 0x010 | 0xbea02145 | 0xbea02145 | 0xbea02145 | PASS   |
+| 116 |       5290 | MOD         | 0x014 | 0x415fdeba | 0x415fdeba | 0x415fdeba | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 14/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 117 |       5320 | IER         | 0x008 | 0x1b0584e0 | 0x00000000 | 0x00000000 | PASS   |
+| 118 |       5350 | MSG         | 0x00c | 0x1b0584e0 | 0x1b0584e0 | 0x1b0584e0 | PASS   |
+| 119 |       5380 | EXP         | 0x010 | 0xbea02145 | 0xbea02145 | 0xbea02145 | PASS   |
+| 120 |       5410 | MOD         | 0x014 | 0x415fdeba | 0x415fdeba | 0x415fdeba | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 15/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 121 |       5470 | IER         | 0x008 | 0xb93cfe99 | 0x00000001 | 0x00000001 | PASS   |
+| 122 |       5530 | MSG         | 0x00c | 0xb93cfe99 | 0xb93cfe99 | 0xb93cfe99 | PASS   |
+| 123 |       5590 | EXP         | 0x010 | 0x1c995b3c | 0x1c995b3c | 0x1c995b3c | PASS   |
+| 124 |       5650 | MOD         | 0x014 | 0xe366a4c3 | 0xe366a4c3 | 0xe366a4c3 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 15/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 125 |       5680 | IER         | 0x008 | 0xb93cfe99 | 0x00000001 | 0x00000001 | PASS   |
+| 126 |       5710 | MSG         | 0x00c | 0xb93cfe99 | 0xb93cfe99 | 0xb93cfe99 | PASS   |
+| 127 |       5740 | EXP         | 0x010 | 0x1c995b3c | 0x1c995b3c | 0x1c995b3c | PASS   |
+| 128 |       5770 | MOD         | 0x014 | 0xe366a4c3 | 0xe366a4c3 | 0xe366a4c3 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 16/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 129 |       5830 | IER         | 0x008 | 0x57747852 | 0x00000002 | 0x00000002 | PASS   |
+| 130 |       5890 | MSG         | 0x00c | 0x57747852 | 0x57747852 | 0x57747852 | PASS   |
+| 131 |       5950 | EXP         | 0x010 | 0xf2d1ddf7 | 0xf2d1ddf7 | 0xf2d1ddf7 | PASS   |
+| 132 |       6010 | MOD         | 0x014 | 0x0d2e2208 | 0x0d2e2208 | 0x0d2e2208 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 16/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 133 |       6040 | IER         | 0x008 | 0x57747852 | 0x00000002 | 0x00000002 | PASS   |
+| 134 |       6070 | MSG         | 0x00c | 0x57747852 | 0x57747852 | 0x57747852 | PASS   |
+| 135 |       6100 | EXP         | 0x010 | 0xf2d1ddf7 | 0xf2d1ddf7 | 0xf2d1ddf7 | PASS   |
+| 136 |       6130 | MOD         | 0x014 | 0x0d2e2208 | 0x0d2e2208 | 0x0d2e2208 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 17/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 137 |       6190 | IER         | 0x008 | 0xf5abf20b | 0x00000003 | 0x00000003 | PASS   |
+| 138 |       6250 | MSG         | 0x00c | 0xf5abf20b | 0xf5abf20b | 0xf5abf20b | PASS   |
+| 139 |       6310 | EXP         | 0x010 | 0x500e57ae | 0x500e57ae | 0x500e57ae | PASS   |
+| 140 |       6370 | MOD         | 0x014 | 0xaff1a851 | 0xaff1a851 | 0xaff1a851 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 17/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 141 |       6400 | IER         | 0x008 | 0xf5abf20b | 0x00000003 | 0x00000003 | PASS   |
+| 142 |       6430 | MSG         | 0x00c | 0xf5abf20b | 0xf5abf20b | 0xf5abf20b | PASS   |
+| 143 |       6460 | EXP         | 0x010 | 0x500e57ae | 0x500e57ae | 0x500e57ae | PASS   |
+| 144 |       6490 | MOD         | 0x014 | 0xaff1a851 | 0xaff1a851 | 0xaff1a851 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 18/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 145 |       6550 | IER         | 0x008 | 0x93e36bc4 | 0x00000000 | 0x00000000 | PASS   |
+| 146 |       6610 | MSG         | 0x00c | 0x93e36bc4 | 0x93e36bc4 | 0x93e36bc4 | PASS   |
+| 147 |       6670 | EXP         | 0x010 | 0x3646ce61 | 0x3646ce61 | 0x3646ce61 | PASS   |
+| 148 |       6730 | MOD         | 0x014 | 0xc9b9319e | 0xc9b9319e | 0xc9b9319e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 18/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 149 |       6760 | IER         | 0x008 | 0x93e36bc4 | 0x00000000 | 0x00000000 | PASS   |
+| 150 |       6790 | MSG         | 0x00c | 0x93e36bc4 | 0x93e36bc4 | 0x93e36bc4 | PASS   |
+| 151 |       6820 | EXP         | 0x010 | 0x3646ce61 | 0x3646ce61 | 0x3646ce61 | PASS   |
+| 152 |       6850 | MOD         | 0x014 | 0xc9b9319e | 0xc9b9319e | 0xc9b9319e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 19/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 153 |       6910 | IER         | 0x008 | 0x321ae57d | 0x00000001 | 0x00000001 | PASS   |
+| 154 |       6970 | MSG         | 0x00c | 0x321ae57d | 0x321ae57d | 0x321ae57d | PASS   |
+| 155 |       7030 | EXP         | 0x010 | 0x97bf40d8 | 0x97bf40d8 | 0x97bf40d8 | PASS   |
+| 156 |       7090 | MOD         | 0x014 | 0x6840bf27 | 0x6840bf27 | 0x6840bf27 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 19/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 157 |       7120 | IER         | 0x008 | 0x321ae57d | 0x00000001 | 0x00000001 | PASS   |
+| 158 |       7150 | MSG         | 0x00c | 0x321ae57d | 0x321ae57d | 0x321ae57d | PASS   |
+| 159 |       7180 | EXP         | 0x010 | 0x97bf40d8 | 0x97bf40d8 | 0x97bf40d8 | PASS   |
+| 160 |       7210 | MOD         | 0x014 | 0x6840bf27 | 0x6840bf27 | 0x6840bf27 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 20/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 161 |       7270 | IER         | 0x008 | 0xd0525f36 | 0x00000002 | 0x00000002 | PASS   |
+| 162 |       7330 | MSG         | 0x00c | 0xd0525f36 | 0xd0525f36 | 0xd0525f36 | PASS   |
+| 163 |       7390 | EXP         | 0x010 | 0x75f7fa93 | 0x75f7fa93 | 0x75f7fa93 | PASS   |
+| 164 |       7450 | MOD         | 0x014 | 0x8a08056c | 0x8a08056c | 0x8a08056c | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 20/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 165 |       7480 | IER         | 0x008 | 0xd0525f36 | 0x00000002 | 0x00000002 | PASS   |
+| 166 |       7510 | MSG         | 0x00c | 0xd0525f36 | 0xd0525f36 | 0xd0525f36 | PASS   |
+| 167 |       7540 | EXP         | 0x010 | 0x75f7fa93 | 0x75f7fa93 | 0x75f7fa93 | PASS   |
+| 168 |       7570 | MOD         | 0x014 | 0x8a08056c | 0x8a08056c | 0x8a08056c | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 21/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 169 |       7630 | IER         | 0x008 | 0x6e89d8ef | 0x00000003 | 0x00000003 | PASS   |
+| 170 |       7690 | MSG         | 0x00c | 0x6e89d8ef | 0x6e89d8ef | 0x6e89d8ef | PASS   |
+| 171 |       7750 | EXP         | 0x010 | 0xcb2c7d4a | 0xcb2c7d4a | 0xcb2c7d4a | PASS   |
+| 172 |       7810 | MOD         | 0x014 | 0x34d382b5 | 0x34d382b5 | 0x34d382b5 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 21/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 173 |       7840 | IER         | 0x008 | 0x6e89d8ef | 0x00000003 | 0x00000003 | PASS   |
+| 174 |       7870 | MSG         | 0x00c | 0x6e89d8ef | 0x6e89d8ef | 0x6e89d8ef | PASS   |
+| 175 |       7900 | EXP         | 0x010 | 0xcb2c7d4a | 0xcb2c7d4a | 0xcb2c7d4a | PASS   |
+| 176 |       7930 | MOD         | 0x014 | 0x34d382b5 | 0x34d382b5 | 0x34d382b5 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 22/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 177 |       7990 | IER         | 0x008 | 0x0cc152a8 | 0x00000000 | 0x00000000 | PASS   |
+| 178 |       8050 | MSG         | 0x00c | 0x0cc152a8 | 0x0cc152a8 | 0x0cc152a8 | PASS   |
+| 179 |       8110 | EXP         | 0x010 | 0xa964f70d | 0xa964f70d | 0xa964f70d | PASS   |
+| 180 |       8170 | MOD         | 0x014 | 0x569b08f2 | 0x569b08f2 | 0x569b08f2 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 22/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 181 |       8200 | IER         | 0x008 | 0x0cc152a8 | 0x00000000 | 0x00000000 | PASS   |
+| 182 |       8230 | MSG         | 0x00c | 0x0cc152a8 | 0x0cc152a8 | 0x0cc152a8 | PASS   |
+| 183 |       8260 | EXP         | 0x010 | 0xa964f70d | 0xa964f70d | 0xa964f70d | PASS   |
+| 184 |       8290 | MOD         | 0x014 | 0x569b08f2 | 0x569b08f2 | 0x569b08f2 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 23/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 185 |       8350 | IER         | 0x008 | 0xaaf8cc61 | 0x00000001 | 0x00000001 | PASS   |
+| 186 |       8410 | MSG         | 0x00c | 0xaaf8cc61 | 0xaaf8cc61 | 0xaaf8cc61 | PASS   |
+| 187 |       8470 | EXP         | 0x010 | 0x0f5d69c4 | 0x0f5d69c4 | 0x0f5d69c4 | PASS   |
+| 188 |       8530 | MOD         | 0x014 | 0xf0a2963b | 0xf0a2963b | 0xf0a2963b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 23/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 189 |       8560 | IER         | 0x008 | 0xaaf8cc61 | 0x00000001 | 0x00000001 | PASS   |
+| 190 |       8590 | MSG         | 0x00c | 0xaaf8cc61 | 0xaaf8cc61 | 0xaaf8cc61 | PASS   |
+| 191 |       8620 | EXP         | 0x010 | 0x0f5d69c4 | 0x0f5d69c4 | 0x0f5d69c4 | PASS   |
+| 192 |       8650 | MOD         | 0x014 | 0xf0a2963b | 0xf0a2963b | 0xf0a2963b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 24/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 193 |       8710 | IER         | 0x008 | 0x4930461a | 0x00000002 | 0x00000002 | PASS   |
+| 194 |       8770 | MSG         | 0x00c | 0x4930461a | 0x4930461a | 0x4930461a | PASS   |
+| 195 |       8830 | EXP         | 0x010 | 0xec95e3bf | 0xec95e3bf | 0xec95e3bf | PASS   |
+| 196 |       8890 | MOD         | 0x014 | 0x136a1c40 | 0x136a1c40 | 0x136a1c40 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 24/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 197 |       8920 | IER         | 0x008 | 0x4930461a | 0x00000002 | 0x00000002 | PASS   |
+| 198 |       8950 | MSG         | 0x00c | 0x4930461a | 0x4930461a | 0x4930461a | PASS   |
+| 199 |       8980 | EXP         | 0x010 | 0xec95e3bf | 0xec95e3bf | 0xec95e3bf | PASS   |
+| 200 |       9010 | MOD         | 0x014 | 0x136a1c40 | 0x136a1c40 | 0x136a1c40 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 25/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 201 |       9070 | IER         | 0x008 | 0xe767bfd3 | 0x00000003 | 0x00000003 | PASS   |
+| 202 |       9130 | MSG         | 0x00c | 0xe767bfd3 | 0xe767bfd3 | 0xe767bfd3 | PASS   |
+| 203 |       9190 | EXP         | 0x010 | 0x42c21a76 | 0x42c21a76 | 0x42c21a76 | PASS   |
+| 204 |       9250 | MOD         | 0x014 | 0xbd3de589 | 0xbd3de589 | 0xbd3de589 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 25/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 205 |       9280 | IER         | 0x008 | 0xe767bfd3 | 0x00000003 | 0x00000003 | PASS   |
+| 206 |       9310 | MSG         | 0x00c | 0xe767bfd3 | 0xe767bfd3 | 0xe767bfd3 | PASS   |
+| 207 |       9340 | EXP         | 0x010 | 0x42c21a76 | 0x42c21a76 | 0x42c21a76 | PASS   |
+| 208 |       9370 | MOD         | 0x014 | 0xbd3de589 | 0xbd3de589 | 0xbd3de589 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 26/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 209 |       9430 | IER         | 0x008 | 0x859f398c | 0x00000000 | 0x00000000 | PASS   |
+| 210 |       9490 | MSG         | 0x00c | 0x859f398c | 0x859f398c | 0x859f398c | PASS   |
+| 211 |       9550 | EXP         | 0x010 | 0x203a9c29 | 0x203a9c29 | 0x203a9c29 | PASS   |
+| 212 |       9610 | MOD         | 0x014 | 0xdfc563d6 | 0xdfc563d6 | 0xdfc563d6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 26/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 213 |       9640 | IER         | 0x008 | 0x859f398c | 0x00000000 | 0x00000000 | PASS   |
+| 214 |       9670 | MSG         | 0x00c | 0x859f398c | 0x859f398c | 0x859f398c | PASS   |
+| 215 |       9700 | EXP         | 0x010 | 0x203a9c29 | 0x203a9c29 | 0x203a9c29 | PASS   |
+| 216 |       9730 | MOD         | 0x014 | 0xdfc563d6 | 0xdfc563d6 | 0xdfc563d6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 27/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 217 |       9790 | IER         | 0x008 | 0x23d6b345 | 0x00000001 | 0x00000001 | PASS   |
+| 218 |       9850 | MSG         | 0x00c | 0x23d6b345 | 0x23d6b345 | 0x23d6b345 | PASS   |
+| 219 |       9910 | EXP         | 0x010 | 0x867316e0 | 0x867316e0 | 0x867316e0 | PASS   |
+| 220 |       9970 | MOD         | 0x014 | 0x798ce91f | 0x798ce91f | 0x798ce91f | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 27/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 221 |      10000 | IER         | 0x008 | 0x23d6b345 | 0x00000001 | 0x00000001 | PASS   |
+| 222 |      10030 | MSG         | 0x00c | 0x23d6b345 | 0x23d6b345 | 0x23d6b345 | PASS   |
+| 223 |      10060 | EXP         | 0x010 | 0x867316e0 | 0x867316e0 | 0x867316e0 | PASS   |
+| 224 |      10090 | MOD         | 0x014 | 0x798ce91f | 0x798ce91f | 0x798ce91f | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 28/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 225 |      10150 | IER         | 0x008 | 0xc20e2cfe | 0x00000002 | 0x00000002 | PASS   |
+| 226 |      10210 | MSG         | 0x00c | 0xc20e2cfe | 0xc20e2cfe | 0xc20e2cfe | PASS   |
+| 227 |      10270 | EXP         | 0x010 | 0x67ab895b | 0x67ab895b | 0x67ab895b | PASS   |
+| 228 |      10330 | MOD         | 0x014 | 0x985476a4 | 0x985476a4 | 0x985476a4 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 28/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 229 |      10360 | IER         | 0x008 | 0xc20e2cfe | 0x00000002 | 0x00000002 | PASS   |
+| 230 |      10390 | MSG         | 0x00c | 0xc20e2cfe | 0xc20e2cfe | 0xc20e2cfe | PASS   |
+| 231 |      10420 | EXP         | 0x010 | 0x67ab895b | 0x67ab895b | 0x67ab895b | PASS   |
+| 232 |      10450 | MOD         | 0x014 | 0x985476a4 | 0x985476a4 | 0x985476a4 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 29/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 233 |      10510 | IER         | 0x008 | 0x6045a6b7 | 0x00000003 | 0x00000003 | PASS   |
+| 234 |      10570 | MSG         | 0x00c | 0x6045a6b7 | 0x6045a6b7 | 0x6045a6b7 | PASS   |
+| 235 |      10630 | EXP         | 0x010 | 0xc5e00312 | 0xc5e00312 | 0xc5e00312 | PASS   |
+| 236 |      10690 | MOD         | 0x014 | 0x3a1ffced | 0x3a1ffced | 0x3a1ffced | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 29/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 237 |      10720 | IER         | 0x008 | 0x6045a6b7 | 0x00000003 | 0x00000003 | PASS   |
+| 238 |      10750 | MSG         | 0x00c | 0x6045a6b7 | 0x6045a6b7 | 0x6045a6b7 | PASS   |
+| 239 |      10780 | EXP         | 0x010 | 0xc5e00312 | 0xc5e00312 | 0xc5e00312 | PASS   |
+| 240 |      10810 | MOD         | 0x014 | 0x3a1ffced | 0x3a1ffced | 0x3a1ffced | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 30/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 241 |      10870 | IER         | 0x008 | 0xfe7d2070 | 0x00000000 | 0x00000000 | PASS   |
+| 242 |      10930 | MSG         | 0x00c | 0xfe7d2070 | 0xfe7d2070 | 0xfe7d2070 | PASS   |
+| 243 |      10990 | EXP         | 0x010 | 0x5bd885d5 | 0x5bd885d5 | 0x5bd885d5 | PASS   |
+| 244 |      11050 | MOD         | 0x014 | 0xa4277a2a | 0xa4277a2a | 0xa4277a2a | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 30/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 245 |      11080 | IER         | 0x008 | 0xfe7d2070 | 0x00000000 | 0x00000000 | PASS   |
+| 246 |      11110 | MSG         | 0x00c | 0xfe7d2070 | 0xfe7d2070 | 0xfe7d2070 | PASS   |
+| 247 |      11140 | EXP         | 0x010 | 0x5bd885d5 | 0x5bd885d5 | 0x5bd885d5 | PASS   |
+| 248 |      11170 | MOD         | 0x014 | 0xa4277a2a | 0xa4277a2a | 0xa4277a2a | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  1/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 249 |      11230 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 250 |      11290 | MSG         | 0x00c | 0x00000041 | 0x00000041 | 0x00000041 | PASS   |
+| 251 |      11350 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 252 |      11410 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  1/10 | Execucao: MSG^EXP mod MOD = 0x00000ae6
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 253 |      11440 | STATUS.IDLE | 0x004 | --         | 0x00000000 | 0x00000000 | PASS   |
+| 254 |      11440 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 255 |      11500 | STATUS.BUSY | 0x004 | --         | 0x00000001 | 0x00000001 | PASS   |
+| 256 |      43240 | STATUS.DONE | 0x004 | --         | 0x00000002 | 0x00000002 | PASS   |
+| 257 |      43240 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 258 |      43270 | RESULT      | 0x018 | --         | 0x00000ae6 | 0x00000ae6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  1/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 259 |      43300 | MSG         | 0x00c | 0x00000041 | 0x00000041 | 0x00000041 | PASS   |
+| 260 |      43330 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 261 |      43360 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
+| 262 |      43420 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 263 |      43420 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  2/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 264 |      43480 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 265 |      43540 | MSG         | 0x00c | 0x0000007b | 0x0000007b | 0x0000007b | PASS   |
+| 266 |      43600 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 267 |      43660 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  2/10 | Execucao: MSG^EXP mod MOD = 0x00000b34
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 268 |      43690 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 269 |      43690 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 270 |      43750 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 271 |      55690 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 272 |      55690 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 273 |      55720 | RESULT      | 0x018 | --         | 0x00000b34 | 0x00000b34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  2/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 274 |      55750 | MSG         | 0x00c | 0x0000007b | 0x0000007b | 0x0000007b | PASS   |
+| 275 |      55780 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 276 |      55810 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
+| 277 |      55870 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 278 |      55870 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  3/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 279 |      55930 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 280 |      55990 | MSG         | 0x00c | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 281 |      56050 | EXP         | 0x010 | 0x00000005 | 0x00000005 | 0x00000005 | PASS   |
+| 282 |      56110 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  3/10 | Execucao: MSG^EXP mod MOD = 0x00000000
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 283 |      56140 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 284 |      56140 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 285 |      56200 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 286 |      64780 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 287 |      64780 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 288 |      64810 | RESULT      | 0x018 | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  3/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 289 |      64840 | MSG         | 0x00c | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 290 |      64870 | EXP         | 0x010 | 0x00000005 | 0x00000005 | 0x00000005 | PASS   |
+| 291 |      64900 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
+| 292 |      64960 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 293 |      64960 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  4/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 294 |      65020 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 295 |      65080 | MSG         | 0x00c | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 296 |      65140 | EXP         | 0x010 | 0x0000000d | 0x0000000d | 0x0000000d | PASS   |
+| 297 |      65200 | MOD         | 0x014 | 0x00000101 | 0x00000101 | 0x00000101 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  4/10 | Execucao: MSG^EXP mod MOD = 0x00000001
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 298 |      65230 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 299 |      65230 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 300 |      65290 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 301 |      90190 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 302 |      90190 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 303 |      90220 | RESULT      | 0x018 | --         | 0x00000001 | 0x00000001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  4/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 304 |      90250 | MSG         | 0x00c | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 305 |      90280 | EXP         | 0x010 | 0x0000000d | 0x0000000d | 0x0000000d | PASS   |
+| 306 |      90310 | MOD         | 0x014 | 0x00000101 | 0x00000101 | 0x00000101 | PASS   |
+| 307 |      90370 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 308 |      90370 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  5/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 309 |      90430 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 310 |      90490 | MSG         | 0x00c | 0x0000002a | 0x0000002a | 0x0000002a | PASS   |
+| 311 |      90550 | EXP         | 0x010 | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 312 |      90610 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  5/10 | Execucao: MSG^EXP mod MOD = 0x00000001
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 313 |      90640 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 314 |      90640 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 315 |      90700 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 316 |      92890 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 317 |      92890 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 318 |      92920 | RESULT      | 0x018 | --         | 0x00000001 | 0x00000001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  5/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 319 |      92950 | MSG         | 0x00c | 0x0000002a | 0x0000002a | 0x0000002a | PASS   |
+| 320 |      92980 | EXP         | 0x010 | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 321 |      93010 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
+| 322 |      93070 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 323 |      93070 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  6/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 324 |      93130 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 325 |      93190 | MSG         | 0x00c | 0x12345678 | 0x12345678 | 0x12345678 | PASS   |
+| 326 |      93250 | EXP         | 0x010 | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 327 |      93310 | MOD         | 0x014 | 0x0000fff1 | 0x0000fff1 | 0x0000fff1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  6/10 | Execucao: MSG^EXP mod MOD = 0x00006793
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 328 |      93340 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 329 |      93340 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 330 |      93400 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 331 |      95320 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 332 |      95320 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 333 |      95350 | RESULT      | 0x018 | --         | 0x00006793 | 0x00006793 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  6/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 334 |      95380 | MSG         | 0x00c | 0x12345678 | 0x12345678 | 0x12345678 | PASS   |
+| 335 |      95410 | EXP         | 0x010 | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 336 |      95440 | MOD         | 0x014 | 0x0000fff1 | 0x0000fff1 | 0x0000fff1 | PASS   |
+| 337 |      95500 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 338 |      95500 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  7/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 339 |      95560 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 340 |      95620 | MSG         | 0x00c | 0x80000001 | 0x80000001 | 0x80000001 | PASS   |
+| 341 |      95680 | EXP         | 0x010 | 0x00000002 | 0x00000002 | 0x00000002 | PASS   |
+| 342 |      95740 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  7/10 | Execucao: MSG^EXP mod MOD = 0x4000000b
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 343 |      95770 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 344 |      95770 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 345 |      95830 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 346 |      97270 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 347 |      97270 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 348 |      97300 | RESULT      | 0x018 | --         | 0x4000000b | 0x4000000b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  7/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 349 |      97330 | MSG         | 0x00c | 0x80000001 | 0x80000001 | 0x80000001 | PASS   |
+| 350 |      97360 | EXP         | 0x010 | 0x00000002 | 0x00000002 | 0x00000002 | PASS   |
+| 351 |      97390 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
+| 352 |      97450 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 353 |      97450 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  8/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 354 |      97510 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 355 |      97570 | MSG         | 0x00c | 0xffffffff | 0xffffffff | 0xffffffff | PASS   |
+| 356 |      97630 | EXP         | 0x010 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 357 |      97690 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  8/10 | Execucao: MSG^EXP mod MOD = 0x00000040
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 358 |      97720 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 359 |      97720 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 360 |      97780 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 361 |     100600 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 362 |     100600 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 363 |     100630 | RESULT      | 0x018 | --         | 0x00000040 | 0x00000040 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  8/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 364 |     100660 | MSG         | 0x00c | 0xffffffff | 0xffffffff | 0xffffffff | PASS   |
+| 365 |     100690 | EXP         | 0x010 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 366 |     100720 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
+| 367 |     100780 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 368 |     100780 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  9/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 369 |     100840 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 370 |     100900 | MSG         | 0x00c | 0x075bcd15 | 0x075bcd15 | 0x075bcd15 | PASS   |
+| 371 |     100960 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 372 |     101020 | MOD         | 0x014 | 0x00010001 | 0x00010001 | 0x00010001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  9/10 | Execucao: MSG^EXP mod MOD = 0x00008a8e
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 373 |     101050 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 374 |     101050 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 375 |     101110 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 376 |     112150 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 377 |     112150 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 378 |     112180 | RESULT      | 0x018 | --         | 0x00008a8e | 0x00008a8e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA  9/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 379 |     112210 | MSG         | 0x00c | 0x075bcd15 | 0x075bcd15 | 0x075bcd15 | PASS   |
+| 380 |     112240 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 381 |     112270 | MOD         | 0x014 | 0x00010001 | 0x00010001 | 0x00010001 | PASS   |
+| 382 |     112330 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 383 |     112330 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 384 |     112390 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 385 |     112450 | MSG         | 0x00c | 0xfedcba98 | 0xfedcba98 | 0xfedcba98 | PASS   |
+| 386 |     112510 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 387 |     112570 | MOD         | 0x014 | 0x8000000b | 0x8000000b | 0x8000000b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Execucao: MSG^EXP mod MOD = 0x14adadfc
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 388 |     112600 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 389 |     112600 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 390 |     112660 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 391 |     134800 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 392 |     134800 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 393 |     134830 | RESULT      | 0x018 | --         | 0x14adadfc | 0x14adadfc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 394 |     134860 | MSG         | 0x00c | 0xfedcba98 | 0xfedcba98 | 0xfedcba98 | PASS   |
+| 395 |     134890 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 396 |     134920 | MOD         | 0x014 | 0x8000000b | 0x8000000b | 0x8000000b | PASS   |
+| 397 |     134980 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 398 |     134980 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RESUMO | regbank=30 rodadas | RSA=10 rodadas | MOD_ZERO=0 | previstas=398 | realizadas=398 | acertos=398 | falhas=0 | tempo=134980 ns
+TEST PASS: 398 checks, 0 errors
+Simulation finished at time 134980000 ($finish called)

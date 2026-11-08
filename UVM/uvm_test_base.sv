@@ -92,6 +92,7 @@ task test_base::run_phase(uvm_phase phase);
     phase.raise_objection(this);
 
     vseq_h.start(env_h.vsequencer_h);
+    scoreboard::execution_complete = 1'b1;
 
     phase.drop_objection(this);
 

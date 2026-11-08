@@ -1,0 +1,192 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+Warning: FST skips unsupported variable-length string variables: fail_log, trace_path
+[FST] dumping 520 signals (scopes=1)
+
+=== tb_rsa_core_fault: rsa_core isolado (sem APB/UVM/SVA) ===
+
+[T0] Autoverificacao dos modelos de referencia
+  [TB_REF   ] PASS  65^17 mod 3233 = 2790
+  [TB_REF   ] PASS  4^13 mod 497 = 445
+  [TB_REF   ] PASS  0x0F1C3861^9 mod 0xC7C64DFB = 0x7B1005AC (README)
+  [TB_REF   ] PASS  EXP=0 -> 1 (README)
+  [TB_REF   ] PASS  (2^32-1)^2 mod 7 = 2 (2^32 = 4 mod 7)
+  [TB_REF   ] PASS  square-and-multiply = multiplicacao repetida em 400 vetores (divergencias=0)
+
+[T1] Operacoes validas: vetores fixos e 12 aleatorios (seed=1, e<=48)
+  [RESULT   ] PASS  65^17 mod 3233: M=0x00000041 e=17 n=0x00000ca1 -> 0x00000ae6 esperado 0x00000ae6 (3171 ciclos)
+  [DONE_W   ] PASS  65^17 mod 3233: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  65^17 mod 3233: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  preparacao do caso UVM 10: M=0x0f1c3861 e=9 n=0xc7c64dfb -> 0x7b1005ac esperado 0x7b1005ac (1107 ciclos)
+  [DONE_W   ] PASS  preparacao do caso UVM 10: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  preparacao do caso UVM 10: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  EXP=0 (README): M=0x181d60bf e=0 n=0xc2065569 -> 0x00000001 esperado 0x00000001 (141 ciclos)
+  [DONE_W   ] PASS  EXP=0 (README): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  EXP=0 (README): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  EXP=1, M>n: M=0x12345678 e=1 n=0x0000fff1 -> 0x00006793 esperado 0x00006793 (189 ciclos)
+  [DONE_W   ] PASS  EXP=1, M>n: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  EXP=1, M>n: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  M>n, n alto: M=0xffffffff e=3 n=0xfffffffb -> 0x00000040 esperado 0x00000040 (279 ciclos)
+  [DONE_W   ] PASS  M>n, n alto: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M>n, n alto: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  n=1: M=0x0000007b e=7 n=0x00000001 -> 0x00000000 esperado 0x00000000 (1389 ciclos)
+  [DONE_W   ] PASS  n=1: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  n=1: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  MSB de n em 1: M=0xfedcba98 e=17 n=0x8000000b -> 0x14adadfc esperado 0x14adadfc (2211 ciclos)
+  [DONE_W   ] PASS  MSB de n em 1: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  MSB de n em 1: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  2^31 mod (2^32-1): M=0x00000002 e=31 n=0xffffffff -> 0x80000000 esperado 0x80000000 (4143 ciclos)
+  [DONE_W   ] PASS  2^31 mod (2^32-1): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  2^31 mod (2^32-1): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  M=0: M=0x00000000 e=5 n=0x00000061 -> 0x00000000 esperado 0x00000000 (855 ciclos)
+  [DONE_W   ] PASS  M=0: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=0: core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 0 (n de 32 bits): M=0x80010e00 e=12 n=0x9c598438 -> 0x7286b4c8 esperado 0x7286b4c8 (1521 ciclos)
+  [DONE_W   ] PASS  aleatorio 0 (n de 32 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 0 (n de 32 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 1 (n de 11 bits): M=0xae130c5c e=43 n=0x000007ce -> 0x000000d8 esperado 0x000000d8 (8445 ciclos)
+  [DONE_W   ] PASS  aleatorio 1 (n de 11 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 1 (n de 11 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 2 (n de 8 bits): M=0xe3132cc6 e=42 n=0x000000f3 -> 0x0000002e esperado 0x0000002e (8613 ciclos)
+  [DONE_W   ] PASS  aleatorio 2 (n de 8 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 2 (n de 8 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 3 (n de 30 bits): M=0xaf8f485f e=14 n=0x23886547 -> 0x0d40898b esperado 0x0d40898b (1875 ciclos)
+  [DONE_W   ] PASS  aleatorio 3 (n de 30 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 3 (n de 30 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 4 (n de 13 bits): M=0xbf269c7e e=20 n=0x00001845 -> 0x00000d27 esperado 0x00000d27 (3708 ciclos)
+  [DONE_W   ] PASS  aleatorio 4 (n de 13 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 4 (n de 13 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 5 (n de 7 bits): M=0x48d42191 e=23 n=0x0000006e -> 0x00000035 esperado 0x00000035 (4689 ciclos)
+  [DONE_W   ] PASS  aleatorio 5 (n de 7 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 5 (n de 7 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 6 (n de 32 bits): M=0x1e3c9d3c e=42 n=0xe4dc02c9 -> 0x72fdce5b esperado 0x72fdce5b (5661 ciclos)
+  [DONE_W   ] PASS  aleatorio 6 (n de 32 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 6 (n de 32 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 7 (n de 15 bits): M=0xee4ec2dc e=21 n=0x0000722c -> 0x000051ec esperado 0x000051ec (3783 ciclos)
+  [DONE_W   ] PASS  aleatorio 7 (n de 15 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 7 (n de 15 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 8 (n de 8 bits): M=0x88c8b011 e=21 n=0x000000d1 -> 0x00000000 esperado 0x00000000 (4203 ciclos)
+  [DONE_W   ] PASS  aleatorio 8 (n de 8 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 8 (n de 8 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 9 (n de 31 bits): M=0xe8a994d1 e=46 n=0x7f8a71ff -> 0x36897538 esperado 0x36897538 (6348 ciclos)
+  [DONE_W   ] PASS  aleatorio 9 (n de 31 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 9 (n de 31 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 10 (n de 14 bits): M=0xb3254c66 e=35 n=0x00003c4a -> 0x00001264 esperado 0x00001264 (6531 ciclos)
+  [DONE_W   ] PASS  aleatorio 10 (n de 14 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 10 (n de 14 bits): core_error subiu 0 vez(es)
+  [RESULT   ] PASS  aleatorio 11 (n de 5 bits): M=0x92b55c25 e=47 n=0x00000017 -> 0x00000005 esperado 0x00000005 (10077 ciclos)
+  [DONE_W   ] PASS  aleatorio 11 (n de 5 bits): core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  aleatorio 11 (n de 5 bits): core_error subiu 0 vez(es)
+
+[T2] M muito maior que n (dominio 4.1: 0 <= M, e, n <= 2^32-1)
+  [RES_BIGM ] PASS  M=2^32-1, e=2, n=7: M=0xffffffff e=2 n=0x00000007 -> 0x00000002 esperado 0x00000002 (228 ciclos)
+  [DONE_W   ] PASS  M=2^32-1, e=2, n=7: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^32-1, e=2, n=7: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=2^32-1, e=2, n=3: M=0xffffffff e=2 n=0x00000003 -> 0x00000000 esperado 0x00000000 (231 ciclos)
+  [DONE_W   ] PASS  M=2^32-1, e=2, n=3: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^32-1, e=2, n=3: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=2^32-1, e=2, n=65521: M=0xffffffff e=2 n=0x0000fff1 -> 0x0000c400 esperado 0x0000c400 (189 ciclos)
+  [DONE_W   ] PASS  M=2^32-1, e=2, n=65521: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^32-1, e=2, n=65521: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=2^31, e=2, n=5: M=0x80000000 e=2 n=0x00000005 -> 0x00000004 esperado 0x00000004 (228 ciclos)
+  [DONE_W   ] PASS  M=2^31, e=2, n=5: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^31, e=2, n=5: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=0xDEADBEEF, e=5, n=255: M=0xdeadbeef e=5 n=0x000000ff -> 0x000000b3 esperado 0x000000b3 (843 ciclos)
+  [DONE_W   ] PASS  M=0xDEADBEEF, e=5, n=255: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=0xDEADBEEF, e=5, n=255: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=2^32-1, e=2, n=2^31-1: M=0xffffffff e=2 n=0x7fffffff -> 0x00000001 esperado 0x00000001 (144 ciclos)
+  [DONE_W   ] PASS  M=2^32-1, e=2, n=2^31-1: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^32-1, e=2, n=2^31-1: core_error subiu 0 vez(es)
+  [RES_BIGM ] PASS  M=2^16-1, e=2, n=7: M=0x0000ffff e=2 n=0x00000007 -> 0x00000001 esperado 0x00000001 (228 ciclos)
+  [DONE_W   ] PASS  M=2^16-1, e=2, n=7: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  M=2^16-1, e=2, n=7: core_error subiu 0 vez(es)
+
+[T3] n=0 logo apos uma operacao valida (vetor do caso UVM 10)
+  [RESULT   ] PASS  preparacao do caso UVM 10: M=0x0f1c3861 e=9 n=0xc7c64dfb -> 0x7b1005ac esperado 0x7b1005ac (1107 ciclos)
+  [DONE_W   ] PASS  preparacao do caso UVM 10: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  preparacao do caso UVM 10: core_error subiu 0 vez(es)
+        [FSM] n=0: LOAD_M > WAIT_M > LOAD_E > WAIT_E > LOAD_N > WAIT_N > ERROR[done_ff=1 err_ff=1] > LOAD_M
+        [MON] n=0: done subidas=1 largura=1 | err subidas=1 largura=25 (ainda alto) | done&err=1 ciclo(s) | dout mudou com err=1 | mult_start=0
+  [ERR_ON   ] PASS  core_error subiu 3 ciclos apos a carga de n
+  [ERR_EXCL ] FAIL  core_done subiu 1 vez(es); 1 ciclo(s) com core_done e core_error juntos
+  [ERR_W    ] FAIL  core_error com 25 ciclo(s) e ainda alto, observado por 24 ciclos
+        [OBS] core_dout antes=0x7b1005ac depois=0xffffffff; mult/mod nao foram acionados (mult_start=0)
+
+[T3b] n=0 com EXP=0 e com M=0 (prioridade do teste de n)
+  [ERR_ON   ] PASS  M=5, e=0, n=0 sinaliza erro
+  [ERR_EXCL ] FAIL  M=5, e=0, n=0: core_done subiu 1 vez(es)
+  [ERR_ON   ] PASS  M=0, e=3, n=0 sinaliza erro
+  [ERR_EXCL ] FAIL  M=0, e=3, n=0: core_done subiu 1 vez(es)
+
+[T4] Persistencia de core_error e operacao seguinte, sem core_rst
+        [OBS] core_error alto em 200 de 200 ciclos ociosos apos o erro
+        [FSM] op. apos erro: LOAD_M > WAIT_M > LOAD_E > WAIT_E > LOAD_N > WAIT_N > CASE2 > (ANALYZE/START x15) > DONE[done_ff=1 err_ff=0] > LOAD_M
+        [MON] op. apos erro: done subidas=1 largura=1 | err subidas=0 largura=3175 | done&err=0 ciclo(s) | dout mudou com err=0 | mult_start=16
+  [RECOV    ] FAIL  core_error no inicio da nova operacao = 1
+  [RECOV    ] FAIL  core_error alto por 3175 ciclos durante a nova operacao
+  [RESULT   ] PASS  resultado apos erro 0x00000ae6 esperado 0x00000ae6
+        [OBS] core_error depois do DONE = 0 (o estado DONE e o unico, alem de INIT, que zera err_ff)
+
+[T5] core_rst
+  [RST_ERR  ] PASS  core_error caiu 1 ciclo(s) apos soltar core_rst de 1 ciclo
+        [OBS] err_ff so e zerado no estado INIT, um ciclo depois do pulso de core_rst; o pulso de reset sozinho nao o limpa
+  [RST_ABORT] PASS  core_done apos reset no meio de 2^31 mod (2^32-1): 0 (esperado 0)
+  [RST_ABORT] PASS  operacao apos o aborto: M=0x0f1c3861 e=9 n=0xc7c64dfb -> 0x7b1005ac esperado 0x7b1005ac (1107 ciclos)
+  [DONE_W   ] PASS  operacao apos o aborto: core_done com 1 ciclo(s)
+  [NO_ERR   ] PASS  operacao apos o aborto: core_error subiu 0 vez(es)
+
+[T6] Intervalo entre cargas de M, e, n (datasheet 4.3: cargas consecutivas aceitas)
+  [LOAD_GAP ] FAIL  intervalo de 0 ciclo(s): core_done=0 em 20000 ciclos, resultado 0x7b1005ac esperado 0x00000ae6
+        [OBS] parado em rsa_core_ctrl.LOAD_E; WAIT_M/WAIT_E so avancam com core_load=0
+  [LOAD_GAP ] PASS  intervalo de 1 ciclo(s): core_done=1 em 3171 ciclos, resultado 0x00000ae6 esperado 0x00000ae6
+  [LOAD_GAP ] PASS  intervalo de 2 ciclo(s): core_done=1 em 3170 ciclos, resultado 0x00000ae6 esperado 0x00000ae6
+  [LOAD_GAP ] PASS  intervalo de 7 ciclo(s): core_done=1 em 3165 ciclos, resultado 0x00000ae6 esperado 0x00000ae6
+
+[T7] Unitarios dos sub-blocos
+        [OBS] rsa_core_mod.mod_err logo apos o reset = x (mod_err_ff nao e inicializado em INIT)
+  [U_MULT   ] PASS  60 produtos de 32x32 bits (divergencias=0)
+  [U_MOD    ] PASS  80 restos de 64 bits por 32 bits, incluindo divisores pequenos (divergencias=0)
+        [OBS] rsa_core_mod com b=0: mod_done=1 mod_err=1, 1 ciclo(s) juntos, mod_c=0xffffffff, mod_err alto em 16 dos 16 ciclos seguintes
+        [OBS] o mesmo padrao do estado ERROR do controle; no rsa_core esse caminho e inalcancavel (n=0 e barrado em WAIT_N) e mod_err fica desconectado
+
+
++-----------+------------------------------------------+---------+-------------+
+| ID        | Propriedade do rsa_core                  | Datash. | Resultado   |
++-----------+------------------------------------------+---------+-------------+
+| TB_REF    | Modelos de referencia concordam          | -       | ok 6        |
+| RESULT    | core_dout = M^e mod n (M e n gerais)     | 4.1     | ok 23       |
+| RES_BIGM  | core_dout correto com M >> n             | 4.1     | ok 7        |
+| DONE_W    | core_done dura 1 ciclo                   | 3.2     | ok 30       |
+| NO_ERR    | Operacao valida nao gera core_error      | 3.2/4.1 | ok 30       |
+| ERR_ON    | n=0 gera core_error                      | 3.2/4.1 | ok 3        |
+| ERR_EXCL  | n=0: core_error sem core_done            | 3.2/4.1 | FAIL 3/3    |
+| ERR_W     | core_error dura 1 ciclo                  | 3.2     | FAIL 1/1    |
+| RECOV     | Op. apos erro comeca com core_error=0    | 3.2     | FAIL 2/2    |
+| RST_ERR   | core_rst limpa core_error                | 3.2/4.5 | ok 1        |
+| RST_ABORT | core_rst aborta operacao em curso        | 3.2/4.5 | ok 2        |
+| LOAD_GAP  | Cargas aceitas com qualquer intervalo    | 3.2/4.3 | FAIL 1/4    |
+| SUB_MULT  | Interno: mult_c = a*b                    | interno | ok 532      |
+| SUB_MOD   | Interno: mod_c = a mod b                 | interno | ok 531      |
+| U_MULT    | Unitario rsa_core_mult                   | interno | ok 1        |
+| U_MOD     | Unitario rsa_core_mod                    | interno | ok 1        |
++-----------+------------------------------------------+---------+-------------+
+
+Divergencias:
+  [ERR_EXCL] t=830166 ns core_done subiu 1 vez(es); 1 ciclo(s) com core_done e core_error juntos
+  [ERR_W] t=830166 ns core_error com 25 ciclo(s) e ainda alto, observado por 24 ciclos
+  [ERR_EXCL] t=830466 ns M=5, e=0, n=0: core_done subiu 1 vez(es)
+  [ERR_EXCL] t=830766 ns M=0, e=3, n=0: core_done subiu 1 vez(es)
+  [RECOV] t=864766 ns core_error no inicio da nova operacao = 1
+  [RECOV] t=864766 ns core_error alto por 3175 ciclos durante a nova operacao
+  [LOAD_GAP] t=1141946 ns intervalo de 0 ciclo(s): core_done=0 em 20000 ciclos, resultado 0x7b1005ac esperado 0x00000ae6
+
+Localizacao no RTL:
+  ERR_EXCL      src/rsa32/v2/rsa32_core_ctrl.sv:168-173  ERROR: done_ff<=1 e err_ff<=1 no mesmo flanco; c_reg<=FFFFFFFF.
+  ERR_W, RECOV  err_ff so e zerado em INIT (:145) e DONE (:192); ERROR (:112) segue para LOAD_M com err_ff=1.
+  RST_ERR       core_rst leva a INIT, que zera err_ff no flanco seguinte (:143-147).
+  LOAD_GAP      WAIT_M/WAIT_E/WAIT_N (:91-110) so avancam com core_load=0.
+
+Total: 7 falha(s) | t=1382750 ns
+** Fatal: TEST FAIL: 7 divergencia(s) no rsa_core
+   Time: 1382750 ns  Scope: tb_rsa_core_fault.report
+Simulation finished at time 1382750000 ($finish called)

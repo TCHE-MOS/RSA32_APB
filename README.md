@@ -5,6 +5,10 @@ Periférico RSA com interface AMBA 3 APB (APB3), descrito em SystemVerilog.
 O projeto contém RTL do periférico, um núcleo RSA, testbenches estruturais e
 scripts auxiliares de síntese, LEC e simulação.
 
+O [registro de falhas UVM e comparação RSA v1/v2](docs/README_falhas_uvm.md)
+documenta as divergências de módulo zero, as evidências e os eventos históricos
+da bancada.
+
 Os fluxos ativos de simulação e síntese têm como alvo exclusivamente
 `amba_3_apb_rsa_apb_top`. Os fluxos individuais dos sub-blocos e seus
 artefatos estão arquivados em [`legacy/`](legacy/README.md).
@@ -142,6 +146,21 @@ executa dez operações RSA, conferindo STATUS, IRQ, RESULT e preservação de
 MSG/EXP/MOD. A instância usa `LOAD_GAP=1`, conforme o protocolo do núcleo real.
 Os testbenches individuais estão arquivados em
 `legacy/testbenchs/<nome_do_modulo>/`.
+
+### Simulação integrada com Xezim
+
+Para executar `testbenchs/rsa_apb_top/testbench.sv` com RSA v2 e sua
+scoreboard procedural:
+
+```bash
+bash scripts/bash/xezim.sh
+bash scripts/bash/xezim.sh +MOD_ZERO
+```
+
+A segunda chamada acrescenta o caso dirigido de módulo zero. Os resultados
+da contraprova estão no [registro de falhas](docs/README_falhas_uvm.md).
+Logs e ondas ficam em `logs/amba_3_apb_rsa_apb_top/xezim/` e
+`waveforms/amba_3_apb_rsa_apb_top/xezim/`.
 
 ### Simulação integrada com Icarus Verilog
 

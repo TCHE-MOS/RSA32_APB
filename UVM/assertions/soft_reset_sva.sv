@@ -1,19 +1,20 @@
 `timescale 1ns/1ps
 
-module soft_reset_sva #(
-    parameter logic [31:0] EXPECTED_STATUS_AFTER_SRST = 32'h0
-)(apb_rsa_if bus);
+module soft_reset_sva(apb_rsa_if bus);
     import top_tb_pkg::*;
 
     wire transfer = bus.psel && bus.penable && bus.pready;
-    wire srst_write = transfer && bus.pwrite && bus.paddr == CTRL_ADDR && bus.pwdata === 32'h2;
+    wire [ADDR_WIDTH-1:0] word_addr = {bus.paddr[ADDR_WIDTH-1:2], 2'b00};
+    // Datasheet 6.1: SRST takes priority even when START is also written.
+    wire srst_write = transfer && bus.pwrite && word_addr == CTRL_ADDR &&
+                      bus.pslverr === 1'b0 && bus.pwdata[1] === 1'b1;
 
     sequence s_next_write(addr);
-        (!transfer)[*0:$] ##1 (transfer && bus.pwrite && bus.paddr == addr);
+        (!transfer)[*0:$] ##1 (transfer && bus.pwrite && word_addr == addr);
     endsequence
 
     sequence s_next_read(addr);
-        (!transfer)[*0:$] ##1 (transfer && !bus.pwrite && bus.paddr == addr);
+        (!transfer)[*0:$] ##1 (transfer && !bus.pwrite && word_addr == addr);
     endsequence
 
     sequence s_soft_reset;
@@ -22,7 +23,7 @@ module soft_reset_sva #(
         ##1 s_next_write(MOD_ADDR)
         ##1 s_next_write(CTRL_ADDR) ##0 (bus.pwdata === 32'h1)
         ##1 s_next_read(STATUS_ADDR)
-        ##1 s_next_write(CTRL_ADDR) ##0 (bus.pwdata === 32'h2)
+        ##1 s_next_write(CTRL_ADDR) ##0 (bus.pwdata[1] === 1'b1)
         ##1 s_next_read(STATUS_ADDR);
     endsequence
 
@@ -41,8 +42,10 @@ module soft_reset_sva #(
     ) else env_pkg::scoreboard::record_assertion("soft_reset", "SOFT_RESET_RESPONSE", 1'b0, "Erro APB inesperado no soft reset");
 
     ap_status_after_srst: assert property (
-        @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1 || !bus.sva_soft_reset_active)
-        srst_write |=> strong(s_next_read(STATUS_ADDR) ##0 (bus.prdata === EXPECTED_STATUS_AFTER_SRST))
+        @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
+        (srst_write && bus.sva_soft_reset_active)
+        |=> strong(bus.sva_soft_reset_active throughout
+            (s_next_read(STATUS_ADDR) ##0 (bus.pslverr === 1'b0 && bus.prdata === 32'h0)))
     ) else env_pkg::scoreboard::record_assertion("soft_reset", "SOFT_RESET_STATUS", 1'b0, "Leitura de STATUS apos SRST ausente ou diferente do esperado");
 
     cp_srst: cover property (
@@ -51,7 +54,8 @@ module soft_reset_sva #(
 
     cp_status_after_srst: cover property (
         @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1 || !bus.sva_soft_reset_active)
-        srst_write ##1 (s_next_read(STATUS_ADDR) ##0 (bus.prdata === EXPECTED_STATUS_AFTER_SRST))
+        srst_write ##1 (bus.sva_soft_reset_active throughout
+            (s_next_read(STATUS_ADDR) ##0 (bus.pslverr === 1'b0 && bus.prdata === 32'h0)))
     ) env_pkg::scoreboard::record_assertion("soft_reset", "SOFT_RESET_STATUS", 1'b1);
 
     cp_soft_reset_response: cover property (

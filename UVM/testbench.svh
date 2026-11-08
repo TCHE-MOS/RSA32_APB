@@ -22,6 +22,7 @@ import uvm_pkg::*;
 `include "assertions/assertions.svh"
 
 // Test Harness:
+`include "dut_io_pinout.sv"
 `include "top_th.svh"
 
 // Testbench Top:

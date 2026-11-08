@@ -23,8 +23,35 @@ class scoreboard extends uvm_scoreboard;
     static int assertion_indices[string];
     static string active_scenario = "inicializacao";
     static bit assertion_table_printed = 0;
+    static bit execution_complete = 0;
     static int unsigned sequence_transactions[string];
     static int unsigned sequence_failures[string];
+    static int unsigned corners_case_id = 0;
+    static int unsigned corners_width = 0;
+    static int unsigned corners_kind = 0;
+
+    static function string corners_group(int unsigned width, int unsigned kind);
+        return $sformatf("corners%0d_%s", width, kind == 1 ? "INV" : (kind == 2 ? "ERR" : "OK"));
+    endfunction
+
+    static function void begin_corners_case(int unsigned id, int unsigned width, int unsigned kind);
+        corners_case_id = id;
+        corners_width = width;
+        corners_kind = kind;
+        active_scenario = corners_group(width, kind);
+        void'(register_assertion(active_scenario, "CORNERS_EXP_WIDTH"));
+        void'(register_assertion(active_scenario, "CORNERS_RESPONSE"));
+        void'(register_assertion(active_scenario, "CORNERS_READBACK"));
+        void'(register_assertion(active_scenario, "CORNERS_READ_DELAY"));
+        void'(register_assertion(active_scenario, "CORNERS_W1C"));
+        if (kind == 1) begin
+            void'(register_assertion(active_scenario, "CORNERS_RO_PRESERVED"));
+        end else begin
+            void'(register_assertion(active_scenario, "CORNERS_STATUS"));
+            void'(register_assertion(active_scenario, "CORNERS_COMPLETION"));
+            void'(register_assertion(active_scenario, kind == 2 ? "CORNERS_ERROR_RESULT" : "CORNERS_RESULT_VALUE"));
+        end
+    endfunction
 
     static function int register_assertion(string scenario, string id);
         string key;
@@ -48,9 +75,19 @@ class scoreboard extends uvm_scoreboard;
         assertion_indices.delete();
         sequence_transactions.delete();
         sequence_failures.delete();
+        corners_case_id = 0;
+        corners_width = 0;
+        corners_kind = 0;
         assertion_table_printed = 0;
+        execution_complete = 0;
         active_scenario = "inicializacao";
         void'(register_assertion("APB", "APB_SETUP_ACCESS"));
+        void'(register_assertion("APB", "APB_ZERO_WAIT"));
+        void'(register_assertion("APB", "APB_CTRL_READ_ZERO"));
+        void'(register_assertion("APB", "APB_ID_VALUE"));
+        void'(register_assertion("APB", "APB_STATUS_RESERVED"));
+        void'(register_assertion("APB", "APB_IER_RESERVED"));
+        void'(register_assertion("APB", "APB_IRQ_STATUS"));
         void'(register_assertion("APB", "APB_CONTROL_STABLE"));
         void'(register_assertion("APB", "APB_WRITE_DATA_STABLE"));
         void'(register_assertion("APB", "APB_WAIT_HOLD"));
@@ -67,6 +104,7 @@ class scoreboard extends uvm_scoreboard;
         void'(register_assertion("rsa_operation", "RSA_OPERATION_RESPONSE"));
         void'(register_assertion("rsa_operation", "RSA_RESULT_BEFORE_DONE"));
         void'(register_assertion("rsa_operation", "RSA_RESULT_VALUE"));
+        void'(register_assertion("rsa_operation", "RSA_STATUS_VALUE"));
         void'(register_assertion("soft_reset", "SOFT_RESET_ORDER"));
         void'(register_assertion("soft_reset", "SOFT_RESET_RESPONSE"));
         void'(register_assertion("soft_reset", "SOFT_RESET_STATUS"));
@@ -116,7 +154,10 @@ class scoreboard extends uvm_scoreboard;
         return value;
     endfunction
 
-    static function void print_assertion_table();
+    static function void print_assertion_table(
+        int unsigned corners_planned = 0, int unsigned corners_completed = 0,
+        bit corners_running = 0, int unsigned current_case = 0
+    );
         string border;
         string result;
         string instant;
@@ -129,10 +170,15 @@ class scoreboard extends uvm_scoreboard;
         if (assertion_table_printed) return;
         assertion_table_printed = 1;
         server = uvm_report_server::get_server();
-        aborted = server.get_severity_count(UVM_FATAL) != 0;
+        aborted = !execution_complete || server.get_severity_count(UVM_FATAL) != 0;
         border = "+----------------+----------------------------+-------------+---------+---------+--------------+";
         $display("\n[SVA] RESULTADOS DAS ASSERTIONS | %s | cenario atual: %s",
-                 aborted ? "EXECUCAO ABORTADA" : "FIM DA EXECUCAO", active_scenario);
+                 aborted ? "EXECUCAO INTERROMPIDA" : "FIM DA EXECUCAO", active_scenario);
+        if (corners_planned != 0) begin
+            $display("[CAMPANHA] planejados=%0d concluidos=%0d interrompidos=%0d nao_iniciados=%0d caso_atual=%0d",
+                corners_planned, corners_completed, corners_running,
+                corners_planned - corners_completed - int'(corners_running), current_case);
+        end
         $display("%s", border);
         $display("| %s | %s | %s | %s | %s | %s |",
                  table_cell("Cenario", 14), table_cell("Assertion", 26),
@@ -224,7 +270,11 @@ endfunction : build_phase
 function void scoreboard::write_apb_rsa(seq_item t);
     string register_name;
     string status_detail;
-    case (t.address)
+    bit expected_pslverr;
+    bit corners_context;
+    logic [top_tb_pkg::ADDR_WIDTH-1:0] word_addr;
+    word_addr = {t.address[top_tb_pkg::ADDR_WIDTH-1:2], 2'b00};
+    case (word_addr)
         top_tb_pkg::CTRL_ADDR:   register_name = "CTRL";
         top_tb_pkg::STATUS_ADDR: register_name = "STATUS";
         top_tb_pkg::IER_ADDR:    register_name = "IER";
@@ -236,14 +286,22 @@ function void scoreboard::write_apb_rsa(seq_item t);
         default:                register_name = "RESERVADO";
     endcase
     status_detail = "";
-    if (t.address == top_tb_pkg::CTRL_ADDR && t.transaction_type == WRITE)
+    if (word_addr == top_tb_pkg::CTRL_ADDR && t.transaction_type == WRITE)
         status_detail = $sformatf(" START=%b SRST=%b", t.data[0], t.data[1]);
-    if (t.address == top_tb_pkg::STATUS_ADDR && t.transaction_type == READ)
+    if (word_addr == top_tb_pkg::STATUS_ADDR && t.transaction_type == READ)
         status_detail = $sformatf(" BUSY=%b DONE=%b ERROR=%b", t.data[0], t.data[1], t.data[2]);
+    expected_pslverr = 1'b0;
+    corners_context = active_scenario == corners_group(corners_width, corners_kind);
+    if (corners_context) begin
+        expected_pslverr = t.transaction_type == WRITE &&
+            (word_addr == top_tb_pkg::RESULT_ADDR || word_addr == top_tb_pkg::ID_ADDR);
+        status_detail = {status_detail, $sformatf(" caso=%0d EXP_BITS=%0d PSLVERR_EXPECTED=%b",
+                         corners_case_id, corners_width, expected_pslverr)};
+    end
     sequence_transactions[active_scenario]++;
     `uvm_info("SEQ_DEBUG", $sformatf(
         "[%s][%0d] t=%0.3fns %s %s addr=0x%03h data=0x%08h PSLVERR=%b RESPOSTA=%s%s",
         active_scenario, sequence_transactions[active_scenario], $realtime,
         t.transaction_type == WRITE ? "WRITE" : "READ", register_name, t.address,
-        t.data, t.pslverr, t.pslverr === 1'b0 ? "PASS" : "FAIL", status_detail), UVM_LOW)
+        t.data, t.pslverr, t.pslverr === expected_pslverr ? "PASS" : "FAIL", status_detail), UVM_LOW)
 endfunction

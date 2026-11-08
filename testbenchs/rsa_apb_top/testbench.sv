@@ -11,7 +11,10 @@ module testbench;
     localparam integer RSA_ROUNDS = 10;
     localparam integer RSA_TIMEOUT_POLLS = 10000;
     localparam integer EXPECTED_CHECKS = 8 + TEST_ROUNDS * 8 + RSA_ROUNDS * 15;
-    localparam integer GLOBAL_TIMEOUT_CYCLES = 1000 + RSA_ROUNDS * (RSA_TIMEOUT_POLLS * 3 + 100);
+    // +MOD_ZERO adds a valid preparation (15 checks) and an error case (12 checks).
+    localparam integer MOD_ZERO_CHECKS = 27;
+    localparam integer MAX_CHECKS = EXPECTED_CHECKS + MOD_ZERO_CHECKS;
+    localparam integer GLOBAL_TIMEOUT_CYCLES = 1000 + (RSA_ROUNDS + 2) * (RSA_TIMEOUT_POLLS * 3 + 100);
     localparam string TABLE_BORDER =
         "+-----+------------+-------------+-------+------------+------------+------------+--------+";
 
@@ -36,10 +39,12 @@ module testbench;
     logic [DATA_WIDTH-1:0] expected_registers [0:7];
     logic [DATA_WIDTH-1:0] last_write_data [0:7];
     bit write_seen [0:7];
-    string failure_details [0:EXPECTED_CHECKS-1];
+    string failure_details [0:MAX_CHECKS-1];
     string scoreboard_phase;
     integer checks = 0;
     integer errors = 0;
+    integer expected_checks_count = EXPECTED_CHECKS;
+    bit mod_zero_enabled = 1'b0;
     string vcd_path;
 
     amba_3_apb_rsa_apb_top
@@ -204,7 +209,7 @@ module testbench;
         checks = checks + 1;
         if (observed_data !== expected_data) begin
             result_text = "FAIL";
-            if (errors < EXPECTED_CHECKS)
+            if (errors < MAX_CHECKS)
                 failure_details[errors] = $sformatf(
                     "#%0d [%s] %s @%s: esperado=0x%08h, lido=0x%08h, XOR=0x%08h%s",
                     checks, scoreboard_phase, register_name, address_text, expected_data, observed_data,
@@ -376,41 +381,89 @@ module testbench;
         check_irq(1'b0);
     endtask
 
-    task automatic test_rsa_operation(input integer round_number);
-        logic [DATA_WIDTH-1:0] message, exponent, modulus;
-        select_rsa_vector(round_number, message, exponent, modulus);
+    task automatic test_rsa_vector(
+        input string label,
+        input logic [DATA_WIDTH-1:0] message, exponent, modulus
+    );
         expected_registers[RESULT_ADDR >> 2] = reference_modexp(message, exponent, modulus);
-        scoreboard_begin_phase($sformatf("RSA %02d/%0d | Carga dos operandos",
-                                        round_number, RSA_ROUNDS));
+        scoreboard_begin_phase({label, " | Carga dos operandos"});
         write_and_check_register("IER", IER_ADDR, 32'h0000_0003, 32'h0000_0003);
         write_and_check_register("MSG", MSG_ADDR, message, 32'hFFFF_FFFF);
         write_and_check_register("EXP", EXP_ADDR, exponent, 32'hFFFF_FFFF);
         write_and_check_register("MOD", MOD_ADDR, modulus, 32'hFFFF_FFFF);
-        scoreboard_begin_phase($sformatf("RSA %02d/%0d | Execucao: MSG^EXP mod MOD = 0x%08h",
-                                        round_number, RSA_ROUNDS, expected_registers[RESULT_ADDR >> 2]));
+        scoreboard_begin_phase($sformatf("%s | Execucao: MSG^EXP mod MOD = 0x%08h",
+                                        label, expected_registers[RESULT_ADDR >> 2]));
         start_rsa_operation();
         wait_rsa_completion();
-        scoreboard_begin_phase($sformatf("RSA %02d/%0d | Preservacao dos operandos e limpeza",
-                                        round_number, RSA_ROUNDS));
+        scoreboard_begin_phase({label, " | Preservacao dos operandos e limpeza"});
         read_and_check_register("MSG", MSG_ADDR);
         read_and_check_register("EXP", EXP_ADDR);
         read_and_check_register("MOD", MOD_ADDR);
         clear_rsa_status();
     endtask
 
+    task automatic test_rsa_operation(input integer round_number);
+        logic [DATA_WIDTH-1:0] message, exponent, modulus;
+        select_rsa_vector(round_number, message, exponent, modulus);
+        test_rsa_vector($sformatf("RSA %02d/%0d", round_number, RSA_ROUNDS),
+                        message, exponent, modulus);
+    endtask
+
+    // Independent reproduction of UVM corners case 10; no UVM or SVA is used here.
+    task automatic test_mod_zero;
+        logic [DATA_WIDTH-1:0] previous_result, result_data, status_data;
+        integer polls;
+        bit completed;
+
+        // Recreate the valid result that preceded the failing UVM operation.
+        test_rsa_vector("MOD_ZERO | Preparacao", 32'h0F1C_3861,
+                        32'h0000_0009, 32'hC7C6_4DFB);
+        scoreboard_begin_phase("MOD_ZERO | MSG=0x1C2F4FF3 EXP=10 MOD=0");
+        write_and_check_register("MSG", MSG_ADDR, 32'h1C2F_4FF3, 32'hFFFF_FFFF);
+        write_and_check_register("EXP", EXP_ADDR, 32'h0000_000A, 32'hFFFF_FFFF);
+        write_and_check_register("MOD", MOD_ADDR, 32'h0000_0000, 32'hFFFF_FFFF);
+        apb_read(RESULT_ADDR, previous_result);
+        scoreboard_check("RESULT.PRE", RESULT_ADDR,
+                         expected_registers[RESULT_ADDR >> 2], previous_result);
+        start_rsa_operation();
+
+        polls = 0;
+        completed = 1'b0;
+        while (!completed && polls < RSA_TIMEOUT_POLLS) begin
+            apb_read(STATUS_ADDR, status_data);
+            polls++;
+            if ($isunknown(status_data))
+                $fatal(1, "MOD_ZERO: STATUS contains X/Z: 0x%08h", status_data);
+            completed = !status_data[0] && (status_data[1] || status_data[2]);
+        end
+        if (!completed)
+            $fatal(1, "MOD_ZERO: timeout after %0d polls, STATUS=0x%08h", polls, status_data);
+
+        // Datasheet 4.1/4.4: ERROR instead of DONE, BUSY cleared.
+        scoreboard_check("STATUS.ERR", STATUS_ADDR, 32'h0000_0004, status_data);
+        check_irq(1'b1);
+        apb_read(RESULT_ADDR, result_data);
+        // Datasheet 6.5: retain the value observed before the failed operation.
+        scoreboard_check("RESULT.KEEP", RESULT_ADDR, previous_result, result_data);
+        $display("[MOD_ZERO] polls=%0d STATUS=0x%08h BUSY=%b DONE=%b ERROR=%b RESULT_BEFORE=0x%08h RESULT_AFTER=0x%08h",
+                 polls, status_data, status_data[0], status_data[1], status_data[2],
+                 previous_result, result_data);
+        clear_rsa_status();
+    endtask
+
     task automatic report_results;
         integer index;
         $display("%s", TABLE_BORDER);
-        $display("\n[SCB] RESUMO | regbank=%0d rodadas | RSA=%0d rodadas | previstas=%0d | realizadas=%0d | acertos=%0d | falhas=%0d | tempo=%0.0f ns",
-                 TEST_ROUNDS, RSA_ROUNDS, EXPECTED_CHECKS, checks, checks - errors, errors, $realtime);
+        $display("\n[SCB] RESUMO | regbank=%0d rodadas | RSA=%0d rodadas | MOD_ZERO=%b | previstas=%0d | realizadas=%0d | acertos=%0d | falhas=%0d | tempo=%0.0f ns",
+                 TEST_ROUNDS, RSA_ROUNDS, mod_zero_enabled, expected_checks_count,
+                 checks, checks - errors, errors, $realtime);
         if (errors != 0) begin
             $display("[SCB] Detalhes das divergencias:");
-            for (index = 0; index < errors && index < EXPECTED_CHECKS; index = index + 1)
+            for (index = 0; index < errors && index < MAX_CHECKS; index = index + 1)
                 $display("  %s", failure_details[index]);
         end
-        // 88 original checks plus 15 checks for each RSA operation.
-        if (checks != EXPECTED_CHECKS)
-            $fatal(1, "Incomplete test: checks=%0d expected=%0d", checks, EXPECTED_CHECKS);
+        if (checks != expected_checks_count)
+            $fatal(1, "Incomplete test: checks=%0d expected=%0d", checks, expected_checks_count);
         if (errors != 0)
             $fatal(1, "TEST FAIL: %0d errors in %0d checks", errors, checks);
         $display("TEST PASS: %0d checks, %0d errors", checks, errors);
@@ -418,6 +471,8 @@ module testbench;
 
     task automatic run_test;
         integer round_number;
+        mod_zero_enabled = $test$plusargs("MOD_ZERO");
+        expected_checks_count = EXPECTED_CHECKS + (mod_zero_enabled ? MOD_ZERO_CHECKS : 0);
         if (!$value$plusargs("DATA=%h", generic_value))
             generic_value = 32'h1234_567B;
         $display("\n[TEST] amba_3_apb_rsa_apb_top | clock=%0.6f ns | dado=0x%08h | rodadas=%0d",
@@ -432,6 +487,7 @@ module testbench;
         end
         for (round_number = 1; round_number <= RSA_ROUNDS; round_number = round_number + 1)
             test_rsa_operation(round_number);
+        if (mod_zero_enabled) test_mod_zero();
         report_results();
     endtask
 
