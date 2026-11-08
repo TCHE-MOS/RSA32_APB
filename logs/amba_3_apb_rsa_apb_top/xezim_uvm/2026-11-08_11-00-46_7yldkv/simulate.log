@@ -1,0 +1,131 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_root.svh(449) @ 0: reporter [UVM/RELNOTES] 
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  This implementation of the UVM Library deviates from the 1800.2-2017
+  standard.  See the DEVIATIONS.md file contained in the release
+  for more details.
+
+----------------------------------------------------------------
+Accellera:1800.2-2017:UVM:1.0
+
+All copyright owners for this kit are listed in NOTICE.txt
+All Rights Reserved Worldwide
+----------------------------------------------------------------
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_rsa_operation...
+UVM_INFO @ 0: reporter [TIMOUTSET] '+UVM_TIMEOUT=1800,YES' provided on the command line is being applied.
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_vseq.sv(70) @ 0: uvm_test_top.env_h.vsequencer_h@@vseq_h [SEQ_BEGIN] [rsa_operation] INICIO | EXP=8 bits | max_status_reads=25000
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 125000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][1] t=125.000ns WRITE MSG addr=0x00c data=0xa3571834 PSLVERR=0 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 155000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][2] t=155.000ns WRITE EXP addr=0x010 data=0x000000f1 PSLVERR=0 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 185000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][3] t=185.000ns WRITE MOD addr=0x014 data=0xcf9f6e71 PSLVERR=0 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 215000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][4] t=215.000ns WRITE CTRL addr=0x000 data=0x00000001 PSLVERR=0 RESPOSTA=PASS START=1 SRST=0
+UVM_INFO @ 215000: reporter [RSA_REFERENCE] MSG=0xa3571834 EXP=0x000000f1 MOD=0xcf9f6e71 EXPECTED=0x73a563da
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 245000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][5] t=245.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 275000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][6] t=275.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 305000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][7] t=305.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 335000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][8] t=335.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 365000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][9] t=365.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 395000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][10] t=395.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 425000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][11] t=425.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 455000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][12] t=455.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 485000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][13] t=485.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 515000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][14] t=515.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 545000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][15] t=545.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 575000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][16] t=575.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 605000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][17] t=605.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 635000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][18] t=635.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 665000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][19] t=665.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 695000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][20] t=695.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 725000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][21] t=725.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 755000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][22] t=755.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 785000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][23] t=785.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 815000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][24] t=815.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 845000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][25] t=845.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 875000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][26] t=875.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 905000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][27] t=905.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 935000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][28] t=935.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 965000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][29] t=965.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 995000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][30] t=995.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1025000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][31] t=1025.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1055000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][32] t=1055.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1085000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][33] t=1085.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1115000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][34] t=1115.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1145000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][35] t=1145.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1175000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][36] t=1175.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1205000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][37] t=1205.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1235000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][38] t=1235.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1265000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][39] t=1265.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1295000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][40] t=1295.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1325000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][41] t=1325.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1355000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][42] t=1355.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1385000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][43] t=1385.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1415000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][44] t=1415.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1445000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][45] t=1445.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1475000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][46] t=1475.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1505000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][47] t=1505.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1535000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][48] t=1535.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1565000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][49] t=1565.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1595000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][50] t=1595.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1625000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][51] t=1625.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1655000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][52] t=1655.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1685000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][53] t=1685.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1715000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][54] t=1715.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1745000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][55] t=1745.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(285) @ 1775000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [rsa_operation][56] t=1775.000ns READ STATUS addr=0x004 data=0x00000001 PSLVERR=0 RESPOSTA=PASS BUSY=1 DONE=0 ERROR=0
+UVM_FATAL /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh(1533) @ 1800000: reporter [PH_TIMEOUT] Explicit timeout of 1800000 hit, indicating a probable testbench issue
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_report_server.svh(864) @ 1800000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   61
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[PH_TIMEOUT]     1
+[RNTST]     1
+[RSA_REFERENCE]     1
+[SEQ_BEGIN]     1
+[SEQ_DEBUG]    56
+[TIMOUTSET]     1
+[UVM/RELNOTES]     1
+
+UVM_ERROR @ 1800000: reporter [RSA_OPERATION_ORDER] Ordem incorreta ou cenario RSA incompleto
+UVM_ERROR @ 1800000: reporter [RSA_RESULT_BEFORE_DONE] STATUS=0x02 nao observado antes de RESULT ou do encerramento
+
+[SVA] RESULTADOS DAS ASSERTIONS | EXECUCAO INTERROMPIDA | cenario atual: rsa_operation
++----------------+----------------------------+-------------+---------+---------+--------------+
+| Cenario        | Assertion                  | Resultado   | Acertos |  Falhas | Instante(ns) |
++----------------+----------------------------+-------------+---------+---------+--------------+
+| APB            | APB_SETUP_ACCESS           | PASS        |      56 |       0 |     1775.000 |
+| APB            | APB_CONTROL_STABLE         | PASS        |      56 |       0 |     1775.000 |
+| APB            | APB_WRITE_DATA_STABLE      | PASS        |       4 |       0 |      215.000 |
+| APB            | APB_WAIT_HOLD              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ACCESS_END             | PASS        |      56 |       0 |     1785.000 |
+| APB            | APB_ACCESS_ENTRY           | PASS        |      56 |       0 |     1775.000 |
+| APB            | APB_KNOWN_PHASE            | PASS        |     170 |       0 |     1795.000 |
+| APB            | APB_KNOWN_CONTROL          | PASS        |     113 |       0 |     1795.000 |
+| APB            | APB_KNOWN_WRITE_DATA       | PASS        |       8 |       0 |      215.000 |
+| APB            | APB_KNOWN_READY            | PASS        |      56 |       0 |     1775.000 |
+| APB            | APB_KNOWN_ERROR            | PASS        |      56 |       0 |     1775.000 |
+| APB            | APB_KNOWN_READ_DATA        | PASS        |      52 |       0 |     1775.000 |
+| APB            | SVA_SCENARIO_CONFLICT      | PASS        |     170 |       0 |     1795.000 |
+| rsa_operation  | RSA_OPERATION_ORDER        | FAIL        |       0 |       1 |     1800.000 |
+| rsa_operation  | RSA_OPERATION_RESPONSE     | PASS        |      56 |       0 |     1775.000 |
+| rsa_operation  | RSA_RESULT_BEFORE_DONE     | FAIL        |       0 |       1 |     1800.000 |
+| rsa_operation  | RSA_RESULT_VALUE           | INTERROMP.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_ORDER           | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_RESPONSE        | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_STATUS          | NAO EXERC.  |       0 |       0 |           -- |
++----------------+----------------------------+-------------+---------+---------+--------------+
+[SVA] Assertions: 13 PASS | 2 FAIL | 4 NAO EXERCITADAS | 1 INTERROMPIDAS
+[SVA][rsa_operation][RSA_OPERATION_ORDER] Ordem incorreta ou cenario RSA incompleto
+[SVA][rsa_operation][RSA_RESULT_BEFORE_DONE] STATUS=0x02 nao observado antes de RESULT ou do encerramento
+[SVA] Instante indica a ultima ocorrencia; havendo falha, indica a ultima falha.
+[SVA] Contagens finais UVM: ERROR=2 | FATAL=1
+
+Simulation finished at time 1800000 ($finish called)

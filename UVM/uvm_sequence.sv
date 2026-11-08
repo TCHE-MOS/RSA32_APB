@@ -9,6 +9,9 @@ class apb_base_sequence extends uvm_sequence #(seq_item);
 
     `uvm_object_utils(apb_base_sequence)
 
+    // Response of the most recent completed transfer, available to derived sequences.
+    protected logic last_pslverr = 1'bx;
+
     extern function new(string name = "apb_base_sequence");
 
     extern protected task apb_write(
@@ -49,6 +52,7 @@ task apb_base_sequence::apb_write(
         `uvm_fatal("APB_WRITE_RAND", "Falha ao randomizar escrita APB")
     end
     finish_item(wr_item);
+    last_pslverr = wr_item.pslverr;
 endtask
 
 
@@ -69,6 +73,7 @@ task apb_base_sequence::apb_read(
         `uvm_fatal("APB_READ_RAND", "Falha ao randomizar leitura APB")
     end
     finish_item(rd_item);
+    last_pslverr = rd_item.pslverr;
 
     // The driver fills data with PRDATA before calling item_done().
     value = rd_item.data;

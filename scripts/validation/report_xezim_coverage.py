@@ -13,7 +13,7 @@ import re
 METRICS = ('statement', 'branch', 'toggle')
 DESIGNS = {
     'rtl': ('RTL APB RSA', 'UVM + RTL APB RSA',
-            'Cobertura do RTL APB RSA e núcleo RSA v2, coletada pelo Xezim.',
+            'Cobertura do RTL APB RSA e núcleo RSA selecionado no script, coletada pelo Xezim.',
             'Cobertura dos escopos RTL instrumentados sob top_tb.th.dut. '
             'As SVAs comparam RESULT com uma referência de exponenciação modular; '
             'consulte no log se RSA_RESULT_VALUE foi exercitada. '
@@ -32,13 +32,31 @@ def read_log(path, exit_code=0):
         counts.update(UVM_ERROR=final_counts[1], UVM_FATAL=final_counts[2])
     test = re.search(r'\[RNTST\] Running test (\S+?)\.\.\.', text)
     config = {'TEST': test[1]} if test else {}
-    if exit_code or any(int(counts.get(key, 0)) for key in ('UVM_ERROR', 'UVM_FATAL')):
+    incomplete = ('EXECUCAO INTERROMPIDA' in text or
+                  (bool(text) and '--- UVM Report Summary ---' not in text))
+    if incomplete:
+        result = 'EXECUÇÃO INCOMPLETA'
+    elif exit_code or any(int(counts.get(key, 0)) for key in ('UVM_ERROR', 'UVM_FATAL')):
         result = 'FALHA NA EXECUÇÃO'
     elif all(key in counts for key in ('UVM_ERROR', 'UVM_FATAL')):
         result = 'SEM ERROS UVM'
     else:
         result = 'SEM CONCLUSÃO'
     return result, config, counts
+
+
+def read_timing(log_path, walltime_path):
+    text = log_path.read_text() if log_path and log_path.is_file() else ''
+    wall = float(walltime_path.read_text()) if walltime_path and walltime_path.is_file() else None
+    simulated = re.search(r'^\[TIMING\] Tempo simulado global: ([\d.]+) ns$', text, re.MULTILINE)
+    simulated_ns = float(simulated[1]) if simulated else None
+    exponents = {int(case): int(exp, 16) for case, exp in re.findall(
+        r'\[CORNERS_BEGIN\] \[caso=(\d+) [^\n]*?\] DIN=0x[0-9a-fA-F]+ EXP=0x([0-9a-fA-F]+)', text)}
+    rows = [dict(case_id=int(case), exp_bits=int(width), category=kind,
+                 exp_value=exponents.get(int(case)), result=result, elapsed_sim_ns=float(duration))
+            for case, width, kind, result, duration in re.findall(
+                r'\[CORNERS_RESULT\] \[caso=(\d+) EXP=(\d+) bits (\w+)\] (\w+) \| duracao=([\d.]+)ns', text)]
+    return wall, simulated_ns, rows
 
 
 def render_html(code, metrics, units, database_path, out, design, result, config, counts):
@@ -80,7 +98,8 @@ def render_html(code, metrics, units, database_path, out, design, result, config
 
     chips = [('Escopos', str(len(code['scopes'])))]
     chips += [(label, config[key]) for label, key in
-              [('Teste', 'TEST'), ('Seed configurada', 'SEED')]
+              [('Teste', 'TEST'), ('Seed configurada', 'SEED'),
+               ('Tempo real Xezim', 'WALLTIME'), ('Tempo simulado', 'SIMTIME')]
               if key in config]
     campaign = '<div class="campaign-label"><strong>Resumo UVM</strong>Contagens registradas no log; não validam o cálculo RSA</div>'
     for name, key, css in [('Informações', 'UVM_INFO', ''), ('Avisos', 'UVM_WARNING', ''),
@@ -90,7 +109,8 @@ def render_html(code, metrics, units, database_path, out, design, result, config
     replacements = {
         'TITLE': esc(title), 'DESIGN_LABEL': esc(label), 'DESCRIPTION': esc(description),
         'DESIGN_NOTE': esc(note), 'RESULT': esc(result),
-        'RESULT_CLASS': {'SEM ERROS UVM': 'pass', 'FALHA NA EXECUÇÃO': 'fail'}.get(result, ''),
+        'RESULT_CLASS': {'SEM ERROS UVM': 'pass', 'FALHA NA EXECUÇÃO': 'fail',
+                         'EXECUÇÃO INCOMPLETA': 'fail'}.get(result, ''),
         'METRIC_COUNT': str(len(metrics)), 'CARDS': ''.join(cards), 'CAMPAIGN': campaign,
         'HEADERS': headers, 'ROWS': ''.join(rows), 'UNIT_COUNT': str(len(units)),
         'CHIPS': ''.join(f'<span class="chip">{esc(k)}<b>{esc(v)}</b></span>' for k, v in chips),
@@ -158,6 +178,7 @@ def main():
     parser.add_argument('--database', type=Path, required=True)
     parser.add_argument('--output-dir', type=Path, required=True)
     parser.add_argument('--simulation-log', type=Path)
+    parser.add_argument('--walltime-file', type=Path)
     parser.add_argument('--design-kind', choices=DESIGNS, default='rtl')
     parser.add_argument('--test-name')
     parser.add_argument('--seed')
@@ -178,6 +199,11 @@ def main():
             config['TEST'] = args.test_name
         if args.seed:
             config['SEED'] = args.seed
+        wall_seconds, simulated_ns, timing_rows = read_timing(args.simulation_log, args.walltime_file)
+        if wall_seconds is not None:
+            config['WALLTIME'] = f'{wall_seconds:.3f} s'
+        if simulated_ns is not None:
+            config['SIMTIME'] = f'{simulated_ns / 1e6:.6f} ms'
 
         out = args.output_dir
         out.mkdir(parents=True, exist_ok=True)
@@ -187,6 +213,17 @@ def main():
                  f'Tempo final do banco (unidades do simulador): {database["sim_time"]}',
                  f'Escopos instrumentados: {len(scopes)}']
         lines += [f'{metric}: {cell(code, metric)}' for metric in metrics]
+        if wall_seconds is not None:
+            lines.append(f'Tempo real do Xezim (elaboracao, simulacao e logs): {wall_seconds:.3f} s')
+        if simulated_ns is not None:
+            lines.append(f'Tempo simulado global: {simulated_ns:.3f} ns ({simulated_ns / 1e9:.9f} s)')
+        for width in sorted({row['exp_bits'] for row in timing_rows}):
+            group = [row for row in timing_rows if row['exp_bits'] == width]
+            valid = [row for row in group if row['category'] == 'VALID_OPERATION' and row['result'] == 'PASS']
+            mean = sum(row['elapsed_sim_ns'] for row in valid) / len(valid) if valid else None
+            lines.append(f'EXP {width} bits: {len(group)} casos concluidos; '
+                         f'{len(valid)} operacoes validas PASS; media simulada valida='
+                         + (f'{mean:.3f} ns' if mean is not None else 'N/A'))
         note = (DESIGNS[args.design_kind][3] + ' Toggle conta duas direcoes por bit. '
                 'Total zero e N/A. Cobertura nao implica aprovacao funcional. '
                 'Totais por design unit unem hits de suas instancias; '
@@ -196,6 +233,12 @@ def main():
         write_table(out / 'scopes.csv', scopes, 'scope', metrics)
         write_table(out / 'design_units.csv', units, 'design_unit', metrics)
         write_uncovered(out / 'uncovered.csv', scopes)
+        if timing_rows:
+            with (out / 'timing.csv').open('w', newline='') as handle:
+                writer = csv.DictWriter(handle, fieldnames=[
+                    'case_id', 'exp_bits', 'category', 'exp_value', 'result', 'elapsed_sim_ns'])
+                writer.writeheader()
+                writer.writerows(timing_rows)
 
         document = render_html(code, metrics, units, args.database, out,
                                args.design_kind, result, config, counts)
