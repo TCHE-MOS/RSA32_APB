@@ -4,5 +4,6 @@
 `include "assertions/apb_protocol_sva.sv"
 `include "assertions/rsa_operation_sva.sv"
 `include "assertions/soft_reset_sva.sv"
+`include "assertions/test_id_sva.sv"
 
 `endif
