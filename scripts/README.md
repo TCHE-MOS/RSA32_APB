@@ -19,16 +19,16 @@ GPDK45 e FreePDK45 são configurações independentes.
 Na raiz do repositório, após configurar o ambiente e as licenças Cadence:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p gpdk45
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p free45
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p ics55
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p tsmc28
+./scripts/bash/genus_no_gui.sh -p sky130
+./scripts/bash/genus_no_gui.sh -p gpdk45
+./scripts/bash/genus_no_gui.sh -p free45
+./scripts/bash/genus_no_gui.sh -p ics55
+./scripts/bash/genus_no_gui.sh -p tsmc28
 
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p gpdk45
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p free45
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p ics55
+./scripts/bash/innovus_no_gui.sh -p sky130
+./scripts/bash/innovus_no_gui.sh -p gpdk45
+./scripts/bash/innovus_no_gui.sh -p free45
+./scripts/bash/innovus_no_gui.sh -p ics55
 ```
 
 Os nomes anteriores `genus_nogui.sh` e `innovus_full_flow.sh` continuam
@@ -55,7 +55,7 @@ Para a mesma biblioteca em outro diretório:
 
 ```bash
 TSMC28_ROOT=/caminho/das/bibliotecas \
-  ./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p tsmc28
+  ./scripts/bash/genus_no_gui.sh -p tsmc28
 ```
 
 Para outra versão, corner ou seleção de células, `TSMC28_LIB_FILES`
@@ -64,7 +64,7 @@ com chaves em torno de cada caminho que contenha espaços:
 
 ```bash
 TSMC28_LIB_FILES='{/pdk/TSMC28/std_tt.lib} {/pdk/TSMC28/lvt_tt.lib}' \
-  ./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p tsmc28
+  ./scripts/bash/genus_no_gui.sh -p tsmc28
 ```
 
 Use bibliotecas de um mesmo corner. Os arquivos devem existir e ser legíveis;
@@ -78,7 +78,7 @@ sem GUI sobre a netlist do topo `amba_3_apb_rsa_apb_top`. Na raiz do projeto,
 após configurar o ambiente Cadence:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/xrun_ps_tsmc28.sh
+./scripts/bash/xrun_ps_tsmc28.sh
 ```
 
 `bash/xrun_ps.sh` também chama esse fluxo TSMC28, com os mesmos argumentos
@@ -90,7 +90,7 @@ não é usado um SDF de outra síntese. Para fixar uma execução:
 
 ```bash
 SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-11-05_14-23-23_190403435_tsmc28 \
-  ./scripts/amba_3_apb_rsa_apb_top/bash/xrun_ps_tsmc28.sh
+  ./scripts/bash/xrun_ps_tsmc28.sh
 ```
 
 A bancada é `testbenchs/rsa_apb_top/testbench.sv`, com `POST_SYNTHESIS`
@@ -148,10 +148,10 @@ não muda a execução em andamento. Uma falha interrompe as etapas seguintes.
 Para executar apenas uma etapa ou abrir a GUI:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/0.innovus_init.sh -p free45
-./scripts/amba_3_apb_rsa_apb_top/bash/1.innovus_check.sh -p free45
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_gui.sh place -p free45
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_gui.sh -p free45
+./scripts/bash/0.innovus_init.sh -p free45
+./scripts/bash/1.innovus_check.sh -p free45
+./scripts/bash/innovus_gui.sh place -p free45
+./scripts/bash/genus_gui.sh -p free45
 ```
 
 Nas etapas individuais, informe sempre o mesmo `-p`. A GUI Innovus abre a
@@ -160,7 +160,7 @@ específica, copie seu identificador completo, incluindo o sufixo:
 
 ```bash
 SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-10-29_16-00-00_123456789_sky130 \
-  ./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p sky130
+  ./scripts/bash/innovus_no_gui.sh -p sky130
 ```
 
 ## Resultados
@@ -213,10 +213,10 @@ As etapas que apenas exportam artefatos ou abrem uma GUI não criam novos
 relatórios de análise.
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/lec.sh -p gpdk45
-./scripts/amba_3_apb_rsa_apb_top/bash/lec_gui.sh -p tsmc28
-./scripts/amba_3_apb_rsa_apb_top/bash/lint.sh
-./scripts/amba_3_apb_rsa_apb_top/bash/imc.sh /caminho/do/banco/de/cobertura
+./scripts/bash/lec.sh -p gpdk45
+./scripts/bash/lec_gui.sh -p tsmc28
+./scripts/bash/lint.sh
+./scripts/bash/imc.sh /caminho/do/banco/de/cobertura
 ```
 
 O LEC usa as bibliotecas Liberty e a netlist mais recente do PDK selecionado;

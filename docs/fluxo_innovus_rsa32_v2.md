@@ -7,8 +7,8 @@ O período de clock e os delays de interface vêm do SDC da mesma síntese.
 ## Execução por PDK
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p gpdk45
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p gpdk45
+./scripts/bash/genus_no_gui.sh -p gpdk45
+./scripts/bash/innovus_no_gui.sh -p gpdk45
 ```
 
 As opções são `sky130`, `gpdk45`, `free45` e `ics55`; o padrão é
@@ -37,7 +37,7 @@ marcador do mesmo PDK, ou a seleção explícita em `SYNTH_RUN`:
 
 ```bash
 SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-10-29_16-00-00_123456789_free45 \
-  ./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p free45
+  ./scripts/bash/innovus_no_gui.sh -p free45
 ```
 
 Uma seleção incompatível com o PDK é rejeitada. Uma etapa que falha
@@ -60,7 +60,7 @@ Cada PDK mantém seu marcador em
 `ps_files/rsa_apb_top_<flag>/innovus/rsa32_v2/active_run`.
 
 Os parâmetros de tecnologia são compartilhados com o Genus em
-`scripts/amba_3_apb_rsa_apb_top/tcl/pdks/`: nó, Liberty, LEFs, site,
+`scripts/tcl/pdks/`: nó, Liberty, LEFs, site,
 camadas de pinos/alimentação e células de CTS. O floorplan mantém densidade
 de 60%; SKY130 usa dimensões de anel adequadas ao mínimo de largura de met5.
 O MMMC usa o corner typical e RC dos LEFs. O GDS exportado permanece
@@ -69,9 +69,9 @@ experimental, sem GDS das células e sem mapa de camadas validado.
 ## GUI
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_gui.sh -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_gui.sh place -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_gui.sh -p sky130
+./scripts/bash/innovus_gui.sh -p sky130
+./scripts/bash/innovus_gui.sh place -p sky130
+./scripts/bash/genus_gui.sh -p sky130
 ```
 
 A GUI Innovus abre a etapa mais avançada disponível por padrão, ou a etapa
@@ -81,5 +81,5 @@ A GUI Genus abre o banco mais recente do PDK escolhido.
 Os scripts podem ser chamados de qualquer diretório. `GENUS_BIN` e
 `INNOVUS_BIN` permitem indicar os executáveis. Os caminhos dos PDKs podem
 ser configurados pelas variáveis descritas no
-[guia de síntese por PDK](../scripts/amba_3_apb_rsa_apb_top/README.md).
+[guia de síntese por PDK](../scripts/README.md).
 Os scripts de simulação pós-síntese e LEC mantêm suas configurações próprias.

@@ -45,6 +45,7 @@ task driver::run_phase(uvm_phase phase);
 
     // 2) Aguardar 10 ciclos de clock e colocar PRESETn = 1 na borda de descida do clock
     repeat(10) @(posedge vif.pclk);
+    @(negedge vif.pclk);
     vif.presetn = 1'b1;
 
     forever begin
@@ -62,6 +63,7 @@ task driver::run_phase(uvm_phase phase);
             vif.penable   = 1'b1;
 
             @(posedge vif.pclk);
+            req.data      = vif.prdata;
             vif.psel      = 1'b0;
             vif.penable   = 1'b0;
         end

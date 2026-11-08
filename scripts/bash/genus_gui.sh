@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/pdk_common.sh"
 pdk_parse_args "$@"
-export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 RUN="amba_3_apb_rsa_apb_top_$(date '+%Y-%m-%d_%H-%M-%S_%N')_${PDK}"
 DB_DIR="$PROJECT_ROOT/ps_files/rsa_apb_top_${PDK}/db"
 LOG_DIR="$PROJECT_ROOT/logs/amba_3_apb_rsa_apb_top_${PDK}/genus/gui/$RUN"

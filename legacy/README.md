@@ -26,7 +26,7 @@ uma eventual reutilização exige revisar esses caminhos e as dependências.
 
 Os fontes RTL e sua documentação permanecem em `src/`, pois os sub-blocos
 continuam compondo o top. Os scripts ativos ficam em
-`scripts/amba_3_apb_rsa_apb_top/`, a bancada integrada em
+`scripts/`, a bancada integrada em
 `testbenchs/rsa_apb_top/` e a verificação UVM em `UVM/`.
 Os artefatos do top, incluindo suas variantes de tecnologia, permanecem nas
 pastas originais da raiz. `scripts/pages/` continua gerando a documentação

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 
 case "${1:-}" in
     -h|--help)

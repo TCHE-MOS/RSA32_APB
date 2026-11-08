@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 DESIGN="amba_3_apb_rsa_apb_top"
 
-if [[ ! -d "$PROJECT_ROOT/scripts/$DESIGN/tcl" || ! -d "$PROJECT_ROOT/ps_files/rsa_apb_top_ihp130" ]]; then
+if [[ ! -d "$PROJECT_ROOT/scripts/tcl" || ! -d "$PROJECT_ROOT/ps_files/rsa_apb_top_ihp130" ]]; then
     printf 'Erro: diretório do projeto RSA_APB não reconhecido: %s\n' "$PROJECT_ROOT" >&2
     exit 1
 fi

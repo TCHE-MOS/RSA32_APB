@@ -58,14 +58,14 @@ Nos scripts TCL do Innovus:
 O script [sky130_check.sh](bash/sky130_check.sh) verifica os arquivos necessários para o Genus e o Innovus:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/sky130_check.sh
+./scripts/bash/sky130_check.sh
 ```
 
 Para usar outra montagem do PDK:
 
 ```bash
 SKY130_PDK_BASE=/caminho/para/dataroot \
-./scripts/amba_3_apb_rsa_apb_top/bash/sky130_check.sh
+./scripts/bash/sky130_check.sh
 ```
 
 O GDS das células é reportado como aviso porque não é necessário para a síntese nem para a inicialização/place-and-route. Ele passa a ser necessário para um stream-out GDSII válido.
@@ -78,9 +78,9 @@ Depois de carregar o ambiente Cadence:
 
 ```bash
 setup
-./scripts/amba_3_apb_rsa_apb_top/bash/sky130_check.sh
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p sky130
+./scripts/bash/sky130_check.sh
+./scripts/bash/genus_no_gui.sh -p sky130
+./scripts/bash/innovus_no_gui.sh -p sky130
 ```
 
 ## Warnings esperados da Liberty

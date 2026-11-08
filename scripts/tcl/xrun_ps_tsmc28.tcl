@@ -1,6 +1,6 @@
 # Xcelium gate-level run. SDF is annotated at elaboration by -sdf_cmd_file.
 # Xrun -input evaluates commands interactively: info script may be empty.
-source [file join $::env(PROJECT_ROOT) scripts amba_3_apb_rsa_apb_top tcl report_common.tcl]
+source [file join $::env(PROJECT_ROOT) scripts tcl report_common.tcl]
 flow_reports::init $::env(REPORT_DIR) tsmc28
 
 set provenance [open [flow_reports::path simulation_inputs txt] w]

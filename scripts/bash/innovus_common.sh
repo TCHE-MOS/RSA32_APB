@@ -9,7 +9,7 @@ innovus_setup() {
     local stage="$1" candidate latest="" netlist_dir
     local common_dir
     common_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-    PROJECT_ROOT="$(cd -- "$common_dir/../../.." && pwd)"
+    PROJECT_ROOT="$(cd -- "$common_dir/../.." && pwd)"
     INNOVUS_BASE_DIR="$PROJECT_ROOT/ps_files/rsa_apb_top_${PDK}/innovus/rsa32_v2"
     netlist_dir="$PROJECT_ROOT/ps_files/rsa_apb_top_${PDK}/netlist"
 
@@ -77,7 +77,7 @@ innovus_run() {
         return 127
     fi
     export INNOVUS_SCRIPT="$tcl_file"
-    tcl_file="$PROJECT_ROOT/scripts/amba_3_apb_rsa_apb_top/tcl/run_innovus_${PDK}.tcl"
+    tcl_file="$PROJECT_ROOT/scripts/tcl/run_innovus_${PDK}.tcl"
     mkdir -p -- "$INNOVUS_LOG_DIR" "$INNOVUS_REPORT_DIR" "$INNOVUS_DB_DIR"
     cd -- "$INNOVUS_LOG_DIR"
     printf 'Sintese: %s\nNetlist: %s\nSDC: %s\nBanco: %s\n' \

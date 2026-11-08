@@ -2,9 +2,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 RUN="amba_3_apb_rsa_apb_top_uvm_$(date '+%Y-%m-%d_%H-%M-%S')"
-LOG_DIR="$PROJECT_ROOT/logs/amba_3_apb_rsa_apb_top/xrun_uvm/nogui"
+LOG_DIR="$PROJECT_ROOT/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui"
 WAVE_DIR="$PROJECT_ROOT/waveforms/amba_3_apb_rsa_apb_top/uvm"
 RTL_DIR="$PROJECT_ROOT/src/amba_3_apb"
 UVM_DIR="$PROJECT_ROOT/UVM"
@@ -12,21 +12,19 @@ COV_DIR="$PROJECT_ROOT/coverage/amba_3_apb_rsa_apb_top/uvm"
 UVM_TESTNAME="${UVM_TESTNAME:-test_rsa_operation}"
 UVM_VERBOSITY="${UVM_VERBOSITY:-UVM_MEDIUM}"
 
-for tool in xrun imc; do
-    if ! command -v "$tool" >/dev/null 2>&1; then
-        echo "Erro: '$tool' nao encontrado no PATH. Execute o setup das ferramentas Cadence." >&2
-        exit 1
-    fi
-done
+if ! command -v xrun >/dev/null 2>&1; then
+    echo "Erro: 'xrun' nao encontrado no PATH. Execute o setup das ferramentas Cadence." >&2
+    exit 1
+fi
 
 mkdir -p -- "$LOG_DIR" "$WAVE_DIR" "$COV_DIR"
 export RUN WAVE_FILE="$WAVE_DIR/${RUN}.shm"
 cd -- "$LOG_DIR"
 
-# RTL e bancada UVM: testbench.svh inclui os pacotes e seus componentes.
-xrun -64bit -sv -uvm -uvmhome CDNS-1.2 \
+# Mesmos fontes e teste da execucao sem GUI, com depuracao no SimVision.
+xrun -64bit -sv -uvm -uvmhome CDNS-1.2 -gui \
     -timescale 1ns/1ps \
-    -input "$SCRIPT_DIR/../tcl/xrun_uvm_nogui.tcl" \
+    -input "$SCRIPT_DIR/../tcl/xrun_uvm_gui.tcl" \
     -top top_tb \
     -access +rwc \
     -incdir "$UVM_DIR" \
@@ -55,13 +53,3 @@ xrun -64bit -sv -uvm -uvmhome CDNS-1.2 \
     "+UVM_TESTNAME=$UVM_TESTNAME" \
     "+UVM_VERBOSITY=$UVM_VERBOSITY" \
     "$@"
-
-# Shared IMC entry preserves each report execution and its RTL suffix.
-COV_RUN="$COV_DIR/scope/$RUN"
-"$SCRIPT_DIR/imc.sh" "$COV_RUN"
-
-echo "Simulacao UVM e relatorio de cobertura concluidos."
-echo "Teste:     $UVM_TESTNAME"
-echo "Log:       $LOG_DIR/${RUN}.log"
-echo "Ondas:     $WAVE_FILE"
-echo "Cobertura: $COV_RUN"

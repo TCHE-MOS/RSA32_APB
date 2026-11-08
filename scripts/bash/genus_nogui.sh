@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/pdk_common.sh"
 pdk_parse_args "$@"
-export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../../.." && pwd)"
+export PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
 OUTPUT_DIR="$PROJECT_ROOT/ps_files/rsa_apb_top_${PDK}"
 GENUS_BIN="${GENUS_BIN:-genus}"
 
