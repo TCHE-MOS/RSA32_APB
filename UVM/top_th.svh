@@ -39,6 +39,7 @@ import top_tb_pkg::*;
     apb_protocol_sva apb_protocol_sva_h(apb_rsa_if);
     rsa_operation_sva rsa_operation_sva_h(apb_rsa_if);
     soft_reset_sva soft_reset_sva_h(apb_rsa_if);
+    test_id_sva test_id_sva_h(apb_rsa_if);
 
 ////////////////////////////////////////////////
 // DUT instantiation

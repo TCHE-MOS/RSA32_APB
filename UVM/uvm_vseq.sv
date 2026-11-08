@@ -61,9 +61,11 @@ task vseq::body();
         
     sequence_rsa_operation  sequence_rsa_operation_h;
     sequence_soft_reset     sequence_soft_reset_h;
+    sequence_test_id         sequence_test_id_h;
   
     sequence_rsa_operation_h    = sequence_rsa_operation::type_id::create("sequence_rsa_operation_h");
     sequence_soft_reset_h       = sequence_soft_reset   ::type_id::create("sequence_soft_reset_h");
+    sequence_test_id_h          = sequence_test_id      ::type_id::create("sequence_test_id_h");
 
     scoreboard::active_scenario = "rsa_operation";
     `uvm_info("SEQ_BEGIN", $sformatf("[rsa_operation] INICIO | EXP=8 bits | max_status_reads=%0d",
@@ -79,5 +81,12 @@ task vseq::body();
     sequence_soft_reset_h.start(sequencer_h);
     vif.sva_soft_reset_active = 1'b0;
     scoreboard::report_sequence_result("soft_reset");
+
+    scoreboard::active_scenario = "test_id";
+    `uvm_info("SEQ_BEGIN", "[test_id] INICIO", UVM_LOW)
+    vif.sva_test_id_active = 1'b1;
+    sequence_test_id_h.start(sequencer_h);
+    vif.sva_test_id_active = 1'b0;
+    scoreboard::report_sequence_result("test_id");
 
 endtask

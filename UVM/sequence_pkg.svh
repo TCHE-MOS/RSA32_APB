@@ -21,5 +21,6 @@ package sequence_pkg;
     `include "uvm_sequence.sv"
     `include "uvm_sequence_rsa_operation.sv"
     `include "uvm_sequence_soft_reset.sv"
+    `include "uvm_sequence_test_id.sv"
 
 endpackage : sequence_pkg

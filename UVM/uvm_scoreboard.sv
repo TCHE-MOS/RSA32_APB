@@ -70,6 +70,10 @@ class scoreboard extends uvm_scoreboard;
         void'(register_assertion("soft_reset", "SOFT_RESET_ORDER"));
         void'(register_assertion("soft_reset", "SOFT_RESET_RESPONSE"));
         void'(register_assertion("soft_reset", "SOFT_RESET_STATUS"));
+        void'(register_assertion("test_id", "ID_SCENARIO_RUN"));
+        void'(register_assertion("test_id", "ID_READ_RESPONSE"));
+        void'(register_assertion("test_id", "ID_READ_KNOWN"));
+        void'(register_assertion("test_id", "ID_READ_STABLE"));
     endfunction
 
     static function void record_assertion(
