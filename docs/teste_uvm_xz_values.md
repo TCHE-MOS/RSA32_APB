@@ -1,8 +1,8 @@
 # Corner de dados X/Z no regbank
 
 `sequence_xz_values`, derivada de `apb_base_sequence`, encapsula a campanha.
-A virtual sequence a executa depois de `rsa_operation`, `soft_reset` e
-`corners_exp`. Para desenvolver este corner sem executar os testes RSA:
+A virtual sequence a executa depois de `rsa_operation`, `soft_reset`,
+`test_id` e `corners_exp`. Para desenvolver este corner sem executar os testes RSA:
 
 ```bash
 ./scripts/bash/xezim_uvm.sh -- +XZ_VALUES_ONLY=1

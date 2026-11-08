@@ -26,6 +26,7 @@ class vseq extends uvm_sequence;
     // Tasks
     extern task body();
     extern protected task run_xz_values();
+    extern protected task run_test_id();
       
     extern task pre_start();
 
@@ -64,10 +65,18 @@ task vseq::body();
     sequence_soft_reset     sequence_soft_reset_h;
     sequence_corners_exp    sequence_corners_exp_h;
     int xz_values_only = 0;
+    int test_id_only = 0;
 
     void'($value$plusargs("XZ_VALUES_ONLY=%d", xz_values_only));
     if (!(xz_values_only inside {0, 1}))
         `uvm_fatal("XZ_CONFIG", "XZ_VALUES_ONLY deve ser 0 ou 1")
+    void'($value$plusargs("TEST_ID_ONLY=%d", test_id_only));
+    if (!(test_id_only inside {0, 1}) || (test_id_only && xz_values_only))
+        `uvm_fatal("ID_CONFIG", "TEST_ID_ONLY deve ser 0 ou 1 e nao pode ser combinado com XZ_VALUES_ONLY=1")
+    if (test_id_only == 1) begin
+        run_test_id();
+        return;
+    end
     if (xz_values_only == 1) begin
         run_xz_values();
         return;
@@ -90,6 +99,8 @@ task vseq::body();
     sequence_soft_reset_h.start(sequencer_h);
     vif.sva_soft_reset_active = 1'b0;
     scoreboard::report_sequence_result("soft_reset");
+
+    run_test_id();
 
     sequence_corners_exp_h = sequence_corners_exp::type_id::create("sequence_corners_exp_h");
     void'($value$plusargs("CORNERS_CASES=%d", sequence_corners_exp_h.num_testcases));
@@ -115,5 +126,20 @@ task vseq::run_xz_values();
     scoreboard::active_scenario = "xz_values";
     `uvm_info("SEQ_BEGIN", "[xz_values] INICIO | X -> Z -> X/Z segmentado | sem START RSA", UVM_LOW)
     sequence_xz_values_h.start(sequencer_h);
+    scoreboard::active_scenario = "finalizacao";
+endtask
+
+// ID read/write/read imported from FEAT-UVM-MILENA-3-test_id.
+task vseq::run_test_id();
+    sequence_test_id sequence_test_id_h;
+    sequence_test_id_h = sequence_test_id::type_id::create("sequence_test_id_h");
+    scoreboard::active_scenario = "test_id";
+    `uvm_info("SEQ_BEGIN", "[test_id] INICIO | READ ID -> WRITE 0xFFFFFFFF -> READ ID", UVM_LOW)
+    vif.sva_test_id_active = 1'b1;
+    sequence_test_id_h.start(sequencer_h);
+    vif.sva_test_id_active = 1'b0;
+    // Sample the closing window before reporting or ending the test.
+    @(negedge vif.pclk);
+    scoreboard::report_sequence_result("test_id");
     scoreboard::active_scenario = "finalizacao";
 endtask

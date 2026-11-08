@@ -110,6 +110,11 @@ class scoreboard extends uvm_scoreboard;
         void'(register_assertion("soft_reset", "SOFT_RESET_ORDER"));
         void'(register_assertion("soft_reset", "SOFT_RESET_RESPONSE"));
         void'(register_assertion("soft_reset", "SOFT_RESET_STATUS"));
+        void'(register_assertion("test_id", "ID_SCENARIO_RUN"));
+        void'(register_assertion("test_id", "ID_READ_RESPONSE"));
+        void'(register_assertion("test_id", "ID_READ_KNOWN"));
+        void'(register_assertion("test_id", "ID_READ_STABLE"));
+        void'(register_assertion("test_id", "ID_WRITE_RESPONSE"));
     endfunction
 
     static function void record_assertion(
@@ -311,7 +316,7 @@ function void scoreboard::write_apb_rsa(seq_item t);
         status_detail = {status_detail, $sformatf(" caso=%0d EXP_BITS=%0d PSLVERR_EXPECTED=%b",
                          corners_case_id, corners_width, expected_pslverr)};
     end
-    if (active_scenario == "xz_values") begin
+    if (active_scenario == "xz_values" || active_scenario == "test_id") begin
         expected_pslverr = word_addr >= 12'h020 ||
             (t.transaction_type == WRITE &&
              (word_addr == top_tb_pkg::RESULT_ADDR || word_addr == top_tb_pkg::ID_ADDR));

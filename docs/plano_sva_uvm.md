@@ -7,7 +7,7 @@ nao aplicam novos resets entre os cenarios.
 
 **Conexao e ativacao.**
 
-Os quatro modulos de `UVM/assertions/` sao incluidos por
+Os cinco modulos de `UVM/assertions/` sao incluidos por
 `assertions/assertions.svh` e instanciados em `top_th.svh`. Eles recebem
 somente a interface APB. Nenhum sinal interno do DUT e utilizado.
 `top_tb_pkg.svh` e incluido antes das classes que usam seus enderecos.
@@ -18,6 +18,7 @@ sequence, os controles exclusivos da bancada:
 
 - `sva_rsa_operation_active`: ordem e resposta da operacao RSA.
 - `sva_soft_reset_active`: ordem e resposta do soft reset.
+- `sva_test_id_active`: leitura, tentativa de escrita e preservacao do ID.
 - `sva_corners_exp_active`: verificacoes da campanha corners.
 
 Esses controles nao estao conectados ao DUT. Quem iniciar uma sequence
@@ -310,12 +311,16 @@ registrado por `cover property` de eventos efetivos, sem implicacoes
 vacuosas. No SEQ_DEBUG, PSLVERR=1 aparece como RESPOSTA=PASS quando essa
 rejeicao foi solicitada pelo caso INVALID_APB.
 
-A virtual sequence executa `rsa_operation`, `soft_reset` e `corners_exp`
-em sequencia. Cada chamada start aguarda o retorno da anterior. Nao e
-necessario `+CORNERS_EXP`, nem existe retorno antecipado que exclua as
-outras duas sequences. A campanha de corners usa as quantidades do header,
+A virtual sequence executa `rsa_operation`, `soft_reset`, `test_id`,
+`corners_exp` e `xz_values` em sequencia. Cada chamada start aguarda o retorno
+da anterior. Nao e necessario `+CORNERS_EXP`. As selecoes explicitas
+`+TEST_ID_ONLY=1` e `+XZ_VALUES_ONLY=1` executam somente o cenario escolhido
+e nao podem ser combinadas. A campanha de corners usa as quantidades do header,
 com orcamento por operacao em ciclos. `+CORNERS_CASES` seleciona um prefixo
 ate o total configurado no header; `+CORNERS_MAX_READS` e somente um cap diagnostico opcional.
+
+A importacao da sequence e das assertions de ID, suas adaptacoes e os
+comandos de validacao estao em [integracao_uvm_test_id.md](integracao_uvm_test_id.md).
 
 Exemplo de verificacao reduzida do controle e das primeiras SVAs:
 

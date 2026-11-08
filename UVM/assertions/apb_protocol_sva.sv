@@ -8,6 +8,9 @@ module apb_protocol_sva(apb_rsa_if bus);
     wire [ADDR_WIDTH-1:0] word_addr = {bus.paddr[ADDR_WIDTH-1:2], 2'b00};
     wire read_transfer = transfer && !bus.pwrite && bus.pslverr === 1'b0;
     logic [1:0] ier = '0;
+    wire scenario_exclusive = $onehot0({bus.sva_rsa_operation_active,
+        bus.sva_soft_reset_active, bus.sva_test_id_active,
+        bus.sva_corners_exp_active, bus.xz_values_active});
 
     // Only the interrupt enables are retained as reference context (6.3).
     always @(posedge bus.pclk or negedge bus.presetn) begin
@@ -30,8 +33,8 @@ module apb_protocol_sva(apb_rsa_if bus);
 
     ap_id_value: assert property (
         @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
-        (read_transfer && word_addr == ID_ADDR) |-> bus.prdata === 32'h5253_0200
-    ) else env_pkg::scoreboard::record_assertion("APB", "APB_ID_VALUE", 1'b0, "ID deve retornar 0x52530200");
+        (read_transfer && word_addr == ID_ADDR) |-> bus.prdata === EXPECTED_ID_VALUE
+    ) else env_pkg::scoreboard::record_assertion("APB", "APB_ID_VALUE", 1'b0, $sformatf("ID deve retornar 0x%08h", EXPECTED_ID_VALUE));
 
     ap_status_reserved: assert property (
         @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
@@ -113,8 +116,7 @@ module apb_protocol_sva(apb_rsa_if bus);
 
     ap_scenario_exclusive: assert property (
         @(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
-        !(bus.sva_rsa_operation_active && bus.sva_soft_reset_active ||
-          bus.sva_corners_exp_active && (bus.sva_rsa_operation_active || bus.sva_soft_reset_active))
+        scenario_exclusive
     ) else env_pkg::scoreboard::record_assertion("APB", "SVA_SCENARIO_CONFLICT", 1'b0, "Dois cenarios SVA foram ativados simultaneamente");
 
     // Log PASS only for a matching observation, never for a vacuous implication.
@@ -125,7 +127,7 @@ module apb_protocol_sva(apb_rsa_if bus);
         read_transfer && word_addr == CTRL_ADDR && bus.prdata === 32'h0)
         env_pkg::scoreboard::record_assertion("APB", "APB_CTRL_READ_ZERO", 1'b1);
     cp_id_value: cover property (@(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
-        read_transfer && word_addr == ID_ADDR && bus.prdata === 32'h5253_0200)
+        read_transfer && word_addr == ID_ADDR && bus.prdata === EXPECTED_ID_VALUE)
         env_pkg::scoreboard::record_assertion("APB", "APB_ID_VALUE", 1'b1);
     cp_status_reserved: cover property (@(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
         read_transfer && word_addr == STATUS_ADDR && bus.prdata[31:3] === '0)
@@ -174,8 +176,7 @@ module apb_protocol_sva(apb_rsa_if bus);
         transfer && !bus.pwrite && !bus.pslverr && !$isunknown(bus.prdata))
         env_pkg::scoreboard::record_assertion("APB", "APB_KNOWN_READ_DATA", 1'b1);
     cp_scenario_exclusive: cover property (@(posedge bus.pclk) disable iff (bus.presetn !== 1'b1)
-        !(bus.sva_rsa_operation_active && bus.sva_soft_reset_active ||
-          bus.sva_corners_exp_active && (bus.sva_rsa_operation_active || bus.sva_soft_reset_active)))
+        scenario_exclusive)
         env_pkg::scoreboard::record_assertion("APB", "SVA_SCENARIO_CONFLICT", 1'b1);
 
 endmodule

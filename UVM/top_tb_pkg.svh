@@ -40,5 +40,8 @@ package top_tb_pkg;
     parameter logic [ADDR_WIDTH-1:0] RESULT_ADDR = 12'h018;
     parameter logic [ADDR_WIDTH-1:0] ID_ADDR     = 12'h01C;
 
+    // Shared by the imported ID checker and the general APB checker (6.6).
+    parameter logic [31:0] EXPECTED_ID_VALUE = 32'h5253_0200;
+
 
 endpackage : top_tb_pkg

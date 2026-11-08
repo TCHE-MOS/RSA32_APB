@@ -1,0 +1,11 @@
+Code coverage — xezim / APB RSA UVM + RTL APB RSA
+Banco: /home/matheus-grossi/Documentos/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xezim_uvm/2026-11-08_18-24-18_rc2U1e/xezim_cov.json
+Resultado UVM registrado: SEM ERROS UVM
+Tempo final do banco (unidades do simulador): 200000
+Escopos instrumentados: 18
+statement: 184/328 (56.10%)
+branch: 62/210 (29.52%)
+toggle: 66/5334 (1.24%)
+Tempo real do Xezim (elaboracao, simulacao e logs): 1.735 s
+Tempo simulado global: 200.000 ns (0.000000200 s)
+Cobertura dos escopos RTL instrumentados sob top_tb.th.dut. As SVAs comparam RESULT com uma referência de exponenciação modular; consulte no log se RSA_RESULT_VALUE foi exercitada. Ausência de erros UVM não comprova aprovação funcional. Toggle conta duas direcoes por bit. Total zero e N/A. Cobertura nao implica aprovacao funcional. Totais por design unit unem hits de suas instancias; os totais globais contam os pontos por instancia.

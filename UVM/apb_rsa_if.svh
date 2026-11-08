@@ -40,6 +40,7 @@ interface apb_rsa_if #(
     // Verification-only controls; these signals are not connected to the DUT.
     bit sva_rsa_operation_active = 1'b0;
     bit sva_soft_reset_active = 1'b0;
+    bit sva_test_id_active = 1'b0;
 
     // Context of one corners-exp case; no connection to DUT ports.
     bit sva_corners_exp_active = 1'b0;
