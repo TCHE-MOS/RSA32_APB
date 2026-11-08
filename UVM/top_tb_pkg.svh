@@ -27,6 +27,9 @@ package top_tb_pkg;
                                          + CORNERS_CASES_EXP_16
                                          + CORNERS_CASES_EXP_32;
 
+    // Fixed X/Z campaign: all-X, all-Z and both orders at bit/nibble/byte granularity.
+    parameter integer XZ_VALUES_PATTERN_COUNT = 8;
+
     // Address Mapping (Datasheet 5)
     parameter logic [ADDR_WIDTH-1:0] CTRL_ADDR   = 12'h000;
     parameter logic [ADDR_WIDTH-1:0] STATUS_ADDR = 12'h004;

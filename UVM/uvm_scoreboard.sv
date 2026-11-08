@@ -26,6 +26,7 @@ class scoreboard extends uvm_scoreboard;
     static bit execution_complete = 0;
     static int unsigned sequence_transactions[string];
     static int unsigned sequence_failures[string];
+    static int unsigned expected_xz_events[string];
     static int unsigned corners_case_id = 0;
     static int unsigned corners_width = 0;
     static int unsigned corners_kind = 0;
@@ -75,6 +76,7 @@ class scoreboard extends uvm_scoreboard;
         assertion_indices.delete();
         sequence_transactions.delete();
         sequence_failures.delete();
+        expected_xz_events.delete();
         corners_case_id = 0;
         corners_width = 0;
         corners_kind = 0;
@@ -114,6 +116,14 @@ class scoreboard extends uvm_scoreboard;
         string scenario, string id, bit passed, string detail = ""
     );
         int index;
+        // These two nominal rules deliberately encounter X/Z in this scenario.
+        // Keep a separate observation count: neither an SVA PASS nor a DUT failure.
+        // No protocol, response, reserved-bit or constant-register rule is waived.
+        if (!passed && scenario == "APB" && active_scenario == "xz_values" &&
+            (id == "APB_KNOWN_WRITE_DATA" || id == "APB_KNOWN_READ_DATA")) begin
+            expected_xz_events[id]++;
+            return;
+        end
         index = register_assertion(scenario, id);
         if (passed) begin
             assertion_rows[index].passed++;
@@ -217,6 +227,9 @@ class scoreboard extends uvm_scoreboard;
                          table_cell(assertion_rows[index].id, 0), table_cell(assertion_rows[index].detail, 0));
         end
         $display("[SVA] Instante indica a ultima ocorrencia; havendo falha, indica a ultima falha.");
+        foreach (expected_xz_events[id])
+            $display("[XZ][OBSERVACAO_NOMINAL] %s: %0d ocorrencias intencionais de X/Z (fora de PASS/FAIL SVA)",
+                     id, expected_xz_events[id]);
         $display("[SVA] Contagens finais UVM: ERROR=%0d | FATAL=%0d\n",
                  server.get_severity_count(UVM_ERROR), server.get_severity_count(UVM_FATAL));
     endfunction
@@ -298,10 +311,16 @@ function void scoreboard::write_apb_rsa(seq_item t);
         status_detail = {status_detail, $sformatf(" caso=%0d EXP_BITS=%0d PSLVERR_EXPECTED=%b",
                          corners_case_id, corners_width, expected_pslverr)};
     end
+    if (active_scenario == "xz_values") begin
+        expected_pslverr = word_addr >= 12'h020 ||
+            (t.transaction_type == WRITE &&
+             (word_addr == top_tb_pkg::RESULT_ADDR || word_addr == top_tb_pkg::ID_ADDR));
+    end
     sequence_transactions[active_scenario]++;
     `uvm_info("SEQ_DEBUG", $sformatf(
         "[%s][%0d] t=%0.3fns %s %s addr=0x%03h data=0x%08h PSLVERR=%b RESPOSTA=%s%s",
         active_scenario, sequence_transactions[active_scenario], $realtime,
         t.transaction_type == WRITE ? "WRITE" : "READ", register_name, t.address,
-        t.data, t.pslverr, t.pslverr === expected_pslverr ? "PASS" : "FAIL", status_detail), UVM_LOW)
+        t.data, t.pslverr, t.pslverr === expected_pslverr ? "PASS" : "FAIL", status_detail),
+        active_scenario == "xz_values" ? UVM_HIGH : UVM_LOW)
 endfunction

@@ -31,6 +31,12 @@ interface apb_rsa_if #(
     longint unsigned cycle_count = 0;
     always @(posedge pclk) cycle_count <= cycle_count + 1;
 
+    // Observation context for the X/Z sequence; no dedicated SVA at this stage.
+    bit xz_values_active = 1'b0;
+    int unsigned xz_pattern_id = 0;
+    logic [ADDR_WIDTH-1:0] xz_address;
+    logic [DATA_WIDTH-1:0] xz_payload;
+
     // Verification-only controls; these signals are not connected to the DUT.
     bit sva_rsa_operation_active = 1'b0;
     bit sva_soft_reset_active = 1'b0;

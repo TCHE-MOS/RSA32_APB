@@ -25,6 +25,7 @@ class vseq extends uvm_sequence;
 
     // Tasks
     extern task body();
+    extern protected task run_xz_values();
       
     extern task pre_start();
 
@@ -62,6 +63,15 @@ task vseq::body();
     sequence_rsa_operation  sequence_rsa_operation_h;
     sequence_soft_reset     sequence_soft_reset_h;
     sequence_corners_exp    sequence_corners_exp_h;
+    int xz_values_only = 0;
+
+    void'($value$plusargs("XZ_VALUES_ONLY=%d", xz_values_only));
+    if (!(xz_values_only inside {0, 1}))
+        `uvm_fatal("XZ_CONFIG", "XZ_VALUES_ONLY deve ser 0 ou 1")
+    if (xz_values_only == 1) begin
+        run_xz_values();
+        return;
+    end
 
     sequence_rsa_operation_h    = sequence_rsa_operation::type_id::create("sequence_rsa_operation_h");
     sequence_soft_reset_h       = sequence_soft_reset   ::type_id::create("sequence_soft_reset_h");
@@ -93,4 +103,17 @@ task vseq::body();
               sequence_corners_exp_h.cycles_per_exp, sequence_corners_exp_h.max_status_reads), UVM_LOW)
     sequence_corners_exp_h.start(sequencer_h);
 
+    run_xz_values();
+
+endtask
+
+// The existing nominal-data SVA observations are classified by the scoreboard
+// only while this scenario is active. All other checks keep reporting errors.
+task vseq::run_xz_values();
+    sequence_xz_values sequence_xz_values_h;
+    sequence_xz_values_h = sequence_xz_values::type_id::create("sequence_xz_values_h");
+    scoreboard::active_scenario = "xz_values";
+    `uvm_info("SEQ_BEGIN", "[xz_values] INICIO | X -> Z -> X/Z segmentado | sem START RSA", UVM_LOW)
+    sequence_xz_values_h.start(sequencer_h);
+    scoreboard::active_scenario = "finalizacao";
 endtask
