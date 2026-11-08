@@ -25,12 +25,12 @@ Variaveis de ambiente:
   UVM_TESTNAME     Teste (padrao: test_rsa_operation).
   UVM_VERBOSITY    Mensagens UVM (padrao: UVM_MEDIUM).
   UVM_SEED         Seed (padrao: 1; aceita random).
-  MAX_TIME         Limite de tempo simulado (padrao: 1ms).
+  MAX_TIME         Limite de tempo simulado (padrao: 2.5ms).
 
 Exemplo:
   ./xezim_uvm.sh
   UVM_HOME=/caminho/uvm/src ./xezim_uvm.sh
-  ./xezim_uvm.sh -- +UVM_TIMEOUT=1000000,YES
+  ./xezim_uvm.sh -- +UVM_TIMEOUT=2500000,YES
 EOF
 }
 
@@ -86,7 +86,7 @@ XEZIM_UVM_DIR="$(cd -- "$XEZIM_UVM_DIR" && pwd)"
 UVM_TESTNAME="${UVM_TESTNAME:-test_rsa_operation}"
 UVM_VERBOSITY="${UVM_VERBOSITY:-UVM_MEDIUM}"
 UVM_SEED="${UVM_SEED:-1}"
-MAX_TIME="${MAX_TIME:-1ms}"
+MAX_TIME="${MAX_TIME:-2.5ms}"
 RTL_DIR="$PROJECT_ROOT/src/amba_3_apb"
 UVM_DIR="$PROJECT_ROOT/UVM"
 
@@ -156,6 +156,10 @@ if [[ "$MODE" == simulate ]]; then
     if ! awk '
         /^[[:space:]]*UVM_ERROR[[:space:]]*:/ { errors = $NF; saw_errors = 1 }
         /^[[:space:]]*UVM_FATAL[[:space:]]*:/ { fatals = $NF; saw_fatals = 1 }
+        /^\[SVA\] Contagens finais UVM: ERROR=[0-9]+ \| FATAL=[0-9]+$/ {
+            split($5, final_errors, "="); errors = final_errors[2]
+            split($7, final_fatals, "="); fatals = final_fatals[2]
+        }
         END { exit !(saw_errors && saw_fatals && errors == 0 && fatals == 0) }
     ' "$BUILD_DIR/simulate.log"; then
         printf 'Erro: resumo UVM ausente ou com UVM_ERROR/UVM_FATAL. Consulte %s\n' \

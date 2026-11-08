@@ -117,8 +117,8 @@ Na raiz do repositório, com Icarus Verilog, Verilator e genhtml instalados:
 ```bash
 python3 -m venv /tmp/rsa-apb-pages-env
 /tmp/rsa-apb-pages-env/bin/pip install -r scripts/pages/requirements.txt
-./scripts/amba_3_apb_rsa_apb_top/bash/iverilog.sh
-./scripts/amba_3_apb_rsa_apb_top/bash/verilator.sh
+./scripts/bash/iverilog.sh
+./scripts/bash/verilator.sh
 /tmp/rsa-apb-pages-env/bin/python scripts/pages/build.py
 python3 -m http.server 8000 --directory _site
 ```

@@ -34,6 +34,13 @@ import top_tb_pkg::*;
     );
 
 ////////////////////////////////////////////////
+// Interface assertions
+////////////////////////////////////////////////
+    apb_protocol_sva apb_protocol_sva_h(apb_rsa_if);
+    rsa_operation_sva rsa_operation_sva_h(apb_rsa_if);
+    soft_reset_sva soft_reset_sva_h(apb_rsa_if);
+
+////////////////////////////////////////////////
 // DUT instantiation
 ////////////////////////////////////////////////
     amba_3_apb_rsa_apb_top #(

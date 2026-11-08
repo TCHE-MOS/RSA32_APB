@@ -53,6 +53,7 @@ endfunction
 ////////////////////////////////////////////////
 function void test_base::build_phase(uvm_phase phase);
     super.build_phase(phase);
+    scoreboard::init_assertion_log();
 
     // Env creation
     env_h = env::type_id::create(.name("env_h"), .parent(this));

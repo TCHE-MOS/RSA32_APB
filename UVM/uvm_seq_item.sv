@@ -16,8 +16,9 @@ class seq_item extends uvm_sequence_item;
 ////////////////////////////////////////////////
     // Write or READ
     rand transaction_type_t     transaction_type;
-    rand bit [31:0]             data;
-    rand bit [11:0]             address;
+    rand logic [31:0]           data;
+    rand logic [11:0]           address;
+    logic                      pslverr;
 
 ////////////////////////////////////////////////
 // Constraints

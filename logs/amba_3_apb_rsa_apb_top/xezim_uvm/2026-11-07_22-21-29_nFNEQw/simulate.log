@@ -1,0 +1,69 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_root.svh(449) @ 0: reporter [UVM/RELNOTES] 
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  This implementation of the UVM Library deviates from the 1800.2-2017
+  standard.  See the DEVIATIONS.md file contained in the release
+  for more details.
+
+----------------------------------------------------------------
+Accellera:1800.2-2017:UVM:1.0
+
+All copyright owners for this kit are listed in NOTICE.txt
+All Rights Reserved Worldwide
+----------------------------------------------------------------
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_rsa_operation...
+UVM_INFO @ 0: reporter [TIMOUTSET] '+UVM_TIMEOUT=1000,YES' provided on the command line is being applied.
+UVM_FATAL /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh(1533) @ 1000000: reporter [PH_TIMEOUT] Explicit timeout of 1000000 hit, indicating a probable testbench issue
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_report_server.svh(864) @ 1000000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    3
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[PH_TIMEOUT]     1
+[RNTST]     1
+[TIMOUTSET]     1
+[UVM/RELNOTES]     1
+
+UVM_ERROR @ 1000000: reporter [RSA_OPERATION_ORDER] Ordem incorreta ou cenario RSA incompleto
+UVM_ERROR @ 1000000: reporter [RSA_RESULT_BEFORE_DONE] STATUS=0x02 nao observado antes de RESULT ou do encerramento
+
+[SVA] RESULTADOS DAS ASSERTIONS | EXECUCAO ABORTADA | cenario atual: rsa_operation
++----------------+----------------------------+-------------+---------+---------+--------------+
+| Cenario        | Assertion                  | Resultado   | Acertos |  Falhas | Instante(ns) |
++----------------+----------------------------+-------------+---------+---------+--------------+
+| APB            | APB_SETUP_ACCESS           | PASS        |      30 |       0 |      995.000 |
+| APB            | APB_CONTROL_STABLE         | PASS        |      30 |       0 |      995.000 |
+| APB            | APB_WRITE_DATA_STABLE      | PASS        |       4 |       0 |      215.000 |
+| APB            | APB_WAIT_HOLD              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ACCESS_END             | PASS        |      29 |       0 |      975.000 |
+| APB            | APB_ACCESS_ENTRY           | PASS        |      30 |       0 |      995.000 |
+| APB            | APB_KNOWN_PHASE            | PASS        |      90 |       0 |      995.000 |
+| APB            | APB_KNOWN_CONTROL          | PASS        |      60 |       0 |      995.000 |
+| APB            | APB_KNOWN_WRITE_DATA       | PASS        |       8 |       0 |      215.000 |
+| APB            | APB_KNOWN_READY            | PASS        |      30 |       0 |      995.000 |
+| APB            | APB_KNOWN_ERROR            | PASS        |      30 |       0 |      995.000 |
+| APB            | APB_KNOWN_READ_DATA        | PASS        |      26 |       0 |      995.000 |
+| APB            | SVA_SCENARIO_CONFLICT      | PASS        |      90 |       0 |      995.000 |
+| rsa_operation  | RSA_OPERATION_ORDER        | FAIL        |       0 |       1 |     1000.000 |
+| rsa_operation  | RSA_OPERATION_RESPONSE     | PASS        |      30 |       0 |      995.000 |
+| rsa_operation  | RSA_RESULT_BEFORE_DONE     | FAIL        |       0 |       1 |     1000.000 |
+| soft_reset     | SOFT_RESET_ORDER           | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_RESPONSE        | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_STATUS          | NAO EXERC.  |       0 |       0 |           -- |
++----------------+----------------------------+-------------+---------+---------+--------------+
+[SVA] Assertions: 13 PASS | 2 FAIL | 4 NAO EXERCITADAS | 0 INTERROMPIDAS
+[SVA][rsa_operation][RSA_OPERATION_ORDER] Ordem incorreta ou cenario RSA incompleto
+[SVA][rsa_operation][RSA_RESULT_BEFORE_DONE] STATUS=0x02 nao observado antes de RESULT ou do encerramento
+[SVA] Instante indica a ultima ocorrencia; havendo falha, indica a ultima falha.
+[SVA] Contagens finais UVM: ERROR=2 | FATAL=1
+
+Simulation finished at time 1000000 ($finish called)

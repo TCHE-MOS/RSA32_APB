@@ -14,6 +14,7 @@ class vseq extends uvm_sequence;
   	sequencer       	sequencer_h;
   
     env                 env_h;
+    virtual apb_rsa_if   vif;
   
 
 ////////////////////////////////////////////////
@@ -47,6 +48,9 @@ task vseq::pre_start();
   
     sequencer_h = p_sequencer.sequencer_h;
 
+    if (!uvm_config_db #(virtual apb_rsa_if)::get(p_sequencer, "", "apb_rsa_if", vif))
+        `uvm_fatal("NOVIF", "Interface APB nao encontrada para controlar os cenarios SVA")
+
 endtask
 
 
@@ -61,7 +65,19 @@ task vseq::body();
     sequence_rsa_operation_h    = sequence_rsa_operation::type_id::create("sequence_rsa_operation_h");
     sequence_soft_reset_h       = sequence_soft_reset   ::type_id::create("sequence_soft_reset_h");
 
+    scoreboard::active_scenario = "rsa_operation";
+    `uvm_info("SEQ_BEGIN", $sformatf("[rsa_operation] INICIO | EXP=8 bits | max_status_reads=%0d",
+              sequence_rsa_operation_h.max_status_reads), UVM_LOW)
+    vif.sva_rsa_operation_active = 1'b1;
     sequence_rsa_operation_h.start(sequencer_h);
-    sequence_soft_reset_h   .start(sequencer_h);
+    vif.sva_rsa_operation_active = 1'b0;
+    scoreboard::report_sequence_result("rsa_operation");
+
+    scoreboard::active_scenario = "soft_reset";
+    `uvm_info("SEQ_BEGIN", "[soft_reset] INICIO", UVM_LOW)
+    vif.sva_soft_reset_active = 1'b1;
+    sequence_soft_reset_h.start(sequencer_h);
+    vif.sva_soft_reset_active = 1'b0;
+    scoreboard::report_sequence_result("soft_reset");
 
 endtask
