@@ -27,5 +27,9 @@ interface apb_rsa_if #(
     logic  pslverr;
     logic  irq;
 
+    // Verification-only controls; these signals are not connected to the DUT.
+    bit sva_rsa_operation_active = 1'b0;
+    bit sva_soft_reset_active = 1'b0;
+
 
 endinterface

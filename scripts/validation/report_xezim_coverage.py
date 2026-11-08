@@ -15,7 +15,8 @@ DESIGNS = {
     'rtl': ('RTL APB RSA', 'UVM + RTL APB RSA',
             'Cobertura do RTL APB RSA e núcleo RSA v2, coletada pelo Xezim.',
             'Cobertura dos escopos RTL instrumentados sob top_tb.th.dut. '
-            'O scoreboard atual imprime transações; não confere o resultado RSA. '
+            'As SVAs comparam RESULT com uma referência de exponenciação modular; '
+            'consulte no log se RSA_RESULT_VALUE foi exercitada. '
             'Ausência de erros UVM não comprova aprovação funcional.'),
 }
 
@@ -25,6 +26,10 @@ def read_log(path, exit_code=0):
     counts = dict(re.findall(
         r'^\s*(UVM_INFO|UVM_WARNING|UVM_ERROR|UVM_FATAL)\s*:\s*(\d+)\s*$',
         text, re.MULTILINE))
+    final_counts = re.search(
+        r'^\[SVA\] Contagens finais UVM: ERROR=(\d+) \| FATAL=(\d+)$', text, re.MULTILINE)
+    if final_counts:
+        counts.update(UVM_ERROR=final_counts[1], UVM_FATAL=final_counts[2])
     test = re.search(r'\[RNTST\] Running test (\S+?)\.\.\.', text)
     config = {'TEST': test[1]} if test else {}
     if exit_code or any(int(counts.get(key, 0)) for key in ('UVM_ERROR', 'UVM_FATAL')):

@@ -9,6 +9,7 @@
 package sequence_pkg;
 
     import uvm_pkg::*;
+    import top_tb_pkg::*;
 
     // Basic parameters
     typedef enum {READ, WRITE} transaction_type_t;

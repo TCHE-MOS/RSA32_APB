@@ -41,5 +41,9 @@ initial begin
 
 end
 
+final begin
+    env_pkg::scoreboard::print_assertion_table();
+end
+
 
 endmodule
