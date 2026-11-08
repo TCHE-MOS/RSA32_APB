@@ -16,7 +16,7 @@ class apb_base_sequence extends uvm_sequence #(seq_item);
 
     extern protected task apb_write(
         input bit [11:0] addr,
-        input bit [31:0] value = '0,
+        input logic [31:0] value = '0,
         input bit randomize_data = 1'b0
     );
 
@@ -35,7 +35,7 @@ endfunction
 
 task apb_base_sequence::apb_write(
     input bit [11:0] addr,
-    input bit [31:0] value = '0,
+    input logic [31:0] value = '0,
     input bit randomize_data = 1'b0
 );
     seq_item wr_item;
@@ -43,13 +43,19 @@ task apb_base_sequence::apb_write(
     wr_item = seq_item::type_id::create("wr_item");
 
     start_item(wr_item);
-    if (!wr_item.randomize() with {
-        transaction_type == WRITE;
-        address          == local::addr;
-        if (!local::randomize_data)
-            data == local::value;
-    }) begin
-        `uvm_fatal("APB_WRITE_RAND", "Falha ao randomizar escrita APB")
+    // Bypass randomization for directed values: constraint solvers generate
+    // only 0/1 and cannot preserve a payload containing X/Z.
+    if (randomize_data) begin
+        wr_item.address_dist.constraint_mode(0);
+        if (!wr_item.randomize() with {
+            transaction_type == WRITE;
+            address == local::addr;
+        })
+            `uvm_fatal("APB_WRITE_RAND", "Falha ao randomizar escrita APB")
+    end else begin
+        wr_item.transaction_type = WRITE;
+        wr_item.address = addr;
+        wr_item.data = value;
     end
     finish_item(wr_item);
     last_pslverr = wr_item.pslverr;
@@ -65,13 +71,10 @@ task apb_base_sequence::apb_read(
     rd_item = seq_item::type_id::create("rd_item");
 
     start_item(rd_item);
-    if (!rd_item.randomize() with {
-        transaction_type == READ;
-        address          == local::addr;
-        data             == '0;
-    }) begin
-        `uvm_fatal("APB_READ_RAND", "Falha ao randomizar leitura APB")
-    end
+    // Directed accesses must also reach addresses outside address_dist.
+    rd_item.transaction_type = READ;
+    rd_item.address = addr;
+    rd_item.data = '0;
     finish_item(rd_item);
     last_pslverr = rd_item.pslverr;
 

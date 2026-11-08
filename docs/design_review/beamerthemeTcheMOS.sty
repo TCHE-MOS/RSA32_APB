@@ -1,0 +1,231 @@
+% =====================================================================
+% beamerthemeTcheMOS.sty
+% Tema Beamer da design house TchêMOS — Semiconductor Design House
+% Paleta extraída de docs/logo.png
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeTcheMOS}[2026/11/08 Tema TcheMOS]
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{amssymb}
+\usetikzlibrary{positioning,calc}
+
+% ---------------------------------------------------------------------
+% Caminho dos logos (pode ser redefinido no documento)
+% ---------------------------------------------------------------------
+\providecommand{\tmLogoPath}{..}
+\newcommand{\tmLogoEmpresa}{\tmLogoPath/logo.png}
+\newcommand{\tmLogoUnisinos}{\tmLogoPath/unisinos.png}
+\newcommand{\tmLogoSICT}{\tmLogoPath/SICT.png}
+
+% ---------------------------------------------------------------------
+% Paleta (logo TchêMOS)
+% ---------------------------------------------------------------------
+\definecolor{tmCafe}{HTML}{4B2511}      % marrom da cuia / texto "TchêMOS"
+\definecolor{tmCafeEsc}{HTML}{2E1608}   % marrom profundo (sombras)
+\definecolor{tmVermelho}{HTML}{A7170F}  % lenço vermelho
+\definecolor{tmDourado}{HTML}{C9A04A}   % trilhas douradas / linha do subtítulo
+\definecolor{tmAreia}{HTML}{E9DCC0}     % dourado claro (fundos de bloco)
+\definecolor{tmOliva}{HTML}{64732F}     % campo / araucária
+\definecolor{tmErva}{HTML}{879B29}      % erva-mate
+\definecolor{tmCreme}{HTML}{FBF8F7}     % fundo do logo
+\definecolor{tmTexto}{HTML}{2B211C}     % texto corrido
+
+% ---------------------------------------------------------------------
+% Cores Beamer
+% ---------------------------------------------------------------------
+\setbeamercolor{background canvas}{bg=tmCreme}
+\setbeamercolor{normal text}{fg=tmTexto,bg=tmCreme}
+\setbeamercolor{structure}{fg=tmCafe}
+\setbeamercolor{alerted text}{fg=tmVermelho}
+\setbeamercolor{example text}{fg=tmOliva}
+
+\setbeamercolor{frametitle}{fg=tmCreme,bg=tmCafe}
+\setbeamercolor{framesubtitle}{fg=tmDourado}
+\setbeamercolor{title}{fg=tmCafe}
+\setbeamercolor{subtitle}{fg=tmVermelho}
+
+\setbeamercolor{item}{fg=tmDourado}
+\setbeamercolor{subitem}{fg=tmVermelho}
+\setbeamercolor{subsubitem}{fg=tmOliva}
+\setbeamercolor{enumerate item}{fg=tmCreme,bg=tmCafe}
+
+\setbeamercolor{block title}{fg=tmCreme,bg=tmCafe}
+\setbeamercolor{block body}{fg=tmTexto,bg=tmAreia!45}
+\setbeamercolor{block title alerted}{fg=tmCreme,bg=tmVermelho}
+\setbeamercolor{block body alerted}{fg=tmTexto,bg=tmVermelho!8}
+\setbeamercolor{block title example}{fg=tmCreme,bg=tmOliva}
+\setbeamercolor{block body example}{fg=tmTexto,bg=tmOliva!10}
+
+\setbeamercolor{footline left}{fg=tmCreme,bg=tmCafe}
+\setbeamercolor{footline mid}{fg=tmCafe,bg=tmAreia}
+\setbeamercolor{footline right}{fg=tmCreme,bg=tmVermelho}
+
+% ---------------------------------------------------------------------
+% Fontes
+% ---------------------------------------------------------------------
+\usefonttheme{professionalfonts}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamerfont{footline}{size=\scriptsize}
+
+% ---------------------------------------------------------------------
+% Elementos gerais
+% ---------------------------------------------------------------------
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{itemize item}{\raisebox{0.15ex}{\color{tmDourado}\rule{0.6ex}{0.6ex}}}
+\setbeamertemplate{itemize subitem}{\color{tmVermelho}\textendash}
+\setbeamertemplate{enumerate item}{%
+  \tikz[baseline=(n.base)]\node[fill=tmCafe,text=tmCreme,circle,inner sep=1.2pt,
+    font=\scriptsize\bfseries] (n) {\insertenumlabel};}
+
+% ---------------------------------------------------------------------
+% Título do slide: faixa café + linha dourada + marca vermelha
+% ---------------------------------------------------------------------
+\setbeamertemplate{frametitle}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[tmCafe] (current page.north west) rectangle
+      ([yshift=-1.25cm]current page.north east);
+    \fill[tmDourado] ([yshift=-1.25cm]current page.north west) rectangle
+      ([yshift=-1.31cm]current page.north east);
+    \fill[tmVermelho] ([yshift=-1.25cm]current page.north west) rectangle
+      ([xshift=1.6cm,yshift=-1.31cm]current page.north west);
+    \node[anchor=east,inner sep=1.5pt,fill=tmCreme,rounded corners=3pt]
+      at ([xshift=-0.3cm,yshift=-0.625cm]current page.north east)
+      {\includegraphics[height=0.95cm]{\tmLogoEmpresa}};
+    \node[anchor=west,align=left,inner sep=0pt,text width=12.5cm]
+      at ([xshift=0.6cm,yshift=-0.625cm]current page.north west) {%
+        {\usebeamerfont{frametitle}\color{tmCreme}\insertframetitle}%
+        \ifx\insertframesubtitle\@empty\else
+          \\[0.2ex]{\usebeamerfont{framesubtitle}\color{tmDourado}\insertframesubtitle}%
+        \fi};
+  \end{tikzpicture}%
+  \vspace*{1.45cm}%
+}
+
+% ---------------------------------------------------------------------
+% Rodapé: autores | título curto | página
+% ---------------------------------------------------------------------
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.30\paperwidth,ht=2.6ex,dp=1ex,leftskip=0.6cm]{footline left}%
+    \usebeamerfont{footline}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.58\paperwidth,ht=2.6ex,dp=1ex,center]{footline mid}%
+    \usebeamerfont{footline}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.12\paperwidth,ht=2.6ex,dp=1ex,center]{footline right}%
+    \usebeamerfont{footline}\insertframenumber\,/\,\inserttotalframenumber
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% ---------------------------------------------------------------------
+% Gerente (campo extra para a capa)
+% ---------------------------------------------------------------------
+\def\tm@manager{}
+\newcommand{\manager}[1]{\def\tm@manager{#1}}
+
+% ---------------------------------------------------------------------
+% Capa
+% ---------------------------------------------------------------------
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    % faixa lateral esquerda com o logo da empresa
+    \fill[tmCreme] (current page.north west) rectangle (current page.south east);
+    \fill[tmCafe] (current page.north west) rectangle
+      ([xshift=0.35cm]current page.south west);
+    \fill[tmVermelho] ([xshift=0.35cm]current page.north west) rectangle
+      ([xshift=0.45cm]current page.south west);
+    % rodapé institucional (fundo branco para os logos parceiros)
+    \fill[white] ([xshift=0.45cm]current page.south west) rectangle
+      ([yshift=1.75cm]current page.south east);
+    \fill[tmDourado] ([xshift=0.45cm,yshift=1.75cm]current page.south west) rectangle
+      ([yshift=1.81cm]current page.south east);
+    % logo TchêMOS
+    \node[anchor=west,inner sep=0pt] (logo) at ([xshift=0.9cm,yshift=0.85cm]current page.west)
+      {\includegraphics[height=5.6cm]{\tmLogoEmpresa}};
+    % logos parceiros
+    \node[anchor=east,inner sep=0pt] (sict) at ([xshift=-0.6cm,yshift=0.88cm]current page.south east)
+      {\includegraphics[height=1.4cm,trim=95 25 95 10,clip]{\tmLogoSICT}};
+    \node[anchor=east,inner sep=0pt] at ([xshift=-0.7cm]sict.west)
+      {\includegraphics[height=1.3cm,trim=15 18 10 22,clip]{\tmLogoUnisinos}};
+    \node[anchor=west,text=tmCafe,font=\footnotesize,align=left] at ([xshift=0.9cm,yshift=0.88cm]current page.south west)
+      {\textbf{\insertinstitute}\\[0.08cm]{\color{tmOliva}\insertdate}};
+    % bloco de texto
+    \node[anchor=north west,text width=8.3cm,align=left,inner sep=0pt]
+      at ([xshift=7.0cm,yshift=-1.3cm]current page.north west) {%
+        \raggedright\hyphenpenalty=10000\exhyphenpenalty=10000
+        {\color{tmDourado}\rule{1.4cm}{2pt}}\\[0.2cm]
+        {\small\color{tmVermelho}\bfseries\insertsubtitle}\\[0.15cm]
+        {\usebeamerfont{title}\color{tmCafe}\inserttitle}\\[0.45cm]
+        {\color{tmDourado}\rule{\linewidth}{0.6pt}}\\[0.2cm]
+        {\footnotesize\color{tmTexto}\textbf{Autores}}\\[0.02cm]
+        {\normalsize\color{tmCafe}\insertauthor}\\[0.3cm]
+        {\footnotesize\color{tmTexto}\textbf{Gerente}}\\[0.02cm]
+        {\normalsize\color{tmCafe}\tm@manager}
+      };
+  \end{tikzpicture}%
+}
+
+% ---------------------------------------------------------------------
+% Divisor de seção
+% ---------------------------------------------------------------------
+\AtBeginSection[]{%
+  {\setbeamertemplate{footline}{}%
+  \begin{frame}[plain,noframenumbering]
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[tmCafe] (current page.north west) rectangle (current page.south east);
+      \fill[tmDourado] ([yshift=-0.6cm]current page.west) rectangle
+        ([yshift=-0.66cm]current page.east);
+      \fill[tmVermelho] ([yshift=-0.57cm]current page.west) rectangle
+        ([xshift=2.2cm,yshift=-0.69cm]current page.west);
+      \node[anchor=south west,text=tmCreme,font=\huge\bfseries]
+        at ([xshift=1.2cm,yshift=-0.35cm]current page.west) {\insertsectionhead};
+      \node[anchor=north west,text=tmDourado,font=\large]
+        at ([xshift=1.2cm,yshift=-0.9cm]current page.west)
+        {Seção \insertsectionnumber};
+    \end{tikzpicture}
+  \end{frame}}
+}
+
+
+% ---------------------------------------------------------------------
+% Link para o repositório (botão no canto inferior direito do slide)
+%   \tmRepoLink{URL}{rótulo}
+% ---------------------------------------------------------------------
+\newcommand{\tmRepoLink}[2]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east,fill=tmCafe,text=tmCreme,rounded corners=3pt,
+      inner xsep=6pt,inner ysep=3pt,font=\scriptsize\bfseries,
+      draw=tmDourado,line width=0.6pt]
+      at ([xshift=-0.35cm,yshift=0.62cm]current page.south east)
+      {\href{#1}{\textcolor{tmCreme}{$\blacktriangleright$\ #2}}};
+  \end{tikzpicture}}
+
+% ---------------------------------------------------------------------
+% Caixa de veredito
+%   \tmVeredito{cor}{título}{detalhe}
+% ---------------------------------------------------------------------
+\newcommand{\tmVeredito}[3]{%
+  \par\noindent
+  \begin{tikzpicture}
+    \node[fill=#1,text=white,rounded corners=4pt,text width=\dimexpr\linewidth-12pt\relax,
+      align=center,inner sep=6pt] {%
+      \hyphenpenalty=10000\exhyphenpenalty=10000{\normalsize\bfseries #2}\\[0.2ex]{\footnotesize #3}};
+  \end{tikzpicture}\par}
+
+% Selos de status
+\newcommand{\tmOK}{\tikz[baseline=-0.6ex]\node[fill=tmOliva,text=white,rounded corners=2pt,
+  inner sep=2pt,font=\scriptsize\bfseries]{ATENDIDO};}
+\newcommand{\tmRessalva}{\tikz[baseline=-0.6ex]\node[fill=tmDourado,text=tmCafeEsc,rounded corners=2pt,
+  inner sep=2pt,font=\scriptsize\bfseries]{RESSALVA};}
+
+\endinput
