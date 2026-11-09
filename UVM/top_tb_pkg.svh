@@ -16,10 +16,10 @@ package top_tb_pkg;
     // Quantidade de casos corners por largura de EXP. Edite somente estes valores.
     // Zero desabilita a largura; o total e o watchdog sao calculados automaticamente.
     parameter integer CORNERS_CASES_EXP_4  = 10;
-    parameter integer CORNERS_CASES_EXP_8  = 0;
-    parameter integer CORNERS_CASES_EXP_12 = 0;
-    parameter integer CORNERS_CASES_EXP_16 = 0;
-    parameter integer CORNERS_CASES_EXP_32 = 0;
+    parameter integer CORNERS_CASES_EXP_8  = 10;
+    parameter integer CORNERS_CASES_EXP_12 = 5;
+    parameter integer CORNERS_CASES_EXP_16 = 1;
+    parameter integer CORNERS_CASES_EXP_32 = 1;
 
     parameter integer CORNERS_TOTAL_CASES = CORNERS_CASES_EXP_4
                                          + CORNERS_CASES_EXP_8
