@@ -1,0 +1,2 @@
+case_id,exp_bits,category,exp_value,result,elapsed_sim_ns
+1,4,VALID_OPERATION,8,PASS,10470.0

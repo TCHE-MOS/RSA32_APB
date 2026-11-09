@@ -5,6 +5,10 @@ Periférico RSA com interface AMBA 3 APB (APB3), descrito em SystemVerilog.
 O projeto contém RTL do periférico, um núcleo RSA, testbenches estruturais e
 scripts auxiliares de síntese, LEC e simulação.
 
+O [registro de falhas UVM e comparação RSA v1/v2](docs/README_falhas_uvm.md)
+documenta as divergências de módulo zero, as evidências e os eventos históricos
+da bancada.
+
 Os fluxos ativos de simulação e síntese têm como alvo exclusivamente
 `amba_3_apb_rsa_apb_top`. Os fluxos individuais dos sub-blocos e seus
 artefatos estão arquivados em [`legacy/`](legacy/README.md).
@@ -39,8 +43,10 @@ salvas no diagrams.net aparecem sem exportar imagens ou reconstruir o site.
 ├── ps_files/rsa_apb_top*/        # Resultados do top por tecnologia
 ├── reports/amba_3_apb_rsa_apb_top*/
 ├── scripts/
-│   ├── amba_3_apb_rsa_apb_top/   # Entradas Bash e Tcl do top
+│   ├── bash/                   # Entradas Bash de simulação e ferramentas EDA
+│   ├── tcl/                    # Fluxos Tcl e configurações dos PDKs
 │   ├── pages/                  # Geração da documentação
+│   ├── validation/             # Relatórios de cobertura
 │   └── clean.sh                # Limpeza de artefatos do top
 ├── src/
 │   ├── amba_3_apb/              # RTL APB e wrapper RSA
@@ -108,12 +114,12 @@ Genus e Innovus aceitam `-p sky130|gpdk45|free45|ics55`; o padrão é
 `gpdk45`.
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/genus_no_gui.sh -p sky130
-./scripts/amba_3_apb_rsa_apb_top/bash/innovus_no_gui.sh -p sky130
+./scripts/bash/genus_no_gui.sh -p sky130
+./scripts/bash/innovus_no_gui.sh -p sky130
 ```
 
 Os resultados ficam separados por execução e PDK, com sufixos nos arquivos
-de síntese e relatórios. Consulte o [guia dos fluxos por PDK](scripts/amba_3_apb_rsa_apb_top/README.md)
+de síntese e relatórios. Consulte o [guia dos fluxos por PDK](scripts/README.md)
 para os quatro PDKs, caminhos e seleção de execuções anteriores.
 
 ## Módulos RTL
@@ -141,14 +147,29 @@ MSG/EXP/MOD. A instância usa `LOAD_GAP=1`, conforme o protocolo do núcleo real
 Os testbenches individuais estão arquivados em
 `legacy/testbenchs/<nome_do_modulo>/`.
 
+### Simulação integrada com Xezim
+
+Para executar `testbenchs/rsa_apb_top/testbench.sv` com RSA v2 e sua
+scoreboard procedural:
+
+```bash
+bash scripts/bash/xezim.sh
+bash scripts/bash/xezim.sh +MOD_ZERO
+```
+
+A segunda chamada acrescenta o caso dirigido de módulo zero. Os resultados
+da contraprova estão no [registro de falhas](docs/README_falhas_uvm.md).
+Logs e ondas ficam em `logs/amba_3_apb_rsa_apb_top/xezim/` e
+`waveforms/amba_3_apb_rsa_apb_top/xezim/`.
+
 ### Simulação integrada com Icarus Verilog
 
 Com `iverilog` e `vvp` no `PATH`, execute:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/iverilog.sh
+./scripts/bash/iverilog.sh
 # Opcional: escolher o valor genérico de 32 bits.
-./scripts/amba_3_apb_rsa_apb_top/bash/iverilog.sh +DATA=DEADBEEF
+./scripts/bash/iverilog.sh +DATA=DEADBEEF
 ```
 
 O cenário aprovado termina com `TEST PASS: 238 checks, 0 errors`. Logs ficam em
@@ -162,8 +183,8 @@ sequência, as tasks, o mapa de registradores e os critérios de aprovação.
 Com Verilator, `verilator_coverage`, Make e G++ com suporte a C++20 no `PATH`:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/verilator.sh
-./scripts/amba_3_apb_rsa_apb_top/bash/verilator.sh +DATA=DEADBEEF
+./scripts/bash/verilator.sh
+./scripts/bash/verilator.sh +DATA=DEADBEEF
 ```
 
 O script executa a mesma bancada e gera o resumo em
@@ -180,8 +201,8 @@ Com Xcelium no `PATH`, execute a simulação integrada em batch ou abra
 SimVision:
 
 ```bash
-./scripts/amba_3_apb_rsa_apb_top/bash/xrun.sh
-./scripts/amba_3_apb_rsa_apb_top/bash/xrun_wgui.sh
+./scripts/bash/xrun.sh
+./scripts/bash/xrun_wgui.sh
 ```
 
 Os scripts executam a bancada integrada com Xcelium; o fluxo gráfico também
@@ -261,7 +282,7 @@ publica a página quando GitHub Pages está configurado para GitHub Actions.
 - Os relatórios de síntese ficam em `reports/amba_3_apb_rsa_apb_top_<flag>/`;
   LEC também usa a flag do PDK. Lint e cobertura IMC usam
   `reports/amba_3_apb_rsa_apb_top_rtl/<ferramenta>/<RUN>/`, com sufixo `_rtl`
-  nos relatórios. A [metodologia dos Tcl](scripts/amba_3_apb_rsa_apb_top/README.md#metodologia-comum-de-relatórios)
+  nos relatórios. A [metodologia dos Tcl](scripts/README.md#metodologia-comum-de-relatórios)
   detalha os caminhos e a preservação de execuções anteriores. Os relatórios
   Verilator e os resultados históricos mantêm seus caminhos existentes.
 - Os logs de síntese ficam em `logs/amba_3_apb_rsa_apb_top_<flag>/`;

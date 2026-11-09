@@ -9,6 +9,7 @@
 package sequence_pkg;
 
     import uvm_pkg::*;
+    import top_tb_pkg::*;
 
     // Basic parameters
     typedef enum {READ, WRITE} transaction_type_t;
@@ -17,7 +18,11 @@ package sequence_pkg;
     `include "uvm_seq_item.sv"
 
     // Sequence
+    `include "uvm_sequence.sv"
     `include "uvm_sequence_rsa_operation.sv"
-
+    `include "uvm_sequence_soft_reset.sv"
+    `include "uvm_sequence_test_id.sv"
+    `include "uvm_sequence_corners_exp.sv"
+    `include "uvm_sequence_xz_values.sv"
 
 endpackage : sequence_pkg

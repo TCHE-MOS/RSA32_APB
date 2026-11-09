@@ -1,0 +1,5 @@
+# Gerado por generate.mjs; caminhos relativos a /home/matheus-grossi/Projects/RSA_APB_32-bit/schematic_generator/esquematico
+script sources.ys
+hierarchy -check -top rsa_core
+script processes.ys
+write_json "/home/matheus-grossi/Projects/RSA_APB_32-bit/schematic_generator/esquematico/saida/rsa_core/netlist.json"

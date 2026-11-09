@@ -1,0 +1,339 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 1603 1721" width="1603" height="1721">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="1603" height="1721"/>
+<rect class="frame" x="-16" y="-16" width="1587" height="1705"/>
+<g class="tblock" transform="translate(1011,1589)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">6 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">amba_3_apb_regbank</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">amba_3_apb_regbank.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/regbank_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">DATA_WIDTH = 32, D_WID = 31</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">34 células, 8 registradores (132 bits)</text></g>
+<g class="wires">
+<path class="w" data-n="22" d="M1105,1455L1167,1455L1167,1493L1417,1493"/>
+<circle class="jn" data-n="22" cx="1167" cy="1455" r="2.4"/>
+<path class="w rst" data-n="17" d="M366,1314L463,1314L463,1485L1174,1485L1174,1453L1417,1453"/>
+<circle class="jn" data-n="17" cx="463" cy="1314" r="2.4"/>
+<path class="w" data-n="30" d="M318,777L456,777L456,698L1293,698L1293,664L1417,664"/>
+<circle class="jn" data-n="30" cx="456" cy="777" r="2.4"/>
+<path class="w" data-n="29" d="M312,991L428,991L428,1340L1417,1340"/>
+<circle class="jn" data-n="29" cx="428" cy="991" r="2.4"/>
+<path class="w" data-n="32" d="M318,388L470,388L470,706L1417,706"/>
+<circle class="jn" data-n="32" cx="470" cy="388" r="2.4"/>
+<path class="w" data-n="31" d="M324,468L463,468L463,748L1417,748"/>
+<circle class="jn" data-n="31" cx="463" cy="468" r="2.4"/>
+<path class="w bus" data-n="48" d="M601,972L1417,972"/>
+<path class="w bus cst" data-n="49" d="M312,946L463,946L463,948L593,948"/>
+<path class="w" data-n="29" d="M312,991L428,991L428,964L593,964"/>
+<path class="w" data-n="30" d="M318,777L456,777L456,980L593,980"/>
+<circle class="jn" data-n="30" cx="456" cy="980" r="2.4"/>
+<path class="w" data-n="10" d="M147,1153L161,1153L161,1043L463,1043L463,996L593,996"/>
+<circle class="jn" data-n="10" cx="161" cy="1153" r="2.4"/>
+<path class="w bus" data-n="50" d="M595,442L1417,442"/>
+<path class="w bus cst" data-n="51" d="M312,564L449,564L449,426L587,426"/>
+<path class="w" data-n="31" d="M324,468L463,468L463,442L587,442"/>
+<circle class="jn" data-n="31" cx="463" cy="442" r="2.4"/>
+<path class="w" data-n="32" d="M318,388L470,388L470,458L587,458"/>
+<circle class="jn" data-n="32" cx="470" cy="458" r="2.4"/>
+<path class="w bus" data-n="33" d="M330,179L428,179L428,22L1417,22"/>
+<circle class="jn bus" data-n="33" cx="428" cy="179" r="3"/>
+<path class="w bus" data-n="34" d="M330,689L442,689L442,1020L1293,1020L1293,1012L1417,1012"/>
+<circle class="jn bus" data-n="34" cx="442" cy="689" r="3"/>
+<path class="w bus" data-n="35" d="M330,609L1417,609"/>
+<path class="w bus" data-n="28" d="M312,857L463,857L463,916L1417,916"/>
+<circle class="jn bus" data-n="28" cx="463" cy="857" r="3"/>
+<path class="w bus cst" data-n="52" d="M147,1533L1417,1533"/>
+<path class="w" data-n="5" d="M147,1113L238,1113L238,1209L324,1209"/>
+<circle class="jn" data-n="5" cx="238" cy="1113" r="2.4"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,1223L324,1223"/>
+<circle class="jn" data-n="3" cx="182" cy="741" r="2.4"/>
+<circle class="jn" data-n="3" cx="182" cy="1223" r="2.4"/>
+<path class="w" data-n="5" d="M147,1113L324,1113"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,1127L324,1127"/>
+<circle class="jn" data-n="3" cx="182" cy="1127" r="2.4"/>
+<path class="w" data-n="11" d="M147,1282L671,1282L671,1306L797,1306"/>
+<circle class="jn" data-n="11" cx="671" cy="1282" r="2.4"/>
+<path class="w" data-n="23" d="M592,1314L671,1314L671,1320L797,1320"/>
+<path class="w" data-n="4" d="M147,1322L168,1322L168,1307L324,1307"/>
+<circle class="jn" data-n="4" cx="168" cy="1322" r="2.4"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,1321L324,1321"/>
+<circle class="jn" data-n="3" cx="182" cy="1321" r="2.4"/>
+<path class="w" data-n="4" d="M147,1322L168,1322L168,1365L324,1365"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,1379L324,1379"/>
+<circle class="jn" data-n="3" cx="182" cy="1379" r="2.4"/>
+<path class="w" data-n="18" d="M366,1372L428,1372L428,1377L566.3,1377"/>
+<path class="w" data-n="24" d="M360,1422L428,1422L428,1391L566.3,1391"/>
+<path class="w" data-n="19" d="M608.3,1384L671,1384L671,1402L769,1402"/>
+<path class="w" data-n="25" d="M611,1430L671,1430L671,1416L769,1416"/>
+<path class="w" data-n="20" d="M811,1409L951.7,1409"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,1454L853,1454L853,1423L951.7,1423"/>
+<circle class="jn" data-n="1" cx="231" cy="701" r="2.4"/>
+<path class="w" data-n="21" d="M993.7,1416L1041,1416L1041,1448L1063,1448"/>
+<path class="w" data-n="26" d="M969,1462L1063,1462"/>
+<path class="w rst" data-n="17" d="M366,1314L556,1314"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,1422L324,1422"/>
+<path class="w" data-n="10" d="M147,1153L161,1153L161,1446L428,1446L428,1430L575,1430"/>
+<path class="w rst" data-n="2" d="M147,1462L933,1462"/>
+<path class="w rst" data-n="17" d="M366,1314L463,1314L463,1110L1167,1110L1167,1123L1237,1123"/>
+<path class="w" data-n="22" d="M1105,1455L1167,1455L1167,1137L1237,1137"/>
+<path class="w bus" data-n="36" d="M1027,868L1041,868L1041,401L435,401L435,520L210,520L210,857L252,857"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,881L252,881"/>
+<circle class="jn" data-n="0" cx="203" cy="661" r="2.4"/>
+<circle class="jn" data-n="0" cx="203" cy="881" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,909L282,909L282,897"/>
+<circle class="jn" data-n="1" cx="231" cy="909" r="2.4"/>
+<path class="w" data-n="39" d="M1449,1070L1536,1070L1536,353L189,353L189,991L252,991"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,1015L252,1015"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,1051L282,1051L282,1031"/>
+<circle class="jn" data-n="1" cx="231" cy="1051" r="2.4"/>
+<path class="w" data-n="42" d="M1449,1146L1543,1146L1543,46L161,46L161,777L258,777"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,801L258,801"/>
+<circle class="jn" data-n="0" cx="203" cy="801" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,829L288,829L288,817"/>
+<circle class="jn" data-n="1" cx="231" cy="829" r="2.4"/>
+<path class="w" data-n="47" d="M619,180L671,180L671,332L224,332L224,468L264,468"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,492L264,492"/>
+<circle class="jn" data-n="0" cx="203" cy="492" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,543L294,543L294,508"/>
+<circle class="jn" data-n="1" cx="231" cy="543" r="2.4"/>
+<path class="w" data-n="46" d="M619,92L685,92L685,339L238,339L238,388L258,388"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,412L258,412"/>
+<circle class="jn" data-n="0" cx="203" cy="412" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,440L288,440L288,428"/>
+<circle class="jn" data-n="1" cx="231" cy="440" r="2.4"/>
+<path class="w bus" data-n="45" d="M619,516L699,516L699,54L175,54L175,179L270,179"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,203L270,203"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,360L300,360L300,219"/>
+<path class="w bus" data-n="44" d="M619,268L678,268L678,346L217,346L217,689L270,689"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,713L270,713"/>
+<circle class="jn" data-n="0" cx="203" cy="713" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,749L300,749L300,729"/>
+<circle class="jn" data-n="1" cx="231" cy="749" r="2.4"/>
+<path class="w bus" data-n="43" d="M619,648L692,648L692,325L196,325L196,609L270,609"/>
+<path class="w clk" data-n="0" d="M147,661L203,661L203,633L270,633"/>
+<circle class="jn" data-n="0" cx="203" cy="633" r="2.4"/>
+<path class="w rst" data-n="1" d="M147,701L231,701L231,661L300,661L300,649"/>
+<circle class="jn" data-n="1" cx="231" cy="661" r="2.4"/>
+<path class="w bus" data-n="28" d="M312,857L995,857"/>
+<path class="w bus" data-n="13" d="M147,884L161,884L161,916L428,916L428,908L853,908L853,879L995,879"/>
+<path class="w" data-n="16" d="M839,1313L1011,1313L1011,894"/>
+<path class="w" data-n="29" d="M312,991L428,991L428,1048L593,1048"/>
+<circle class="jn" data-n="29" cx="428" cy="1048" r="2.4"/>
+<path class="w cst" data-n="53" d="M312,1072L463,1072L463,1070L593,1070"/>
+<path class="w" data-n="15" d="M366,1120L470,1120L470,1118L609,1118L609,1085"/>
+<path class="w" data-n="37" d="M625,1059L671,1059L671,1049L733,1049"/>
+<path class="w cst" data-n="54" d="M619,1139L671,1139L671,1071L733,1071"/>
+<path class="w" data-n="12" d="M147,1242L238,1242L238,1247L470,1247L470,1239L678,1239L678,1194L749,1194L749,1086"/>
+<path class="w" data-n="38" d="M765,1060L853,1060L853,1059L1417,1059"/>
+<path class="w cst" data-n="55" d="M1279,1081L1417,1081"/>
+<path class="w" data-n="27" d="M1279,1130L1293,1130L1293,1108L1433,1108L1433,1096"/>
+<circle class="jn" data-n="27" cx="1293" cy="1130" r="2.4"/>
+<path class="w" data-n="30" d="M318,777L456,777L456,1183L587,1183"/>
+<path class="w cst" data-n="56" d="M312,1168L435,1168L435,1205L587,1205"/>
+<path class="w" data-n="14" d="M366,1216L470,1216L470,1232L603,1232L603,1220"/>
+<path class="w" data-n="40" d="M619,1194L671,1194L671,1221L739,1221"/>
+<path class="w cst" data-n="57" d="M619,1261L671,1261L671,1243L739,1243"/>
+<path class="w" data-n="11" d="M147,1282L755,1282L755,1258"/>
+<path class="w" data-n="41" d="M771,1232L853,1232L853,1102L1300,1102L1300,1135L1417,1135"/>
+<path class="w cst" data-n="58" d="M1279,1174L1300,1174L1300,1157L1417,1157"/>
+<path class="w" data-n="27" d="M1279,1130L1293,1130L1293,1184L1433,1184L1433,1172"/>
+<path class="w bus" data-n="35" d="M330,609L477,609L477,637L587,637"/>
+<circle class="jn bus" data-n="35" cx="477" cy="609" r="3"/>
+<path class="w bus" data-n="3" d="M147,741L449,741L449,659L587,659"/>
+<path class="w" data-n="9" d="M147,924L603,924L603,674"/>
+<path class="w bus" data-n="34" d="M330,689L442,689L442,257L587,257"/>
+<path class="w bus" data-n="3" d="M147,741L182,741L182,279L587,279"/>
+<circle class="jn bus" data-n="3" cx="182" cy="279" r="3"/>
+<path class="w" data-n="8" d="M147,317L477,317L477,318L603,318L603,294"/>
+<path class="w bus" data-n="33" d="M330,179L428,179L428,505L587,505"/>
+<path class="w bus" data-n="3" d="M147,741L182,741L182,527L587,527"/>
+<circle class="jn bus" data-n="3" cx="182" cy="527" r="3"/>
+<path class="w" data-n="7" d="M147,535L477,535L477,566L603,566L603,542"/>
+<path class="w" data-n="32" d="M318,388L470,388L470,81L587,81"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,103L587,103"/>
+<path class="w" data-n="6" d="M147,231L168,231L168,142L603,142L603,118"/>
+<circle class="jn" data-n="6" cx="168" cy="231" r="2.4"/>
+<path class="w" data-n="31" d="M324,468L463,468L463,169L587,169"/>
+<path class="w" data-n="3" d="M147,741L182,741L182,150L477,150L477,191L587,191"/>
+<circle class="jn" data-n="3" cx="182" cy="150" r="2.4"/>
+<path class="w" data-n="6" d="M147,231L477,231L477,230L603,230L603,206"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(90,651)"><path class="pin" d="M0,0H48L57,10L48,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">pclk_i</text></g>
+<g class="node k-in" transform="translate(72,691)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">presetn_i</text></g>
+<g class="node k-in" transform="translate(72,1452)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_rst_i</text></g>
+<g class="node k-in" transform="translate(42,731)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">pwdata_i[31:0]</text></g>
+<g class="node k-in" transform="translate(72,1312)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_ctrl_i</text></g>
+<g class="node k-in" transform="translate(60,1103)"><path class="pin" d="M0,0H78L87,10L78,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_status_i</text></g>
+<g class="node k-in" transform="translate(78,221)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_ier_i</text></g>
+<g class="node k-in" transform="translate(78,525)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_msg_i</text></g>
+<g class="node k-in" transform="translate(78,307)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_exp_i</text></g>
+<g class="node k-in" transform="translate(78,914)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">we_mod_i</text></g>
+<g class="node k-in" transform="translate(48,1143)"><path class="pin" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_wp_busy_i</text></g>
+<g class="node k-in" transform="translate(48,1272)"><path class="pin" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_wp_done_i</text></g>
+<g class="node k-in" transform="translate(42,1232)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_wp_error_i</text></g>
+<g class="node k-in" transform="translate(12,874)"><path class="pin" d="M0,0H126L135,10L126,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_wp_dout_i[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,1483)"><path class="pout" d="M0,0H54L63,10L54,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">start_o</text></g>
+<g class="node k-out" transform="translate(1417,1443)"><path class="pout" d="M0,0H48L57,10L48,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">srst_o</text></g>
+<g class="node k-out" transform="translate(1417,654)"><path class="pout" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">status_done_o</text></g>
+<g class="node k-out" transform="translate(1417,1330)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">status_error_o</text></g>
+<g class="node k-out" transform="translate(1417,696)"><path class="pout" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">done_ie_o</text></g>
+<g class="node k-out" transform="translate(1417,738)"><path class="pout" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">err_ie_o</text></g>
+<g class="node k-out" transform="translate(1417,962)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_sts_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,432)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_ier_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,12)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_msg_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,1002)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_exp_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,599)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_mod_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,906)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_res_o[31:0]</text></g>
+<g class="node k-out" transform="translate(1417,1523)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">op_idr_o[31:0]</text></g>
+<g class="node k-gate" transform="translate(324,1201)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:190$5770" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:190"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(324,1105)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:204$5771" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:204"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(797,1298)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:224$5775" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:224"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(324,1299)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:237$5776" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:237"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(324,1357)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5777" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(566.3,1369)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5779" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(769,1394)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5781" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(951.7,1401)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5782" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-gate" transform="translate(1063,1440)" data-cell="$logic_and$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5784" data-type="$logic_and" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M4,1H22A14,14 0 0 1 22,29H4Z"/><path class="leg" d="M0,8H4M0,22H4M36,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">&amp;&amp;</text></g>
+<g class="node k-not" transform="translate(556,1303)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_regbank.sv:224$5774" data-type="$logic_not" data-src="amba_3_apb_regbank.sv:224"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-not" transform="translate(324,1411)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5778" data-type="$logic_not" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-not" transform="translate(575,1419)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5780" data-type="$logic_not" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-not" transform="translate(933,1451)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_regbank.sv:239$5783" data-type="$logic_not" data-src="amba_3_apb_regbank.sv:239"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-gate" transform="translate(1237,1115)" data-cell="$logic_or$../../src/amba_3_apb/amba_3_apb_regbank.sv:178$5769" data-type="$logic_or" data-src="amba_3_apb_regbank.sv:178"><path class="sym" d="M5,1Q13,15 5,29Q28,29 38,15Q28,1 5,1Z"/><path class="leg" d="M0,8H8M0,22H8M38,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">||</text></g>
+<g class="node k-adff" transform="translate(252,841)" data-cell="$procdff$6706" data-type="$adff" data-src="amba_3_apb_regbank.sv:216"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=32'h0</text></g>
+<g class="node k-adff" transform="translate(252,975)" data-cell="$procdff$6711" data-type="$adff" data-src="amba_3_apb_regbank.sv:171"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=1'b0</text></g>
+<g class="node k-adff" transform="translate(258,761)" data-cell="$procdff$6716" data-type="$adff" data-src="amba_3_apb_regbank.sv:171"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=1'b0</text></g>
+<g class="node k-adff" transform="translate(264,452)" data-cell="$procdff$6721" data-type="$adff" data-src="amba_3_apb_regbank.sv:113"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=1'b0</text></g>
+<g class="node k-adff" transform="translate(258,372)" data-cell="$procdff$6726" data-type="$adff" data-src="amba_3_apb_regbank.sv:113"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=1'b0</text></g>
+<g class="node k-adff" transform="translate(270,163)" data-cell="$procdff$6731" data-type="$adff" data-src="amba_3_apb_regbank.sv:113"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=32'h0</text></g>
+<g class="node k-adff" transform="translate(270,673)" data-cell="$procdff$6736" data-type="$adff" data-src="amba_3_apb_regbank.sv:113"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=32'h0</text></g>
+<g class="node k-adff" transform="translate(270,593)" data-cell="$procdff$6741" data-type="$adff" data-src="amba_3_apb_regbank.sv:113"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=32'h0</text></g>
+<g class="node k-mux" transform="translate(995,842)" data-cell="$procmux$6170" data-type="$mux" data-src="amba_3_apb_regbank.sv:224"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(593,1033)" data-cell="$procmux$6173" data-type="$mux" data-src="amba_3_apb_regbank.sv:204"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(733,1034)" data-cell="$procmux$6176" data-type="$mux" data-src="amba_3_apb_regbank.sv:200"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(1417,1044)" data-cell="$procmux$6179" data-type="$mux" data-src="amba_3_apb_regbank.sv:178"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,1168)" data-cell="$procmux$6182" data-type="$mux" data-src="amba_3_apb_regbank.sv:190"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(739,1206)" data-cell="$procmux$6185" data-type="$mux" data-src="amba_3_apb_regbank.sv:186"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(1417,1120)" data-cell="$procmux$6188" data-type="$mux" data-src="amba_3_apb_regbank.sv:178"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,622)" data-cell="$procmux$6191" data-type="$mux" data-src="amba_3_apb_regbank.sv:158"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,242)" data-cell="$procmux$6194" data-type="$mux" data-src="amba_3_apb_regbank.sv:148"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,490)" data-cell="$procmux$6197" data-type="$mux" data-src="amba_3_apb_regbank.sv:138"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,66)" data-cell="$procmux$6200" data-type="$mux" data-src="amba_3_apb_regbank.sv:126"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(587,154)" data-cell="$procmux$6203" data-type="$mux" data-src="amba_3_apb_regbank.sv:126"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-join" transform="translate(593,936)"><rect class="join" x="0" y="0" width="8" height="72" rx="1.5"/></g>
+<g class="node k-const" transform="translate(269,937)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">29'h0</text></g>
+<g class="node k-join" transform="translate(587,414)"><rect class="join" x="0" y="0" width="8" height="56" rx="1.5"/></g>
+<g class="node k-const" transform="translate(269,555)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">30'h0</text></g>
+<g class="node k-const" transform="translate(56,1524)"><rect class="const" x="0" y="0" width="91" height="18" rx="3"/><text class="ctxt" x="45.5" y="12.5" text-anchor="middle">32'h5253_0200</text></g>
+<g class="node k-const" transform="translate(275,1063)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(582,1130)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(1242,1072)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(275,1159)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(582,1252)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(1242,1165)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="30" x="1322" y="674">status_done_reg</text>
+<text class="nlbl" data-n="29" x="1316" y="1350">status_error_reg</text>
+<text class="nlbl" data-n="32" x="1322" y="716">ier_done_ie_reg</text>
+<text class="nlbl" data-n="31" x="1328" y="758">ier_err_ie_reg</text>
+<text class="nlbl" data-n="33" x="1334" y="32">msg_reg[31:0]</text>
+<text class="nlbl" data-n="34" x="1334" y="1022">exp_reg[31:0]</text>
+<text class="nlbl" data-n="35" x="1334" y="619">mod_reg[31:0]</text>
+<text class="nlbl" data-n="28" x="1316" y="926">result_reg[31:0]</text>
+<text class="nlbl" data-n="5" x="253" y="1206">we_status_i</text>
+<text class="nlbl" data-n="3" x="253" y="1233">pwdata_i[1]</text>
+<text class="nlbl" data-n="5" x="253" y="1110">we_status_i</text>
+<text class="nlbl" data-n="3" x="253" y="1137">pwdata_i[2]</text>
+<text class="nlbl" data-n="11" x="714" y="1303">rsa_wp_done_i</text>
+<text class="nlbl" data-n="4" x="265" y="1304">we_ctrl_i</text>
+<text class="nlbl" data-n="3" x="253" y="1331">pwdata_i[1]</text>
+<text class="nlbl" data-n="17" x="370" y="1324">srst_o</text>
+<text class="nlbl" data-n="4" x="265" y="1362">we_ctrl_i</text>
+<text class="nlbl" data-n="3" x="253" y="1389">pwdata_i[0]</text>
+<text class="nlbl" data-n="22" x="1109" y="1465">start_o</text>
+<text class="nlbl" data-n="3" x="253" y="1432">pwdata_i[1]</text>
+<text class="nlbl" data-n="10" x="492" y="1440">rsa_wp_busy_i</text>
+<text class="nlbl" data-n="22" x="1190" y="1134">start_o</text>
+<text class="nlbl" data-n="28" x="316" y="867">result_reg[31:0]</text>
+<text class="nlbl" data-n="29" x="316" y="1001">status_error_reg</text>
+<text class="nlbl" data-n="30" x="322" y="787">status_done_reg</text>
+<text class="nlbl" data-n="31" x="328" y="478">ier_err_ie_reg</text>
+<text class="nlbl" data-n="32" x="322" y="398">ier_done_ie_reg</text>
+<text class="nlbl" data-n="33" x="334" y="189">msg_reg[31:0]</text>
+<text class="nlbl" data-n="34" x="334" y="699">exp_reg[31:0]</text>
+<text class="nlbl" data-n="35" x="334" y="619">mod_reg[31:0]</text>
+<text class="nlbl" data-n="28" x="894" y="854">result_reg[31:0]</text>
+<text class="nlbl" data-n="13" x="876" y="889">rsa_wp_dout_i[31:0]</text>
+<path class="wmark" d="M1033,872L1038,864"/><text class="wtxt" x="1039" y="864">32</text>
+<text class="nlbl" data-n="29" x="492" y="1045">status_error_reg</text>
+<text class="nlbl" data-n="12" x="753" y="1096">rsa_wp_error_i</text>
+<text class="nlbl" data-n="30" x="492" y="1180">status_done_reg</text>
+<text class="nlbl" data-n="11" x="759" y="1268">rsa_wp_done_i</text>
+<text class="nlbl" data-n="35" x="504" y="634">mod_reg[31:0]</text>
+<text class="nlbl" data-n="3" x="498" y="669">pwdata_i[31:0]</text>
+<text class="nlbl" data-n="9" x="607" y="684">we_mod_i</text>
+<path class="wmark" d="M625,652L630,644"/><text class="wtxt" x="631" y="644">32</text>
+<text class="nlbl" data-n="34" x="504" y="254">exp_reg[31:0]</text>
+<text class="nlbl" data-n="3" x="498" y="289">pwdata_i[31:0]</text>
+<text class="nlbl" data-n="8" x="607" y="304">we_exp_i</text>
+<path class="wmark" d="M625,272L630,264"/><text class="wtxt" x="631" y="264">32</text>
+<text class="nlbl" data-n="33" x="504" y="502">msg_reg[31:0]</text>
+<text class="nlbl" data-n="3" x="498" y="537">pwdata_i[31:0]</text>
+<text class="nlbl" data-n="7" x="607" y="552">we_msg_i</text>
+<path class="wmark" d="M625,520L630,512"/><text class="wtxt" x="631" y="512">32</text>
+<text class="nlbl" data-n="32" x="492" y="78">ier_done_ie_reg</text>
+<text class="nlbl" data-n="3" x="516" y="113">pwdata_i[0]</text>
+<text class="nlbl" data-n="6" x="607" y="128">we_ier_i</text>
+<text class="nlbl" data-n="31" x="498" y="166">ier_err_ie_reg</text>
+<text class="nlbl" data-n="3" x="516" y="201">pwdata_i[1]</text>
+<text class="nlbl" data-n="6" x="607" y="216">we_ier_i</text>
+<path class="wmark" d="M607,976L612,968"/><text class="wtxt" x="613" y="968">32</text>
+<text class="nlbl" data-n="29" x="492" y="974">status_error_reg</text>
+<text class="nlbl" data-n="30" x="498" y="990">status_done_reg</text>
+<text class="nlbl" data-n="10" x="510" y="1006">rsa_wp_busy_i</text>
+<path class="wmark" d="M601,446L606,438"/><text class="wtxt" x="607" y="438">32</text>
+<text class="nlbl" data-n="31" x="498" y="452">ier_err_ie_reg</text>
+<text class="nlbl" data-n="32" x="492" y="468">ier_done_ie_reg</text>
+</g></svg>

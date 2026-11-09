@@ -1,0 +1,8 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+In file included from /home/matheus-grossi/Projects/RSA_APB_32-bit/UVM/sequence_pkg.svh:20,
+                 from /home/matheus-grossi/Projects/RSA_APB_32-bit/UVM/testbench.svh:14:
+/home/matheus-grossi/Projects/RSA_APB_32-bit/UVM/uvm_sequence_rsa_operation.sv:40:9: error: malformed `include directive: `include top_tb_pkg::top_tb_pkg::top_tb_pkg_imports
+    40 |         `include top_tb_pkg::top_tb_pkg::top_tb_pkg_imports
+       |         ^~~~~~~~
+Error: preprocessing failed (1 error(s))

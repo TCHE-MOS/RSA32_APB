@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 808 369" width="808" height="369">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="808" height="369"/>
+<rect class="frame" x="-16" y="-16" width="792" height="353"/>
+<g class="tblock" transform="translate(216,237)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">7 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">amba_3_apb_reset</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">amba_3_apb_reset.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/reset_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">LATENCY = 2</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">5 células, 1 registradores (2 bits)</text></g>
+<g class="wires">
+<path class="w rst" data-n="4" d="M577,90L673,90"/>
+<path class="w" data-n="6" d="M183,40L411,40"/>
+<path class="w" data-n="3" d="M447,40L513,40L513,83L535,83"/>
+<path class="w rst" data-n="2" d="M87,132L101,132L101,99L317,99L317,97L535,97"/>
+<path class="w bus" data-n="7" d="M499,133L535,133"/>
+<path class="w bus cst" data-n="8" d="M499,182L513,182L513,147L535,147"/>
+<path class="w bus" data-n="5" d="M577,140L651,140L651,12L101,12L101,40L123,40"/>
+<path class="w clk" data-n="0" d="M87,52L101,52L101,64L123,64"/>
+<path class="w rst" data-n="1" d="M87,92L153,92L153,80"/>
+<path class="w bus" data-n="6" d="M183,40L324,40L324,124L459,124"/>
+<circle class="jn bus" data-n="6" cx="324" cy="40" r="3"/>
+<path class="w bus cst" data-n="9" d="M183,142L459,142"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(30,42)"><path class="pin" d="M0,0H48L57,10L48,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">pclk_i</text></g>
+<g class="node k-in" transform="translate(12,82)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">presetn_i</text></g>
+<g class="node k-in" transform="translate(30,122)"><path class="pin" d="M0,0H48L57,10L48,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">srst_i</text></g>
+<g class="node k-out" transform="translate(673,80)"><path class="pout" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_rst_o</text></g>
+<g class="node k-not" transform="translate(411,29)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_reset.sv:37$5763" data-type="$logic_not" data-src="amba_3_apb_reset.sv:37"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-gate" transform="translate(535,75)" data-cell="$logic_or$../../src/amba_3_apb/amba_3_apb_reset.sv:37$5764" data-type="$logic_or" data-src="amba_3_apb_reset.sv:37"><path class="sym" d="M5,1Q13,15 5,29Q28,29 38,15Q28,1 5,1Z"/><path class="leg" d="M0,8H8M0,22H8M38,15H42"/><text class="optxt" x="17" y="18.5" text-anchor="middle">||</text></g>
+<g class="node k-gate" transform="translate(535,125)" data-cell="$or$../../src/amba_3_apb/amba_3_apb_reset.sv:29$5762" data-type="$or" data-src="amba_3_apb_reset.sv:29"><path class="sym" d="M5,1Q13,15 5,29Q28,29 38,15Q28,1 5,1Z"/><path class="leg" d="M0,8H8M0,22H8M38,15H42"/></g>
+<g class="node k-adff" transform="translate(123,24)" data-cell="$procdff$6746" data-type="$adff" data-src="amba_3_apb_reset.sv:21"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/><circle class="sym" cx="30" cy="51" r="3"/><text class="pintxt" x="30" y="46" text-anchor="middle">R</text><text class="pintxt sm" x="30" y="31" text-anchor="middle">rst=2'b00</text></g>
+<g class="node k-op2" transform="translate(459,113)" data-cell="$shl$../../src/amba_3_apb/amba_3_apb_reset.sv:29$5761" data-type="$shl" data-src="amba_3_apb_reset.sv:29"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">&lt;&lt;</text><text class="pintxt" x="7" y="14.5" text-anchor="start">a</text><text class="pintxt" x="7" y="32.5" text-anchor="start">b</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-const" transform="translate(456,173)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">2'b01</text></g>
+<g class="node k-const" transform="translate(140,133)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h1</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="6" x="340" y="50">presetnsync</text>
+<text class="nlbl" data-n="4" x="581" y="100">rsa_rst_o</text>
+<path class="wmark" d="M583,144L588,136"/><text class="wtxt" x="589" y="136">2</text>
+<text class="nlbl" data-n="6" x="187" y="50">reset_sync_reg[1:0]</text>
+<text class="nlbl" data-n="6" x="340" y="121">reset_sync_reg[1:0]</text>
+<path class="wmark" d="M505,137L510,129"/><text class="wtxt" x="511" y="129">2</text>
+</g></svg>

@@ -86,7 +86,7 @@ São 238 comparações de dados, STATUS e IRQ. O resultado matemático é calcul
 por uma referência independente de exponenciação modular.
 
 Os fluxos Icarus, Verilator e Xcelium estão em
-`scripts/amba_3_apb_rsa_apb_top/bash/`. Os fluxos Genus, LEC e lint também
+`scripts/bash/`. Os fluxos Genus, LEC e lint também
 estão nessa pasta: execute `genus_nogui.sh` para sintetizar, `genus_gui.sh`
 para abrir no Genus o banco mais recente, e `lec.sh` para comparar a netlist
 integrada; `lint.sh` executa as verificações RTL do Conformal LEC. Os scripts

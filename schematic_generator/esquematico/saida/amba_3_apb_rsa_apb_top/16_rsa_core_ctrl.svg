@@ -1,0 +1,532 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 2809 1954" width="2809" height="1954">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="2809" height="1954"/>
+<rect class="frame" x="-16" y="-16" width="2793" height="1938"/>
+<g class="tblock" transform="translate(2217,1822)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">16 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">rsa_core_ctrl</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">rsa32_core_ctrl.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/rsa_wrapper_inst/rsa_core_inst/rsa_core_ctrl_blk</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">DATA_WIDTH = 32, D_WID = 31, LOAD = 1, RESET = 1</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">1 instâncias de submódulo</text></g>
+<g class="wires">
+<path class="w" data-n="15" d="M1170,726L2524,726L2524,692L2618,692"/>
+<path class="w" data-n="20" d="M1176,41L2618,41"/>
+<path class="w bus" data-n="14" d="M1752,187L2618,187"/>
+<path class="w" data-n="21" d="M1164,361L2618,361"/>
+<path class="w bus" data-n="16" d="M1146,1540L1239,1540L1239,1729L2524,1729L2524,1732L2618,1732"/>
+<path class="w bus" data-n="18" d="M1146,1721L2524,1721L2524,1690L2618,1690"/>
+<path class="w bus" data-n="19" d="M1146,255L1239,255L1239,734L2618,734"/>
+<circle class="jn bus" data-n="19" cx="1239" cy="255" r="3"/>
+<path class="w" data-n="2" d="M123,1488L1982,1488L1982,1315L2098,1315"/>
+<path class="w cst" data-n="60" d="M1968,1510L1989,1510L1989,1333L2098,1333"/>
+<path class="w bus" data-n="16" d="M1146,1540L1239,1540L1239,1285L1405.3,1285"/>
+<path class="w bus cst" data-n="61" d="M1146,1303L1405.3,1303"/>
+<path class="w bus" data-n="17" d="M1146,1096L1246,1096L1246,1346L1405.3,1346"/>
+<circle class="jn bus" data-n="17" cx="1246" cy="1096" r="3"/>
+<path class="w bus cst" data-n="62" d="M1146,1364L1405.3,1364"/>
+<path class="w bus" data-n="17" d="M1146,1096L1246,1096L1246,1017L1671,1017L1671,1034L1764,1034"/>
+<path class="w bus cst" data-n="63" d="M1500,1046L1671,1046L1671,1052L1764,1052"/>
+<path class="w rst" data-n="1" d="M123,1659L2436,1659"/>
+<path class="w cst" data-n="64" d="M2300,1681L2314,1681L2314,1677L2436,1677"/>
+<path class="w" data-n="4" d="M123,1145L718,1145L718,1017L1010,1017L1010,1009L1838,1009L1838,1070L1932,1070"/>
+<path class="w bus" data-n="52" d="M846,1186L1017,1186L1017,1175L1182,1175"/>
+<path class="w bus" data-n="51" d="M2650,1060L2749,1060L2749,12L144,12L144,979L249,979"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,1003L249,1003"/>
+<circle class="jn" data-n="0" cx="151" cy="835" r="2.4"/>
+<circle class="jn" data-n="0" cx="151" cy="1003" r="2.4"/>
+<path class="w bus" data-n="29" d="M1472.7,157L1664,157L1664,187L1692,187"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,176L1010,176L1010,211L1692,211"/>
+<circle class="jn" data-n="0" cx="1010" cy="211" r="2.4"/>
+<path class="w" data-n="28" d="M966,750L1010,750L1010,726L1110,726"/>
+<path class="w clk" data-n="0" d="M123,835L1017,835L1017,750L1110,750"/>
+<path class="w bus" data-n="27" d="M882,1426L1010,1426L1010,1540L1086,1540"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,1564L1086,1564"/>
+<circle class="jn" data-n="0" cx="151" cy="1564" r="2.4"/>
+<path class="w bus" data-n="26" d="M996,1309L1010,1309L1010,1096L1086,1096"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,1153L732,1153L732,1140L1017,1140L1017,1120L1086,1120"/>
+<circle class="jn" data-n="0" cx="151" cy="1153" r="2.4"/>
+<path class="w bus" data-n="25" d="M946,1721L1086,1721"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,1775L1010,1775L1010,1745L1086,1745"/>
+<path class="w bus" data-n="24" d="M970,255L1086,255"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,176L1010,176L1010,279L1086,279"/>
+<path class="w" data-n="23" d="M954.8,87L1010,87L1010,41L1116,41"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,176L413,176L413,20L1017,20L1017,65L1116,65"/>
+<circle class="jn" data-n="0" cx="413" cy="176" r="2.4"/>
+<path class="w" data-n="22" d="M978.9,527L1010,527L1010,361L1104,361"/>
+<path class="w clk" data-n="0" d="M123,835L151,835L151,328L599,328L599,340L1017,340L1017,385L1104,385"/>
+<circle class="jn" data-n="0" cx="151" cy="328" r="2.4"/>
+<path class="w" data-n="21" d="M1164,361L1232,361L1232,629L718,629L718,455L887.9,455"/>
+<circle class="jn" data-n="21" cx="1232" cy="361" r="2.4"/>
+<path class="w cst" data-n="65" d="M571,350L725,350L725,467L887.9,467"/>
+<path class="w" data-n="37" d="M571,991L697,991L697,479L887.9,479"/>
+<circle class="jn" data-n="37" cx="697" cy="991" r="2.4"/>
+<path class="w cst" data-n="66" d="M571,388L704,388L704,491L887.9,491"/>
+<path class="w" data-n="38" d="M571,1113L711,1113L711,503L887.9,503"/>
+<circle class="jn" data-n="38" cx="711" cy="1113" r="2.4"/>
+<path class="w cst" data-n="67" d="M571,487L599,487L599,515L887.9,515"/>
+<path class="w" data-n="39" d="M571,869L683,869L683,527L887.9,527"/>
+<circle class="jn" data-n="39" cx="683" cy="869" r="2.4"/>
+<circle class="jn" data-n="39" cx="683" cy="527" r="2.4"/>
+<path class="w cst" data-n="68" d="M571,525L599,525L599,539L887.9,539"/>
+<path class="w" data-n="41" d="M571,651L690,651L690,551L887.9,551"/>
+<circle class="jn" data-n="41" cx="690" cy="651" r="2.4"/>
+<circle class="jn" data-n="41" cx="690" cy="551" r="2.4"/>
+<path class="w cst" data-n="69" d="M571,563L887.9,563"/>
+<path class="w" data-n="42" d="M571,1052L627,1052L627,575L887.9,575"/>
+<circle class="jn" data-n="42" cx="627" cy="1052" r="2.4"/>
+<circle class="jn" data-n="42" cx="627" cy="575" r="2.4"/>
+<path class="w cst" data-n="70" d="M571,601L599,601L599,587L887.9,587"/>
+<path class="w" data-n="50" d="M571,930L606,930L606,599L887.9,599"/>
+<circle class="jn" data-n="50" cx="606" cy="930" r="2.4"/>
+<circle class="jn" data-n="50" cx="606" cy="599" r="2.4"/>
+<path class="w" data-n="20" d="M1176,41L1232,41L1232,153L746,153L746,51L873.8,51"/>
+<circle class="jn" data-n="20" cx="1232" cy="41" r="2.4"/>
+<path class="w cst" data-n="71" d="M571,49L585,49L585,63L873.8,63"/>
+<path class="w" data-n="40" d="M571,296L592,296L592,75L873.8,75"/>
+<circle class="jn" data-n="40" cx="592" cy="296" r="2.4"/>
+<path class="w cst" data-n="72" d="M571,87L873.8,87"/>
+<path class="w" data-n="43" d="M571,438L620,438L620,99L873.8,99"/>
+<circle class="jn" data-n="43" cx="620" cy="438" r="2.4"/>
+<path class="w cst" data-n="73" d="M571,125L585,125L585,111L873.8,111"/>
+<path class="w" data-n="50" d="M571,930L606,930L606,123L873.8,123"/>
+<path class="w bus" data-n="19" d="M1146,255L1239,255L1239,333L711,333L711,207L879,207"/>
+<circle class="jn bus" data-n="19" cx="1239" cy="333" r="3"/>
+<path class="w bus cst" data-n="74" d="M571,198L718,198L718,219L879,219"/>
+<path class="w" data-n="39" d="M571,869L683,869L683,231L879,231"/>
+<path class="w bus" data-n="5" d="M123,219L704,219L704,243L879,243"/>
+<path class="w" data-n="41" d="M571,651L690,651L690,255L879,255"/>
+<path class="w bus cst" data-n="75" d="M571,241L697,241L697,267L879,267"/>
+<path class="w" data-n="42" d="M571,1052L627,1052L627,279L879,279"/>
+<path class="w bus" data-n="3" d="M123,1295L137,1295L137,262L585,262L585,291L879,291"/>
+<circle class="jn bus" data-n="3" cx="137" cy="1295" r="3"/>
+<path class="w" data-n="49" d="M571,1263L613,1263L613,303L879,303"/>
+<circle class="jn" data-n="49" cx="613" cy="1263" r="2.4"/>
+<path class="w bus" data-n="18" d="M1146,1721L1232,1721L1232,1667L746,1667L746,1697L860,1697"/>
+<circle class="jn bus" data-n="18" cx="1232" cy="1721" r="3"/>
+<path class="w bus cst" data-n="76" d="M571,1709L860,1709"/>
+<path class="w" data-n="42" d="M571,1052L627,1052L627,1721L860,1721"/>
+<path class="w bus" data-n="3" d="M123,1295L137,1295L137,1730L620,1730L620,1733L860,1733"/>
+<path class="w" data-n="49" d="M571,1263L613,1263L613,1745L860,1745"/>
+<path class="w bus" data-n="17" d="M1146,1096L1246,1096L1246,1148L739,1148L739,1261L910,1261"/>
+<circle class="jn bus" data-n="17" cx="1246" cy="1148" r="3"/>
+<path class="w bus" data-n="58" d="M1500,1157L1664,1157L1664,1025L725,1025L725,1273L910,1273"/>
+<circle class="jn bus" data-n="58" cx="1664" cy="1157" r="3"/>
+<path class="w" data-n="37" d="M571,991L697,991L697,1285L910,1285"/>
+<path class="w bus" data-n="58" d="M1500,1157L1664,1157L1664,1592L634,1592L634,1297L910,1297"/>
+<path class="w" data-n="38" d="M571,1113L711,1113L711,1309L910,1309"/>
+<path class="w bus" data-n="58" d="M1500,1157L1664,1157L1664,1261L1017,1261L1017,1224L704,1224L704,1321L910,1321"/>
+<circle class="jn bus" data-n="58" cx="1664" cy="1261" r="3"/>
+<path class="w" data-n="39" d="M571,869L683,869L683,1333L910,1333"/>
+<path class="w bus" data-n="3" d="M123,1295L676,1295L676,1345L910,1345"/>
+<path class="w" data-n="47" d="M571,1456L641,1456L641,1357L910,1357"/>
+<circle class="jn" data-n="47" cx="641" cy="1456" r="2.4"/>
+<path class="w bus" data-n="16" d="M1146,1540L1239,1540L1239,1512L648,1512L648,1415L850,1415"/>
+<circle class="jn bus" data-n="16" cx="1239" cy="1512" r="3"/>
+<circle class="jn bus" data-n="16" cx="1239" cy="1540" r="3"/>
+<path class="w bus" data-n="3" d="M123,1295L137,1295L137,1361L662,1361L662,1437L850,1437"/>
+<circle class="jn bus" data-n="3" cx="137" cy="1361" r="3"/>
+<path class="w" data-n="45" d="M571,1395L655,1395L655,1464L866,1464L866,1452"/>
+<circle class="jn" data-n="45" cx="655" cy="1464" r="2.4"/>
+<path class="w" data-n="15" d="M1170,726L1232,726L1232,672L746,672L746,702L880,702"/>
+<circle class="jn" data-n="15" cx="1232" cy="726" r="2.4"/>
+<path class="w cst" data-n="77" d="M571,700L599,700L599,714L880,714"/>
+<path class="w" data-n="40" d="M571,296L592,296L592,726L880,726"/>
+<circle class="jn" data-n="40" cx="592" cy="726" r="2.4"/>
+<path class="w cst" data-n="78" d="M571,738L880,738"/>
+<path class="w" data-n="43" d="M571,438L620,438L620,750L880,750"/>
+<circle class="jn" data-n="43" cx="620" cy="750" r="2.4"/>
+<path class="w cst" data-n="79" d="M571,776L599,776L599,762L880,762"/>
+<path class="w" data-n="49" d="M571,1263L613,1263L613,774L880,774"/>
+<circle class="jn" data-n="49" cx="613" cy="774" r="2.4"/>
+<path class="w cst" data-n="80" d="M571,814L599,814L599,786L880,786"/>
+<path class="w" data-n="50" d="M571,930L606,930L606,798L880,798"/>
+<circle class="jn" data-n="50" cx="606" cy="798" r="2.4"/>
+<path class="w bus" data-n="14" d="M1752,187L1838,187L1838,103L1253,103L1253,133L1391.7,133"/>
+<circle class="jn bus" data-n="14" cx="1838" cy="187" r="3"/>
+<path class="w bus" data-n="19" d="M1146,255L1239,255L1239,145L1391.7,145"/>
+<path class="w" data-n="40" d="M571,296L592,296L592,160L1246,160L1246,157L1391.7,157"/>
+<circle class="jn" data-n="40" cx="592" cy="160" r="2.4"/>
+<path class="w bus cst" data-n="81" d="M1146,182L1232,182L1232,169L1391.7,169"/>
+<path class="w" data-n="43" d="M571,438L620,438L620,168L1017,168L1017,203L1246,203L1246,181L1391.7,181"/>
+<circle class="jn" data-n="43" cx="620" cy="168" r="2.4"/>
+<path class="w bus cst" data-n="82" d="M1752,926L1838,926L1838,932L1911.3,932"/>
+<path class="w bus cst" data-n="83" d="M1752,964L1838,964L1838,954L1911.3,954"/>
+<path class="w" data-n="9" d="M1804,1043L1845,1043L1845,1009L1927.3,1009L1927.3,969"/>
+<circle class="jn" data-n="9" cx="1845" cy="1043" r="2.4"/>
+<path class="w bus" data-n="30" d="M1943.3,943L1982,943L1982,936L2080.7,936"/>
+<path class="w bus cst" data-n="84" d="M1968,1030L1989,1030L1989,958L2080.7,958"/>
+<path class="w" data-n="11" d="M1968,1070L1996,1070L1996,1015L2096.7,1015L2096.7,973"/>
+<path class="w bus cst" data-n="85" d="M1500,1084L1671,1084L1671,1106L1749.3,1106"/>
+<path class="w bus cst" data-n="86" d="M1500,1240L1671,1240L1671,1128L1749.3,1128"/>
+<path class="w" data-n="8" d="M1445.3,1355L1671,1355L1671,1345L1765.3,1345L1765.3,1143"/>
+<path class="w bus" data-n="32" d="M1781.3,1117L1911.3,1117"/>
+<path class="w bus cst" data-n="87" d="M1752,1366L1838,1366L1838,1139L1911.3,1139"/>
+<path class="w" data-n="9" d="M1804,1043L1845,1043L1845,1166L1927.3,1166L1927.3,1154"/>
+<path class="w bus" data-n="33" d="M1943.3,1128L2003,1128L2003,1042L2080.7,1042"/>
+<path class="w bus cst" data-n="88" d="M1968,1187L2010,1187L2010,1064L2080.7,1064"/>
+<path class="w" data-n="7" d="M1445.3,1294L1678,1294L1678,1208L2017,1208L2017,1091L2096.7,1091L2096.7,1079"/>
+<path class="w bus" data-n="34" d="M2112.7,1053L2152,1053L2152,1077L2232.7,1077"/>
+<path class="w bus cst" data-n="89" d="M2138,1112L2152,1112L2152,1099L2232.7,1099"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1126L2248.7,1126L2248.7,1114"/>
+<circle class="jn" data-n="6" cx="2194" cy="1324" r="2.4"/>
+<path class="w bus cst" data-n="90" d="M2300,756L2405,756L2405,881L2419,881"/>
+<path class="w bus cst" data-n="91" d="M2300,799L2391,799L2391,893L2419,893"/>
+<path class="w" data-n="37" d="M571,991L697,991L697,843L1838,843L1838,777L2398,777L2398,905L2419,905"/>
+<circle class="jn" data-n="37" cx="697" cy="843" r="2.4"/>
+<path class="w bus cst" data-n="92" d="M2300,837L2384,837L2384,917L2419,917"/>
+<path class="w" data-n="38" d="M571,1113L711,1113L711,858L2377,858L2377,929L2419,929"/>
+<circle class="jn" data-n="38" cx="711" cy="858" r="2.4"/>
+<path class="w bus cst" data-n="93" d="M2300,880L2370,880L2370,941L2419,941"/>
+<path class="w" data-n="39" d="M571,869L683,869L683,896L2166,896L2166,939L2356,939L2356,953L2419,953"/>
+<circle class="jn" data-n="39" cx="683" cy="896" r="2.4"/>
+<path class="w bus cst" data-n="94" d="M2300,918L2363,918L2363,965L2419,965"/>
+<path class="w" data-n="40" d="M571,296L592,296L592,904L1982,904L1982,908L2159,908L2159,947L2349,947L2349,977L2419,977"/>
+<path class="w bus" data-n="31" d="M2112.7,947L2152,947L2152,955L2342,955L2342,989L2419,989"/>
+<path class="w" data-n="41" d="M571,651L690,651L690,985L2152,985L2152,963L2335,963L2335,1001L2419,1001"/>
+<path class="w bus cst" data-n="95" d="M2300,985L2328,985L2328,1013L2419,1013"/>
+<path class="w" data-n="42" d="M571,1052L627,1052L627,993L1996,993L1996,999L2159,999L2159,1006L2321,1006L2321,1025L2419,1025"/>
+<circle class="jn" data-n="42" cx="627" cy="993" r="2.4"/>
+<path class="w bus cst" data-n="96" d="M2300,1028L2314,1028L2314,1037L2419,1037"/>
+<path class="w" data-n="43" d="M571,438L620,438L620,1001L1982,1001L1982,1007L2152,1007L2152,1049L2419,1049"/>
+<path class="w bus" data-n="35" d="M2264.7,1088L2314,1088L2314,1061L2419,1061"/>
+<path class="w" data-n="44" d="M571,1329L669,1329L669,1387L1845,1387L1845,1216L2024,1216L2024,1209L2321,1209L2321,1073L2419,1073"/>
+<path class="w bus" data-n="57" d="M2264.7,1164L2328,1164L2328,1085L2419,1085"/>
+<path class="w" data-n="45" d="M571,1395L655,1395L655,1471L1852,1471L1852,1290L2201,1290L2201,1293L2335,1293L2335,1097L2419,1097"/>
+<path class="w bus" data-n="56" d="M2264.7,1248L2342,1248L2342,1109L2419,1109"/>
+<path class="w" data-n="46" d="M571,1522L655,1522L655,1496L1253,1496L1253,1531L1989,1531L1989,1584L2349,1584L2349,1121L2419,1121"/>
+<path class="w bus" data-n="55" d="M2264.7,1332L2356,1332L2356,1133L2419,1133"/>
+<path class="w" data-n="47" d="M571,1456L641,1456L641,1504L1246,1504L1246,1539L1982,1539L1982,1592L2363,1592L2363,1145L2419,1145"/>
+<path class="w bus" data-n="54" d="M2264.7,1408L2370,1408L2370,1157L2419,1157"/>
+<path class="w" data-n="48" d="M571,1600L2377,1600L2377,1169L2419,1169"/>
+<path class="w bus" data-n="53" d="M2264.7,1484L2384,1484L2384,1181L2419,1181"/>
+<path class="w" data-n="49" d="M571,1263L613,1263L613,1608L2391,1608L2391,1193L2419,1193"/>
+<circle class="jn" data-n="49" cx="613" cy="1608" r="2.4"/>
+<path class="w bus cst" data-n="97" d="M2300,1630L2398,1630L2398,1205L2419,1205"/>
+<path class="w" data-n="50" d="M571,930L606,930L606,1651L2405,1651L2405,1217L2419,1217"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,982L531,982"/>
+<circle class="jn bus" data-n="13" cx="420" cy="979" r="3"/>
+<circle class="jn bus" data-n="13" cx="420" cy="982" r="3"/>
+<path class="w bus cst" data-n="98" d="M309,1048L413,1048L413,1000L531,1000"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1104L531,1104"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1104" r="3"/>
+<path class="w bus cst" data-n="99" d="M309,1124L413,1124L413,1122L531,1122"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,860L531,860"/>
+<circle class="jn bus" data-n="13" cx="420" cy="860" r="3"/>
+<path class="w bus cst" data-n="100" d="M309,878L531,878"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,287L531,287"/>
+<path class="w bus cst" data-n="101" d="M309,305L531,305"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,642L531,642"/>
+<circle class="jn bus" data-n="13" cx="420" cy="642" r="3"/>
+<path class="w bus cst" data-n="102" d="M309,660L531,660"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1043L531,1043"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1043" r="3"/>
+<path class="w bus cst" data-n="103" d="M309,1086L413,1086L413,1061L531,1061"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,429L531,429"/>
+<circle class="jn bus" data-n="13" cx="420" cy="429" r="3"/>
+<path class="w bus cst" data-n="104" d="M309,447L531,447"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1320L531,1320"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1320" r="3"/>
+<path class="w bus cst" data-n="105" d="M309,1338L531,1338"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1386L531,1386"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1386" r="3"/>
+<path class="w bus cst" data-n="106" d="M309,1404L531,1404"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1513L531,1513"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1513" r="3"/>
+<path class="w bus cst" data-n="107" d="M309,1531L531,1531"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1447L531,1447"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1447" r="3"/>
+<path class="w bus cst" data-n="108" d="M309,1465L531,1465"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1591L531,1591"/>
+<path class="w bus cst" data-n="109" d="M309,1609L531,1609"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,1254L531,1254"/>
+<circle class="jn bus" data-n="13" cx="420" cy="1254" r="3"/>
+<path class="w bus cst" data-n="110" d="M309,1272L531,1272"/>
+<path class="w bus" data-n="13" d="M309,979L420,979L420,921L531,921"/>
+<circle class="jn bus" data-n="13" cx="420" cy="921" r="3"/>
+<path class="w bus cst" data-n="111" d="M309,934L427,934L427,939L531,939"/>
+<path class="w bus" data-n="36" d="M2510,1049L2618,1049"/>
+<path class="w bus cst" data-n="112" d="M2510,1264L2524,1264L2524,1071L2618,1071"/>
+<path class="w" data-n="10" d="M2476,1668L2634,1668L2634,1086"/>
+<path class="w bus cst" data-n="113" d="M571,1175L814,1175"/>
+<path class="w bus cst" data-n="114" d="M571,1213L746,1213L746,1197L814,1197"/>
+<path class="w" data-n="38" d="M571,1113L711,1113L711,1231L830,1231L830,1212"/>
+<circle class="jn" data-n="38" cx="711" cy="1231" r="2.4"/>
+<path class="w bus cst" data-n="115" d="M2138,1525L2180,1525L2180,1473L2232.7,1473"/>
+<path class="w bus cst" data-n="116" d="M2138,1563L2187,1563L2187,1495L2232.7,1495"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1522L2248.7,1522L2248.7,1510"/>
+<path class="w bus cst" data-n="117" d="M2138,1449L2166,1449L2166,1397L2232.7,1397"/>
+<path class="w bus cst" data-n="118" d="M2138,1487L2173,1487L2173,1419L2232.7,1419"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1446L2248.7,1446L2248.7,1434"/>
+<circle class="jn" data-n="6" cx="2194" cy="1446" r="2.4"/>
+<path class="w bus cst" data-n="119" d="M2138,1373L2152,1373L2152,1321L2232.7,1321"/>
+<path class="w bus cst" data-n="120" d="M2138,1411L2159,1411L2159,1343L2232.7,1343"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1370L2248.7,1370L2248.7,1358"/>
+<circle class="jn" data-n="6" cx="2194" cy="1370" r="2.4"/>
+<path class="w bus cst" data-n="121" d="M2138,1231L2201,1231L2201,1237L2232.7,1237"/>
+<path class="w bus cst" data-n="122" d="M2138,1269L2201,1269L2201,1259L2232.7,1259"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1286L2248.7,1286L2248.7,1274"/>
+<circle class="jn" data-n="6" cx="2194" cy="1286" r="2.4"/>
+<path class="w bus cst" data-n="123" d="M2138,1150L2201,1150L2201,1153L2232.7,1153"/>
+<path class="w bus cst" data-n="124" d="M2138,1188L2201,1188L2201,1175L2232.7,1175"/>
+<path class="w" data-n="6" d="M2138,1324L2194,1324L2194,1202L2248.7,1202L2248.7,1190"/>
+<circle class="jn" data-n="6" cx="2194" cy="1202" r="2.4"/>
+<path class="w bus" data-n="17" d="M1146,1096L1246,1096L1246,1157L1339,1157"/>
+<circle class="jn bus" data-n="17" cx="1246" cy="1157" r="3"/>
+<path class="w bus" data-n="12" d="M1218,1175L1339,1175"/>
+<path class="w cst" data-n="125" d="M1146,1216L1232,1216L1232,1193L1339,1193"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(54,825)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_clk</text></g>
+<g class="node k-in" transform="translate(54,1649)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_rst</text></g>
+<g class="node k-in" transform="translate(48,1478)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_load</text></g>
+<g class="node k-in" transform="translate(18,1285)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_din[31:0]</text></g>
+<g class="node k-in" transform="translate(42,1135)"><path class="pin" d="M0,0H72L81,10L72,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_loadx</text></g>
+<g class="node k-in" transform="translate(12,209)"><path class="pin" d="M0,0H102L111,10L102,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">ctrl_dinx[31:0]</text></g>
+<g class="node k-out" transform="translate(2618,682)"><path class="pout" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_done</text></g>
+<g class="node k-out" transform="translate(2618,31)"><path class="pout" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_err</text></g>
+<g class="node k-out" transform="translate(2618,177)"><path class="pout" d="M0,0H84L93,10L84,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_c[31:0]</text></g>
+<g class="node k-out" transform="translate(2618,351)"><path class="pout" d="M0,0H72L81,10L72,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_start</text></g>
+<g class="node k-out" transform="translate(2618,1722)"><path class="pout" d="M0,0H84L93,10L84,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_n[31:0]</text></g>
+<g class="node k-out" transform="translate(2618,1680)"><path class="pout" d="M0,0H84L93,10L84,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_m[31:0]</text></g>
+<g class="node k-out" transform="translate(2618,724)"><path class="pout" d="M0,0H108L117,10L108,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">ctrl_doutx[31:0]</text></g>
+<g class="node k-op2" transform="translate(2098,1304)" data-cell="$eq$../../src/rsa32/v2/rsa32_core_ctrl.sv:101$5700" data-type="$eq" data-src="rsa32_core_ctrl.sv:101"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(1405.3,1274)" data-cell="$eq$../../src/rsa32/v2/rsa32_core_ctrl.sv:103$5701" data-type="$eq" data-src="rsa32_core_ctrl.sv:103"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(1405.3,1335)" data-cell="$eq$../../src/rsa32/v2/rsa32_core_ctrl.sv:107$5703" data-type="$eq" data-src="rsa32_core_ctrl.sv:107"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(1764,1023)" data-cell="$eq$../../src/rsa32/v2/rsa32_core_ctrl.sv:122$5705" data-type="$eq" data-src="rsa32_core_ctrl.sv:122"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(2436,1648)" data-cell="$eq$../../src/rsa32/v2/rsa32_core_ctrl.sv:83$5689" data-type="$eq" data-src="rsa32_core_ctrl.sv:83"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-not" transform="translate(1932,1059)" data-cell="$logic_not$../../src/rsa32/v2/rsa32_core_ctrl.sv:119$5704" data-type="$logic_not" data-src="rsa32_core_ctrl.sv:119"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-not" transform="translate(1182,1164)" data-cell="$not$../../src/rsa32/v2/rsa32_core_ctrl.sv:67$5687" data-type="$not" data-src="rsa32_core_ctrl.sv:67"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-dff" transform="translate(249,963)" data-cell="$procdff$6771" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1692,171)" data-cell="$procdff$6772" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1110,710)" data-cell="$procdff$6773" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1086,1524)" data-cell="$procdff$6774" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1086,1080)" data-cell="$procdff$6775" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1086,1705)" data-cell="$procdff$6776" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1086,239)" data-cell="$procdff$6777" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1116,25)" data-cell="$procdff$6778" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-dff" transform="translate(1104,345)" data-cell="$procdff$6779" data-type="$dff" data-src="rsa32_core_ctrl.sv:140"><rect class="sym ff" x="2" y="2" width="56" height="52" rx="2"/><text class="pintxt" x="7" y="19.5" text-anchor="start">D</text><text class="pintxt" x="53" y="19.5" text-anchor="end">Q</text><path class="sym nofill" d="M2,35L8,40L2,45"/><path class="leg" d="M0,16H2M0,40H2M58,16H60"/></g>
+<g class="node k-pmux" transform="translate(887.9,437)" data-cell="$procmux$6512" data-type="$pmux" data-src="rsa32_core_ctrl.sv:206"><path class="sym" d="M2,2L89,10V170L2,178Z"/><text class="pintxt b" x="46.5" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">START</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">CASE2</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">CASE1</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">ANALYZE</text><path class="leg" d="M0,114H2"/><text class="pintxt" x="6" y="129" text-anchor="start">d4</text><path class="leg" d="M0,126H2"/><text class="pintxt sel" x="6" y="141" text-anchor="start">s4</text><text class="pintxt ann" x="21.5" y="141" text-anchor="start">CASE0</text><path class="leg" d="M0,138H2"/><text class="pintxt" x="6" y="153" text-anchor="start">d5</text><path class="leg" d="M0,150H2"/><text class="pintxt sel" x="6" y="165" text-anchor="start">s5</text><text class="pintxt ann" x="21.5" y="165" text-anchor="start">INIT</text><path class="leg" d="M0,162H2"/><path class="leg" d="M89,90H91"/></g>
+<g class="node k-pmux" transform="translate(873.8,33)" data-cell="$procmux$6522" data-type="$pmux" data-src="rsa32_core_ctrl.sv:186"><path class="sym" d="M2,2L79,10V98L2,106Z"/><text class="pintxt b" x="41.5" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">DONE</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">ERROR</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">INIT</text><path class="leg" d="M0,90H2"/><path class="leg" d="M79,54H81"/></g>
+<g class="node k-pmux" transform="translate(879,189)" data-cell="$procmux$6528" data-type="$pmux" data-src="rsa32_core_ctrl.sv:193"><path class="sym" d="M2,2L89,10V122L2,130Z"/><text class="pintxt b" x="46.5" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">CASE1</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">ANALYZE</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">CASE0</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">LOAD_M</text><path class="leg" d="M0,114H2"/><path class="leg" d="M89,66H91"/></g>
+<g class="node k-pmux" transform="translate(860,1679)" data-cell="$procmux$6538" data-type="$pmux" data-src="rsa32_core_ctrl.sv:173"><path class="sym" d="M2,2L84,10V74L2,82Z"/><text class="pintxt b" x="44" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">CASE0</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">LOAD_M</text><path class="leg" d="M0,66H2"/><path class="leg" d="M84,42H86"/></g>
+<g class="node k-pmux" transform="translate(910,1243)" data-cell="$procmux$6541" data-type="$pmux" data-src="rsa32_core_ctrl.sv:206"><path class="sym" d="M2,2L84,10V122L2,130Z"/><text class="pintxt b" x="44" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">START</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">CASE2</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">CASE1</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">LOAD_E</text><path class="leg" d="M0,114H2"/><path class="leg" d="M84,66H86"/></g>
+<g class="node k-mux" transform="translate(850,1400)" data-cell="$procmux$6553" data-type="$mux" data-src="rsa32_core_ctrl.sv:164"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-pmux" transform="translate(880,684)" data-cell="$procmux$6558" data-type="$pmux" data-src="rsa32_core_ctrl.sv:186"><path class="sym" d="M2,2L84,10V122L2,130Z"/><text class="pintxt b" x="44" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">DONE</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">ERROR</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">LOAD_M</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">INIT</text><path class="leg" d="M0,114H2"/><path class="leg" d="M84,66H86"/></g>
+<g class="node k-pmux" transform="translate(1391.7,115)" data-cell="$procmux$6566" data-type="$pmux" data-src="rsa32_core_ctrl.sv:186"><path class="sym" d="M2,2L79,10V74L2,82Z"/><text class="pintxt b" x="41.5" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">DONE</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">ERROR</text><path class="leg" d="M0,66H2"/><path class="leg" d="M79,42H81"/></g>
+<g class="node k-mux" transform="translate(1911.3,917)" data-cell="$procmux$6575" data-type="$mux" data-src="rsa32_core_ctrl.sv:122"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2080.7,921)" data-cell="$procmux$6591" data-type="$mux" data-src="rsa32_core_ctrl.sv:119"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(1749.3,1091)" data-cell="$procmux$6607" data-type="$mux" data-src="rsa32_core_ctrl.sv:107"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(1911.3,1102)" data-cell="$procmux$6632" data-type="$mux" data-src="rsa32_core_ctrl.sv:105"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2080.7,1027)" data-cell="$procmux$6654" data-type="$mux" data-src="rsa32_core_ctrl.sv:103"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1062)" data-cell="$procmux$6673" data-type="$mux" data-src="rsa32_core_ctrl.sv:101"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-pmux" transform="translate(2419,863)" data-cell="$procmux$6681" data-type="$pmux" data-src="rsa32_core_ctrl.sv:132"><path class="sym" d="M2,2L89,10V362L2,370Z"/><text class="pintxt b" x="46.5" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">START</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">CASE2</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">CASE1</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">DONE</text><path class="leg" d="M0,114H2"/><text class="pintxt" x="6" y="129" text-anchor="start">d4</text><path class="leg" d="M0,126H2"/><text class="pintxt sel" x="6" y="141" text-anchor="start">s4</text><text class="pintxt ann" x="21.5" y="141" text-anchor="start">ANALYZE</text><path class="leg" d="M0,138H2"/><text class="pintxt" x="6" y="153" text-anchor="start">d5</text><path class="leg" d="M0,150H2"/><text class="pintxt sel" x="6" y="165" text-anchor="start">s5</text><text class="pintxt ann" x="21.5" y="165" text-anchor="start">CASE0</text><path class="leg" d="M0,162H2"/><text class="pintxt" x="6" y="177" text-anchor="start">d6</text><path class="leg" d="M0,174H2"/><text class="pintxt sel" x="6" y="189" text-anchor="start">s6</text><text class="pintxt ann" x="21.5" y="189" text-anchor="start">ERROR</text><path class="leg" d="M0,186H2"/><text class="pintxt" x="6" y="201" text-anchor="start">d7</text><path class="leg" d="M0,198H2"/><text class="pintxt sel" x="6" y="213" text-anchor="start">s7</text><text class="pintxt ann" x="21.5" y="213" text-anchor="start">WAIT_N</text><path class="leg" d="M0,210H2"/><text class="pintxt" x="6" y="225" text-anchor="start">d8</text><path class="leg" d="M0,222H2"/><text class="pintxt sel" x="6" y="237" text-anchor="start">s8</text><text class="pintxt ann" x="21.5" y="237" text-anchor="start">LOAD_N</text><path class="leg" d="M0,234H2"/><text class="pintxt" x="6" y="249" text-anchor="start">d9</text><path class="leg" d="M0,246H2"/><text class="pintxt sel" x="6" y="261" text-anchor="start">s9</text><text class="pintxt ann" x="21.5" y="261" text-anchor="start">WAIT_E</text><path class="leg" d="M0,258H2"/><text class="pintxt" x="6" y="273" text-anchor="start">d10</text><path class="leg" d="M0,270H2"/><text class="pintxt sel" x="6" y="285" text-anchor="start">s10</text><text class="pintxt ann" x="26.6" y="285" text-anchor="start">LOAD_E</text><path class="leg" d="M0,282H2"/><text class="pintxt" x="6" y="297" text-anchor="start">d11</text><path class="leg" d="M0,294H2"/><text class="pintxt sel" x="6" y="309" text-anchor="start">s11</text><text class="pintxt ann" x="26.6" y="309" text-anchor="start">WAIT_M</text><path class="leg" d="M0,306H2"/><text class="pintxt" x="6" y="321" text-anchor="start">d12</text><path class="leg" d="M0,318H2"/><text class="pintxt sel" x="6" y="333" text-anchor="start">s12</text><text class="pintxt ann" x="26.6" y="333" text-anchor="start">LOAD_M</text><path class="leg" d="M0,330H2"/><text class="pintxt" x="6" y="345" text-anchor="start">d13</text><path class="leg" d="M0,342H2"/><text class="pintxt sel" x="6" y="357" text-anchor="start">s13</text><text class="pintxt ann" x="26.6" y="357" text-anchor="start">INIT</text><path class="leg" d="M0,354H2"/><path class="leg" d="M89,186H91"/></g>
+<g class="node k-op2" transform="translate(531,971)" data-cell="$procmux$6682_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:132"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1093)" data-cell="$procmux$6683_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:130"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,849)" data-cell="$procmux$6684_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:128"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,276)" data-cell="$procmux$6685_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:126"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,631)" data-cell="$procmux$6686_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:115"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1032)" data-cell="$procmux$6687_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:113"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,418)" data-cell="$procmux$6688_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:111"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1309)" data-cell="$procmux$6689_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:98"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1375)" data-cell="$procmux$6690_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:96"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1502)" data-cell="$procmux$6691_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:94"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1436)" data-cell="$procmux$6692_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:92"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1580)" data-cell="$procmux$6693_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:90"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,1243)" data-cell="$procmux$6694_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:88"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(531,910)" data-cell="$procmux$6695_CMP0" data-type="$eq" data-src="rsa32_core_ctrl.sv:86"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-mux" transform="translate(2618,1034)" data-cell="$procmux$6700" data-type="$mux" data-src="rsa32_core_ctrl.sv:83"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(814,1160)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:61$5686" data-type="$mux" data-src="rsa32_core_ctrl.sv:61"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1458)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:90$5691" data-type="$mux" data-src="rsa32_core_ctrl.sv:90"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1382)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:92$5693" data-type="$mux" data-src="rsa32_core_ctrl.sv:92"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1306)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:94$5695" data-type="$mux" data-src="rsa32_core_ctrl.sv:94"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1222)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:96$5697" data-type="$mux" data-src="rsa32_core_ctrl.sv:96"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(2232.7,1138)" data-cell="$ternary$../../src/rsa32/v2/rsa32_core_ctrl.sv:98$5699" data-type="$mux" data-src="rsa32_core_ctrl.sv:98"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-inst" transform="translate(1339,1113)" data-cell="u_exponent_kogge_stone" data-type="$paramod\kogge_stone_adder\DATA_WIDTH=s32'00000000000000000000000000100000" data-src="rsa32_core_ctrl.sv:65" data-sub="kogge_stone_adder" data-inst="u_exponent_kogge_stone"><rect class="inst" x="0" y="0" width="161" height="98" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H157A4,4 0 0 1 161,4V30H0Z"/><text class="insttitle" x="80.5" y="13" text-anchor="middle">u_exponent_kogge_stone</text><text class="instsub" x="80.5" y="25" text-anchor="middle">kogge_stone_adder</text><text class="iptxt" x="6" y="47.5" text-anchor="start">a_i[31:0]</text><text class="iptxt" x="6" y="65.5" text-anchor="start">b_i[31:0]</text><text class="iptxt" x="6" y="83.5" text-anchor="start">cin_i</text><text class="iptxt" x="155" y="47.5" text-anchor="end">sum_o[31:0]</text><text class="iptxt" x="155" y="65.5" text-anchor="end">cout_o</text></g>
+<g class="node k-const" transform="translate(1889,1501)"><rect class="const" x="0" y="0" width="79" height="18" rx="3"/><text class="ctxt" x="39.5" y="12.5" text-anchor="middle">LOAD = 1'b1</text></g>
+<g class="node k-const" transform="translate(1103,1294)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h0</text></g>
+<g class="node k-const" transform="translate(1043,1355)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">EXP_ONE = 32'h1</text></g>
+<g class="node k-const" transform="translate(1457,1037)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h0</text></g>
+<g class="node k-const" transform="translate(2215,1672)"><rect class="const" x="0" y="0" width="85" height="18" rx="3"/><text class="ctxt" x="42.5" y="12.5" text-anchor="middle">RESET = 1'b1</text></g>
+<g class="node k-const" transform="translate(534,341)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,379)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,478)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,516)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(534,554)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,592)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(534,40)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(534,78)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,116)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(528,189)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h1</text></g>
+<g class="node k-const" transform="translate(528,232)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h1</text></g>
+<g class="node k-const" transform="translate(528,1700)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h1</text></g>
+<g class="node k-const" transform="translate(534,691)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,729)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(534,767)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(534,805)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(1055,173)"><rect class="const" x="0" y="0" width="91" height="18" rx="3"/><text class="ctxt" x="45.5" y="12.5" text-anchor="middle">32'hFFFF_FFFF</text></g>
+<g class="node k-const" transform="translate(1697,917)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1101</text></g>
+<g class="node k-const" transform="translate(1697,955)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1010</text></g>
+<g class="node k-const" transform="translate(1913,1021)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1001</text></g>
+<g class="node k-const" transform="translate(1445,1075)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1100</text></g>
+<g class="node k-const" transform="translate(1445,1231)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1011</text></g>
+<g class="node k-const" transform="translate(1697,1357)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1000</text></g>
+<g class="node k-const" transform="translate(1913,1178)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0111</text></g>
+<g class="node k-const" transform="translate(2083,1103)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0110</text></g>
+<g class="node k-const" transform="translate(2245,747)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0000</text></g>
+<g class="node k-const" transform="translate(2245,790)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1001</text></g>
+<g class="node k-const" transform="translate(2245,828)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1001</text></g>
+<g class="node k-const" transform="translate(2245,871)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1001</text></g>
+<g class="node k-const" transform="translate(2245,909)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0001</text></g>
+<g class="node k-const" transform="translate(2245,976)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b1001</text></g>
+<g class="node k-const" transform="translate(2245,1019)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0001</text></g>
+<g class="node k-const" transform="translate(2245,1621)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0001</text></g>
+<g class="node k-const" transform="translate(206,1039)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">START = 4'b1101</text></g>
+<g class="node k-const" transform="translate(206,1115)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">CASE2 = 4'b1100</text></g>
+<g class="node k-const" transform="translate(206,869)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">CASE1 = 4'b1011</text></g>
+<g class="node k-const" transform="translate(212,296)"><rect class="const" x="0" y="0" width="97" height="18" rx="3"/><text class="ctxt" x="48.5" y="12.5" text-anchor="middle">DONE = 4'b1010</text></g>
+<g class="node k-const" transform="translate(194,651)"><rect class="const" x="0" y="0" width="115" height="18" rx="3"/><text class="ctxt" x="57.5" y="12.5" text-anchor="middle">ANALYZE = 4'b1001</text></g>
+<g class="node k-const" transform="translate(206,1077)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">CASE0 = 4'b1000</text></g>
+<g class="node k-const" transform="translate(206,438)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">ERROR = 4'b0111</text></g>
+<g class="node k-const" transform="translate(200,1329)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">WAIT_N = 4'b0110</text></g>
+<g class="node k-const" transform="translate(200,1395)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">LOAD_N = 4'b0101</text></g>
+<g class="node k-const" transform="translate(200,1522)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">WAIT_E = 4'b0100</text></g>
+<g class="node k-const" transform="translate(200,1456)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">LOAD_E = 4'b0011</text></g>
+<g class="node k-const" transform="translate(200,1600)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">WAIT_M = 4'b0010</text></g>
+<g class="node k-const" transform="translate(200,1263)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">LOAD_M = 4'b0001</text></g>
+<g class="node k-const" transform="translate(212,925)"><rect class="const" x="0" y="0" width="97" height="18" rx="3"/><text class="ctxt" x="48.5" y="12.5" text-anchor="middle">INIT = 4'b0000</text></g>
+<g class="node k-const" transform="translate(2455,1255)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0000</text></g>
+<g class="node k-const" transform="translate(528,1166)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h1</text></g>
+<g class="node k-const" transform="translate(528,1204)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h2</text></g>
+<g class="node k-const" transform="translate(2083,1516)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0001</text></g>
+<g class="node k-const" transform="translate(2083,1554)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0010</text></g>
+<g class="node k-const" transform="translate(2083,1440)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0011</text></g>
+<g class="node k-const" transform="translate(2083,1478)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0010</text></g>
+<g class="node k-const" transform="translate(2083,1364)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0011</text></g>
+<g class="node k-const" transform="translate(2083,1402)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0100</text></g>
+<g class="node k-const" transform="translate(2083,1222)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0101</text></g>
+<g class="node k-const" transform="translate(2083,1260)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0100</text></g>
+<g class="node k-const" transform="translate(2083,1141)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0101</text></g>
+<g class="node k-const" transform="translate(2083,1179)"><rect class="const" x="0" y="0" width="55" height="18" rx="3"/><text class="ctxt" x="27.5" y="12.5" text-anchor="middle">4'b0110</text></g>
+<g class="node k-const" transform="translate(1109,1207)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="15" x="2571" y="702">done_ff</text>
+<text class="nlbl" data-n="20" x="2577" y="51">err_ff</text>
+<text class="nlbl" data-n="14" x="2547" y="197">c_reg[31:0]</text>
+<text class="nlbl" data-n="21" x="2565" y="371">start_ff</text>
+<text class="nlbl" data-n="16" x="2547" y="1742">n_reg[31:0]</text>
+<text class="nlbl" data-n="18" x="2547" y="1700">m_reg[31:0]</text>
+<text class="nlbl" data-n="19" x="2547" y="744">x_reg[31:0]</text>
+<text class="nlbl" data-n="2" x="2039" y="1312">ctrl_load</text>
+<text class="nlbl" data-n="16" x="1334.3" y="1282">n_reg[31:0]</text>
+<text class="nlbl" data-n="17" x="1334.3" y="1343">e_reg[31:0]</text>
+<text class="nlbl" data-n="17" x="1693" y="1031">e_reg[31:0]</text>
+<text class="nlbl" data-n="4" x="1867" y="1080">ctrl_loadx</text>
+<text class="nlbl" data-n="52" x="1033" y="1185">e_decrement_amount[31:0]</text>
+<path class="wmark" d="M1224,1179L1229,1171"/><text class="wtxt" x="1230" y="1171">32</text>
+<text class="nlbl" data-n="51" x="166" y="976">state_ns[3:0]</text>
+<text class="nlbl" data-n="13" x="313" y="989">state_reg[3:0]</text>
+<text class="nlbl" data-n="14" x="1756" y="197">c_reg[31:0]</text>
+<text class="nlbl" data-n="15" x="1174" y="736">done_ff</text>
+<text class="nlbl" data-n="16" x="1150" y="1550">n_reg[31:0]</text>
+<text class="nlbl" data-n="17" x="1150" y="1106">e_reg[31:0]</text>
+<text class="nlbl" data-n="18" x="1150" y="1731">m_reg[31:0]</text>
+<text class="nlbl" data-n="19" x="1150" y="265">x_reg[31:0]</text>
+<text class="nlbl" data-n="20" x="1180" y="51">err_ff</text>
+<text class="nlbl" data-n="21" x="1168" y="371">start_ff</text>
+<text class="nlbl" data-n="21" x="834.9" y="465">start_ff</text>
+<text class="nlbl" data-n="20" x="832.8" y="61">err_ff</text>
+<text class="nlbl" data-n="19" x="808" y="217">x_reg[31:0]</text>
+<text class="nlbl" data-n="5" x="784" y="253">ctrl_dinx[31:0]</text>
+<text class="nlbl" data-n="3" x="790" y="301">ctrl_din[31:0]</text>
+<path class="wmark" d="M976,259L981,251"/><text class="wtxt" x="982" y="251">32</text>
+<text class="nlbl" data-n="18" x="789" y="1707">m_reg[31:0]</text>
+<text class="nlbl" data-n="3" x="771" y="1743">ctrl_din[31:0]</text>
+<path class="wmark" d="M952,1725L957,1717"/><text class="wtxt" x="958" y="1717">32</text>
+<text class="nlbl" data-n="17" x="839" y="1271">e_reg[31:0]</text>
+<text class="nlbl" data-n="58" x="761" y="1283">e_decrement_result[31:0]</text>
+<text class="nlbl" data-n="58" x="761" y="1307">e_decrement_result[31:0]</text>
+<text class="nlbl" data-n="58" x="761" y="1331">e_decrement_result[31:0]</text>
+<text class="nlbl" data-n="3" x="821" y="1355">ctrl_din[31:0]</text>
+<path class="wmark" d="M1002,1313L1007,1305"/><text class="wtxt" x="1008" y="1305">32</text>
+<text class="nlbl" data-n="16" x="779" y="1412">n_reg[31:0]</text>
+<text class="nlbl" data-n="3" x="761" y="1447">ctrl_din[31:0]</text>
+<path class="wmark" d="M888,1430L893,1422"/><text class="wtxt" x="894" y="1422">32</text>
+<text class="nlbl" data-n="15" x="833" y="712">done_ff</text>
+<text class="nlbl" data-n="14" x="1320.7" y="143">c_reg[31:0]</text>
+<text class="nlbl" data-n="19" x="1320.7" y="155">x_reg[31:0]</text>
+<path class="wmark" d="M1478.7,161L1483.7,153"/><text class="wtxt" x="1484.7" y="153">32</text>
+<path class="wmark" d="M1949.3,947L1954.3,939"/><text class="wtxt" x="1955.3" y="939">4</text>
+<path class="wmark" d="M2118.7,951L2123.7,943"/><text class="wtxt" x="2124.7" y="943">4</text>
+<path class="wmark" d="M1787.3,1121L1792.3,1113"/><text class="wtxt" x="1793.3" y="1113">4</text>
+<path class="wmark" d="M1949.3,1132L1954.3,1124"/><text class="wtxt" x="1955.3" y="1124">4</text>
+<path class="wmark" d="M2118.7,1057L2123.7,1049"/><text class="wtxt" x="2124.7" y="1049">4</text>
+<path class="wmark" d="M2270.7,1092L2275.7,1084"/><text class="wtxt" x="2276.7" y="1084">4</text>
+<path class="wmark" d="M2516,1053L2521,1045"/><text class="wtxt" x="2522" y="1045">4</text>
+<text class="nlbl" data-n="13" x="442" y="979">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1101">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="857">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="284">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="639">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1040">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="426">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1317">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1383">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1510">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1444">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1588">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="1251">state_reg[3:0]</text>
+<text class="nlbl" data-n="13" x="442" y="918">state_reg[3:0]</text>
+<text class="nlbl" data-n="51" x="2654" y="1070">state_ns[3:0]</text>
+<text class="nlbl" data-n="52" x="850" y="1196">e_decrement_amount[31:0]</text>
+<path class="wmark" d="M2270.7,1488L2275.7,1480"/><text class="wtxt" x="2276.7" y="1480">4</text>
+<path class="wmark" d="M2270.7,1412L2275.7,1404"/><text class="wtxt" x="2276.7" y="1404">4</text>
+<path class="wmark" d="M2270.7,1336L2275.7,1328"/><text class="wtxt" x="2276.7" y="1328">4</text>
+<path class="wmark" d="M2270.7,1252L2275.7,1244"/><text class="wtxt" x="2276.7" y="1244">4</text>
+<path class="wmark" d="M2270.7,1168L2275.7,1160"/><text class="wtxt" x="2276.7" y="1160">4</text>
+<text class="nlbl" data-n="17" x="1268" y="1167">e_reg[31:0]</text>
+<text class="nlbl" data-n="58" x="1504" y="1154">e_decrement_result[31:0]</text>
+<path class="ncx" d="M1500,1175H1509M1506,1172L1512,1178M1506,1178L1512,1172"/><text class="nc" x="1515" y="1178">aberta (sem carga)</text>
+</g></svg>

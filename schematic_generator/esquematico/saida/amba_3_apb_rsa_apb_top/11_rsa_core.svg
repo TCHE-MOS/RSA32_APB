@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 1578 465" width="1578" height="465">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="1578" height="465"/>
+<rect class="frame" x="-16" y="-16" width="1562" height="449"/>
+<g class="tblock" transform="translate(986,333)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">11 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">rsa_core</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">rsa32_core_top.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/rsa_wrapper_inst/rsa_core_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">DATA_WIDTH = 32, D_WID = 31, LOAD = 1, RESET = 1</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">3 instâncias de submódulo</text></g>
+<g class="wires">
+<path class="w" data-n="4" d="M482,140L629,140L629,22L1228,22"/>
+<path class="w" data-n="5" d="M482,158L650,158L650,220L1091,220L1091,216L1228,216"/>
+<path class="w bus" data-n="6" d="M482,176L622,176L622,256L1228,256"/>
+<path class="w clk" data-n="0" d="M117,45L145,45L145,140L255,140"/>
+<circle class="jn" data-n="0" cx="145" cy="45" r="2.4"/>
+<path class="w rst" data-n="1" d="M117,85L138,85L138,158L255,158"/>
+<circle class="jn" data-n="1" cx="138" cy="85" r="2.4"/>
+<path class="w" data-n="2" d="M117,154L131,154L131,176L255,176"/>
+<path class="w bus" data-n="3" d="M117,194L255,194"/>
+<path class="w" data-n="11" d="M1401,96L1518,96L1518,286L131,286L131,212L255,212"/>
+<path class="w bus" data-n="13" d="M1401,132L1511,132L1511,278L145,278L145,230L255,230"/>
+<path class="w clk" data-n="0" d="M117,45L1112,45L1112,96L1228,96"/>
+<path class="w rst" data-n="1" d="M117,85L138,85L138,53L1105,53L1105,114L1228,114"/>
+<path class="w" data-n="14" d="M975,110L1098,110L1098,132L1228,132"/>
+<path class="w bus" data-n="15" d="M975,128L1091,128L1091,150L1228,150"/>
+<path class="w bus" data-n="8" d="M482,212L1091,212L1091,168L1228,168"/>
+<path class="w clk" data-n="0" d="M117,45L145,45L145,61L636,61L636,110L790,110"/>
+<circle class="jn" data-n="0" cx="145" cy="61" r="2.4"/>
+<path class="w rst" data-n="1" d="M117,85L138,85L138,83L622,83L622,128L790,128"/>
+<circle class="jn" data-n="1" cx="138" cy="83" r="2.4"/>
+<path class="w" data-n="7" d="M482,194L629,194L629,146L790,146"/>
+<path class="w bus" data-n="9" d="M482,230L636,230L636,164L790,164"/>
+<path class="w bus" data-n="10" d="M482,248L643,248L643,182L790,182"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(48,35)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">core_clk</text></g>
+<g class="node k-in" transform="translate(48,75)"><path class="pin" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">core_rst</text></g>
+<g class="node k-in" transform="translate(42,144)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">core_load</text></g>
+<g class="node k-in" transform="translate(12,184)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">core_din[31:0]</text></g>
+<g class="node k-out" transform="translate(1228,12)"><path class="pout" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">core_done</text></g>
+<g class="node k-out" transform="translate(1228,206)"><path class="pout" d="M0,0H60L69,10L60,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">core_err</text></g>
+<g class="node k-out" transform="translate(1228,246)"><path class="pout" d="M0,0H102L111,10L102,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">core_dout[31:0]</text></g>
+<g class="node k-inst" transform="translate(255,96)" data-cell="rsa_core_ctrl_blk" data-type="$paramod$285a757dd7cd8efd19c0a259a74b2dd1edf44bc7\rsa_core_ctrl" data-src="rsa32_core_top.sv:78" data-sub="rsa_core_ctrl" data-inst="rsa_core_ctrl_blk"><rect class="inst" x="0" y="0" width="227" height="170" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H223A4,4 0 0 1 227,4V30H0Z"/><text class="insttitle" x="113.5" y="13" text-anchor="middle">rsa_core_ctrl_blk</text><text class="instsub" x="113.5" y="25" text-anchor="middle">rsa_core_ctrl</text><text class="iptxt" x="6" y="47.5" text-anchor="start">ctrl_clk</text><text class="iptxt" x="6" y="65.5" text-anchor="start">ctrl_rst</text><text class="iptxt" x="6" y="83.5" text-anchor="start">ctrl_load</text><text class="iptxt" x="6" y="101.5" text-anchor="start">ctrl_din[31:0]</text><text class="iptxt" x="6" y="119.5" text-anchor="start">ctrl_loadx</text><text class="iptxt" x="6" y="137.5" text-anchor="start">ctrl_dinx[31:0]</text><text class="iptxt" x="221" y="47.5" text-anchor="end">ctrl_done</text><text class="iptxt" x="221" y="65.5" text-anchor="end">ctrl_err</text><text class="iptxt" x="221" y="83.5" text-anchor="end">ctrl_c[31:0]</text><text class="iptxt" x="221" y="101.5" text-anchor="end">ctrl_start</text><text class="iptxt" x="221" y="119.5" text-anchor="end">ctrl_n[31:0]</text><text class="iptxt" x="221" y="137.5" text-anchor="end">ctrl_m[31:0]</text><text class="iptxt" x="221" y="155.5" text-anchor="end">ctrl_doutx[31:0]</text></g>
+<g class="node k-inst" transform="translate(1228,52)" data-cell="rsa_core_mod_blk" data-type="$paramod$b2d502523927301d6af035cfbce39660dc264d27\rsa_core_mod" data-src="rsa32_core_top.sv:63" data-sub="rsa_core_mod" data-inst="rsa_core_mod_blk"><rect class="inst" x="0" y="0" width="173" height="134" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H169A4,4 0 0 1 173,4V30H0Z"/><text class="insttitle" x="86.5" y="13" text-anchor="middle">rsa_core_mod_blk</text><text class="instsub" x="86.5" y="25" text-anchor="middle">rsa_core_mod</text><text class="iptxt" x="6" y="47.5" text-anchor="start">mod_clk</text><text class="iptxt" x="6" y="65.5" text-anchor="start">mod_rst</text><text class="iptxt" x="6" y="83.5" text-anchor="start">mod_start</text><text class="iptxt" x="6" y="101.5" text-anchor="start">mod_a[63:0]</text><text class="iptxt" x="6" y="119.5" text-anchor="start">mod_b[31:0]</text><text class="iptxt" x="167" y="47.5" text-anchor="end">mod_done</text><text class="iptxt" x="167" y="65.5" text-anchor="end">mod_err</text><text class="iptxt" x="167" y="83.5" text-anchor="end">mod_c[31:0]</text></g>
+<g class="node k-inst" transform="translate(790,66)" data-cell="rsa_core_mult_blk" data-type="$paramod$b2d502523927301d6af035cfbce39660dc264d27\rsa_core_mult" data-src="rsa32_core_top.sv:49" data-sub="rsa_core_mult" data-inst="rsa_core_mult_blk"><rect class="inst" x="0" y="0" width="185" height="134" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H181A4,4 0 0 1 185,4V30H0Z"/><text class="insttitle" x="92.5" y="13" text-anchor="middle">rsa_core_mult_blk</text><text class="instsub" x="92.5" y="25" text-anchor="middle">rsa_core_mult</text><text class="iptxt" x="6" y="47.5" text-anchor="start">mult_clk</text><text class="iptxt" x="6" y="65.5" text-anchor="start">mult_rst</text><text class="iptxt" x="6" y="83.5" text-anchor="start">mult_start</text><text class="iptxt" x="6" y="101.5" text-anchor="start">mult_a[31:0]</text><text class="iptxt" x="6" y="119.5" text-anchor="start">mult_b[31:0]</text><text class="iptxt" x="179" y="47.5" text-anchor="end">mult_done</text><text class="iptxt" x="179" y="65.5" text-anchor="end">mult_c[63:0]</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="2" x="196" y="186">core_load</text>
+<text class="nlbl" data-n="3" x="166" y="204">core_din[31:0]</text>
+<text class="nlbl" data-n="11" x="178" y="222">mod_done_sig</text>
+<text class="nlbl" data-n="13" x="160" y="240">mod_c_sig[31:0]</text>
+<text class="nlbl" data-n="4" x="486" y="150">core_done</text>
+<text class="nlbl" data-n="5" x="486" y="168">core_err</text>
+<text class="nlbl" data-n="6" x="486" y="186">core_dout[31:0]</text>
+<text class="nlbl" data-n="7" x="486" y="204">ctrl_start_sig</text>
+<text class="nlbl" data-n="8" x="486" y="222">ctrl_n_sig[31:0]</text>
+<text class="nlbl" data-n="9" x="486" y="240">ctrl_m_sig[31:0]</text>
+<text class="nlbl" data-n="10" x="486" y="258">ctrl_doutx_sig[31:0]</text>
+<text class="nlbl" data-n="14" x="1145" y="142">mult_done_sig</text>
+<text class="nlbl" data-n="15" x="1127" y="160">mult_c_sig[63:0]</text>
+<text class="nlbl" data-n="8" x="1127" y="178">ctrl_n_sig[31:0]</text>
+<text class="nlbl" data-n="11" x="1405" y="106">mod_done_sig</text>
+<text class="nlbl" data-n="" x="1405" y="124">mod_err_unused</text>
+<path class="ncx" d="M1401,114H1410M1407,111L1413,117M1407,117L1413,111"/><text class="nc" x="1416" y="117">aberta (sem carga)</text>
+<text class="nlbl" data-n="13" x="1405" y="142">mod_c_sig[31:0]</text>
+<text class="nlbl" data-n="7" x="701" y="156">ctrl_start_sig</text>
+<text class="nlbl" data-n="9" x="689" y="174">ctrl_m_sig[31:0]</text>
+<text class="nlbl" data-n="10" x="665" y="192">ctrl_doutx_sig[31:0]</text>
+<text class="nlbl" data-n="14" x="979" y="107">mult_done_sig</text>
+<text class="nlbl" data-n="15" x="979" y="138">mult_c_sig[63:0]</text>
+</g></svg>

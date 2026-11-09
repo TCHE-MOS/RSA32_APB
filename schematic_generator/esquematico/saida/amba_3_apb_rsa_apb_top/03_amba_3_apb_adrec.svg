@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 610 255" width="610" height="255">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="610" height="255"/>
+<rect class="frame" x="-16" y="-16" width="594" height="239"/>
+<g class="tblock" transform="translate(18,123)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">3 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">amba_3_apb_adrec</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">amba_3_apb_adrec.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/data_io_top_inst/adrec_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">ADDR_WIDTH = 12, A_WID = 11</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">2 células, sem registradores</text></g>
+<g class="wires">
+<path class="w bus" data-n="0" d="M111,27L125,27L125,54L435,54L435,67L457,67"/>
+<circle class="jn bus" data-n="0" cx="125" cy="27" r="3"/>
+<path class="w" data-n="1" d="M343,27L457,27"/>
+<path class="w" data-n="2" d="M271,27L307,27"/>
+<path class="w bus" data-n="0" d="M111,27L231,27"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(12,17)"><path class="pin" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">paddr_i[11:0]</text></g>
+<g class="node k-out" transform="translate(457,57)"><path class="pout" d="M0,0H84L93,10L84,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">oaddr_o[3:0]</text></g>
+<g class="node k-out" transform="translate(457,17)"><path class="pout" d="M0,0H84L93,10L84,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">addr_valid_o</text></g>
+<g class="node k-not" transform="translate(307,16)" data-cell="$logic_not$../../src/amba_3_apb/amba_3_apb_adrec.sv:17$5744" data-type="$logic_not" data-src="amba_3_apb_adrec.sv:17"><path class="sym" d="M3,2L25,11L3,20Z"/><circle class="sym" cx="28.5" cy="11" r="3.2"/><path class="leg" d="M0,11H3M31.7,11H36"/></g>
+<g class="node k-op1" transform="translate(231,12)" data-cell="$reduce_or$../../src/amba_3_apb/amba_3_apb_adrec.sv:17$5743" data-type="$reduce_or" data-src="amba_3_apb_adrec.sv:17"><rect class="sym" x="2" y="1" width="36" height="28" rx="8"/><text class="optxt" x="20" y="19" text-anchor="middle">|</text><path class="leg" d="M0,15H2M38,15H40"/></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="1" x="347" y="37">addr_valid_o</text>
+<text class="nlbl" data-n="0" x="148" y="37">paddr_i[11:5]</text>
+</g></svg>

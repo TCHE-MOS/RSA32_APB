@@ -34,6 +34,18 @@ import top_tb_pkg::*;
     );
 
 ////////////////////////////////////////////////
+// Interface assertions
+////////////////////////////////////////////////
+    apb_protocol_sva apb_protocol_sva_h(apb_rsa_if);
+    rsa_operation_sva rsa_operation_sva_h(apb_rsa_if);
+    soft_reset_sva soft_reset_sva_h(apb_rsa_if);
+    test_id_sva #(
+        .CHECK_ID_VALUE(1'b1),
+        .EXPECTED_ID(EXPECTED_ID_VALUE)
+    ) test_id_sva_h(apb_rsa_if);
+    corners_exp_sva corners_exp_sva_h(apb_rsa_if);
+
+////////////////////////////////////////////////
 // DUT instantiation
 ////////////////////////////////////////////////
     amba_3_apb_rsa_apb_top #(
@@ -55,7 +67,19 @@ import top_tb_pkg::*;
         .irq_o      (apb_rsa_if.irq)
     );
 
-
-
+    // One waveform scope containing only the top-level DUT pins.
+    dut_io_pinout_monitor dut_io_pinout (
+        .pclk_i     (pclk),
+        .presetn_i  (apb_rsa_if.presetn),
+        .psel_i     (apb_rsa_if.psel),
+        .penable_i  (apb_rsa_if.penable),
+        .pwrite_i   (apb_rsa_if.pwrite),
+        .paddr_i    (apb_rsa_if.paddr),
+        .pwdata_i   (apb_rsa_if.pwdata),
+        .prdata_o   (apb_rsa_if.prdata),
+        .pready_o   (apb_rsa_if.pready),
+        .pslverr_o  (apb_rsa_if.pslverr),
+        .irq_o      (apb_rsa_if.irq)
+    );
 
 endmodule

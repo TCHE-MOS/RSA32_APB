@@ -1,0 +1,88 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+[FST] dumping 574 signals (scopes=1)
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_root.svh(449) @ 0: reporter [UVM/RELNOTES] 
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  This implementation of the UVM Library deviates from the 1800.2-2017
+  standard.  See the DEVIATIONS.md file contained in the release
+  for more details.
+
+----------------------------------------------------------------
+Accellera:1800.2-2017:UVM:1.0
+
+All copyright owners for this kit are listed in NOTICE.txt
+All Rights Reserved Worldwide
+----------------------------------------------------------------
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_rsa_operation...
+UVM_INFO @ 0: reporter [TIMOUTSET] '+UVM_TIMEOUT=1250200,YES' provided on the command line is being applied.
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_vseq.sv(137) @ 0: uvm_test_top.env_h.vsequencer_h@@vseq_h [SEQ_BEGIN] [test_id] INICIO | READ ID -> WRITE 0xFFFFFFFF -> READ ID
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(325) @ 125000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [test_id][1] t=125.000ns READ ID addr=0x01c data=0x52530200 PSLVERR=0 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(325) @ 155000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [test_id][2] t=155.000ns WRITE ID addr=0x01c data=0xffffffff PSLVERR=1 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_scoreboard.sv(325) @ 185000: uvm_test_top.env_h.scoreboard_h [SEQ_DEBUG] [test_id][3] t=185.000ns READ ID addr=0x01c data=0x52530200 PSLVERR=0 RESPOSTA=PASS
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/UVM/uvm_sequence_test_id.sv(53) @ 190000: uvm_test_top.env_h.agent_h.sequencer_h@@sequence_test_id_h [ID_OBSERVATION] ANTES=0x52530200 ENVIADO=0xFFFFFFFF DEPOIS=0x52530200 ESPERADO=0x52530200 PSLVERR R/W/R=0/1/0
+UVM_INFO @ 200000: reporter [SEQ_RESULT] [test_id] PASS | transacoes=3 falhas_SVA=0 verificacoes_sem_resultado=0
+UVM_INFO /home/matheus-grossi/Documentos/RSA32_APB/.deps/1800.2-2017-1.0/src/base/uvm_report_server.svh(864) @ 200000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    9
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[ID_OBSERVATION]     1
+[RNTST]     1
+[SEQ_BEGIN]     1
+[SEQ_DEBUG]     3
+[SEQ_RESULT]     1
+[TIMOUTSET]     1
+[UVM/RELNOTES]     1
+
+[TIMING] Tempo simulado global: 200.000 ns
+
+[SVA] RESULTADOS DAS ASSERTIONS | FIM DA EXECUCAO | cenario atual: finalizacao
++----------------+----------------------------+-------------+---------+---------+--------------+
+| Cenario        | Assertion                  | Resultado   | Acertos |  Falhas | Instante(ns) |
++----------------+----------------------------+-------------+---------+---------+--------------+
+| APB            | APB_SETUP_ACCESS           | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_ZERO_WAIT              | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_CTRL_READ_ZERO         | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ID_VALUE               | PASS        |       2 |       0 |      185.000 |
+| APB            | APB_STATUS_RESERVED        | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_IER_RESERVED           | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_IRQ_STATUS             | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_CONTROL_STABLE         | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_WRITE_DATA_STABLE      | PASS        |       1 |       0 |      155.000 |
+| APB            | APB_WAIT_HOLD              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ACCESS_END             | PASS        |       3 |       0 |      195.000 |
+| APB            | APB_ACCESS_ENTRY           | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_KNOWN_PHASE            | PASS        |      10 |       0 |      195.000 |
+| APB            | APB_KNOWN_CONTROL          | PASS        |       6 |       0 |      185.000 |
+| APB            | APB_KNOWN_WRITE_DATA       | PASS        |       2 |       0 |      155.000 |
+| APB            | APB_KNOWN_READY            | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_KNOWN_ERROR            | PASS        |       3 |       0 |      185.000 |
+| APB            | APB_KNOWN_READ_DATA        | PASS        |       2 |       0 |      185.000 |
+| APB            | SVA_SCENARIO_CONFLICT      | PASS        |      10 |       0 |      195.000 |
+| rsa_operation  | RSA_OPERATION_ORDER        | NAO EXERC.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_OPERATION_RESPONSE     | NAO EXERC.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_RESULT_BEFORE_DONE     | NAO EXERC.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_RESULT_VALUE           | NAO EXERC.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_STATUS_VALUE           | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_ORDER           | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_RESPONSE        | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_STATUS          | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_SCENARIO_RUN            | PASS        |       1 |       0 |      185.000 |
+| test_id        | ID_READ_RESPONSE           | PASS        |       2 |       0 |      185.000 |
+| test_id        | ID_READ_KNOWN              | PASS        |       2 |       0 |      185.000 |
+| test_id        | ID_READ_STABLE             | PASS        |       1 |       0 |      185.000 |
+| test_id        | ID_WRITE_RESPONSE          | PASS        |       1 |       0 |      155.000 |
++----------------+----------------------------+-------------+---------+---------+--------------+
+[SVA] Assertions: 19 PASS | 0 FAIL | 13 NAO EXERCITADAS | 0 INTERROMPIDAS
+[SVA] Instante indica a ultima ocorrencia; havendo falha, indica a ultima falha.
+[SVA] Contagens finais UVM: ERROR=0 | FATAL=0
+
+Simulation finished at time 200000 ($finish called)

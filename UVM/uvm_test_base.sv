@@ -53,6 +53,7 @@ endfunction
 ////////////////////////////////////////////////
 function void test_base::build_phase(uvm_phase phase);
     super.build_phase(phase);
+    scoreboard::init_assertion_log();
 
     // Env creation
     env_h = env::type_id::create(.name("env_h"), .parent(this));
@@ -91,6 +92,7 @@ task test_base::run_phase(uvm_phase phase);
     phase.raise_objection(this);
 
     vseq_h.start(env_h.vsequencer_h);
+    scoreboard::execution_complete = 1'b1;
 
     phase.drop_objection(this);
 

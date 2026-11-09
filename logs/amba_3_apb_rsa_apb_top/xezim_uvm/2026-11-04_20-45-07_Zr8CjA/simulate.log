@@ -1,0 +1,35 @@
+=== xezim 0.11.4 ===
+git e826641 (2026-10-31T02:47:36-07:00)
+UVM_INFO /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_root.svh(449) @ 0: reporter [UVM/RELNOTES] 
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  This implementation of the UVM Library deviates from the 1800.2-2017
+  standard.  See the DEVIATIONS.md file contained in the release
+  for more details.
+
+----------------------------------------------------------------
+Accellera:1800.2-2017:UVM:1.0
+
+All copyright owners for this kit are listed in NOTICE.txt
+All Rights Reserved Worldwide
+----------------------------------------------------------------
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_rsa_operation...
+[xezim][warning] a #delay evaluated to a pathological real value 9.2000e15 at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1498:19 at time 0 — the process is parked far in the future, so a clock driven by it will appear to stop. This usually means the delay expression produced NaN/inf or IEEE-754 bit garbage.
+[xezim][hang-report] simulation reached --max-time (1000 ticks) without $finish
+[xezim][hang-report] 2 event waiter(s), 19 condition waiter(s) parked at sim time 0; oldest first:
+[xezim][hang-report]   pid 18 (fork child) waiting 0 tick(s) (since t=0) on @(posedge th.pclk (now 0, UNCHANGED since parked)) (10 qualifying events remaining) — resumes at a wait inside the process at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_task_phase.svh:135:7
+[xezim][hang-report]     'th.pclk' (now 0) has no continuous driver (no clock generator, edge block or continuous assign writes it) — normal for a variable driven from an initial/always block; on a NET this is the signature of a dropped/unresolved instance
+[xezim][hang-report]   pid 20 (fork child) waiting 0 tick(s) (since t=0) on @(posedge th.apb_rsa_if.psel (now x, UNCHANGED since parked)) — resumes at a wait inside the process at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_task_phase.svh:135:7
+[xezim][hang-report]     'th.apb_rsa_if.psel' (now x) has no continuous driver (no clock generator, edge block or continuous assign writes it) — normal for a variable driven from an initial/always block; on a NET this is the signature of a dropped/unresolved instance
+[xezim][hang-report]   pid 14 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1431:13
+[xezim][hang-report]   pid 108 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 159 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 207 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 255 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 303 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 351 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+[xezim][hang-report]   pid 399 blocked in wait(condition) — resumes at /home/matheus-grossi/Projects/RSA_APB_32-bit/.deps/1800.2-2017-1.0/src/base/uvm_phase.svh:1541:19
+Simulation finished at time 0

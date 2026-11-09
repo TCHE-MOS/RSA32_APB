@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 1685 598" width="1685" height="598">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="1685" height="598"/>
+<rect class="frame" x="-16" y="-16" width="1669" height="582"/>
+<g class="tblock" transform="translate(1093,466)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">8 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">amba_3_apb_rsa_wrapper_top</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">amba_3_apb_rsa_wrapper_top.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/rsa_wrapper_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">DATA_WIDTH = 32, D_WID = 31, LOAD_GAP = 0</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">3 instâncias de submódulo</text></g>
+<g class="wires">
+<path class="w" data-n="13" d="M1268,352L1490,352"/>
+<path class="w" data-n="7" d="M410,79L497,79L497,55L1490,55"/>
+<circle class="jn" data-n="7" cx="497" cy="79" r="2.4"/>
+<path class="w" data-n="8" d="M410,97L1490,97"/>
+<path class="w bus" data-n="9" d="M410,115L504,115L504,139L1490,139"/>
+<path class="w clk" data-n="0" d="M153,22L167,22L167,79L195,79"/>
+<circle class="jn" data-n="0" cx="167" cy="22" r="2.4"/>
+<path class="w rst" data-n="3" d="M153,179L167,179L167,97L195,97"/>
+<circle class="jn" data-n="3" cx="167" cy="179" r="2.4"/>
+<path class="w" data-n="11" d="M1268,316L1372,316L1372,171L174,171L174,115L195,115"/>
+<path class="w bus" data-n="12" d="M1268,334L1379,334L1379,163L181,163L181,133L195,133"/>
+<path class="w clk" data-n="0" d="M153,22L511,22L511,236L591,236"/>
+<path class="w rst" data-n="1" d="M153,250L511,250L511,254L591,254"/>
+<path class="w rst" data-n="3" d="M153,179L504,179L504,272L591,272"/>
+<circle class="jn" data-n="3" cx="504" cy="179" r="2.4"/>
+<path class="w" data-n="2" d="M153,290L591,290"/>
+<path class="w" data-n="7" d="M410,79L497,79L497,308L591,308"/>
+<path class="w" data-n="8" d="M410,97L490,97L490,326L591,326"/>
+<circle class="jn" data-n="8" cx="490" cy="97" r="2.4"/>
+<path class="w rst" data-n="3" d="M153,179L942,179L942,316L1047,316"/>
+<path class="w bus" data-n="10" d="M831,236L935,236L935,334L1047,334"/>
+<path class="w bus" data-n="4" d="M153,330L167,330L167,356L935,356L935,352L1047,352"/>
+<path class="w bus" data-n="5" d="M153,370L1047,370"/>
+<path class="w bus" data-n="6" d="M153,410L167,410L167,388L1047,388"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(30,12)"><path class="pin" d="M0,0H114L123,10L114,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">pclk_i / core_clk</text></g>
+<g class="node k-in" transform="translate(78,240)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">presetn_i</text></g>
+<g class="node k-in" transform="translate(90,280)"><path class="pin" d="M0,0H54L63,10L54,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">start_i</text></g>
+<g class="node k-in" transform="translate(12,169)"><path class="pin" d="M0,0H132L141,10L132,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_rst_i / core_rst</text></g>
+<g class="node k-in" transform="translate(48,320)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_msg_i[31:0]</text></g>
+<g class="node k-in" transform="translate(48,360)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_exp_i[31:0]</text></g>
+<g class="node k-in" transform="translate(48,400)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_mod_i[31:0]</text></g>
+<g class="node k-out" transform="translate(1490,342)"><path class="pout" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_wp_busy_o</text></g>
+<g class="node k-out" transform="translate(1490,45)"><path class="pout" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_wp_done_o</text></g>
+<g class="node k-out" transform="translate(1490,87)"><path class="pout" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_wp_error_o</text></g>
+<g class="node k-out" transform="translate(1490,129)"><path class="pout" d="M0,0H126L135,10L126,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_wp_dout_o[31:0]</text></g>
+<g class="node k-inst" transform="translate(195,35)" data-cell="rsa_core_inst" data-type="$paramod$285a757dd7cd8efd19c0a259a74b2dd1edf44bc7\rsa_core" data-src="amba_3_apb_rsa_wrapper_top.sv:109" data-sub="rsa_core" data-inst="rsa_core_inst"><rect class="inst" x="0" y="0" width="215" height="116" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H211A4,4 0 0 1 215,4V30H0Z"/><text class="insttitle" x="107.5" y="13" text-anchor="middle">rsa_core_inst</text><text class="instsub" x="107.5" y="25" text-anchor="middle">rsa_core</text><text class="iptxt" x="6" y="47.5" text-anchor="start">core_clk</text><text class="iptxt" x="6" y="65.5" text-anchor="start">core_rst</text><text class="iptxt" x="6" y="83.5" text-anchor="start">core_load</text><text class="iptxt" x="6" y="101.5" text-anchor="start">core_din[31:0]</text><text class="iptxt" x="209" y="47.5" text-anchor="end">core_done</text><text class="iptxt" x="209" y="65.5" text-anchor="end">core_err</text><text class="iptxt" x="209" y="83.5" text-anchor="end">core_dout[31:0]</text></g>
+<g class="node k-inst" transform="translate(591,192)" data-cell="rsa_wrapper_control_inst" data-type="$paramod$9f13852e3e97bc645a0760db154e3effeb04f830\amba_3_apb_rsa_wrapper_control" data-src="amba_3_apb_rsa_wrapper_top.sv:72" data-sub="amba_3_apb_rsa_wrapper_control" data-inst="rsa_wrapper_control_inst"><rect class="inst" x="0" y="0" width="240" height="152" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H236A4,4 0 0 1 240,4V30H0Z"/><text class="insttitle" x="120" y="13" text-anchor="middle">rsa_wrapper_control_inst</text><text class="instsub" x="120" y="25" text-anchor="middle">amba_3_apb_rsa_wrapper_control</text><text class="iptxt" x="6" y="47.5" text-anchor="start">pclk_i</text><text class="iptxt" x="6" y="65.5" text-anchor="start">presetn_i</text><text class="iptxt" x="6" y="83.5" text-anchor="start">rsa_rst_i</text><text class="iptxt" x="6" y="101.5" text-anchor="start">start_i</text><text class="iptxt" x="6" y="119.5" text-anchor="start">core_done_i</text><text class="iptxt" x="6" y="137.5" text-anchor="start">core_error_i</text><text class="iptxt" x="234" y="47.5" text-anchor="end">c_state_o[6:0]</text></g>
+<g class="node k-inst" transform="translate(1047,272)" data-cell="rsa_wrapper_data_inst" data-type="$paramod$b3337eb10a120eeb7917f474be68e7978ee1c300\amba_3_apb_rsa_wrapper_data" data-src="amba_3_apb_rsa_wrapper_top.sv:93" data-sub="amba_3_apb_rsa_wrapper_data" data-inst="rsa_wrapper_data_inst"><rect class="inst" x="0" y="0" width="221" height="134" rx="4"/><path class="insthdr" d="M0,4A4,4 0 0 1 4,0H217A4,4 0 0 1 221,4V30H0Z"/><text class="insttitle" x="110.5" y="13" text-anchor="middle">rsa_wrapper_data_inst</text><text class="instsub" x="110.5" y="25" text-anchor="middle">amba_3_apb_rsa_wrapper_data</text><text class="iptxt" x="6" y="47.5" text-anchor="start">rsa_rst_i</text><text class="iptxt" x="6" y="65.5" text-anchor="start">c_state_i[6:0]</text><text class="iptxt" x="6" y="83.5" text-anchor="start">op_msg_i[31:0]</text><text class="iptxt" x="6" y="101.5" text-anchor="start">op_exp_i[31:0]</text><text class="iptxt" x="6" y="119.5" text-anchor="start">op_mod_i[31:0]</text><text class="iptxt" x="215" y="47.5" text-anchor="end">core_load_o</text><text class="iptxt" x="215" y="65.5" text-anchor="end">core_din_o[31:0]</text><text class="iptxt" x="215" y="83.5" text-anchor="end">rsa_wp_busy_o</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="7" x="1431" y="65">core_done</text>
+<text class="nlbl" data-n="8" x="1425" y="107">core_error</text>
+<text class="nlbl" data-n="9" x="1395" y="149">core_dout[31:0]</text>
+<text class="nlbl" data-n="8" x="414" y="107">core_error</text>
+<path class="wmark" d="M416,119L421,111"/><text class="wtxt" x="422" y="111">32</text>
+<text class="nlbl" data-n="7" x="532" y="318">core_done</text>
+<text class="nlbl" data-n="8" x="526" y="336">core_error</text>
+<text class="nlbl" data-n="10" x="835" y="246">c_state_w[6:0]</text>
+<text class="nlbl" data-n="10" x="958" y="344">c_state_w[6:0]</text>
+<text class="nlbl" data-n="11" x="1272" y="326">core_load</text>
+<text class="nlbl" data-n="12" x="1272" y="344">core_din[31:0]</text>
+</g></svg>

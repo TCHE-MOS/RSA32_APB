@@ -21,8 +21,6 @@ class monitor  extends uvm_monitor;
     // Analysis Port
     uvm_analysis_port #(seq_item) monitor_ap;
 
-    seq_item item;
-
 ////////////////////////////////////////////////
 // Methods
 ////////////////////////////////////////////////
@@ -52,8 +50,6 @@ function void monitor::build_phase(uvm_phase phase);
 
     this.monitor_ap = new(.name("monitor_ap"),.parent(this));
 
-    item = seq_item::type_id::create("item");
-
 endfunction
 
 
@@ -61,25 +57,19 @@ endfunction
 // Build phase
 ////////////////////////////////////////////////
 task monitor::run_phase(uvm_phase phase);
-    
-    // Monitoramos o barramento
-    // Encapsulamos em itens de transação
-    @(posedge vif.psel);
+    seq_item observed_item;
 
-    if (vif.pwrite) begin
-        item.transaction_type = WRITE;
-        item.data    = vif.pwdata;
-        item.address = vif.paddr;
+    forever begin
+        @(posedge vif.pclk);
+        if (vif.presetn === 1'b1 && vif.psel === 1'b1 &&
+            vif.penable === 1'b1 && vif.pready === 1'b1) begin
+            observed_item = seq_item::type_id::create("observed_item");
+            observed_item.transaction_type = vif.pwrite ? WRITE : READ;
+            observed_item.address = vif.paddr;
+            observed_item.data = vif.pwrite ? vif.pwdata : vif.prdata;
+            observed_item.pslverr = vif.pslverr;
+            monitor_ap.write(observed_item);
+        end
     end
-    else begin
-        item.transaction_type = READ;
-        @(posedge vif.penable);
-        item.data    = vif.prdata;
-        item.address = vif.paddr;
-    end
-
-    // Envia para analysis port
-    monitor_ap.write(item);
-
 
 endtask

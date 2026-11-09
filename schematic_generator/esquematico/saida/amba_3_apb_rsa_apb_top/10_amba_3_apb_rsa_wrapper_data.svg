@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="sheet" viewBox="-24 -24 993 1068" width="993" height="1068">
+<style>.w { fill: none; stroke: #2b3440; stroke-width: 1.15; stroke-linejoin: round; }
+.w.bus { stroke: #1e4fbf; stroke-width: 2.3; }
+.w.clk { stroke: #15803d; }
+.w.rst { stroke: #b42318; }
+.w.cst { stroke: #8a94a3; }
+.jn { fill: #2b3440; }
+.jn.bus { fill: #1e4fbf; }
+.sym { fill: #fffdf6; stroke: #1f2937; stroke-width: 1.35; }
+.sym.ff { fill: #fff7e6; }
+.sym.nofill { fill: none; }
+.leg { stroke: #1f2937; stroke-width: 1.35; fill: none; }
+.pin { fill: #dcfce7; stroke: #166534; stroke-width: 1.2; }
+.pout { fill: #ffedd5; stroke: #9a3412; stroke-width: 1.2; }
+.const { fill: #f3f4f6; stroke: #a3abb7; stroke-width: 1; }
+.join { fill: #1e4fbf; }
+.inst { fill: #eef2ff; stroke: #3730a3; stroke-width: 1.5; }
+.insthdr { fill: #c7d2fe; }
+text { font-family: 'DejaVu Sans Mono', 'JetBrains Mono', Menlo, Consolas, monospace; font-size: 10px; fill: #111827; }
+.plbl { font-weight: bold; }
+.ctxt { fill: #374151; font-size: 9.5px; }
+.optxt { font-size: 13px; font-weight: bold; }
+.optxt.sm { font-size: 10px; }
+.pintxt { font-size: 8.5px; fill: #4b5563; }
+.pintxt.sel { fill: #7c3aed; }
+.pintxt.b { font-weight: bold; fill: #111827; }
+.pintxt.sm { font-size: 8px; }
+.nlbl { font-size: 9.5px; fill: #0b3a8c; }
+.insttitle { font-weight: bold; font-size: 11px; }
+.instsub { font-style: italic; fill: #3730a3; }
+.iptxt { font-size: 9.5px; }
+.nc { font-size: 8px; fill: #b42318; }
+.pintxt.ann { fill: #6d28d9; font-weight: bold; }
+.wmark { stroke: #1e4fbf; stroke-width: 1.2; fill: none; }
+.wtxt { font-size: 8.5px; fill: #1e4fbf; }
+.ncx { stroke: #b42318; stroke-width: 1.3; fill: none; }
+.paper { fill: #ffffff; }
+.frame { fill: none; stroke: #1d2731; stroke-width: 1.2; }
+.tb { fill: #ffffff; stroke: #1d2731; stroke-width: 1.2; }
+.tbl { fill: none; stroke: #1d2731; stroke-width: 0.8; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'DejaVu Sans Condensed', 'Arial Narrow', sans-serif; }
+.tb-proj { font-size: 16px; font-weight: 700; fill: #1d2731; }
+.tb-sub { font-size: 13px; fill: #1d2731; }
+.tb-k { font-size: 9.5px; fill: #5b6672; }
+.tb-v { font-size: 11px; font-weight: 600; fill: #1d2731; }
+.tb-num { font-size: 13px; font-weight: 700; fill: #1d2731; }
+
+text { font-family: 'IBM Plex Mono', Consolas, Menlo, 'DejaVu Sans Mono', monospace; }
+.tblock text { font-family: 'Barlow Semi Condensed', 'Arial Narrow', 'DejaVu Sans Condensed', sans-serif; }</style>
+<rect class="paper" x="-24" y="-24" width="993" height="1068"/>
+<rect class="frame" x="-16" y="-16" width="977" height="1052"/>
+<g class="tblock" transform="translate(401,936)"><rect class="tb" x="0" y="0" width="560" height="100"/><path class="tbl" d="M0,28H560M0,46H560M0,64H560M0,82H560M470,0V28M260,28V46M330,82V100"/><text class="tb-proj" x="10" y="20">AMBA_3_APB_RSA_APB_TOP</text><text class="tb-sub" x="254" y="20">esquemático RTL elaborado</text><text class="tb-k" x="478" y="11">folha</text><text class="tb-num" x="478" y="24">10 de 17</text><text class="tb-k" x="10" y="41">módulo</text><text class="tb-v" x="84" y="41">amba_3_apb_rsa_wrapper_data</text><text class="tb-k" x="268" y="41">arquivo</text><text class="tb-v" x="318" y="41">amba_3_apb_rsa_wrapper_data.sv</text><text class="tb-k" x="10" y="59">instância</text><text class="tb-v" x="84" y="59">amba_3_apb_rsa_apb_top/rsa_wrapper_inst/rsa_wrapper_data_inst</text><text class="tb-k" x="10" y="77">parâmetros</text><text class="tb-v" x="84" y="77">DATA_WIDTH = 32, IDLE = 0, D_WID = 31, GAP_EXP_MOD = 8, GAP_MSG_EXP = 2, LOAD_EXP = 4, LOAD_MOD = 16, LOAD_MSG = 1, WAIT_DONE = 32</text><text class="tb-k" x="10" y="95">netlist do Yosys 0.68+ (proc -noopt), 05/11/2026</text><text class="tb-k" x="338" y="95">12 células, sem registradores</text></g>
+<g class="wires">
+<path class="w" data-n="16" d="M708,770L816,770"/>
+<path class="w bus" data-n="15" d="M678,694L816,694"/>
+<path class="w" data-n="14" d="M696,391L816,391"/>
+<path class="w cst" data-n="17" d="M299,21L348,21L348,211L485,211"/>
+<path class="w cst" data-n="18" d="M299,59L341,59L341,223L485,223"/>
+<path class="w" data-n="6" d="M299,109L334,109L334,235L485,235"/>
+<path class="w cst" data-n="19" d="M299,158L327,158L327,247L485,247"/>
+<path class="w" data-n="11" d="M299,444L397,444L397,259L485,259"/>
+<circle class="jn" data-n="11" cx="397" cy="444" r="2.4"/>
+<path class="w cst" data-n="20" d="M299,196L320,196L320,271L485,271"/>
+<path class="w" data-n="7" d="M299,246L313,246L313,283L485,283"/>
+<path class="w cst" data-n="21" d="M299,295L485,295"/>
+<path class="w" data-n="12" d="M299,510L390,510L390,307L485,307"/>
+<circle class="jn" data-n="12" cx="390" cy="510" r="2.4"/>
+<path class="w cst" data-n="22" d="M299,333L313,333L313,319L485,319"/>
+<path class="w" data-n="8" d="M299,383L320,383L320,331L485,331"/>
+<path class="w cst" data-n="23" d="M299,559L327,559L327,343L485,343"/>
+<path class="w" data-n="13" d="M299,614L383,614L383,355L485,355"/>
+<circle class="jn" data-n="13" cx="383" cy="614" r="2.4"/>
+<path class="w bus" data-n="1" d="M133,435L154,435L154,100L259,100"/>
+<circle class="jn bus" data-n="1" cx="154" cy="435" r="3"/>
+<path class="w bus cst" data-n="24" d="M133,118L259,118"/>
+<path class="w bus" data-n="1" d="M133,435L154,435L154,237L259,237"/>
+<circle class="jn bus" data-n="1" cx="154" cy="237" r="3"/>
+<path class="w bus cst" data-n="25" d="M133,255L259,255"/>
+<path class="w bus" data-n="1" d="M133,435L154,435L154,374L259,374"/>
+<circle class="jn bus" data-n="1" cx="154" cy="374" r="3"/>
+<path class="w bus cst" data-n="26" d="M133,392L259,392"/>
+<path class="w bus cst" data-n="27" d="M299,663L334,663L334,464L501,464"/>
+<path class="w bus" data-n="4" d="M133,476L501,476"/>
+<path class="w" data-n="11" d="M299,444L397,444L397,488L501,488"/>
+<circle class="jn" data-n="11" cx="397" cy="488" r="2.4"/>
+<path class="w bus" data-n="3" d="M133,580L341,580L341,500L501,500"/>
+<path class="w" data-n="12" d="M299,510L390,510L390,512L501,512"/>
+<circle class="jn" data-n="12" cx="390" cy="512" r="2.4"/>
+<path class="w bus" data-n="2" d="M133,684L348,684L348,524L501,524"/>
+<path class="w" data-n="13" d="M299,614L383,614L383,536L501,536"/>
+<circle class="jn" data-n="13" cx="383" cy="536" r="2.4"/>
+<path class="w cst" data-n="28" d="M299,754L355,754L355,630L489.8,630"/>
+<path class="w cst" data-n="29" d="M299,792L362,792L362,642L489.8,642"/>
+<path class="w" data-n="11" d="M299,444L397,444L397,654L489.8,654"/>
+<path class="w cst" data-n="30" d="M299,830L369,830L369,666L489.8,666"/>
+<path class="w" data-n="12" d="M299,510L390,510L390,678L489.8,678"/>
+<path class="w cst" data-n="31" d="M299,868L376,868L376,690L489.8,690"/>
+<path class="w" data-n="13" d="M299,614L383,614L383,702L489.8,702"/>
+<path class="w bus" data-n="1" d="M133,435L259,435"/>
+<path class="w bus cst" data-n="32" d="M133,515L147,515L147,453L259,453"/>
+<path class="w bus" data-n="1" d="M133,435L154,435L154,501L259,501"/>
+<circle class="jn bus" data-n="1" cx="154" cy="501" r="3"/>
+<path class="w bus cst" data-n="33" d="M133,619L147,619L147,519L259,519"/>
+<path class="w bus" data-n="1" d="M133,435L154,435L154,605L259,605"/>
+<path class="w bus cst" data-n="34" d="M133,771L147,771L147,623L259,623"/>
+<path class="w" data-n="5" d="M597,283L611,283L611,380L664,380"/>
+<path class="w cst" data-n="35" d="M597,402L664,402"/>
+<path class="w rst" data-n="0" d="M133,732L625,732L625,656L680,656L680,417"/>
+<circle class="jn" data-n="0" cx="625" cy="732" r="2.4"/>
+<path class="w bus" data-n="9" d="M597,500L632,500L632,683L646,683"/>
+<path class="w bus cst" data-n="36" d="M597,583L618,583L618,705L646,705"/>
+<path class="w rst" data-n="0" d="M133,732L662,732L662,720"/>
+<path class="w" data-n="10" d="M585.8,666L611,666L611,759L676,759"/>
+<path class="w cst" data-n="37" d="M597,781L676,781"/>
+<path class="w rst" data-n="0" d="M133,732L154,732L154,889L692,889L692,796"/>
+<circle class="jn" data-n="0" cx="154" cy="732" r="2.4"/>
+</g>
+<g class="nodes">
+<g class="node k-in" transform="translate(58,722)"><path class="pin" d="M0,0H66L75,10L66,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">rsa_rst_i</text></g>
+<g class="node k-in" transform="translate(28,425)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">c_state_i[6:0]</text></g>
+<g class="node k-in" transform="translate(28,674)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_msg_i[31:0]</text></g>
+<g class="node k-in" transform="translate(28,570)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_exp_i[31:0]</text></g>
+<g class="node k-in" transform="translate(28,466)"><path class="pin" d="M0,0H96L105,10L96,20H0Z"/><text class="plbl" x="7" y="14" text-anchor="start">op_mod_i[31:0]</text></g>
+<g class="node k-out" transform="translate(816,760)"><path class="pout" d="M0,0H78L87,10L78,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">core_load_o</text></g>
+<g class="node k-out" transform="translate(816,684)"><path class="pout" d="M0,0H108L117,10L108,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">core_din_o[31:0]</text></g>
+<g class="node k-out" transform="translate(816,381)"><path class="pout" d="M0,0H90L99,10L90,20H0Z"/><text class="plbl" x="10" y="14" text-anchor="start">rsa_wp_busy_o</text></g>
+<g class="node k-pmux" transform="translate(485,193)" data-cell="$procmux$6277" data-type="$pmux" data-src="amba_3_apb_rsa_wrapper_data.sv:81"><path class="sym" d="M2,2L110,10V170L2,178Z"/><text class="pintxt b" x="57" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">WAIT_DONE</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">LOAD_MOD</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">GAP_EXP_MOD</text><path class="leg" d="M0,90H2"/><text class="pintxt" x="6" y="105" text-anchor="start">d3</text><path class="leg" d="M0,102H2"/><text class="pintxt sel" x="6" y="117" text-anchor="start">s3</text><text class="pintxt ann" x="21.5" y="117" text-anchor="start">LOAD_EXP</text><path class="leg" d="M0,114H2"/><text class="pintxt" x="6" y="129" text-anchor="start">d4</text><path class="leg" d="M0,126H2"/><text class="pintxt sel" x="6" y="141" text-anchor="start">s4</text><text class="pintxt ann" x="21.5" y="141" text-anchor="start">GAP_MSG_EXP</text><path class="leg" d="M0,138H2"/><text class="pintxt" x="6" y="153" text-anchor="start">d5</text><path class="leg" d="M0,150H2"/><text class="pintxt sel" x="6" y="165" text-anchor="start">s5</text><text class="pintxt ann" x="21.5" y="165" text-anchor="start">LOAD_MSG</text><path class="leg" d="M0,162H2"/><path class="leg" d="M110,90H112"/></g>
+<g class="node k-op2" transform="translate(259,89)" data-cell="$procmux$6278_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:81"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(259,226)" data-cell="$procmux$6280_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:67"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(259,363)" data-cell="$procmux$6282_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:53"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-pmux" transform="translate(501,446)" data-cell="$procmux$6289" data-type="$pmux" data-src="amba_3_apb_rsa_wrapper_data.sv:74"><path class="sym" d="M2,2L94,10V98L2,106Z"/><text class="pintxt b" x="49" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">LOAD_MOD</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">LOAD_EXP</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">LOAD_MSG</text><path class="leg" d="M0,90H2"/><path class="leg" d="M94,54H96"/></g>
+<g class="node k-pmux" transform="translate(489.8,612)" data-cell="$procmux$6298" data-type="$pmux" data-src="amba_3_apb_rsa_wrapper_data.sv:74"><path class="sym" d="M2,2L94,10V98L2,106Z"/><text class="pintxt b" x="49" y="13" text-anchor="middle">pmux</text><text class="pintxt" x="6" y="21" text-anchor="start">dflt</text><path class="leg" d="M0,18H2"/><text class="pintxt" x="6" y="33" text-anchor="start">d0</text><path class="leg" d="M0,30H2"/><text class="pintxt sel" x="6" y="45" text-anchor="start">s0</text><text class="pintxt ann" x="21.5" y="45" text-anchor="start">LOAD_MOD</text><path class="leg" d="M0,42H2"/><text class="pintxt" x="6" y="57" text-anchor="start">d1</text><path class="leg" d="M0,54H2"/><text class="pintxt sel" x="6" y="69" text-anchor="start">s1</text><text class="pintxt ann" x="21.5" y="69" text-anchor="start">LOAD_EXP</text><path class="leg" d="M0,66H2"/><text class="pintxt" x="6" y="81" text-anchor="start">d2</text><path class="leg" d="M0,78H2"/><text class="pintxt sel" x="6" y="93" text-anchor="start">s2</text><text class="pintxt ann" x="21.5" y="93" text-anchor="start">LOAD_MSG</text><path class="leg" d="M0,90H2"/><path class="leg" d="M94,54H96"/></g>
+<g class="node k-op2" transform="translate(259,424)" data-cell="$procmux$6299_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:74"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(259,490)" data-cell="$procmux$6300_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:60"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-op2" transform="translate(259,594)" data-cell="$procmux$6301_CMP0" data-type="$eq" data-src="amba_3_apb_rsa_wrapper_data.sv:46"><rect class="sym" x="2" y="1" width="36" height="38" rx="8"/><text class="optxt" x="20" y="24" text-anchor="middle">==</text><path class="leg" d="M0,11H2M0,29H2M38,20H40"/></g>
+<g class="node k-mux" transform="translate(664,365)" data-cell="$procmux$6306" data-type="$mux" data-src="amba_3_apb_rsa_wrapper_data.sv:32"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(646,668)" data-cell="$procmux$6309" data-type="$mux" data-src="amba_3_apb_rsa_wrapper_data.sv:32"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-mux" transform="translate(676,744)" data-cell="$procmux$6312" data-type="$mux" data-src="amba_3_apb_rsa_wrapper_data.sv:32"><path class="sym" d="M2,2L30,10V42L2,50Z"/><text class="pintxt" x="8" y="18.5" text-anchor="start">0</text><text class="pintxt" x="8" y="40.5" text-anchor="start">1</text><path class="leg" d="M0,15H2M0,37H2M16,46V52M30,26H32"/></g>
+<g class="node k-const" transform="translate(262,12)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(262,50)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,149)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,187)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,286)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,324)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,550)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(18,109)"><rect class="const" x="0" y="0" width="115" height="18" rx="3"/><text class="ctxt" x="57.5" y="12.5" text-anchor="middle">WAIT_DONE = 7'h20</text></g>
+<g class="node k-const" transform="translate(12,246)"><rect class="const" x="0" y="0" width="121" height="18" rx="3"/><text class="ctxt" x="60.5" y="12.5" text-anchor="middle">GAP_EXP_MOD = 7'h8</text></g>
+<g class="node k-const" transform="translate(12,383)"><rect class="const" x="0" y="0" width="121" height="18" rx="3"/><text class="ctxt" x="60.5" y="12.5" text-anchor="middle">GAP_MSG_EXP = 7'h2</text></g>
+<g class="node k-const" transform="translate(256,654)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h0</text></g>
+<g class="node k-const" transform="translate(262,745)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(262,783)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,821)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(262,859)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b1</text></g>
+<g class="node k-const" transform="translate(24,506)"><rect class="const" x="0" y="0" width="109" height="18" rx="3"/><text class="ctxt" x="54.5" y="12.5" text-anchor="middle">LOAD_MOD = 7'h10</text></g>
+<g class="node k-const" transform="translate(30,610)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">LOAD_EXP = 7'h4</text></g>
+<g class="node k-const" transform="translate(30,762)"><rect class="const" x="0" y="0" width="103" height="18" rx="3"/><text class="ctxt" x="51.5" y="12.5" text-anchor="middle">LOAD_MSG = 7'h1</text></g>
+<g class="node k-const" transform="translate(560,393)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+<g class="node k-const" transform="translate(554,574)"><rect class="const" x="0" y="0" width="43" height="18" rx="3"/><text class="ctxt" x="21.5" y="12.5" text-anchor="middle">32'h0</text></g>
+<g class="node k-const" transform="translate(560,772)"><rect class="const" x="0" y="0" width="37" height="18" rx="3"/><text class="ctxt" x="18.5" y="12.5" text-anchor="middle">1'b0</text></g>
+</g>
+<g class="labels">
+<text class="nlbl" data-n="1" x="170" y="97">c_state_i[6:0]</text>
+<text class="nlbl" data-n="1" x="170" y="234">c_state_i[6:0]</text>
+<text class="nlbl" data-n="1" x="170" y="371">c_state_i[6:0]</text>
+<text class="nlbl" data-n="4" x="412" y="486">op_mod_i[31:0]</text>
+<text class="nlbl" data-n="3" x="412" y="510">op_exp_i[31:0]</text>
+<text class="nlbl" data-n="2" x="412" y="534">op_msg_i[31:0]</text>
+<path class="wmark" d="M603,504L608,496"/><text class="wtxt" x="609" y="496">32</text>
+<text class="nlbl" data-n="1" x="170" y="432">c_state_i[6:0]</text>
+<text class="nlbl" data-n="1" x="170" y="498">c_state_i[6:0]</text>
+<text class="nlbl" data-n="1" x="170" y="602">c_state_i[6:0]</text>
+<text class="nlbl" data-n="14" x="700" y="401">rsa_wp_busy_o</text>
+<text class="nlbl" data-n="15" x="682" y="704">core_din_o[31:0]</text>
+<text class="nlbl" data-n="16" x="712" y="780">core_load_o</text>
+</g></svg>

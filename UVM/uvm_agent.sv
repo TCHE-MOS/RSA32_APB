@@ -81,8 +81,6 @@ function void agent::connect_phase(uvm_phase phase);
   
     driver_h.vif  = config_h.vif;
     driver_h.seq_item_port.connect(sequencer_h.seq_item_export);
-  
-    
 
 endfunction
 

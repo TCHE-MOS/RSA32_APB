@@ -1,0 +1,10 @@
+A simulacao nativa concluiu ($finish, resumo UVM completo, ERROR=0 e FATAL=0).
+As 32768 linhas XZ_ROW e os 32 registros XZ_RETENTION foram auditados.
+O wrapper Bash encerrou com status 2 no pos-processamento devido a uma
+edicao do proprio script durante a simulacao. A versao final passou bash -n.
+HTML e CSV foram recuperados diretamente com report_xezim_coverage.py,
+usando o banco xezim_cov.json e o simulate.log originais.
+O tempo real do wrapper nao foi recuperado; nenhum valor foi estimado.
+A revisao final altera apenas a impressao dos nomes no XZ_SUMMARY: o
+enum e copiado para uma variavel tipada antes de chamar name(). Este
+ajuste foi validado separadamente com os oito nomes e recompilacao UVM.

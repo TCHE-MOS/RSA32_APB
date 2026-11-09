@@ -1,0 +1,16 @@
+design_unit,instances,statement_covered,statement_total,statement_percent,branch_covered,branch_total,branch_percent,toggle_covered,toggle_total,toggle_percent
+amba_3_apb_adrec,1,2,2,100.0,0,0,,0,10,0.0
+amba_3_apb_control,1,12,29,41.37931034482759,2,26,7.6923076923076925,0,26,0.0
+amba_3_apb_data_io_top,1,2,2,100.0,0,2,0.0,0,146,0.0
+amba_3_apb_data_o_mux,1,2,10,20.0,1,9,11.11111111111111,0,64,0.0
+amba_3_apb_regbank,1,29,49,59.183673469387756,3,23,13.043478260869565,0,724,0.0
+amba_3_apb_reset,1,4,5,80.0,1,2,50.0,0,8,0.0
+amba_3_apb_rsa_apb_top,1,1,1,100.0,0,0,,0,628,0.0
+amba_3_apb_rsa_wrapper_control,1,8,26,30.76923076923077,4,27,14.814814814814815,0,44,0.0
+amba_3_apb_rsa_wrapper_data,1,7,28,25.0,3,10,30.0,0,68,0.0
+amba_3_apb_rsa_wrapper_top,1,5,5,100.0,0,0,,0,222,0.0
+kogge_stone_adder,4,10,10,100.0,0,0,,0,524,0.0
+rsa_core,1,0,0,,0,0,,0,460,0.0
+rsa_core_ctrl,1,11,59,18.64406779661017,4,51,7.8431372549019605,0,732,0.0
+rsa_core_mod,1,7,42,16.666666666666668,2,34,5.882352941176471,0,732,0.0
+rsa_core_mult,1,6,30,20.0,1,26,3.8461538461538463,0,682,0.0

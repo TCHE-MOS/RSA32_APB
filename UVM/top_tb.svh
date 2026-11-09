@@ -41,5 +41,12 @@ initial begin
 
 end
 
+final begin
+    $display("[TIMING] Tempo simulado global: %0.3f ns", $realtime);
+    env_pkg::scoreboard::print_assertion_table(
+        th.apb_rsa_if.sva_corners_cases_planned, th.apb_rsa_if.sva_corners_cases_completed,
+        th.apb_rsa_if.sva_corners_exp_active, th.apb_rsa_if.sva_corners_case_id);
+end
+
 
 endmodule
