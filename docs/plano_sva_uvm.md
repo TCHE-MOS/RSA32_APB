@@ -152,7 +152,7 @@ executado pelo driver conforme a rotina, sem um checker adicional.
 Para executar a bancada existente no Xezim, a partir da raiz:
 
 ```bash
-bash scripts/bash/xezim_uvm.sh --no-waves
+bash scripts/MG/bash/xezim_uvm.sh --no-waves
 ```
 
 Os includes e as instancias em `top_th.svh` ativam as assertions durante
@@ -166,13 +166,13 @@ falhas funcionais. Uma falha de assertion nao significa que as ondas foram
 interrompidas; confira o tempo final e o progresso no log.
 
 ```bash
-bash scripts/bash/xezim_uvm.sh
+bash scripts/MG/bash/xezim_uvm.sh
 
 # Abrir um FST com os pinos do topo e zoom de toda a simulacao:
-gtkwave caminho/execucao.fst -S scripts/tcl/xezim_uvm_wave_view.tcl
+gtkwave caminho/execucao.fst -S scripts/MG/tcl/xezim_uvm_wave_view.tcl
 
 # Gravar tambem uma alternativa VCD; requer fst2vcd:
-bash scripts/bash/xezim_uvm.sh --vcd
+bash scripts/MG/bash/xezim_uvm.sh --vcd
 ```
 
 O script Tcl configura apenas a selecao de sinais e o zoom do GTKWave.
@@ -325,7 +325,7 @@ comandos de validacao estao em [integracao_uvm_test_id.md](integracao_uvm_test_i
 Exemplo de verificacao reduzida do controle e das primeiras SVAs:
 
 ```bash
-bash scripts/bash/xezim_uvm.sh --no-waves -- \
+bash scripts/MG/bash/xezim_uvm.sh --no-waves -- \
   +CORNERS_MAX_READS=100
 ```
 
@@ -453,13 +453,13 @@ duracao real. A execucao real depende do desempenho do simulador.
 Uma execucao extensa completa e solicitada pelo comando normal:
 
 ```bash
-bash scripts/bash/xezim_uvm.sh --no-waves
+bash scripts/MG/bash/xezim_uvm.sh --no-waves
 ```
 
 Para validar o encadeamento com somente um caso corners:
 
 ```bash
-bash scripts/bash/xezim_uvm.sh --no-waves -- +CORNERS_CASES=1
+bash scripts/MG/bash/xezim_uvm.sh --no-waves -- +CORNERS_CASES=1
 ```
 
 O topo passa o progresso da campanha ao resumo final: planejados,

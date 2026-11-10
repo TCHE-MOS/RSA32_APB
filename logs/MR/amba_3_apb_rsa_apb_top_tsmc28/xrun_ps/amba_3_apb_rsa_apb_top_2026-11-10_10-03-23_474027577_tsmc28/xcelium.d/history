@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(10Nov2026:10:03:23):( xrun -64bit -sv -timescale 1ns/1ps +define+POST_SYNTHESIS+NTC+RECREM -top testbench -defparam testbench.CLOCK_PERIOD_NS=10.0 -access +rwc -input /home/aluno/Documents/RSA32_APB/scripts/MR/bash/../tcl/xrun_ps_tsmc28.tcl -sdf_cmd_file /home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_10-03-23_474027577_tsmc28/sdf_annotation_tsmc28.cmd -sdf_verbose -sdfstats /home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_10-03-23_474027577_tsmc28/sdf_unannotated_tsmc28.rpt -l /home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_10-03-23_474027577_tsmc28/amba_3_apb_rsa_apb_top_2026-11-10_10-03-23_474027577_tsmc28.log -v /tsmc28/tcbn28hpcplusbwp30p140.v /home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28.v /home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/testbench.sv )&&(./xcelium.d/env.d/env.history.10Nov2026_10_03_23)

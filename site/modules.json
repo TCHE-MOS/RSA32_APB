@@ -4,8 +4,8 @@
     "name": "amba_3_apb_rsa_apb_top",
     "label": "Topo APB + RSA",
     "group": "Integração",
-    "readme": "src/amba_3_apb/README_amba_3_apb_rsa_apb_top.md",
-    "source": "src/amba_3_apb/amba_3_apb_rsa_apb_top.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_rsa_apb_top.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv",
     "highlights": [
       "Barramento APB de 32 bits, com endereçamento de 12 bits e oito registradores.",
       "Clock comum à interface e ao núcleo, com reset interno de liberação sincronizada."
@@ -17,8 +17,8 @@
     "name": "amba_3_apb_control",
     "label": "Controle APB",
     "group": "Barramento",
-    "readme": "src/amba_3_apb/README_amba_3_apb_control.md",
-    "source": "src/amba_3_apb/amba_3_apb_control.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_control.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_control.sv",
     "highlights": [
       "PREADY constante em nível alto, sem ciclos de espera nos acessos APB.",
       "Interrupção por nível, condicionada às flags DONE e ERROR e às respectivas máscaras em IER."
@@ -30,8 +30,8 @@
     "name": "amba_3_apb_data_io_top",
     "label": "Endereço e leitura",
     "group": "Barramento",
-    "readme": "src/amba_3_apb/README_amba_3_apb_data_io_top.md",
-    "source": "src/amba_3_apb/amba_3_apb_data_io_top.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_data_io_top.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_data_io_top.sv",
     "highlights": [
       "Índice de registrador compartilhado pelo multiplexador de leitura e pelo controle APB.",
       "Decodificação de endereço e multiplexação organizadas em módulos independentes."
@@ -43,8 +43,8 @@
     "name": "amba_3_apb_adrec",
     "label": "Redução do endereço",
     "group": "Barramento",
-    "readme": "src/amba_3_apb/README_amba_3_apb_adrec.md",
-    "source": "src/amba_3_apb/amba_3_apb_adrec.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_adrec.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_adrec.sv",
     "highlights": [
       "Seleção de registrador definida por PADDR[5:2].",
       "Faixa válida de 0x000 a 0x01F, verificada pelos bits superiores do endereço."
@@ -56,8 +56,8 @@
     "name": "amba_3_apb_data_o_mux",
     "label": "Multiplexador de leitura",
     "group": "Barramento",
-    "readme": "src/amba_3_apb/README_amba_3_apb_data_o_mux.md",
-    "source": "src/amba_3_apb/amba_3_apb_data_o_mux.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_data_o_mux.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv",
     "highlights": [
       "Leitura dos operandos, do resultado, do status, das máscaras de interrupção e da identificação.",
       "Ausência de registradores no caminho entre as entradas do multiplexador e sua saída."
@@ -69,8 +69,8 @@
     "name": "amba_3_apb_regbank",
     "label": "Banco de registradores",
     "group": "Armazenamento",
-    "readme": "src/amba_3_apb/README_amba_3_apb_regbank.md",
-    "source": "src/amba_3_apb/amba_3_apb_regbank.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_regbank.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_regbank.sv",
     "highlights": [
       "DONE e ERROR com limpeza por escrita de 1 (W1C), START ou SRST.",
       "SRST tem prioridade sobre START e preserva operandos, máscaras de interrupção e resultado."
@@ -82,8 +82,8 @@
     "name": "amba_3_apb_reset",
     "label": "Reset e sincronização",
     "group": "Controle",
-    "readme": "src/amba_3_apb/README_amba_3_apb_reset.md",
-    "source": "src/amba_3_apb/amba_3_apb_reset.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_reset.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_reset.sv",
     "highlights": [
       "Latência de liberação configurável por LATENCY, com dois estágios na configuração padrão.",
       "Reset interno ativo alto, mantido enquanto a sincronização não estiver concluída ou SRST estiver ativo."
@@ -95,8 +95,8 @@
     "name": "amba_3_apb_rsa_wrapper_top",
     "label": "Wrapper RSA",
     "group": "RSA",
-    "readme": "src/amba_3_apb/README_amba_3_apb_rsa_wrapper_top.md",
-    "source": "src/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_rsa_wrapper_top.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv",
     "highlights": [
       "Carregamento na ordem MSG, EXP e MOD, com intervalos definidos por LOAD_GAP.",
       "Resultado, conclusão e erro encaminhados diretamente do núcleo ao banco de registradores."
@@ -108,8 +108,8 @@
     "name": "amba_3_apb_rsa_wrapper_control",
     "label": "FSM do wrapper",
     "group": "RSA",
-    "readme": "src/amba_3_apb/README_amba_3_apb_rsa_wrapper_control.md",
-    "source": "src/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_rsa_wrapper_control.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv",
     "highlights": [
       "Sete estados com codificação One-Hot, incluindo dois estados de intervalo.",
       "Retorno a IDLE por reset e recuperação para IDLE em codificações de estado não previstas."
@@ -121,8 +121,8 @@
     "name": "amba_3_apb_rsa_wrapper_data",
     "label": "Dados do wrapper",
     "group": "RSA",
-    "readme": "src/amba_3_apb/README_amba_3_apb_rsa_wrapper_data.md",
-    "source": "src/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv",
+    "readme": "src/MG/amba_3_apb/README_amba_3_apb_rsa_wrapper_data.md",
+    "source": "src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv",
     "highlights": [
       "Barramento compartilhado de entrada com seleção entre MSG, EXP e MOD.",
       "Reset interno força a zero os dados, a habilitação de carga e a indicação BUSY."
@@ -134,8 +134,8 @@
     "name": "rsa_core",
     "label": "Núcleo RSA de 32 bits",
     "group": "RSA",
-    "readme": "src/rsa32/README_rsa_core.md",
-    "source": "src/rsa32/rsa_core_32.sv",
+    "readme": "src/MG/rsa32/README_rsa_core.md",
+    "source": "src/MG/rsa32/rsa_core_32.sv",
     "highlights": [
       "Multiplicação por deslocamentos e somas, com produto intermediário de 64 bits.",
       "Redução modular por comparação, subtração e deslocamento, com detecção de módulo nulo."

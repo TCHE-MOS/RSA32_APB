@@ -1,0 +1,14 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-timescale
+1ns/1ps
+
+testbench
+-DEFPARAM
+testbench.CLOCK_PERIOD_NS=10.0
+-ACCESS
++rwc
+-SDF_CMD_FILE
+/home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_10-03-23_474027577_tsmc28/sdf_annotation_tsmc28.cmd

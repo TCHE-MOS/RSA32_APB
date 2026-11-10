@@ -30,7 +30,7 @@ salvas no diagrams.net aparecem sem exportar imagens ou reconstruir o site.
 
 ```text
 .
-├── constraints/                 # Restrições do top
+├── constraints/                 # Restrições (SDC), divididas em MG/ e MR/
 ├── docs/                        # Especificações e material de referência
 ├── images/                      # Diagramas e imagens do projeto
 ├── legacy/                      # Fluxos individuais e artefatos dos sub-blocos
@@ -43,8 +43,18 @@ salvas no diagrams.net aparecem sem exportar imagens ou reconstruir o site.
 ├── ps_files/rsa_apb_top*/        # Resultados do top por tecnologia
 ├── reports/amba_3_apb_rsa_apb_top*/
 ├── scripts/
-│   ├── bash/                   # Entradas Bash de simulação e ferramentas EDA
-│   ├── tcl/                    # Fluxos Tcl e configurações dos PDKs
+│   ├── MG/                     # Fluxos da implementação MG
+│   │   ├── bash/               # Entradas Bash de simulação e ferramentas EDA
+│   │   └── tcl/                # Fluxos Tcl e configurações dos PDKs
+│   ├── MR/                     # Mesmos fluxos, com RTL/SDC do MR e saídas em */MR/
+│   │   ├── bash/
+│   │   └── tcl/
+│   ├── RSA4/                   # LEC RTL x RTL do RSA de 4 bits (RTL em RSA4/src)
+│   │   ├── bash/
+│   │   └── tcl/
+│   ├── RSA32/                  # Simulação Xcelium do rsa_core 32 bits (RTL/TB em RSA32_opt)
+│   │   ├── bash/
+│   │   └── tcl/
 │   ├── pages/                  # Geração da documentação
 │   ├── validation/             # Relatórios de cobertura
 │   └── clean.sh                # Limpeza de artefatos do top
@@ -114,8 +124,8 @@ Genus e Innovus aceitam `-p sky130|gpdk45|free45|ics55`; o padrão é
 `gpdk45`.
 
 ```bash
-./scripts/bash/genus_no_gui.sh -p sky130
-./scripts/bash/innovus_no_gui.sh -p sky130
+./scripts/MG/bash/genus_no_gui.sh -p sky130
+./scripts/MG/bash/innovus_no_gui.sh -p sky130
 ```
 
 Os resultados ficam separados por execução e PDK, com sufixos nos arquivos
@@ -153,8 +163,8 @@ Para executar `testbenchs/rsa_apb_top/testbench.sv` com RSA v2 e sua
 scoreboard procedural:
 
 ```bash
-bash scripts/bash/xezim.sh
-bash scripts/bash/xezim.sh +MOD_ZERO
+bash scripts/MG/bash/xezim.sh
+bash scripts/MG/bash/xezim.sh +MOD_ZERO
 ```
 
 A segunda chamada acrescenta o caso dirigido de módulo zero. Os resultados
@@ -167,9 +177,9 @@ Logs e ondas ficam em `logs/amba_3_apb_rsa_apb_top/xezim/` e
 Com `iverilog` e `vvp` no `PATH`, execute:
 
 ```bash
-./scripts/bash/iverilog.sh
+./scripts/MG/bash/iverilog.sh
 # Opcional: escolher o valor genérico de 32 bits.
-./scripts/bash/iverilog.sh +DATA=DEADBEEF
+./scripts/MG/bash/iverilog.sh +DATA=DEADBEEF
 ```
 
 O cenário aprovado termina com `TEST PASS: 238 checks, 0 errors`. Logs ficam em
@@ -183,8 +193,8 @@ sequência, as tasks, o mapa de registradores e os critérios de aprovação.
 Com Verilator, `verilator_coverage`, Make e G++ com suporte a C++20 no `PATH`:
 
 ```bash
-./scripts/bash/verilator.sh
-./scripts/bash/verilator.sh +DATA=DEADBEEF
+./scripts/MG/bash/verilator.sh
+./scripts/MG/bash/verilator.sh +DATA=DEADBEEF
 ```
 
 O script executa a mesma bancada e gera o resumo em
@@ -201,8 +211,8 @@ Com Xcelium no `PATH`, execute a simulação integrada em batch ou abra
 SimVision:
 
 ```bash
-./scripts/bash/xrun.sh
-./scripts/bash/xrun_wgui.sh
+./scripts/MG/bash/xrun.sh
+./scripts/MG/bash/xrun_wgui.sh
 ```
 
 Os scripts executam a bancada integrada com Xcelium; o fluxo gráfico também
@@ -276,7 +286,7 @@ locais existentes, execute `python3 scripts/pages/build.py`; a saída fica em
 `_site/`. O workflow `.github/workflows/pages.yml` recria as simulações e
 publica a página quando GitHub Pages está configurado para GitHub Actions.
 
-- O SDC do top está em `constraints/amba_3_apb_rsa_apb_top.sdc`.
+- O SDC do top está em `constraints/MG/amba_3_apb_rsa_apb_top.sdc`.
 - Os resultados de síntese são separados em
   `ps_files/rsa_apb_top*/`, conforme a tecnologia e a execução.
 - Os relatórios de síntese ficam em `reports/amba_3_apb_rsa_apb_top_<flag>/`;

@@ -12,9 +12,22 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{pmboxdraw}   % caracteres de árvore (├ │ └ ─) em verbatim
 
 \newcommand{\tmLogoPath}{..}   % logos ficam em docs/
 \usetheme{TcheMOS}
+
+% Borda padrão das imagens
+\newcommand{\tmBorda}[1]{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.6pt}\fcolorbox{tmCafe}{white}{#1}}}
+
+% Fonte compacta para árvores de diretório (verbatim)
+\newcommand{\tmTree}{\fontsize{5.2}{6.1}\selectfont}
+
+% Selo de estado da lista de testes
+\newcommand{\tmFeito}{\tikz[baseline=-0.6ex]\node[fill=tmOliva,text=white,rounded corners=2pt,
+  inner sep=2pt,font=\tiny\bfseries]{FEITO};}
+% Sequência de reset inicial comum aos testes 1.0–4.0
+\newcommand{\tmRstIni}{\leavevmode\textcolor{tmCafe}{1–2)~Reset inicial$^{\dagger}$}}
 
 % Repositório: evidências na branch FEAT-UVM
 \newcommand{\tmRepo}{https://github.com/TCHE-MOS/RSA32_APB/tree/FEAT-UVM/docs/entregaveis}
@@ -26,6 +39,24 @@
 \institute{TchêMOS — Semiconductor Design House}
 \date{Novembro de 2026}
 
+% ---------------------------------------------------------------------
+% Índice automático
+%  - desativa o slide divisor que o tema insere a cada \section
+%  - grava no .aux o nº do primeiro slide de cada seção
+%  - item do índice: "N. Título ........ slide"
+% ---------------------------------------------------------------------
+\makeatletter
+\newcommand{\tmSecFrame}[2]{\expandafter\gdef\csname tm@secframe@#1\endcsname{#2}}
+\AtBeginSection[]{\immediate\write\@auxout{\string\tmSecFrame{\thesection}{\the\numexpr\value{framenumber}+1\relax}}}
+\newcommand{\tm@tocframe}[1]{\ifcsname tm@secframe@#1\endcsname\csname tm@secframe@#1\endcsname\else ?\fi}
+\setbeamertemplate{section in toc}{%
+  \vskip0.12em\leavevmode\hbox to 1.7em{\color{tmVermelho}\bfseries\inserttocsectionnumber.\hfil}%
+  {\color{tmCafe}\inserttocsection}%
+  \leaders\hbox to 0.55em{\hss{\color{tmDourado}.}\hss}\hfill
+  \hbox to 1.4em{\hfil\color{tmCafe}\bfseries\tm@tocframe{\inserttocsectionnumber}}\par}
+\setbeamertemplate{subsection in toc}{}
+\makeatother
+
 \begin{document}
 
 % ---------------------------------------------------------------------
@@ -33,9 +64,22 @@
   \titlepage
 \end{frame}
 
+% ---------------------------------------------------------------------
+% Sumário (gerado a partir das \section)
+% ---------------------------------------------------------------------
+\begin{frame}{Sumário}
+  \vspace*{-0.1cm}
+  \centering
+  \begin{minipage}{0.78\textwidth}
+    \small
+    \tableofcontents
+  \end{minipage}
+\end{frame}
+
 % =====================================================================
 % Entregáveis
 % =====================================================================
+\section{Entregáveis e arquitetura}
 \begin{frame}{Entregáveis do projeto}{Critérios de aceitação}
   \scriptsize
   \renewcommand{\arraystretch}{1.18}
@@ -64,7 +108,167 @@
 \begin{frame}{Rascunho da arquitetura}{Concepção inicial do periférico RSA\_APB}
   \vspace*{-0.45cm}
   \centering
-  \includegraphics[width=\textwidth,height=6.7cm,keepaspectratio]{figuras/rascunho_da_arquitetura.png}
+  {\setlength{\fboxsep}{3pt}\setlength{\fboxrule}{1.2pt}%
+   \fcolorbox{tmCafe}{white}{\includegraphics[width=0.96\textwidth,height=6.4cm,keepaspectratio]{figuras/rascunho_da_arquitetura.png}}}
+\end{frame}
+
+% =====================================================================
+% Comparativo arquitetural MG x MR (fonte: docs/diff.md)
+% =====================================================================
+\begin{frame}[fragile]{Comparativo arquitetural MG × MR}{1.~Visão geral dos blocos}
+  \vspace*{-0.35cm}
+  \begin{columns}[T]
+    \begin{column}{0.40\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}MG} · um módulo por função · 15 módulos}\\[0.05cm]
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.9}{5.7}\selectfont
+\begin{verbatim}
+amba_3_apb_rsa_apb_top
+├── amba_3_apb_data_io_top
+│   ├── amba_3_apb_adrec
+│   └── amba_3_apb_data_o_mux
+├── amba_3_apb_control
+├── amba_3_apb_regbank
+├── amba_3_apb_reset
+└── amba_3_apb_rsa_wrapper_top
+    ├── ..._rsa_wrapper_control
+    ├── ..._rsa_wrapper_data
+    └── rsa_core (v2)
+        ├── rsa_core_ctrl + KSA 32b
+        ├── rsa_core_mult + KSA 64b
+        └── rsa_core_mod  + KSA 64b, 33b
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      \vspace{0.1cm}
+      {\scriptsize\textbf{\color{tmCafe}MR} · escravo APB monolítico · 8 módulos}\\[0.05cm]
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.9}{5.7}\selectfont
+\begin{verbatim}
+amba_3_apb_rsa_apb_top  (+ srst_cnt, mux)
+├── rsa_apb_rst_sync
+├── rsa_apb_regs
+├── rsa_apb_seq
+└── rsa_core  (ctrl, mult, mod)
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+    \end{column}
+    \begin{column}{0.58\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}Correspondência entre os blocos}}\\[0.05cm]
+      \tiny
+      \renewcommand{\arraystretch}{1.05}
+      \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{1.75cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+        \toprule
+        \textbf{Função} & \textbf{MG} & \textbf{MR} \\
+        \midrule
+        Decodificação de endereço & \texttt{adrec} & \texttt{rsa\_apb\_regs} (\texttt{word == W\_x}) \\
+        Mux de PRDATA & \texttt{data\_o\_mux} + gate em \texttt{data\_io\_top} & \texttt{always\_comb} em \texttt{rsa\_apb\_regs} \\
+        Fase APB, PSLVERR, write enables & \texttt{control} & \texttt{wr\_acc}, \texttt{wr\_ok}, \texttt{pslverr} em \texttt{rsa\_apb\_regs} \\
+        IRQ & \texttt{control} & \texttt{rsa\_apb\_regs} \\
+        Registradores e STATUS & \texttt{regbank} & \texttt{rsa\_apb\_regs} (um \texttt{always\_ff}) \\
+        Comandos START/SRST & \texttt{regbank} (combinacional) & \texttt{start\_req}, \texttt{srst\_req} \\
+        Reset do núcleo & \texttt{reset} & \texttt{rst\_sync} + \texttt{srst\_cnt} no top \\
+        Sequenciador de cargas & \texttt{wrapper\_control} (estado) + \texttt{wrapper\_data} (saídas) & \texttt{rsa\_apb\_seq} \\
+        Seleção do operando & \texttt{core\_din\_o} em \texttt{wrapper\_data} & \texttt{operand\_sel} + mux no top \\
+        Somadores do núcleo & Kogge-Stone explícito (4 inst.) & \texttt{+}/\texttt{-} (escolha do Genus) \\
+        \bottomrule
+      \end{tabularx}\\[0.1cm]
+      {\tiny Mesmas portas no top e mesmo núcleo algorítmico (FSMs \texttt{ctrl}/\texttt{mult}/\texttt{mod}); a diferença está no particionamento da interface APB e do sequenciador. KSA = \texttt{kogge\_stone\_adder}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Comparativo arquitetural MG × MR}{2.~Fase APB}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}MG} · \texttt{amba\_3\_apb\_control.sv}}\\[0.05cm]
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\tmTree
+\begin{verbatim}
+// APB Phase Encoding:
+localparam logic [3:0] IDLE   = 4'b1000,
+                       SETUP  = 4'b1001,
+                       ACCESS = 4'b1011;
+...
+// APB Phase Decoder:
+always_comb
+    begin : control_branch
+        if (psel_i && !penable_i)
+            apb_phase = SETUP;
+        else if (psel_i && penable_i)
+            apb_phase = ACCESS;
+        else
+            apb_phase = IDLE;
+    end
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      \vspace{0.1cm}
+      \footnotesize
+      Decodificador de fase explícito (\texttt{IDLE}/\texttt{SETUP}/\texttt{ACCESS}). É \textbf{combinacional}, não uma FSM registrada: a fase é recalculada a cada ciclo a partir de \texttt{psel} e \texttt{penable}.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}MR} · \texttt{rsa\_apb\_top.sv} (\texttt{rsa\_apb\_regs})}\\[0.05cm]
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\tmTree
+\begin{verbatim}
+// The transfer completes in the access phase
+// (PREADY is always high)
+wire wr_acc = psel && penable && pwrite;
+...
+wire wr_ok = wr_acc && !ro_write && !busy_write;
+
+assign pready = 1'b1;
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      \vspace{0.1cm}
+      \footnotesize
+      Não nomeia fases: qualifica a escrita direto por \texttt{psel \&\& penable \&\& pwrite}.
+      \vspace{0.2cm}
+      \begin{block}{Em comum}
+        \scriptsize \texttt{PREADY = 1} fixo nas duas (sem \emph{wait states}); por isso \texttt{APB\_WAIT\_HOLD} não é exercitada na UVM.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Comparativo arquitetural MG × MR}{3.~Política de PSLVERR}
+  \vspace*{-0.2cm}
+  \begin{center}
+    \footnotesize
+    \begin{tabular}{@{}lll@{}}
+      \toprule
+      \textbf{Condição} & \textbf{MG} & \textbf{MR} \\
+      \midrule
+      Endereço reservado (leitura ou escrita) & \alert{\textbf{1}} & 0 \\
+      Escrita em RESULT/ID & 1 & 1 \\
+      Escrita em MSG/EXP/MOD com BUSY & 1 & 1 \\
+      Escrita de START com BUSY & \alert{\textbf{0}}, START ignorado$^{*}$ & 1, sem efeito \\
+      Escrita de SRST com BUSY & 0, SRST executado (log UVM) & 0, SRST executado \\
+      \bottomrule
+    \end{tabular}\\[0.05cm]
+    {\tiny $^{*}$\,Pela leitura do RTL; nenhuma bancada exercita START com BUSY.}
+  \end{center}
+  \vspace{0.05cm}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Endereço reservado}
+        \scriptsize No MG, \texttt{addr\_valid = \textasciitilde|paddr[11:5]} (\texttt{adrec}) alimenta o PSLVERR em qualquer acesso a 0x020–0xFFF. O MR não tem sinal de validade: endereço que não casa com nenhum registrador é ignorado, como na lista da seção 6.7 da especificação.
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{alertblock}{CTRL com BUSY no MG}
+        \scriptsize O ramo de \texttt{control} testa \texttt{ctrl\_pwdata == 2'b10 \&\& busy}, ou seja, \textbf{SRST}, embora o comentário diga START. Ele nunca dispara: o SRST força \texttt{rsa\_rst}, que zera BUSY no mesmo ciclo. START com BUSY é só descartado no \texttt{regbank}, sem PSLVERR.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % =====================================================================
@@ -74,44 +278,114 @@
 \begin{frame}{Diagrama de blocos do topo}{\texttt{amba\_3\_apb\_rsa\_apb\_top} — esquemático RTL elaborado}
   \vspace{0.1cm}
   \centering
-  \includegraphics[width=\textwidth]{figuras/diagrama_topo.pdf}
+  \tmBorda{\includegraphics[width=\textwidth]{figuras/diagrama_topo.pdf}}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E01
 % ---------------------------------------------------------------------
-\begin{frame}{E01~— Coprocessador RSA de 32 bits e testbench}
-  \begin{block}{Entregável}
-    Coprocessador RSA de 32 bits e respectivo testbench em SystemVerilog
-  \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Código-fonte disponível e funcional
-  \end{exampleblock}
-  \vspace{0.1cm}
-  {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-  {\small\color{tmVermelho}\textbf{Pergunta da revisão:}} {\small\itshape O módulo \texttt{rsa\_core32b} possui um testbench funcional?}
-  % TODO: evidências e status
+% Fonte da figura: schematic_generator/esquematico/saida/esquematicos_apb_rsa.pdf (pág. 13)
+\section{E01 — Coprocessador RSA de 32 bits e testbench}
+\begin{frame}{E01~— Coprocessador RSA de 32 bits e testbench}{\texttt{rsa\_core} — esquemático RTL elaborado do topo}
+  \vspace*{-0.2cm}
+  \centering
+  {\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.6pt}%
+   \fcolorbox{tmCafe}{white}{\includegraphics[width=\textwidth,height=6.3cm,keepaspectratio]{figuras/diagrama_rsa_core.pdf}}}
+\end{frame}
+
+% Recorte de: RSA32_opt/src/v2/rsa32_core_top.sv e rsa32_core_ctrl.sv
+%   (idênticos a src/MG/rsa32/v2)
+\begin{frame}[fragile]{E01~— Coprocessador RSA de 32 bits e testbench}{Recorte do RTL · núcleo v2 (RSA32\_opt) · SystemVerilog}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}Topo \texttt{rsa\_core}} · \texttt{rsa32\_core\_top.sv}}\\[0.05cm]
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+module rsa_core #(
+    parameter   DATA_WIDTH = 32,
+                D_WID      = (DATA_WIDTH-1),
+                RESET = 1'b1,
+                LOAD = 1'b1
+)
+(
+    input   logic core_clk,
+    input   logic core_rst,
+    input   logic core_load,
+    input   logic [D_WID:0] core_din,
+    output  logic core_done,
+    output  logic core_err,
+    output  logic [D_WID:0] core_dout
+);
+    ...
+    rsa_core_mult #( ... ) rsa_core_mult_blk (
+        .mult_start (ctrl_start_sig),
+        .mult_a     (ctrl_m_sig),
+        .mult_b     (ctrl_doutx_sig),
+        .mult_done  (mult_done_sig),
+        .mult_c     (mult_c_sig), ... );
+    rsa_core_mod #( ... ) rsa_core_mod_blk (
+        .mod_start  (mult_done_sig),
+        .mod_a      (mult_c_sig), ... );
+
+    rsa_core_ctrl #( ... ) rsa_core_ctrl_blk ( ... );
+endmodule
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}Controle \texttt{rsa\_core\_ctrl}} · \texttt{rsa32\_core\_ctrl.sv}}\\[0.05cm]
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+// CASE2 subtracts two; CASE1 and START subtract one.
+assign e_decrement_amount = (state_reg == CASE2) ? DATA_WIDTH'(2) : DATA_WIDTH'(1);
+kogge_stone_adder #(
+    .DATA_WIDTH(DATA_WIDTH)
+) u_exponent_kogge_stone (
+    .a_i    (e_reg),
+    .b_i    (~e_decrement_amount),
+    .cin_i  (1'b1),
+    .sum_o  (e_decrement_result),
+    .cout_o ()
+);
+...
+        WAIT_N:
+          begin
+              if (ctrl_load == LOAD)
+                  state_ns = WAIT_N;
+              else if (n_reg == '0)
+                  state_ns = ERROR;
+              else if (e_reg == '0)
+                  state_ns = CASE0;
+              else if (e_reg == EXP_ONE)
+                  state_ns = CASE1;
+              else
+                  state_ns = CASE2;
+          end
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      {\tiny \texttt{WAIT\_N} escolhe o caso (erro, $E=0$, $E=1$, $E\geq2$); o expoente é decrementado por um Kogge-Stone de 32 bits. ``\dots'' = omitido.}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E02
 % ---------------------------------------------------------------------
+\section{E02 — Equivalência lógica RSA 4 bits}
 \begin{frame}{E02~— Equivalência lógica RSA 4 bits}{Cadence Conformal LEC · golden Verilog $\times$ revised SystemVerilog}
-  \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Entregável}
-        \small Relatório de equivalência lógica entre as implementações RSA de 4 bits em Verilog e SystemVerilog
-      \end{block}
-      \begin{exampleblock}{Requisito de aceitação \hfill \tmOK}
-        \small Equivalência lógica comprovada
-      \end{exampleblock}
-      {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-      {\scriptsize\color{tmVermelho}\textbf{Pergunta da revisão:}} {\scriptsize\itshape O RSA de 4 bits do cliente (Verilog) é logicamente equivalente à versão em SystemVerilog? Apresente as evidências.}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \tmVeredito{tmOliva}{EQUIVALÊNCIA COMPROVADA — PASS}{94 de 94 pontos equivalentes · 0 não equivalentes · 0 abortados}
-      \vspace{0.15cm}
-      \scriptsize
+  \tmVeredito{tmOliva}{LEC — PASS}{94 de 94 pontos equivalentes · 0 não equivalentes · 0 abortados}
+  \vspace{0.3cm}
+  \begin{center}
+      \footnotesize
       \begin{tabular}{@{}ll@{}}
         \toprule
         Golden   & \texttt{src/vlog/rsa\_core.v} (\texttt{-verilog2k}) \\
@@ -123,12 +397,11 @@
         Saída    & \texttt{Compare Results: PASS} (código 0) \\
         \bottomrule
       \end{tabular}
-    \end{column}
-  \end{columns}
+  \end{center}
   \tmRepoLink{\tmRepo/E02}{Evidências E02 no GitHub}
 \end{frame}
 
-\begin{frame}{E02~— Equivalência lógica RSA 4 bits}{Mapeamento, comparação e ressalvas}
+\begin{frame}{E02~— Equivalência lógica RSA 4 bits}{Mapeamento e comparação}
   \begin{columns}[T]
     \begin{column}{0.48\textwidth}
       \scriptsize
@@ -160,9 +433,6 @@
         \item \texttt{report\_verification}: 0 opções não padrão, 0 verificação incompleta, 0 modificação manual, 0 ambiguidade.
         \item Avisos de lint idênticos nos dois lados (largura de operandos, \texttt{case} sem \texttt{default}).
       \end{itemize}
-      \begin{alertblock}{Escopo}
-        \footnotesize LEC prova que as duas descrições são equivalentes entre si; não prova conformidade do RSA com a especificação nem ausência de bugs presentes em ambas.
-      \end{alertblock}
     \end{column}
   \end{columns}
   \tmRepoLink{\tmRepo/E02}{Evidências E02 no GitHub}
@@ -171,167 +441,525 @@
 % ---------------------------------------------------------------------
 % E03
 % ---------------------------------------------------------------------
-\begin{frame}{E03~— Simulação funcional do \texttt{rsa\_core32b}}
-  \begin{block}{Entregável}
-    Relatório de simulação funcional do \texttt{rsa\_core32b}
-  \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Testes executados com sucesso
-  \end{exampleblock}
-  \vspace{0.1cm}
-  {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-  {\small\color{tmVermelho}\textbf{Pergunta da revisão:}} {\small\itshape Execute a simulação do \texttt{rsa\_core32b} e mostre os resultados.}
-  % TODO: evidências e status
+% Recorte de: RSA32_opt/logs/rsa_core_32_opt/xrun/rsa_core_32_opt_2026-11-05_09-26-11.log
+%   (pasta RSA32_opt/ na raiz do repositório)
+% Testbench:  RSA32_opt/testbenches/testbench.sv · RTL: RSA32_opt/src/v2
+\section{E03 — Simulação funcional do \texorpdfstring{\texttt{rsa\_core32b}}{rsa\_core32b}}
+% Recorte de: RSA32_opt/logs/rsa_core_32_opt/xrun/rsa_core_32_opt_2026-11-05_09-24-24.log
+%   (execução em lote com cobertura; a execução 09-26-11, com GUI, está no slide seguinte)
+\begin{frame}[fragile]{E03~— Simulação funcional do \texttt{rsa\_core32b}}{Compilação e execução do testbench · RSA32\_opt · Xcelium 24.03}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.37\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}Compilação do RTL v2 e do testbench}}\\[0.05cm]
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+TOOL:  xrun(64)  24.03-s013:
+       Started on Nov 05, 2026 at 09:24:24 -03
+xrun
+    -top testbench
+    -coverage all
+    ...
+file: .../src/v2/rsa32_core_kogge_stone_adder.sv
+    module worklib.kogge_stone_adder:sv
+        errors: 0, warnings: 0
+file: .../src/v2/rsa32_core_mult.sv
+    module worklib.rsa_core_mult:sv
+        errors: 0, warnings: 0
+file: .../src/v2/rsa32_core_mod.sv
+    module worklib.rsa_core_mod:sv
+        errors: 0, warnings: 0
+file: .../src/v2/rsa32_core_ctrl.sv
+    module worklib.rsa_core_ctrl:sv
+        errors: 0, warnings: 0
+file: .../src/v2/rsa32_core_top.sv
+    module worklib.rsa_core:sv
+        errors: 0, warnings: 0
+file: .../testbenches/testbench.sv
+    module worklib.testbench:sv
+        errors: 0, warnings: 0
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+    \end{column}
+    \begin{column}{0.61\textwidth}
+      {\scriptsize\textbf{\color{tmCafe}Execução}}\\[0.05cm]
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+xcelium> run
+------------------------------------------------------------
+RSA Core - 32-bit SystemVerilog Testbench
+------------------------------------------------------------
+       Message   Exponent    Modulus    Result       Expected
+------------------------------------------------------------
+Test  1: M=00000000 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  2: M=00000000 E=00000000 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test  3: M=00000000 E=00000000 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+...
+Test 53: M=80000000 E=00000002 N=ffffffff -> C=40000000 ERR=0  Expected=40000000 ERR=0 [PASSED]
+Test 54: M=deadbeef E=00000003 N=fffffffb -> C=62fbd2ea ERR=0  Expected=62fbd2ea ERR=0 [PASSED]
+Test 55: M=12345678 E=00000003 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+------------------------------------------------------------
+Tests executed : 55
+Passed         : 55
+Failed         : 0
+------------------------------------------------------------
+32-bit RSA Core validation: PASSED
+------------------------------------------------------------
+End of Simulation
+Simulation complete via $finish(1) at time 696090 NS + 0
+xcelium> exit
+TOOL:  xrun(64)  24.03-s013: Exiting on Nov 05, 2026 at 09:24:29 -03  (total: 00:00:05)
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+    \end{column}
+  \end{columns}
+  \vspace{0.05cm}
+  {\tiny \texttt{RSA32\_opt/logs/rsa\_core\_32\_opt/xrun/rsa\_core\_32\_opt\_2026-11-05\_09-24-24.log} · ``\dots'' = linhas omitidas}
+\end{frame}
+
+\begin{frame}[fragile]{E03~— Simulação funcional do \texttt{rsa\_core32b}}{\texttt{testbench.sv} · núcleo v2 (RSA32\_opt) · Xcelium 24.03}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.30\textwidth}
+      \tmVeredito{tmOliva}{55 / 55 PASSED}{0 falhas · 32-bit RSA Core validation: PASSED}
+      \vspace{0.2cm}
+      {\scriptsize 55 vetores $C = M^E \bmod N$ comparados ao valor esperado: $N = 0$ (erro), operandos nulos e unitários, valores pequenos e operandos de 32 bits.}
+    \end{column}
+    \begin{column}{0.69\textwidth}
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+TOOL:  xrun(64)  24.03-s013: Started on Nov 05, 2026 at 09:26:11 -03
+  -top testbench
+...
+Test  1: M=00000000 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test 25: M=00000004 E=0000000a N=00000009 -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+...
+Test 50: M=abcdef01 E=00000001 N=00ffffff -> C=00cdefac ERR=0  Expected=00cdefac ERR=0 [PASSED]
+Test 51: M=ffffffff E=00000001 N=fffffffb -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 52: M=12345678 E=00000002 N=ffffffff -> C=1f403f1c ERR=0  Expected=1f403f1c ERR=0 [PASSED]
+Test 53: M=80000000 E=00000002 N=ffffffff -> C=40000000 ERR=0  Expected=40000000 ERR=0 [PASSED]
+Test 54: M=deadbeef E=00000003 N=fffffffb -> C=62fbd2ea ERR=0  Expected=62fbd2ea ERR=0 [PASSED]
+Test 55: M=12345678 E=00000003 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+------------------------------------------------------------
+Tests executed : 55
+Passed         : 55
+Failed         : 0
+------------------------------------------------------------
+32-bit RSA Core validation: PASSED
+------------------------------------------------------------
+End of Simulation
+Simulation complete via $finish(1) at time 696090 NS + 0
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      {\tiny \texttt{RSA32\_opt/logs/rsa\_core\_32\_opt/xrun/rsa\_core\_32\_opt\_2026-11-05\_09-26-11.log} · ``\dots'' = linhas omitidas}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E04
 % ---------------------------------------------------------------------
-\begin{frame}{E04~— Ambiente de verificação UVM}
-  \begin{block}{Entregável}
-    Ambiente de verificação UVM para a interface \texttt{rsa\_apb}
+% Fonte: docs/UVM_structure_diagram.png
+\section{E04 — Ambiente de verificação UVM}
+\begin{frame}{E04~— Ambiente de verificação UVM}{Estrutura do ambiente e ligação ao DUT}
+  \small
+  \begin{itemize}\setlength{\itemsep}{0.35em}
+    \item \textbf{Topo:} \texttt{top\_tb} publica \texttt{apb\_rsa\_if} no \texttt{config\_db} e chama \texttt{run\_test()}; \texttt{top\_th} gera \texttt{pclk} e instancia o DUT.
+    \item \textbf{Teste:} \texttt{uvm\_test\_rsa\_operation} (estende \texttt{uvm\_test\_base}) dispara a \texttt{uvm\_vseq}.
+    \item \textbf{Sequências (em ordem):} \texttt{rsa\_operation} $\rightarrow$ \texttt{soft\_reset} $\rightarrow$ \texttt{test\_id} $\rightarrow$ \texttt{corners\_exp} $\rightarrow$ \texttt{xz\_values}.
+    \item \textbf{Env:} \texttt{env\_config}, \texttt{uvm\_scoreboard}, \texttt{uvm\_vsequencer}.
+    \item \textbf{Agente APB:} \texttt{driver}, \texttt{monitor}, \texttt{sequencer}, \texttt{subscriber}, \texttt{agent\_config}.
+    \item \textbf{Assertions (5 módulos SVA):} \texttt{apb\_protocol}, \texttt{rsa\_operation}, \texttt{soft\_reset}, \texttt{test\_id}, \texttt{corners\_exp}; resultados consolidados por \texttt{record\_assertion()} e impressos em \texttt{print\_assertion\_table()}.
+    \item \textbf{DUT:} \texttt{amba\_3\_apb\_rsa\_apb\_top} (\texttt{src/MG}), ligado à \texttt{apb\_rsa\_if} pelos sinais APB e \texttt{irq}.
+  \end{itemize}
+  \vfill
+  {\tiny Diagrama da estrutura em resolução completa: \texttt{docs/UVM\_structure\_diagram.png} (fonte: \texttt{UVM/estrutura.md}).}
+\end{frame}
+
+% ---------------------------------------------------------------------
+% Lista de testes da bancada
+% Fonte: UVM/RSA_APB_Verif_Plan.xlsx, aba Lista_de_testes
+% ---------------------------------------------------------------------
+\begin{frame}{E04~— Lista de testes da bancada UVM}{Plano de verificação · testes 1.0 a 3.0}
+  \vspace*{-0.4cm}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.05}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries\color{tmCafe}}l >{\ttfamily}p{2.55cm} X >{\raggedright\arraybackslash}p{2.3cm} c@{}}
+    \toprule
+    \textbf{Id} & \normalfont\textbf{Teste} & \textbf{Procedimento} & \textbf{Funcionalidade} & \textbf{Estado} \\
+    \midrule
+    1.0 & test\_reset &
+      \tmRstIni\newline
+      3) Escrever \texttt{0xFFFF\_FFFF} em \texttt{0x0C}\newline
+      4) Ler \texttt{0x0C}\newline
+      5) Colocar PRESETn = 0\newline
+      6) Aguardar 10 ciclos e colocar PRESETn = 1 na borda de descida do clock\newline
+      7) Ler \texttt{0x0C} &
+      1.0 — Reset externo (PRESETn) & \tmFeito \\
+    \midrule
+    2.0 & test\_soft\_reset &
+      \tmRstIni\newline
+      3) Carregar operandos: \texttt{0x0C}~$\leftarrow$~$\langle$dado1$\rangle$, \texttt{0x10}~$\leftarrow$~$\langle$dado2$\rangle$, \texttt{0x14}~$\leftarrow$~$\langle$dado3$\rangle$\newline
+      4) Disparar o start da operação: \texttt{0x00}~$\leftarrow$~\texttt{0x01}\newline
+      5) Ler o registrador de status (\texttt{0x04})\newline
+      6) Aplicar soft reset: escrever em \texttt{0x00} até o valor ser \texttt{0x02}\newline
+      7) Ler o registrador de status (\texttt{0x04}) &
+      4.0 a 8.0 — Operação RSA & \tmFeito \\
+    \midrule
+    3.0 & test\_id &
+      \tmRstIni\newline
+      3) Ler \texttt{0x1C}\newline
+      4) Escrever \texttt{0xFFFF\_FFFF} em \texttt{0x1C}\newline
+      5) Ler \texttt{0x1C} &
+      10.0 — Identificação do bloco & \tmFeito \\
+    \bottomrule
+  \end{tabularx}\\[0.05cm]
+  {\tiny $^{\dagger}$\,Reset inicial (testes 1.0 a 4.0): 1)~iniciar o DUT com PRESETn = 0; 2)~aguardar 10 ciclos de clock e colocar PRESETn = 1 na borda de descida do clock.}
+\end{frame}
+
+\begin{frame}{E04~— Lista de testes da bancada UVM}{Plano de verificação · testes 4.0 a 6.0}
+  \vspace*{-0.4cm}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.05}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries\color{tmCafe}}l >{\ttfamily}p{2.55cm} X >{\raggedright\arraybackslash}p{2.3cm} c@{}}
+    \toprule
+    \textbf{Id} & \normalfont\textbf{Teste} & \textbf{Procedimento} & \textbf{Funcionalidade} & \textbf{Estado} \\
+    \midrule
+    4.0 & test\_rsa\_operation &
+      \tmRstIni\newline
+      3) Carregar operandos: \texttt{0x0C}~$\leftarrow$~$\langle$dado1$\rangle$, \texttt{0x10}~$\leftarrow$~$\langle$dado2$\rangle$, \texttt{0x14}~$\leftarrow$~$\langle$dado3$\rangle$\newline
+      4) Disparar o start da operação: \texttt{0x00}~$\leftarrow$~\texttt{0x01}\newline
+      5) \emph{Polling} no registrador de status: ler de \texttt{0x01} até o valor ser \texttt{0x02}\newline
+      6) Ler o resultado (\texttt{0x18}) &
+      4.0 a 8.0 — Operação RSA & \tmFeito \\
+    \midrule
+    5.0 & test\_corners\_exp &
+      Casos aleatórios da operação RSA (válida / inválida / erro), com DIN e MOD aleatórios e EXP variando entre 4, 8, 12, 16 e 32 bits &
+      Teste direcionado ao RSA de 32 bits & \tmFeito \\
+    \midrule
+    6.0 & test\_xz\_values &
+      Escrita e leitura de registradores com valores X e/ou Z, utilizando endereços válidos &
+      Teste direcionado ao APB & \tmFeito \\
+    \bottomrule
+  \end{tabularx}\\[0.05cm]
+  {\tiny $^{\dagger}$\,Reset inicial: 1)~iniciar o DUT com PRESETn = 0; 2)~aguardar 10 ciclos de clock e colocar PRESETn = 1 na borda de descida do clock.}\\[0.05cm]
+  \begin{block}{Funcionalidades referenciadas (aba \texttt{Lista\_de\_Funcionalidades})}
+    \tiny
+    \textbf{1.0} Reset externo (PRESETn) ·
+    \textbf{4.0} Operação RSA ($C = M^e \bmod n$) ·
+    \textbf{5.0} Controle da operação ·
+    \textbf{6.0} Status da operação ·
+    \textbf{7.0} Dados de entrada ·
+    \textbf{8.0} Registrador de resultado ·
+    \textbf{10.0} Identificação do bloco
   \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Ambiente funcional e executável
-  \end{exampleblock}
-  % TODO: evidências e status
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E05
 % ---------------------------------------------------------------------
-\begin{frame}{E05~— Simulação funcional do RSA\_APB}{RTL · Xcelium 24.03 · 100\,MHz}
+% Recorte de: logs/amba_3_apb_rsa_apb_top/xrun_uvm/nogui/amba_3_apb_rsa_apb_top_uvm_2026-11-10_10-24-56.log
+%   (bancada UVM de MG · relatório final do scoreboard: print_assertion_table() em UVM/uvm_scoreboard.sv)
+\section{E05 — Simulação funcional do RSA\_APB}
+\begin{frame}[fragile]{E05~— Simulação funcional do RSA\_APB}{Bancada UVM (MG) · RTL · Xcelium 24.03 · 100\,MHz}
+  \vspace*{-0.3cm}
   \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Entregável}
-        \small Relatório de simulação funcional da interface RSA\_APB de 32 bits
-      \end{block}
-      \begin{exampleblock}{Requisito de aceitação \hfill \tmOK}
-        \small Testes funcionais aprovados
-      \end{exampleblock}
+    \begin{column}{0.30\textwidth}
+      \tmVeredito{tmOliva}{TEST PASS}{UVM\_ERROR = 0\\UVM\_FATAL = 0}
+      \vspace{0.15cm}
       \scriptsize
       \begin{tabular}{@{}ll@{}}
         \toprule
-        Execução & \texttt{2026-11-05\_15-10-39} \\
-        Topo / TB & \texttt{amba\_3\_apb\_rsa\_apb\_top} / \texttt{testbench.sv} \\
-        Parâmetros & 32 bits dados · 12 bits endereço · \texttt{LOAD\_GAP=1} \\
-        Clock & 10\,ns (100\,MHz) · modelo RTL, sem SDF \\
+        Execução & \texttt{2026-11-10\_10-24-56} \\
+        Teste & \texttt{test\_rsa\_operation} \\
+        Topo & \texttt{amba\_3\_apb\_rsa\_apb\_top} \\
+        Sequências & 5 (\texttt{uvm\_vseq}) \\
+        Transf. APB & 109\,072 \\
+        Assertions & 39 PASS · 0 FAIL \\
+        Simulado & 3\,608\,310\,ns \\
         \bottomrule
-      \end{tabular}
+      \end{tabular}\\[0.1cm]
+      {\tiny \texttt{APB\_WAIT\_HOLD} não exercitada: o DUT responde sem \emph{wait states} (\texttt{PREADY}~=~1).}
     \end{column}
-    \begin{column}{0.46\textwidth}
-      \tmVeredito{tmOliva}{TEST PASS — 398 / 398}{0 falhas · 0 mensagens *E/*F · 134,98\,$\mu$s simulados}
-      \vspace{0.2cm}
-      \small
-      \textbf{\color{tmCafe}Plano executado}
-      \[
-        N_{\text{checks}} = \underbrace{8}_{\text{iniciais}} + \underbrace{30\times 8}_{\text{banco de reg.}} + \underbrace{10\times 15}_{\text{operações RSA}} = 398
-      \]
-      \footnotesize
-      Cada operação RSA verifica carga e preservação dos operandos, BUSY/DONE, \texttt{RESULT}, IRQ e retorno a IDLE; referência: $\mathit{MSG}^{\mathit{EXP}} \bmod \mathit{MOD}$ calculada no testbench.
+    \begin{column}{0.69\textwidth}
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
+TOOL:  xrun(64)  24.03-s013: Started on Nov 10, 2026 at 10:24:56 -03
+  +UVM_TESTNAME=test_rsa_operation
+...
+UVM_INFO @ 318575000: reporter [RSA_RESULT_VALUE] MSG=0x212d0eb1 EXP=0x000000de MOD=0x2a22eb39
+                                                  EXPECTED=0x07c5db67 ACTUAL=0x07c5db67
+UVM_INFO @ 318580000: reporter [SEQ_RESULT] [rsa_operation] PASS | transacoes=10616 falhas_SVA=0
+UVM_INFO @ 318790000: reporter [SEQ_RESULT] [soft_reset] PASS | transacoes=7 falhas_SVA=0
+UVM_INFO @ 318890000: reporter [SEQ_RESULT] [test_id] PASS | transacoes=3 falhas_SVA=0
+... [CORNERS_RESULT] [caso=1 EXP=4 bits VALID_OPERATION]    PASS | duracao=10280.000ns
+... [CORNERS_SUMMARY] TOTAL=1 PASS=1 FAIL=0 (inclui TIMEOUT=0)
+... [XZ_RESULT] CONCLUIDO | rotinas=8 enderecos=32768 transacoes=98381 falhas_resposta=0
+...
+--- UVM Report Summary ---
+** Report counts by severity
+UVM_INFO :43563
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+...
+[TIMING] Tempo simulado global: 3608310.000 ns
+[CAMPANHA] planejados=1 concluidos=1 interrompidos=0 nao_iniciados=0 caso_atual=1
+...
+[SVA] Assertions: 39 PASS | 0 FAIL | 1 NAO EXERCITADAS | 0 INTERROMPIDAS
+[XZ][OBSERVACAO_NOMINAL] APB_KNOWN_READ_DATA: 256 ocorrencias intencionais de X/Z
+[XZ][OBSERVACAO_NOMINAL] APB_KNOWN_WRITE_DATA: 65536 ocorrencias intencionais de X/Z
+[SVA] Contagens finais UVM: ERROR=0 | FATAL=0
+Simulation complete via $finish(1) at time 3608310 NS + 69
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      {\tiny \texttt{xrun\_uvm/nogui/amba\_3\_apb\_rsa\_apb\_top\_uvm\_2026-11-10\_10-24-56.log} · ``\dots'' = omitido}
     \end{column}
   \end{columns}
-  \tmRepoLink{\tmRepo/E05}{Evidências E05 no GitHub}
 \end{frame}
 
-\begin{frame}{E05~— Simulação funcional do RSA\_APB}{Vetores RSA e cobertura de código}
+\begin{frame}[fragile]{E05~— Simulação funcional do RSA\_APB}{Relatório final do scoreboard UVM · \texttt{print\_assertion\_table()}}
+  \vspace*{-0.3cm}
   \begin{columns}[T]
-    \begin{column}{0.55\textwidth}
-      \scriptsize
-      \textbf{\color{tmCafe}Operações RSA (esperado = lido)}\\[0.1cm]
-      \begin{tabular}{@{}r>{\ttfamily}l>{\ttfamily}lr>{\ttfamily}l@{}}
-        \toprule
-        \# & \normalfont MSG & \normalfont MOD & EXP & \normalfont RESULT \\
-        \midrule
-         1 & 0x00000041 & 0x00000ca1 & 17 & 0x00000ae6 \\
-         2 & 0x0000007b & 0x00000ca1 &  7 & 0x00000b34 \\
-         3 & 0x00000000 & 0x00000061 &  5 & 0x00000000 \\
-         4 & 0x00000001 & 0x00000101 & 13 & 0x00000001 \\
-         5 & 0x0000002a & 0x00000061 &  0 & 0x00000001 \\
-         6 & 0x12345678 & 0x0000fff1 &  1 & 0x00006793 \\
-         7 & 0x80000001 & 0xfffffffb &  2 & 0x4000000b \\
-         8 & 0xffffffff & 0xfffffffb &  3 & 0x00000040 \\
-         9 & 0x075bcd15 & 0x00010001 &  7 & 0x00008a8e \\
-        10 & 0xfedcba98 & 0x8000000b & 17 & 0x14adadfc \\
-        \bottomrule
-      \end{tabular}\\[0.05cm]
-      {\tiny Inclui casos de canto: MSG$=0$, MSG$=1$, EXP$=0$, EXP$=1$, MSG e MOD próximos de $2^{32}$.}
+    \begin{column}{0.70\textwidth}
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\fontsize{4.7}{5.5}\selectfont
+\begin{verbatim}
++----------------+----------------------------+-------------+---------+---------+--------------+
+| Cenario        | Assertion                  | Resultado   | Acertos |  Falhas | Instante(ns) |
++----------------+----------------------------+-------------+---------+---------+--------------+
+| APB            | APB_SETUP_ACCESS           | PASS        |  109072 |       0 |  3608305.000 |
+| APB            | APB_ZERO_WAIT              | PASS        |  109072 |       0 |  3608305.000 |
+| APB            | APB_WAIT_HOLD              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_READ_DATA        | PASS        |   10964 |       0 |  3201635.000 |
+...
+| rsa_operation  | RSA_OPERATION_ORDER        | PASS        |       1 |       0 |   318575.000 |
+| rsa_operation  | RSA_OPERATION_RESPONSE     | PASS        |   10616 |       0 |   318575.000 |
+| rsa_operation  | RSA_RESULT_BEFORE_DONE     | PASS        |       1 |       0 |   318545.000 |
+| rsa_operation  | RSA_RESULT_VALUE           | PASS        |       1 |       0 |   318575.000 |
+| rsa_operation  | RSA_STATUS_VALUE           | PASS        |   10611 |       0 |   318545.000 |
+...
+| corners4_ OK   | CORNERS_EXP_WIDTH          | PASS        |       1 |       0 |   319015.000 |
+| corners4_ OK   | CORNERS_RESPONSE           | PASS        |      64 |       0 |   329195.000 |
+| corners4_ OK   | CORNERS_READBACK           | PASS        |       3 |       0 |   319125.000 |
+| corners4_ OK   | CORNERS_READ_DELAY         | PASS        |       3 |       0 |   319105.000 |
+| corners4_ OK   | CORNERS_W1C                | PASS        |       1 |       0 |   329195.000 |
+| corners4_ OK   | CORNERS_STATUS             | PASS        |      53 |       0 |   329095.000 |
+| corners4_ OK   | CORNERS_COMPLETION         | PASS        |       1 |       0 |   329095.000 |
+| corners4_ OK   | CORNERS_RESULT_VALUE       | PASS        |       1 |       0 |   329125.000 |
++----------------+----------------------------+-------------+---------+---------+--------------+
+[SVA] Assertions: 39 PASS | 0 FAIL | 1 NAO EXERCITADAS | 0 INTERROMPIDAS
+[SVA] Contagens finais UVM: ERROR=0 | FATAL=0
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      {\tiny ``\dots'' = linhas omitidas: 15 do cenário APB, \texttt{soft\_reset} e \texttt{test\_id} (todas PASS, 0 falhas; totais ao lado)}
     \end{column}
-    \begin{column}{0.41\textwidth}
+    \begin{column}{0.28\textwidth}
       \scriptsize
-      \textbf{\color{tmCafe}Cobertura IMC (DUT, \emph{Covered})}\\[0.1cm]
+      \textbf{\color{tmCafe}Resumo por cenário}\\[0.1cm]
       \begin{tabular}{@{}lr@{}}
         \toprule
-        Agregada & 80,62\,\% (3616/4485) \\
-        Código & 80,45\,\% (3543/4404) \\
-        FSM & 90,12\,\% (73/81) \\
-        Funcional & \alert{n/a} \\
+        Cenário & PASS / total \\
+        \midrule
+        APB (protocolo) & 18 / 19 \\
+        \texttt{rsa\_operation} & 5 / 5 \\
+        \texttt{soft\_reset} & 3 / 3 \\
+        \texttt{test\_id} & 5 / 5 \\
+        \texttt{corners\_exp} & 8 / 8 \\
+        \midrule
+        Total & 39 / 40 \\
         \bottomrule
-      \end{tabular}
-      \vspace{0.2cm}
-      \begin{alertblock}{Ressalvas}
-        \footnotesize
-        \begin{itemize}
-          \item Teste dirigido em SystemVerilog, não a regressão UVM.
-          \item Sem modelo de cobertura funcional (detalhado em E06).
-        \end{itemize}
-      \end{alertblock}
+      \end{tabular}\\[0.15cm]
+      {\tiny 0 falhas em todos os cenários; a única assertion sem PASS é \texttt{APB\_WAIT\_HOLD}, não exercitada. Os X/Z injetados por \texttt{xz\_values} são contados à parte, como observação nominal.}
     \end{column}
   \end{columns}
-  \tmRepoLink{\tmRepo/E05}{Evidências E05 no GitHub}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E06
 % ---------------------------------------------------------------------
-\begin{frame}{E06~— Cobertura funcional do RSA\_APB}
-  \begin{block}{Entregável}
-    Relatório de cobertura funcional da interface RSA\_APB de 32 bits
-  \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Métricas apresentadas e correlacionadas ao plano de verificação
-  \end{exampleblock}
-  \vspace{0.1cm}
-  {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-  {\small\color{tmVermelho}\textbf{Pergunta da revisão:}} {\small\itshape Qual é a taxa de cobertura funcional alcançada pelo ambiente de verificação UVM? Correlacione os itens do plano de verificação com as métricas de cobertura coletadas.}
-  % TODO: evidências e status
+% Fonte: docs/code_coverage.jpeg
+% Execução IMC: coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-09_15-40-34
+\section{E06 — Cobertura funcional do RSA\_APB}
+\begin{frame}{E06~— Cobertura funcional do RSA\_APB}{Relatório de cobertura da regressão UVM · Cadence IMC}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.66\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=6.3cm,keepaspectratio]{figuras/code_coverage.jpeg}}\\[0.05cm]
+      {\tiny Execução \texttt{amba\_3\_apb\_rsa\_apb\_top\_uvm\_2026-11-09\_15-40-34}}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}Métricas (\emph{Overall})}\\[0.1cm]
+      \begin{tabular}{@{}lrr@{}}
+        \toprule
+        Métrica & Nota & Cobertos \\
+        \midrule
+        \textbf{Geral} & \textbf{89,15\,\%} & 7\,175/8\,449 \\
+        Código & 84,28\,\% & 7\,037/8\,283 \\
+        \quad Bloco & 93,07\,\% & 388/438 \\
+        \quad Expressão & 96,30\,\% & 58/60 \\
+        \quad Toggle & 76,20\,\% & 6\,591/7\,785 \\
+        FSM & 87,09\,\% & 134/162 \\
+        Funcional & \textbf{\color{tmOliva}100\,\%} & 4/4 \\
+        \bottomrule
+      \end{tabular}\\[0.15cm]
+      \begin{itemize}
+        \item DUT (\texttt{amba\_3\_apb\_rsa\_apb\_top}): 81,39\,\% (3\,797/4\,485).
+        \item Cobertura funcional: 4 de 4 \emph{covergroups} atingidos.
+        \item Toggle é a métrica mais baixa (76,2\,\%).
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E07
 % ---------------------------------------------------------------------
-\begin{frame}{E07~— Gate-level netlist TSMC 28\,nm}
-  \begin{block}{Entregável}
-    Gate-level netlist mapeado para a tecnologia TSMC de 28\,nm
-  \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Netlist gerado corretamente pelo Cadence Genus
-  \end{exampleblock}
-  \vspace{0.1cm}
-  {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-  {\small\color{tmVermelho}\textbf{Pergunta da revisão:}} {\small\itshape Mostre-me o netlist do RSA\_APB sintetizado utilizando a biblioteca de células da TSMC de 28\,nm.}
-  % TODO: evidências e status
+% Recorte de: ps_files/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-09_15-16-04_620008766_tsmc28.v
+% Resumo de:  reports/amba_3_apb_rsa_apb_top_tsmc28/genus/amba_3_apb_rsa_apb_top_2026-11-09_15-16-04_620008766_tsmc28/{gates,area}_tsmc28.rpt
+\section{E07 — Gate-level netlist TSMC 28\,nm}
+\begin{frame}[fragile]{E07~— Gate-level netlist TSMC 28\,nm}{Recorte do netlist da última síntese · Genus 22.18 · \texttt{write\_hdl}}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.63\textwidth}
+      \tiny
+      \begin{beamercolorbox}[rounded=true,shadow=false,sep=3pt]{block body}
+\vspace*{-0.6\baselineskip}
+\begin{verbatim}
+// Generated by Cadence Genus(TM) Synthesis Solution 22.18-s061_1
+// Generated on: Nov  9 2026 15:16:53 -03 (Nov  9 2026 18:16:53 UTC)
+
+module amba_3_apb_rsa_apb_top(pclk_i, presetn_i, psel_i, penable_i,
+     pwrite_i, paddr_i, pwdata_i, prdata_o, pready_o, pslverr_o, irq_o);
+  input pclk_i, presetn_i, psel_i, penable_i, pwrite_i;
+  input [11:0] paddr_i;
+  input [31:0] pwdata_i;
+  output [31:0] prdata_o;
+  output pready_o, pslverr_o, irq_o;
+  ...
+  assign pready_o = 1'b1;
+  ...
+  XOR2UD1BWP30P140 g81243__3680(.A1 (n_1795), .A2 (n_1794), .Z
+       (n_1796));
+  ...
+  EDFCNQD1BWP30P140 \regbank_inst_exp_reg_reg[20] (.CDN (presetn_i),
+       .CP (pclk_i), .D (pwdata_i[20]), .E (n_1431), .Q (op_exp_w[20]));
+  ...
+  OR2D1BWP30P140 g84438(.A1 (n_339), .A2 (n_407), .Z (n_1962));
+endmodule
+\end{verbatim}
+\vspace*{-0.6\baselineskip}
+      \end{beamercolorbox}
+      {\tiny \texttt{synth\_amba\_3\_apb\_rsa\_apb\_top\_2026-11-09\_15-16-04\_620008766\_tsmc28.v} · 8\,797 linhas}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}Síntese \texttt{2026-11-09\_15-16-04}}\\[0.1cm]
+      \begin{tabular}{@{}ll@{}}
+        \toprule
+        Biblioteca & \texttt{tcbn28hpcplusbwp30p140} \\
+        Corner & tt1v25c \\
+        Módulos & 1 (hierarquia achatada) \\
+        Células & 2\,562 \\
+        Área & 2\,808,16\,$\mu$m² \\
+        \bottomrule
+      \end{tabular}\\[0.2cm]
+      \textbf{\color{tmCafe}Composição (\texttt{gates\_tsmc28.rpt})}\\[0.1cm]
+      \begin{tabular}{@{}lrr@{}}
+        \toprule
+        Tipo & Instâncias & Área \\
+        \midrule
+        Sequencial & 706 & 62,2\,\% \\
+        Inversor & 176 & 1,6\,\% \\
+        Lógica & 1\,680 & 36,2\,\% \\
+        \midrule
+        Total & 2\,562 & 100\,\% \\
+        \bottomrule
+      \end{tabular}\\[0.2cm]
+      {\tiny Todas as células instanciadas pertencem à biblioteca TSMC (sufixo \texttt{BWP30P140}).}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Fonte: docs/images/schematic_expanded.jpeg
+\begin{frame}{E07~— Gate-level netlist TSMC 28\,nm}{Esquemático do netlist sintetizado · Cadence Genus 22.1}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.72\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=6.4cm,keepaspectratio]{figuras/schematic_expanded.jpeg}}
+    \end{column}
+    \begin{column}{0.26\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}Netlist \texttt{amba\_3\_apb\_rsa\_apb\_top}}\\[0.1cm]
+      \begin{tabular}{@{}lr@{}}
+        \toprule
+        Células padrão & 2\,562 \\
+        Nets & 2\,643 \\
+        Terminais & 84 \\
+        \bottomrule
+      \end{tabular}\\[0.2cm]
+      \begin{itemize}
+        \item Topo achatado: apenas células folha da biblioteca TSMC 28\,nm.
+        \item 706 sequenciais / 1\,856 combinacionais (ver E08).
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Fontes: docs/images/relatorio_lec_ps.jpeg, docs/images/block_view_schem.jpeg
+\begin{frame}{E07~— Gate-level netlist TSMC 28\,nm}{Equivalência RTL $\times$ netlist · Cadence Conformal LEC}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.44\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=6.4cm,keepaspectratio]{figuras/relatorio_lec_ps.jpeg}}
+    \end{column}
+    \begin{column}{0.54\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=3.6cm,keepaspectratio]{figuras/block_view_schem.jpeg}}\\[-0.05cm]
+      {\tiny Esquemático simplificado do \emph{golden} (RTL) no Conformal.}\\[0.15cm]
+      \raggedright\scriptsize
+      \begin{itemize}
+        \item \textbf{Golden:} RTL (5 instâncias + 2 primitivas) · \textbf{Revised:} netlist com 2\,562 células.
+        \item Pontos mapeados idênticos nos dois lados: 49 PI · 35 PO · 706 DFF = \textbf{790}.
+        \item 3 DFF inalcançáveis (\emph{unreachable}) no golden, não mapeados.
+      \end{itemize}
+      % TODO: incluir o resultado do compare (Equivalent / Non-equivalent / Aborted) — não aparece na captura
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % ---------------------------------------------------------------------
 % E08
 % ---------------------------------------------------------------------
+\section{E08 — Análise estática de temporização}
 \begin{frame}{E08~— Análise estática de temporização}{Cadence Genus 22.18 · TSMC 28\,nm · tt1v25c}
-  \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Entregável}
-        \small Relatório de análise estática de temporização (STA)
-      \end{block}
-      \begin{exampleblock}{Requisito de aceitação \hfill \tmOK}
-        \small Ausência de violações de setup nos caminhos analisados (TNS = WNS = 0)
-      \end{exampleblock}
-      {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-      {\scriptsize\color{tmVermelho}\textbf{Pergunta da revisão:}} {\scriptsize\itshape O RSA\_APB apresenta violações de timing? Mostre os relatórios e explique os resultados.}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \tmVeredito{tmOliva}{SEM VIOLAÇÕES DE SETUP}{WNS = +5\,469,7\,ps · TNS = 0 · 0 caminhos violados}
-      \vspace{0.15cm}
-      \scriptsize
+  \tmVeredito{tmOliva}{SEM VIOLAÇÕES DE SETUP}{WNS = +5\,469,7\,ps · TNS = 0 · 0 caminhos violados}
+  \vspace{0.3cm}
+  \begin{center}
+      \footnotesize
       \begin{tabular}{@{}ll@{}}
         \toprule
         Síntese & \texttt{2026-11-05\_14-36-09} \\
@@ -342,8 +970,7 @@
         \quad atraso externo / setup & 33 / 67 \\
         \bottomrule
       \end{tabular}
-    \end{column}
-  \end{columns}
+  \end{center}
   \tmRepoLink{\tmRepo/E08}{Evidências E08 no GitHub}
 \end{frame}
 
@@ -376,37 +1003,97 @@
         \item Pior verificação de \emph{setup} em registrador: \texttt{paddr\_i} $\rightarrow$ \texttt{regbank\_inst\_exp\_reg[18]/E}, slack \textbf{+7\,338\,ps}.
         \item Área: 2\,808,16\,$\mu$m², 2\,562 células (706 seq. / 1\,856 comb.).
       \end{itemize}
-      \begin{alertblock}{Ressalvas}
-        \footnotesize
-        \begin{itemize}
-          \item Apenas \emph{max delay} (setup); \textbf{hold não analisado}.
-          \item STA de síntese: sem CTS, sem parasitas de layout, um único corner (TT).
-        \end{itemize}
-      \end{alertblock}
+    \end{column}
+  \end{columns}
+  \tmRepoLink{\tmRepo/E08}{Evidências E08 no GitHub}
+\end{frame}
+
+% Fonte: docs/images/metrics_time1.jpeg
+\begin{frame}{E08~— Análise estática de temporização}{Timing Debug · histograma de slack e piores caminhos}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.72\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=6.2cm,keepaspectratio]{figuras/metrics_time1.jpeg}}
+    \end{column}
+    \begin{column}{0.26\textwidth}
+      \scriptsize
+      \begin{tabular}{@{}lr@{}}
+        \toprule
+        Caminhos & 1\,000 \\
+        Aprovados & 1\,000 \\
+        Violados & \textbf{\color{tmOliva}0} \\
+        WNS / TNS & 0 / 0 \\
+        \bottomrule
+      \end{tabular}\\[0.2cm]
+      \begin{itemize}
+        \item Slack entre $\approx$5,1 e 9,7\,ns.
+        \item Pior caminho: \texttt{paddr\_i[6]} $\rightarrow$ \texttt{pslverr\_o}, slack \textbf{5,470\,ns} (requerido 7,800\,ns).
+        \item Seguintes: \texttt{paddr\_i[6]} $\rightarrow$ \texttt{prdata\_o[*]}, slack $\geq$ 5,480\,ns.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \tmRepoLink{\tmRepo/E08}{Evidências E08 no GitHub}
+\end{frame}
+
+% Fonte: docs/images/metrics_time2.jpeg
+\begin{frame}{E08~— Análise estática de temporização}{Timing Debug · caminhos internos (setup em registrador)}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.72\textwidth}
+      \centering
+      \tmBorda{\includegraphics[width=\linewidth,height=6.2cm,keepaspectratio]{figuras/metrics_time2.jpeg}}
+    \end{column}
+    \begin{column}{0.26\textwidth}
+      \scriptsize
+      \begin{itemize}
+        \item Caminhos 41--50: \texttt{paddr\_i[6]} $\rightarrow$ \texttt{regbank\_inst\_\allowbreak exp\_reg\_reg[*]/E}.
+        \item Requerido 9,768\,ns · slack \textbf{7,338\,ns}.
+        \item Habilitação de escrita do registrador \texttt{EXP}: pior setup em registrador, com folga ampla.
+      \end{itemize}
     \end{column}
   \end{columns}
   \tmRepoLink{\tmRepo/E08}{Evidências E08 no GitHub}
 \end{frame}
 
 % ---------------------------------------------------------------------
+% Comparativo MG x MR (síntese TSMC 28 nm)
+% Fonte: docs/comparativo_projeto_MG_MR.md, seção 5
+% ---------------------------------------------------------------------
+\section{Comparativo MG × MR — síntese TSMC 28\,nm}
+\begin{frame}{Comparativo MG × MR~— síntese TSMC 28\,nm}{Cadence Genus 22.18 · TSMC 28\,nm · tt1v25c · 100\,MHz}
+  \vspace{0.2cm}
+  \begin{center}
+      \footnotesize
+      \begin{tabular}{@{}lrr@{}}
+        \toprule
+        Métrica & MG & MR \\
+        \midrule
+        Área total & 2\,808\,$\mu$m² & 2\,694\,$\mu$m² ($-$4,1\,\%) \\
+        Células combinacionais & 1\,680 & 1\,324 ($-$21\,\%) \\
+        Potência estimada & 529\,$\mu$W & 500\,$\mu$W ($-$5,5\,\%) \\
+        Atraso do núcleo (reg $\rightarrow$ reg) & \textbf{1\,114\,ps} & 1\,547\,ps \\
+        Frequência indicativa pelo núcleo & $\approx$874\,MHz & $\approx$642\,MHz \\
+        Pior slack & +5\,470\,ps & +3\,153\,ps \\
+        Endpoints com slack $<$ 5\,ns & 0 & 33 \\
+        \bottomrule
+      \end{tabular}
+  \end{center}
+  \vspace{0.2cm}
+  {\tiny Sínteses \texttt{2026-11-10\_09-21-01} (MG) e \texttt{2026-11-10\_09-31-35} (MR), ambas sem violações.
+  Potência estimada pelo Genus sem vetores de atividade. Frequência indicativa = 1 / (atraso + setup) do caminho reg $\rightarrow$ reg do núcleo, sem incerteza.
+  O pior slack depende do SDC de cada projeto: MR com I/O de 3\,ns + 3\,ns e incerteza de 0,5\,ns; MG com 2\,ns + 2\,ns e 0,2\,ns.}
+\end{frame}
+
+% ---------------------------------------------------------------------
 % E09
 % ---------------------------------------------------------------------
+\section{E09 — Simulação pós-síntese com SDF}
 \begin{frame}{E09~— Simulação pós-síntese com SDF}{Gate-level TSMC 28\,nm · Xcelium 24.03 · 100\,MHz}
-  \begin{columns}[T]
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Entregável}
-        \small Relatório de simulação pós-síntese da interface RSA\_APB, com anotação de atrasos SDF
-      \end{block}
-      \begin{exampleblock}{Requisito de aceitação \hfill \tmOK}
-        \small Testes aprovados, sem violações de temporização reportadas durante a simulação
-      \end{exampleblock}
-      {\color{tmDourado}\rule{\linewidth}{0.5pt}}\\[0.05cm]
-      {\scriptsize\color{tmVermelho}\textbf{Pergunta da revisão:}} {\scriptsize\itshape Execute uma regressão dos testes do RSA\_APB com o gate-level netlist e anotação SDF.}
-    \end{column}
-    \begin{column}{0.46\textwidth}
-      \tmVeredito{tmOliva}{TEST PASS — 398 / 398}{0 \emph{Timing violation} · 0 mensagens *E/*F · exit 0}
-      \vspace{0.15cm}
-      \scriptsize
+  \tmVeredito{tmOliva}{TEST PASS — 398 / 398}{0 \emph{Timing violation} · 0 mensagens *E/*F · exit 0}
+  \vspace{0.3cm}
+  \begin{center}
+      \footnotesize
       \begin{tabular}{@{}ll@{}}
         \toprule
         Simulação & \texttt{2026-11-05\_14-37-30} \\
@@ -417,12 +1104,11 @@
         Tempo simulado & 134\,980\,ns \\
         \bottomrule
       \end{tabular}
-    \end{column}
-  \end{columns}
+  \end{center}
   \tmRepoLink{\tmRepo/E09}{Evidências E09 no GitHub}
 \end{frame}
 
-\begin{frame}{E09~— Simulação pós-síntese com SDF}{Anotação SDF, avisos e correlação com o RTL}
+\begin{frame}{E09~— Simulação pós-síntese com SDF}{Anotação SDF e correlação com o RTL}
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
       \scriptsize
@@ -443,17 +1129,9 @@
       \textbf{100\,\% do que o SDF fornece foi anotado.} O SDF não contém entradas \texttt{WIDTH}; os 2 \texttt{\$setuphold} restantes são do FF de sincronização do reset com \texttt{D = 1'b1}.
     \end{column}
     \begin{column}{0.46\textwidth}
-      \begin{exampleblock}{RTL (E05) $\times$ gate-level (E09)}
-        \footnotesize As 398 linhas dos dois scoreboards são idênticas: valores esperados, lidos, status e instantes de verificação.
+      \begin{exampleblock}{RTL $\times$ gate-level (E09)}
+        \footnotesize Com o testbench dirigido \texttt{testbench.sv} (execução RTL \texttt{2026-11-05\_15-10-39}), as 398 linhas dos dois scoreboards são idênticas: valores esperados, lidos, status e instantes de verificação.
       \end{exampleblock}
-      \begin{alertblock}{Ressalvas}
-        \footnotesize
-        \begin{itemize}
-          \item Avisos \texttt{NTCNNC} (132) e \texttt{NTCWID} (196): checks de pulso desativados.
-          \item Um teste dirigido, não a regressão UVM completa.
-          \item Sem layout nem parasitas extraídos; só o corner TT.
-        \end{itemize}
-      \end{alertblock}
     \end{column}
   \end{columns}
   \tmRepoLink{\tmRepo/E09}{Evidências E09 no GitHub}
@@ -461,26 +1139,348 @@
 
 % ---------------------------------------------------------------------
 % E10
+% Fonte: saída de `tree` em scripts/
 % ---------------------------------------------------------------------
-\begin{frame}{E10~— Scripts de automação}
-  \begin{block}{Entregável}
-    Scripts de automação do fluxo de desenvolvimento
-  \end{block}
-  \begin{exampleblock}{Requisito de aceitação}
-    Execução reproduzível das etapas e geração dos respectivos artefatos
-  \end{exampleblock}
-  % TODO: evidências e status
+\section{E10 — Scripts de automação}
+\begin{frame}[fragile]{E10~— Scripts de automação}{Árvore de \texttt{scripts/} (1/4) · \texttt{MG/bash}}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.30\textwidth}
+\tmTree
+\begin{verbatim}
+scripts/
+├── clean.sh
+├── MG
+│   ├── bash
+│   │   ├── 0.innovus_init.sh
+│   │   ├── 1.innovus_check.sh
+│   │   ├── 2.innovus_floorplan.sh
+│   │   ├── 3.innovus_power.sh
+│   │   ├── 4.innovus_place.sh
+│   │   ├── 5.innovus_cts.sh
+│   │   ├── 6.innovus_route.sh
+│   │   ├── 7.innovus_postroute.sh
+│   │   ├── 8.innovus_verify.sh
+│   │   ├── 9.innovus_export.sh
+│   │   ├── genus_gui.sh
+│   │   ├── genus_no_gui.sh
+│   │   ├── genus_nogui.sh
+│   │   ├── imc_common.sh
+│   │   ├── imc_gui.sh
+│   │   ├── imc.key
+│   │   ├── imc.log
+│   │   ├── imc.sh
+│   │   ├── innovus_common.sh
+│   │   ├── innovus_full_flow.sh
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.30\textwidth}
+\tmTree
+\begin{verbatim}
+│   │   ├── innovus_gui.sh
+│   │   ├── innovus_no_gui.sh
+│   │   ├── iverilog.sh
+│   │   ├── lec_gui.sh
+│   │   ├── lec.sh
+│   │   ├── lint.sh
+│   │   ├── mdv.log
+│   │   ├── pdk_common.sh
+│   │   ├── report_common.sh
+│   │   ├── run
+│   │   ├── setup_uvm.sh
+│   │   ├── sky130_check.sh
+│   │   ├── source
+│   │   ├── uvm_campaign.sh
+│   │   ├── verilator.sh
+│   │   ├── xezim_rsa_core_fault.sh
+│   │   ├── xezim.sh
+│   │   ├── xezim_uvm.sh
+│   │   ├── xrun_ps.sh
+│   │   ├── xrun_ps_tsmc28.sh
+│   │   ├── xrun.sh
+│   │   ├── xrun_uvm_gui.sh
+│   │   ├── xrun_uvm_nogui.sh
+│   │   └── xrun_wgui.sh
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}Etapas cobertas pelos \emph{wrappers}}\\[0.1cm]
+      \renewcommand{\arraystretch}{1.1}
+      \begin{tabularx}{\linewidth}{@{}>{\bfseries}l >{\raggedright\arraybackslash}X@{}}
+        \toprule
+        Síntese & \texttt{genus\_*.sh} \\
+        LEC & \texttt{lec.sh}, \texttt{lec\_gui.sh} \\
+        Lint & \texttt{lint.sh}, \texttt{verilator.sh} \\
+        Sim.\ RTL & \texttt{xrun.sh}, \texttt{xrun\_wgui.sh}, \texttt{iverilog.sh} \\
+        UVM & \texttt{xrun\_uvm\_*.sh}, \texttt{setup\_uvm.sh}, \texttt{uvm\_campaign.sh} \\
+        Pós-síntese & \texttt{xrun\_ps.sh}, \texttt{xrun\_ps\_tsmc28.sh} \\
+        Cobertura & \texttt{imc*.sh} \\
+        Ondas & \texttt{xezim*.sh} \\
+        Físico & \texttt{0}--\texttt{9.innovus\_*.sh}, \texttt{innovus\_full\_flow.sh} \\
+        Comuns & \texttt{pdk\_}, \texttt{report\_}, \texttt{innovus\_}, \texttt{imc\_common.sh} \\
+        \bottomrule
+      \end{tabularx}\\[0.15cm]
+      {\tiny Cada \emph{wrapper} chama o script TCL correspondente em \texttt{scripts/MG/tcl} ou \texttt{scripts/MR/tcl} (ex.: Genus executa \texttt{source scripts/MG/bash/../tcl/run\_genus\_tsmc28.tcl}).}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{E10~— Scripts de automação}{Árvore de \texttt{scripts/} (2/4) · \texttt{MG/tcl}}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   └── tcl
+│       ├── 1.innovus_check.tcl
+│       ├── 2.innovus_floorplan.tcl
+│       ├── 3.innovus_power.tcl
+│       ├── 4.innovus_place.tcl
+│       ├── 5.innovus_cts.tcl
+│       ├── 6.innovus_route.tcl
+│       ├── 7.innovus_postroute.tcl
+│       ├── 8.innovus_verify.tcl
+│       ├── 9.innovus_export.tcl
+│       ├── imc.tcl
+│       ├── innovus_common.tcl
+│       ├── innovus_gui.tcl
+│       ├── innovus_init.tcl
+│       ├── innovus_mmmc.tcl
+│       ├── lec_common.tcl
+│       ├── lec_gui.tcl
+│       ├── lec.tcl
+│       ├── lint.tcl
+│       ├── open_genus_gui.tcl
+│       ├── pdk_common.tcl
+│       ├── pdks
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│       │   ├── free45.tcl
+│       │   ├── gpdk45.tcl
+│       │   ├── ics55.tcl
+│       │   ├── sky130.tcl
+│       │   └── tsmc28.tcl
+│       ├── report_common.tcl
+│       ├── run_genus_free45.tcl
+│       ├── run_genus_gpdk45.tcl
+│       ├── run_genus_ics55.tcl
+│       ├── run_genus_sky130.tcl
+│       ├── run_genus.tcl
+│       ├── run_genus_tsmc28.tcl
+│       ├── run_innovus_free45.tcl
+│       ├── run_innovus_gpdk45.tcl
+│       ├── run_innovus_ics55.tcl
+│       ├── run_innovus_sky130.tcl
+│       ├── xezim_uvm_wave_view.tcl
+│       ├── xrun_ps_tsmc28.tcl
+│       ├── xrun_uvm_gui.tcl
+│       ├── xrun_uvm_nogui.tcl
+│       └── xrun_wgui.tcl
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \vspace{0.2cm}
+      \scriptsize
+      \begin{itemize}
+        \item \texttt{pdks/}: um arquivo por tecnologia (TSMC 28\,nm, GPDK45, FreePDK45, ICS55, SKY130).
+        \item \texttt{run\_genus\_<pdk>.tcl} e \texttt{run\_innovus\_<pdk>.tcl}: entradas por tecnologia sobre os fluxos comuns.
+        \item \texttt{lec\_common.tcl}, \texttt{report\_common.tcl}, \texttt{pdk\_common.tcl}: código compartilhado entre ferramentas.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{E10~— Scripts de automação}{Árvore de \texttt{scripts/} (3/4) · \texttt{MR/bash}}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+├── MR
+│   ├── bash
+│   │   ├── 0.innovus_init.sh
+│   │   ├── 1.innovus_check.sh
+│   │   ├── 2.innovus_floorplan.sh
+│   │   ├── 3.innovus_power.sh
+│   │   ├── 4.innovus_place.sh
+│   │   ├── 5.innovus_cts.sh
+│   │   ├── 6.innovus_route.sh
+│   │   ├── 7.innovus_postroute.sh
+│   │   ├── 8.innovus_verify.sh
+│   │   ├── 9.innovus_export.sh
+│   │   ├── genus_gui.sh
+│   │   ├── genus_no_gui.sh
+│   │   ├── genus_nogui.sh
+│   │   ├── imc_common.sh
+│   │   ├── imc_gui.sh
+│   │   ├── imc.sh
+│   │   ├── innovus_common.sh
+│   │   ├── innovus_full_flow.sh
+│   │   ├── innovus_gui.sh
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   │   ├── innovus_no_gui.sh
+│   │   ├── iverilog.sh
+│   │   ├── lec_gui.sh
+│   │   ├── lec.sh
+│   │   ├── lint.sh
+│   │   ├── pdk_common.sh
+│   │   ├── report_common.sh
+│   │   ├── setup_uvm.sh
+│   │   ├── sky130_check.sh
+│   │   ├── uvm_campaign.sh
+│   │   ├── verilator.sh
+│   │   ├── xezim_rsa_core_fault.sh
+│   │   ├── xezim.sh
+│   │   ├── xezim_uvm.sh
+│   │   ├── xrun_ps.sh
+│   │   ├── xrun_ps_tsmc28.sh
+│   │   ├── xrun.sh
+│   │   ├── xrun_uvm_gui.sh
+│   │   ├── xrun_uvm_nogui.sh
+│   │   └── xrun_wgui.sh
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \vspace{0.2cm}
+      \scriptsize
+      \begin{itemize}
+        \item \texttt{MR/} replica os fluxos de \texttt{MG/} com o RTL de \texttt{src/MR/RSA\_APB} e o SDC \texttt{constraints/MR/rsa\_apb.sdc}.
+        \item Saídas separadas em \texttt{logs/MR}, \texttt{reports/MR}, \texttt{waveforms/MR}, \texttt{coverage/MR} e \texttt{ps\_files/MR}.
+        \item \texttt{xrun.sh} e \texttt{xrun\_wgui.sh} usam o TB do MR (\texttt{rsa\_apb\_tb.sv}); UVM e \texttt{xrun\_ps\_tsmc28.sh} usam as bancadas comuns.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{E10~— Scripts de automação}{Árvore de \texttt{scripts/} (4/4) · \texttt{MR/tcl}, \texttt{RSA32}, \texttt{RSA4} e comuns}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   └── tcl
+│       ├── 1.innovus_check.tcl
+│       ├── 2.innovus_floorplan.tcl
+│       ├── 3.innovus_power.tcl
+│       ├── 4.innovus_place.tcl
+│       ├── 5.innovus_cts.tcl
+│       ├── 6.innovus_route.tcl
+│       ├── 7.innovus_postroute.tcl
+│       ├── 8.innovus_verify.tcl
+│       ├── 9.innovus_export.tcl
+│       ├── imc.tcl
+│       ├── innovus_common.tcl
+│       ├── innovus_gui.tcl
+│       ├── innovus_init.tcl
+│       ├── innovus_mmmc.tcl
+│       ├── lec_common.tcl
+│       ├── lec_gui.tcl
+│       ├── lec.tcl
+│       ├── lint.tcl
+│       ├── open_genus_gui.tcl
+│       ├── pdk_common.tcl
+│       ├── pdks
+│       │   ├── free45.tcl
+│       │   ├── gpdk45.tcl
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│       │   ├── ics55.tcl
+│       │   ├── sky130.tcl
+│       │   └── tsmc28.tcl
+│       ├── report_common.tcl
+│       ├── run_genus_free45.tcl
+│       ├── run_genus_gpdk45.tcl
+│       ├── run_genus_ics55.tcl
+│       ├── run_genus_sky130.tcl
+│       ├── run_genus.tcl
+│       ├── run_genus_tsmc28.tcl
+│       ├── run_innovus_free45.tcl
+│       ├── run_innovus_gpdk45.tcl
+│       ├── run_innovus_ics55.tcl
+│       ├── run_innovus_sky130.tcl
+│       ├── xezim_uvm_wave_view.tcl
+│       ├── xrun_ps_tsmc28.tcl
+│       ├── xrun.tcl
+│       ├── xrun_uvm_gui.tcl
+│       ├── xrun_uvm_nogui.tcl
+│       └── xrun_wgui.tcl
+├── pages
+│   ├── build.py
+│   ├── coverage_theme.py
+│   ├── documents.py
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   └── requirements.txt
+├── README.md
+├── README_SKY130.md
+├── RSA32
+│   ├── bash
+│   │   ├── xrun_ps.sh
+│   │   ├── xrun.sh
+│   │   └── xrun_wgui.sh
+│   └── tcl
+│       └── xrun_wgui.tcl
+├── RSA4
+│   ├── bash
+│   │   └── run_rsa_lec.sh
+│   └── tcl
+│       └── rsa_lec.tcl
+└── validation
+    ├── report_xezim_coverage.py
+    ├── test_uvm_campaign_timing.py
+    ├── uvm_campaign_timing.py
+    └── xezim_coverage.html
+\end{verbatim}
+      \vspace{0.05cm}
+      {\tiny
+      \texttt{RSA32/}: simulação Xcelium do \texttt{rsa\_core} de 32 bits (RTL e TB em \texttt{RSA32\_opt}).\\[0.05cm]
+      \texttt{RSA4/}: LEC RTL $\times$ RTL do RSA de 4 bits (\texttt{.v} $\times$ \texttt{.sv}).\par}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % =====================================================================
-% Lacunas de verificação (sem entregável correspondente)
+% Falhas encontradas no RSA32
+% Fontes: docs/failed_rsa.jpeg (formas de onda, caso 10 da corners_exp)
+%         docs/README_falhas_uvm.md, seção "Descrição da falha em texto corrente"
 % =====================================================================
-\begin{frame}{Lacunas de verificação}{Cenários não exercitados}
-  \begin{block}{Pergunta}
-    \itshape Quais funcionalidades ou cenários previstos ainda não foram exercitados pelos testes?
-  \end{block}
-  \vspace{0.4cm}
-  % TODO: evidências e resultados
+\section{Falhas encontradas no RSA32}
+\begin{frame}{Falhas encontradas no RSA32}{Operação RSA com módulo igual a zero}
+  \vspace*{-0.2cm}
+  \centering
+  {\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.6pt}%
+   \fcolorbox{tmCafe}{white}{\includegraphics[width=\textwidth,height=5.4cm,keepaspectratio]{figuras/failed_rsa.jpeg}}}\\[0.15cm]
+  \raggedright\scriptsize
+  Caso 10 da \texttt{corners\_exp}: MSG = \texttt{0x1C2F4FF3}, EXP = \texttt{0x0000000A}, MOD = \texttt{0x00000000}.
+  Em 429\,365\,ns, \texttt{core\_done} e \texttt{core\_error} sobem juntos e \texttt{core\_dout} passa de \texttt{0x7B1005AC} para \texttt{0xFFFFFFFF}.
+\end{frame}
+
+\begin{frame}{Falhas encontradas no RSA32}{Descrição da falha}
+  \footnotesize
+  O problema aparece quando tentamos executar uma operação RSA com o módulo igual a zero. Nessa situação, o esperado é que o circuito sinalize o erro e mantenha o resultado da operação anterior. O que vimos, porém, foi a ativação dos sinais de conclusão e erro ao mesmo tempo. Com isso, o registrador de status indica as duas condições, e o resultado anterior acaba substituído por \texttt{0xFFFFFFFF}.
+
+  \medskip
+  Também percebemos que o sinal de erro continua ativo até aplicarmos um reset. No teste com a versão v2, tentamos limpar os eventos pelo registrador de status: o sinal de conclusão foi limpo, mas o erro permaneceu, mantendo a interrupção ativa.
+
+  \medskip
+  Também testamos a operação com \textbf{expoente igual a zero}, aplicando \textbf{DIN = \texttt{0x181D60BF}} e módulo \texttt{0xC2065569}. Nesse caso, o resultado esperado é \texttt{0x00000001}. Esse é um cenário diferente da falha descrita, que ocorre quando o \textbf{módulo} é zero.
+
+  \medskip
+  A falha apareceu nas duas versões do RSA e foi reproduzida no testbench sem UVM ou SVAs. Isso mostra que as assertions estão apontando um comportamento que realmente ocorre na simulação. O próximo passo é localizar, no RTL, por que uma operação inválida sinaliza conclusão e por que o erro permanece ativo.
 \end{frame}
 
 \end{document}

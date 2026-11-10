@@ -1,0 +1,189 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 05, 2026 at 09:24:24 -03
+xrun
+	-64bit
+	-timescale 1ns/1ps
+	-top testbench
+	-access +rwc
+	-coverage all
+	-covoverwrite
+	-covworkdir /home/aluno/Documents/rsa32_opt/coverage/rsa_core_32_opt
+	-covtest rsa_core_32_opt_2026-11-05_09-24-24
+	-l /home/aluno/Documents/rsa32_opt/logs/rsa_core_32_opt/xrun/rsa_core_32_opt_2026-11-05_09-24-24.log
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_kogge_stone_adder.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mult.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mod.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_ctrl.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_top.sv
+	/home/aluno/Documents/rsa32_opt/testbenches/testbench.sv
+	+VCD=/home/aluno/Documents/rsa32_opt/waveforms/rsa_core_32_opt/rsa_core_32_opt_2026-11-05_09-24-24.vcd
+
+   User defined plus("+") options:
+	+VCD=/home/aluno/Documents/rsa32_opt/waveforms/rsa_core_32_opt/rsa_core_32_opt_2026-11-05_09-24-24.vcd
+
+file: /home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_kogge_stone_adder.sv
+	module worklib.kogge_stone_adder:sv
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mult.sv
+	module worklib.rsa_core_mult:sv
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mod.sv
+	module worklib.rsa_core_mod:sv
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_ctrl.sv
+	module worklib.rsa_core_ctrl:sv
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_top.sv
+	module worklib.rsa_core:sv
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/rsa32_opt/testbenches/testbench.sv
+	module worklib.testbench:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		testbench
+
+	Extracting FSMs for coverage:
+		worklib.kogge_stone_adder
+		worklib.rsa_core_mult
+			FSM extracted for state register state_reg
+		worklib.rsa_core_mod
+			FSM extracted for state register state_reg
+		worklib.rsa_core_ctrl
+			FSM extracted for state register state_reg
+		worklib.rsa_core
+		worklib.testbench
+	Total FSMs extracted = 3
+xmelab: *W,COVSCE: Expression coverage is supported for expressions with static cast as a default configuration. To continue merging older databases, use the "set_backward_compat -disable_static_cast" backward compatibility command in the coverage configuration file. This command disables the support of expression coverage with static cast.
+	Building instance overlay tables: ........
+xmelab: *W,COVFDP: FSM description matching across instance of a module for "COVFDM" warning has been moved from elaboration to simulation dumping. To restore old matching behavior, use "set_backward_compat -COVFDM_during_elab". Also, it is recommended to use set_parameterized_module_coverage CCF command to avoid coverage loss due to FSM description difference across instances of a module.
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+............ Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.rsa_core_ctrl:sv <0x4eb0b257>
+			streams:  26, words: 23494
+		worklib.rsa_core_mod:sv <0x3f9d8646>
+			streams:  22, words: 20927
+		worklib.rsa_core:sv <0x0b3bb9bb>
+			streams:  20, words:  7341
+		worklib.testbench:sv <0x2c6492cf>
+			streams:  12, words: 37357
+		worklib.kogge_stone_adder:sv <0x6892e702>
+			streams:  29, words: 23586
+		worklib.rsa_core_mult:sv <0x6250d937>
+			streams:  19, words: 15176
+		worklib.kogge_stone_adder:sv <0x7765ddb4>
+			streams:  29, words: 23475
+		worklib.kogge_stone_adder:sv <0x7e078c8a>
+			streams:  29, words: 24484
+		worklib.kogge_stone_adder:sv <0x047ca51a>
+			streams:  25, words: 20083
+    logic [DATA_WIDTH-1:0] p_stage [0:LEVELS];
+                                 |
+xmelab: *W,COVMDD (/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_kogge_stone_adder.sv,22|33): Toggle coverage for bit, logic, reg, wire, enum and struct multi-dimensional static arrays and vectors is not supported by default. To enable toggle coverage for enum multi-dimensional static arrays specify 'set_toggle_scoring -sv_enum enable_mda' and for other multi-dimensional static arrays, specify 'set_toggle_scoring -sv_mda [<max_bit_base2_exponent>] [-sv_mda_of_struct]' ccf command in the coverage configuration file.
+    int test_num;
+               |
+xmelab: *W,COVUTA (/home/aluno/Documents/rsa32_opt/testbenches/testbench.sv,29|15): Toggle coverage is not supported for SystemVerilog integer, real array, string, dynamic array, sparse memory and reference ports. It is also not supported for VHDL multi-dimensional array and array of record. There may also be other such objects in the design.
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                   9       6
+		Registers:                98      83
+		Scalar wires:          2,686       -
+		Vectored wires:           51       -
+		Always blocks:             6       6
+		Initial blocks:            4       4
+		Cont. assignments:     2,669      27
+		Pseudo assignments:       44       -
+		Process Clocks:            3       1
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.testbench:sv
+Loading snapshot worklib.testbench:sv .................... Done
+xcelium> source /home/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> run
+------------------------------------------------------------------------------------------------
+RSA Core - 32-bit SystemVerilog Testbench
+------------------------------------------------------------------------------------------------
+       Message   Exponent    Modulus    Result       Expected
+------------------------------------------------------------------------------------------------
+Test  1: M=00000000 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  2: M=00000000 E=00000000 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test  3: M=00000000 E=00000000 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test  4: M=00000000 E=00000000 N=0000000f -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test  5: M=00000000 E=00000001 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  6: M=00000000 E=00000002 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  7: M=00000000 E=0000000f N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  8: M=00000001 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  9: M=00000002 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test 10: M=0000000f E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test 11: M=00000001 E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 12: M=00000001 E=00000001 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 13: M=00000001 E=00000001 N=0000000f -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 14: M=00000001 E=00000002 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 15: M=00000001 E=0000000f N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 16: M=00000002 E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 17: M=0000000f E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 18: M=00000002 E=00000002 N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 19: M=00000002 E=00000002 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 20: M=00000002 E=00000002 N=0000000f -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 21: M=00000002 E=00000003 N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 22: M=00000002 E=0000000f N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 23: M=00000003 E=00000002 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 24: M=0000000f E=00000002 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 25: M=00000004 E=0000000a N=00000009 -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 26: M=0000000b E=00000001 N=00000007 -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 27: M=00000009 E=00000004 N=00000007 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 28: M=00000009 E=00000009 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 29: M=00000008 E=0000000a N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 30: M=00000002 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 31: M=00000009 E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 32: M=00000008 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 33: M=0000000e E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 34: M=00000002 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 35: M=0000000c E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 36: M=00000001 E=00000005 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 37: M=00000007 E=00000005 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 38: M=00000000 E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 39: M=0000000b E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 40: M=0000000f E=0000000f N=0000000f -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 41: M=00000002 E=00000005 N=0000000d -> C=00000006 ERR=0  Expected=00000006 ERR=0 [PASSED]
+Test 42: M=00000004 E=00000003 N=00000011 -> C=0000000d ERR=0  Expected=0000000d ERR=0 [PASSED]
+Test 43: M=00000007 E=00000002 N=00000013 -> C=0000000b ERR=0  Expected=0000000b ERR=0 [PASSED]
+Test 44: M=12345678 E=00000000 N=00010001 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 45: M=00000000 E=00000005 N=01234567 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 46: M=00000001 E=00000007 N=89abcdef -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 47: M=00010001 E=00000002 N=0000ffff -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 48: M=00010000 E=00000002 N=00010001 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 49: M=12345678 E=00000001 N=00010001 -> C=00004444 ERR=0  Expected=00004444 ERR=0 [PASSED]
+Test 50: M=abcdef01 E=00000001 N=00ffffff -> C=00cdefac ERR=0  Expected=00cdefac ERR=0 [PASSED]
+Test 51: M=ffffffff E=00000001 N=fffffffb -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 52: M=12345678 E=00000002 N=ffffffff -> C=1f403f1c ERR=0  Expected=1f403f1c ERR=0 [PASSED]
+Test 53: M=80000000 E=00000002 N=ffffffff -> C=40000000 ERR=0  Expected=40000000 ERR=0 [PASSED]
+Test 54: M=deadbeef E=00000003 N=fffffffb -> C=62fbd2ea ERR=0  Expected=62fbd2ea ERR=0 [PASSED]
+Test 55: M=12345678 E=00000003 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+------------------------------------------------------------------------------------------------
+Tests executed : 55
+Passed         : 55
+Failed         : 0
+------------------------------------------------------------------------------------------------
+32-bit RSA Core validation: PASSED
+------------------------------------------------------------------------------------------------
+End of Simulation
+Simulation complete via $finish(1) at time 696090 NS + 0
+/home/aluno/Documents/rsa32_opt/testbenches/testbench.sv:437         $finish;
+xcelium> exit
+
+coverage setup:
+  workdir  :  /home/aluno/Documents/rsa32_opt/coverage/rsa_core_32_opt
+  dutinst  :  testbench(testbench)
+  scope    :  scope
+  testname :  rsa_core_32_opt_2026-11-05_09-24-24
+
+coverage files:
+  model(design data) :  /home/aluno/Documents/rsa32_opt/coverage/rsa_core_32_opt/scope/icc_4f32aba9_00000000.ucm
+  data               :  /home/aluno/Documents/rsa32_opt/coverage/rsa_core_32_opt/scope/rsa_core_32_opt_2026-11-05_09-24-24/icc_4f32aba9_00000000.ucd
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 05, 2026 at 09:24:29 -03  (total: 00:00:05)

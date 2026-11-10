@@ -1,0 +1,65 @@
+$date
+    Nov  9, 2026  15:12:36
+$end
+$version
+    TOOL:	xmsim(64)	24.03-s013
+$end
+$timescale
+    1 ps
+$end
+
+$scope module rsa_core_tb $end
+$var parameter 64 !    CLK_PERIOD $end
+$var parameter  1 "    RESET $end
+$var parameter  1 #    LOAD $end
+
+$scope module duv $end
+$var parameter 32 $    DATA_WIDTH $end
+$var parameter  1 %    RESET $end
+$var parameter  1 &    LOAD $end
+
+$scope module rsa_core_mult_blk $end
+$var parameter 32 '    DATA_WIDTH $end
+$var parameter  1 (    RESET $end
+$var parameter  1 )    START $end
+$upscope $end
+
+
+$scope module rsa_core_mod_blk $end
+$var parameter 32 *    DATA_WIDTH $end
+$var parameter  1 +    RESET $end
+$var parameter  1 ,    START $end
+$upscope $end
+
+
+$scope module rsa_core_ctrl_blk $end
+$var parameter 32 -    DATA_WIDTH $end
+$var parameter  1 .    RESET $end
+$var parameter  1 /    LOAD $end
+$var parameter 32 0    ONE [31:0] $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b1 0
+1/
+1.
+b100000 -
+1,
+1+
+b100000 *
+1)
+1(
+b100000 '
+1&
+1%
+b100000 $
+1#
+1"
+b10100 !
+$end
+#862320000

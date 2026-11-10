@@ -1,3 +1,107 @@
+# Implementações MG e MR
+
+`scripts/MG/` e `scripts/MR/` têm os mesmos lançadores (`bash/`) e fluxos
+(`tcl/`): Xcelium (RTL, UVM e netlist TSMC28 com SDF), IMC, Genus, LEC/lint,
+Innovus, Xezim, Verilator e Icarus. Os exemplos abaixo usam `MG/`; para a
+implementação MR, troque por `MR/` (por exemplo, `./scripts/MR/bash/genus_nogui.sh -p gpdk45`).
+
+Diferenças do MR:
+
+- RTL: `src/MR/RSA_APB/rsa_core_32bits.sv` e `src/MR/RSA_APB/rsa_apb_top.sv`
+  (top `amba_3_apb_rsa_apb_top`).
+- SDC: `constraints/MR/rsa_apb.sdc`.
+- Saídas em `logs/MR/`, `reports/MR/`, `waveforms/MR/`, `coverage/MR/` e
+  `ps_files/MR/`, com os mesmos subdiretórios do MG; o Innovus usa
+  `innovus/rsa_core_32bits` no lugar de `innovus/rsa32_v2`.
+- `xezim_rsa_core_fault.sh` não recebe `v1|v2`: o MR tem um único núcleo de 32 bits.
+- Bancadas compartilhadas: `testbenchs/rsa_apb_top/testbench.sv`,
+  `testbenchs/rsa_core_fault/tb_rsa_core_fault.sv` e a UVM em `UVM/`.
+
+`scripts/RSA4/` contém o LEC RTL x RTL do projeto RSA de 4 bits:
+`./scripts/RSA4/bash/run_rsa_lec.sh [top]` (com `tcl/rsa_lec.tcl`) compara
+`RSA4/src/vlog/rsa_core.v` (golden) com `RSA4/src/sv/rsa_core.sv` (revised) e
+grava `summary.txt`, `equivalence.rpt` e `console.log` em `reports/RSA4/lec/`.
+
+`scripts/RSA32/` contém a simulação Xcelium do núcleo `rsa_core` de 32 bits de
+`RSA32_opt` (RTL em `RSA32_opt/src/v2`, bancada
+`RSA32_opt/testbenches/testbench.sv`, que permanecem nessa pasta):
+`bash/xrun.sh` (RTL com cobertura IMC), `bash/xrun_wgui.sh` (GUI, SHM) e
+`bash/xrun_ps.sh` (pós-rota com SDF, a partir do export do Innovus em
+`RSA32_opt/ps_files/rsa_core_32_opt/innovus/export`). Resultados em
+`logs|coverage|reports|waveforms/RSA32/rsa_core_32_opt/`.
+
+# Ondas da simulação UVM
+
+Na raiz do projeto, execute um dos fluxos Xcelium:
+
+```bash
+./scripts/MG/bash/xrun_uvm_nogui.sh
+./scripts/MG/bash/xrun_uvm_gui.sh
+```
+
+Ambos gravam as ondas durante a simulação em
+`waveforms/amba_3_apb_rsa_apb_top/uvm/`, com o mesmo identificador de execução:
+
+- `<RUN>.shm/`: banco nativo do SimVision.
+- `<RUN>.vcd`: sinais da hierarquia estática de `top_tb`, incluindo interface
+  APB e DUT, para visualizadores compatíveis com VCD.
+
+Os caminhos são impressos no terminal antes de iniciar o Xrun. Para abrir
+o VCD no GTKWave, use `gtkwave /caminho/impresso/arquivo.vcd`.
+A geração começa quando a simulação inicia; compilar sem simular não gera
+as ondas. Execuções anteriores continuam apenas com os arquivos já gerados.
+
+# Watchdog e duração da campanha UVM
+
+Os lançadores calculam o orçamento pelos casos de `UVM/top_tb_pkg.svh` e
+mostram separadamente o orçamento conservador e o watchdog aplicado.
+No Xcelium 24.03, o watchdog automático fica limitado a **9000 s simulados**:
+essa versão apresenta overflow perto de 9223 s, mesmo com `1ns/1ps` e mesmo
+dividindo o atraso em partes. Valores explícitos de `MAX_TIME` ou
+`+UVM_TIMEOUT` acima de 9200 s são rejeitados antes de iniciar o Xcelium.
+O Xezim mantém seu limite separado, baseado em ticks de 1 ps.
+
+Quando o orçamento excede o limite, o lançador emite um aviso e conserva os
+casos planejados. Se o watchdog expirar antes da conclusão, a execução falha
+com `UVM_FATAL [PH_TIMEOUT]`. O limite não garante que uma campanha arbitrária
+caiba em uma única execução. `+UVM_TIMEOUT=0` continua desabilitando o
+watchdog por escolha explícita do usuário; isso não remove o limite do simulador.
+
+`MAX_TIME=1ms ./scripts/MG/bash/xrun_uvm_nogui.sh` é um exemplo de execução com
+watchdog de 0,9 ms, útil para diagnóstico. Tempo simulado não é tempo de
+execução no computador. Veja a [estimativa da configuração atual](../docs/estimativa_tempo_uvm.md).
+
+# Taxas de cobertura UVM no IMC
+
+Após a simulação, execute na raiz do projeto:
+
+```bash
+./scripts/MG/bash/imc.sh          # gera relatórios do banco UVM mais recente
+./scripts/MG/bash/imc_gui.sh      # abre esse banco na GUI
+```
+
+Ambos aceitam o diretório de uma execução como argumento para selecionar
+outro banco. A seleção automática usa a data/hora no nome da execução e
+exige dados `.ucd`; aguarde o fim da simulação antes de gerar os relatórios.
+O fluxo `xrun_uvm_nogui.sh` já chama `imc.sh` automaticamente.
+
+Os relatórios ficam em `reports/amba_3_apb_rsa_apb_top_rtl/imc/<RUN>/`:
+
+| Arquivo | Conteúdo |
+|---|---|
+| `coverage_rates_rtl.rpt` | Percentuais cumulativos e contagens de itens cobertos/medidos por hierarquia principal; também exibidos no terminal |
+| `coverage_rtl.rpt` | Todas as métricas por instância, incluindo blocos, expressões, toggle e FSM |
+| `coverage_covergroups_rtl.rpt` | Detalhes dos covergroups, coverpoints e bins cobertos ou não cobertos |
+| `coverage_html_rtl/index.html` | Relatório navegável para abrir no navegador |
+| `coverage_inputs_rtl.txt` | Caminho do banco usado na análise |
+
+O percentual de **covergroups** mede os cenários definidos pela bancada;
+**code** e **FSM** medem estruturas do RTL exercitadas pela simulação.
+`n/a` indica ausência de itens medidos naquela métrica/hierarquia.
+Atualmente, `UVM/uvm_subscriber.sv` possui apenas o coverpoint
+`transaction_type` (READ/WRITE): 100% nesses dois bins não representa
+cobertura de todos os cenários RSA/APB. O relatório expõe esse denominador.
+
 # Síntese do top por PDK
 
 Os fluxos Genus e Innovus usam apenas `amba_3_apb_rsa_apb_top`.
@@ -19,16 +123,16 @@ GPDK45 e FreePDK45 são configurações independentes.
 Na raiz do repositório, após configurar o ambiente e as licenças Cadence:
 
 ```bash
-./scripts/bash/genus_no_gui.sh -p sky130
-./scripts/bash/genus_no_gui.sh -p gpdk45
-./scripts/bash/genus_no_gui.sh -p free45
-./scripts/bash/genus_no_gui.sh -p ics55
-./scripts/bash/genus_no_gui.sh -p tsmc28
+./scripts/MG/bash/genus_no_gui.sh -p sky130
+./scripts/MG/bash/genus_no_gui.sh -p gpdk45
+./scripts/MG/bash/genus_no_gui.sh -p free45
+./scripts/MG/bash/genus_no_gui.sh -p ics55
+./scripts/MG/bash/genus_no_gui.sh -p tsmc28
 
-./scripts/bash/innovus_no_gui.sh -p sky130
-./scripts/bash/innovus_no_gui.sh -p gpdk45
-./scripts/bash/innovus_no_gui.sh -p free45
-./scripts/bash/innovus_no_gui.sh -p ics55
+./scripts/MG/bash/innovus_no_gui.sh -p sky130
+./scripts/MG/bash/innovus_no_gui.sh -p gpdk45
+./scripts/MG/bash/innovus_no_gui.sh -p free45
+./scripts/MG/bash/innovus_no_gui.sh -p ics55
 ```
 
 Os nomes anteriores `genus_nogui.sh` e `innovus_full_flow.sh` continuam
@@ -37,10 +141,10 @@ da ferramenta devem vir depois de `--`.
 
 ### TSMC28 sem LEF
 
-`tcl/run_genus_tsmc28.tcl` usa o fluxo comum de síntese lógica do topo
+`MG/tcl/run_genus_tsmc28.tcl` usa o fluxo comum de síntese lógica do topo
 `amba_3_apb_rsa_apb_top`, incluindo o wrapper e o núcleo RSA32 v2.
 Executa `syn_generic`, `syn_map` e `syn_opt`, sem ler ou exigir LEFs.
-Mantém o SDC comum em `constraints/amba_3_apb_rsa_apb_top.sdc` (atualmente
+Mantém o SDC comum em `constraints/MG/amba_3_apb_rsa_apb_top.sdc` (atualmente
 100 MHz), os relatórios e as saídas DB, Verilog, SDC e SDF, com sufixo `tsmc28`.
 Os resultados são de síntese lógica, sem parasitas extraídos de layout.
 O fluxo Innovus recusa essa opção porque não há configuração física.
@@ -55,7 +159,7 @@ Para a mesma biblioteca em outro diretório:
 
 ```bash
 TSMC28_ROOT=/caminho/das/bibliotecas \
-  ./scripts/bash/genus_no_gui.sh -p tsmc28
+  ./scripts/MG/bash/genus_no_gui.sh -p tsmc28
 ```
 
 Para outra versão, corner ou seleção de células, `TSMC28_LIB_FILES`
@@ -64,7 +168,7 @@ com chaves em torno de cada caminho que contenha espaços:
 
 ```bash
 TSMC28_LIB_FILES='{/pdk/TSMC28/std_tt.lib} {/pdk/TSMC28/lvt_tt.lib}' \
-  ./scripts/bash/genus_no_gui.sh -p tsmc28
+  ./scripts/MG/bash/genus_no_gui.sh -p tsmc28
 ```
 
 Use bibliotecas de um mesmo corner. Os arquivos devem existir e ser legíveis;
@@ -73,15 +177,15 @@ Para abrir o banco gerado, use `genus_gui.sh -p tsmc28`.
 
 ### Simulação da netlist TSMC28 com SDF
 
-O par `bash/xrun_ps_tsmc28.sh` / `tcl/xrun_ps_tsmc28.tcl` executa o Xrun
+O par `MG/bash/xrun_ps_tsmc28.sh` / `MG/tcl/xrun_ps_tsmc28.tcl` executa o Xrun
 sem GUI sobre a netlist do topo `amba_3_apb_rsa_apb_top`. Na raiz do projeto,
 após configurar o ambiente Cadence:
 
 ```bash
-./scripts/bash/xrun_ps_tsmc28.sh
+./scripts/MG/bash/xrun_ps_tsmc28.sh
 ```
 
-`bash/xrun_ps.sh` também chama esse fluxo TSMC28, com os mesmos argumentos
+`MG/bash/xrun_ps.sh` também chama esse fluxo TSMC28, com os mesmos argumentos
 e variáveis, substituindo a referência antiga a uma síntese ASAP7.
 
 O script seleciona a netlist TSMC28 mais recente e exige o SDF com o **mesmo
@@ -90,7 +194,7 @@ não é usado um SDF de outra síntese. Para fixar uma execução:
 
 ```bash
 SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-11-05_14-23-23_190403435_tsmc28 \
-  ./scripts/bash/xrun_ps_tsmc28.sh
+  ./scripts/MG/bash/xrun_ps_tsmc28.sh
 ```
 
 A bancada é `testbenchs/rsa_apb_top/testbench.sv`, com `POST_SYNTHESIS`
@@ -148,10 +252,10 @@ não muda a execução em andamento. Uma falha interrompe as etapas seguintes.
 Para executar apenas uma etapa ou abrir a GUI:
 
 ```bash
-./scripts/bash/0.innovus_init.sh -p free45
-./scripts/bash/1.innovus_check.sh -p free45
-./scripts/bash/innovus_gui.sh place -p free45
-./scripts/bash/genus_gui.sh -p free45
+./scripts/MG/bash/0.innovus_init.sh -p free45
+./scripts/MG/bash/1.innovus_check.sh -p free45
+./scripts/MG/bash/innovus_gui.sh place -p free45
+./scripts/MG/bash/genus_gui.sh -p free45
 ```
 
 Nas etapas individuais, informe sempre o mesmo `-p`. A GUI Innovus abre a
@@ -160,7 +264,7 @@ específica, copie seu identificador completo, incluindo o sufixo:
 
 ```bash
 SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-10-29_16-00-00_123456789_sky130 \
-  ./scripts/bash/innovus_no_gui.sh -p sky130
+  ./scripts/MG/bash/innovus_no_gui.sh -p sky130
 ```
 
 ## Resultados
@@ -190,7 +294,7 @@ selecionados automaticamente quando não seguem a nova nomenclatura.
 
 ## Metodologia comum de relatórios
 
-Todos os Tcl ativos que geram relatórios usam `tcl/report_common.tcl`:
+Todos os Tcl ativos que geram relatórios usam `MG/tcl/report_common.tcl`:
 arquivos explícitos seguem `<relatório>_<sufixo>.rpt` (ou `.txt` para
 proveniência), e diretórios de relatórios automáticos seguem
 `<tipo>_<sufixo>/`. O sufixo identifica o PDK; lint e cobertura de RTL
@@ -205,7 +309,7 @@ usam `rtl`, pois não dependem de uma tecnologia.
 | Cobertura IMC | `reports/amba_3_apb_rsa_apb_top_rtl/imc/<RUN>/` | `coverage_rtl.rpt`, `coverage_html_rtl/`, `coverage_inputs_rtl.txt` |
 
 Genus, LEC, lint e IMC reservam uma pasta nova por execução por meio de
-`bash/report_common.sh`, com data, hora, nanossegundos e sufixo. No Innovus,
+`MG/bash/report_common.sh`, com data, hora, nanossegundos e sufixo. No Innovus,
 cada repetição de uma etapa recebe uma subpasta com data, hora, PID,
 contador de relógio e PDK, preservando os relatórios anteriores da mesma
 síntese. Os bancos e netlists mantêm seus caminhos existentes em `ps_files`.
@@ -213,13 +317,18 @@ As etapas que apenas exportam artefatos ou abrem uma GUI não criam novos
 relatórios de análise.
 
 ```bash
-./scripts/bash/lec.sh -p gpdk45
-./scripts/bash/lec_gui.sh -p tsmc28
-./scripts/bash/lint.sh
-./scripts/bash/imc.sh /caminho/do/banco/de/cobertura
+./scripts/MG/bash/lec.sh -p gpdk45
+./scripts/MG/bash/lec_gui.sh -p tsmc28
+./scripts/MG/bash/lint.sh
+./scripts/MG/bash/imc.sh /caminho/do/banco/de/cobertura
 ```
 
-O LEC usa as bibliotecas Liberty e a netlist mais recente do PDK selecionado;
+O LEC inicia em modo Tcl para carregar os scripts de configuração e usa as
+bibliotecas Liberty e a netlist mais recente do PDK selecionado. A seleção
+usa a data/hora no nome da síntese, preservando a ordem após cópias do projeto.
+Sem `-p`, o PDK é `gpdk45`; para abrir a última síntese TSMC28, use
+`./scripts/MG/bash/lec_gui.sh -p tsmc28`. A GUI permanece aberta após a comparação.
+O terminal informa o PDK, a síntese, a netlist, o log e a pasta de relatórios.
 `SYNTH_RUN` permite fixar uma síntese específica, como no Innovus. O arquivo
 `synthesis_inputs_<pdk>.txt` registra os insumos efetivamente usados. O lint
 salva em arquivos os relatórios de design, black boxes e regras. A simulação
@@ -232,9 +341,9 @@ permanecem históricos; esta metodologia se aplica aos Tcl ativos em `scripts/`.
 
 ## Tcl e instalação dos PDKs
 
-`tcl/run_genus_<flag>.tcl` e `tcl/run_innovus_<flag>.tcl` são as entradas
+`MG/tcl/run_genus_<flag>.tcl` e `MG/tcl/run_innovus_<flag>.tcl` são as entradas
 específicas (TSMC28 possui apenas a entrada Genus).
-Os parâmetros tecnológicos ficam em `tcl/pdks/<flag>.tcl`,
+Os parâmetros tecnológicos ficam em `MG/tcl/pdks/<flag>.tcl`,
 compartilhados pelo Genus, inicialização Innovus e MMMC.
 O RTL, as etapas e o SDC de entrada são comuns para facilitar comparações.
 As configurações incluem Liberty, LEFs, nó, site, camadas, alimentação e

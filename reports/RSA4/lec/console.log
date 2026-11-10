@@ -1,0 +1,245 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 990 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Check out Conformal_Asic 23.2 license
+// Command: foreach name {LEC_GOLDEN LEC_REVISED LEC_TOP LEC_OUTPUT_DIR} {
+//              if {![info exists ::env($name)] || $::env($name) eq ""} {
+//                  puts stderr "ERRO: variavel de ambiente $name ausente."
+//                  exit 2
+//              }
+//          }
+// Command: set golden  $::env(LEC_GOLDEN)
+/home/aluno/Documents/RSA32_APB/RSA4/src/vlog/rsa_core.v
+// Command: set revised $::env(LEC_REVISED)
+/home/aluno/Documents/RSA32_APB/RSA4/src/sv/rsa_core.sv
+// Command: set top     $::env(LEC_TOP)
+rsa_core
+// Command: set outdir  $::env(LEC_OUTPUT_DIR)
+/home/aluno/Documents/RSA32_APB/reports/RSA4/lec
+// Command: set compared 0
+0
+// Command: puts "=== LEC: $top | Golden (Verilog) vs Revised (SystemVerilog) ==="
+=== LEC: rsa_core | Golden (Verilog) vs Revised (SystemVerilog) ===
+// Command: set cmd_error [catch {
+//              read_design $golden  -verilog2k    -golden  -root $top
+//              read_design $revised -systemverilog -revised -root $top
+//              report_design_data -both
+//              report_black_box -detail
+//              set_system_mode lec
+//              report_mapped_points -summary
+//              report_unmapped_points -summary
+//              add_compared_points -all
+//              set_compare_effort high
+//              compare
+//              set compared 1
+//              report_compare_data -summary
+//              report_compare_data -class nonequivalent
+//              report_compare_data -class abort
+//              report_statistics
+//              report_verification
+//          } cmd_message]
+// Parsing file /home/aluno/Documents/RSA32_APB/RSA4/src/vlog/rsa_core.v ...
+// Golden root module is set to 'rsa_core'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:3)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:10)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:21)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:3)
+// Note: (RTL5.6) Case statement with no default (occurrence:2)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+// Parsing file /home/aluno/Documents/RSA32_APB/RSA4/src/sv/rsa_core.sv ...
+// Revised root module is set to 'rsa_core'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:3)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:10)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:21)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:3)
+// Note: (RTL5.6) Case statement with no default (occurrence:2)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         5               5
+Library-cells         53              53
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT                7                    7
+OUTPUT               7                    7
+--------------------------------------------
+AND                376                  376
+BUF                 15                   15
+DFF                 88                   88
+INV                 45                   45
+MUX                 24                   24
+NAND                 1                    1
+NOR                 22                   22
+OR                 214                  214
+WIRE                35                   35
+XNOR                16                   16
+XOR                 30                   30
+------ word-level --------------------------
+ADD                  3                    3
+GE                   1                    1
+SUBTRACT             4                    4
+WMUX                22                   22
+WSEL                24                   24
+--------------------------------------------
+Total              866                  866
+
+// Processing Golden ...
+//   1% completed//   2% completed//   4% completed//   8% completed//  12% completed//  14% completed//  16% completed//  18% completed//  19% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  29% completed//  30% completed//  32% completed//  35% completed//  37% completed//  41% completed//  44% completed//  48% completed//  51% completed//  52% completed//  53% completed//  55% completed//  56% completed//  57% completed//  58% completed//  59% completed//  60% completed//  62% completed//  70% completed//  71% completed//  72% completed//  73% completed//  75% completed//  77% completed//  80% completed//  83% completed//  85% completed//  86% completed//  87% completed//  89% completed//  93% completed//  96% completed//  97% completed//  98% completed//  99% completed// 100% completed// Modeling Golden ...
+//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Processing Revised ...
+//   0% completed//   1% completed//   2% completed//   4% completed//   8% completed//  12% completed//  14% completed//  16% completed//  18% completed//  19% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  29% completed//  30% completed//  32% completed//  35% completed//  37% completed//  41% completed//  44% completed//  48% completed//  51% completed//  52% completed//  53% completed//  55% completed//  56% completed//  57% completed//  58% completed//  59% completed//  60% completed//  62% completed//  70% completed//  71% completed//  72% completed//  73% completed//  75% completed//  77% completed//  80% completed//  83% completed//  85% completed//  86% completed//  87% completed//  89% completed//  93% completed//  96% completed//  97% completed//  98% completed//  99% completed// 100% completed// Modeling Revised ...
+//   0% completed//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed// 100% completed// Mapping key points ...
+//   1% completed//   2% completed//   3% completed//   4% completed//   5% completed//   6% completed//   7% completed//   8% completed//   9% completed//  10% completed//  11% completed//  12% completed//  13% completed//  14% completed//  15% completed//  16% completed//  17% completed//  18% completed//  19% completed//  20% completed//  21% completed//  22% completed//  23% completed//  24% completed//  25% completed//  26% completed//  27% completed//  28% completed//  29% completed//  30% completed//  31% completed//  32% completed//  33% completed//  34% completed//  35% completed//  36% completed//  37% completed//  38% completed//  39% completed//  40% completed//  41% completed//  42% completed//  43% completed//  44% completed//  45% completed//  46% completed//  47% completed//  48% completed//  49% completed//  50% completed//  51% completed//  52% completed//  53% completed//  54% completed//  55% completed//  56% completed//  57% completed//  58% completed//  59% completed//  60% completed//  61% completed//  62% completed//  63% completed//  64% completed//  65% completed//  66% completed//  67% completed//  68% completed//  69% completed//  70% completed//  71% completed//  72% completed//  73% completed//  74% completed//  75% completed//  76% completed//  77% completed//  78% completed//  79% completed//  80% completed//  81% completed//  82% completed//  83% completed//  84% completed//  85% completed//  86% completed//  87% completed//  88% completed//  89% completed//  90% completed//  91% completed//  92% completed//  93% completed//  94% completed//  95% completed//  96% completed//  97% completed//  98% completed//  99% completed// 100% completed================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      87        101     
+--------------------------------------------------------------------------------
+Revised           7      7      87        101     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      87        101     
+--------------------------------------------------------------------------------
+Revised           7      7      87        101     
+================================================================================
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// 94 compared points added to compare list
+//   0% Comparing 0 out of 94 points, 0 Non-equivalent//   1% Comparing 1 out of 94 points, 0 Non-equivalent//   2% Comparing 2 out of 94 points, 0 Non-equivalent//   3% Comparing 3 out of 94 points, 0 Non-equivalent//   4% Comparing 4 out of 94 points, 0 Non-equivalent//   5% Comparing 5 out of 94 points, 0 Non-equivalent//   6% Comparing 6 out of 94 points, 0 Non-equivalent//   7% Comparing 7 out of 94 points, 0 Non-equivalent//   8% Comparing 8 out of 94 points, 0 Non-equivalent//   9% Comparing 9 out of 94 points, 0 Non-equivalent//  10% Comparing 10 out of 94 points, 0 Non-equivalent//  11% Comparing 11 out of 94 points, 0 Non-equivalent//  12% Comparing 12 out of 94 points, 0 Non-equivalent//  13% Comparing 13 out of 94 points, 0 Non-equivalent//  14% Comparing 14 out of 94 points, 0 Non-equivalent//  15% Comparing 15 out of 94 points, 0 Non-equivalent//  17% Comparing 16 out of 94 points, 0 Non-equivalent//  18% Comparing 17 out of 94 points, 0 Non-equivalent//  19% Comparing 18 out of 94 points, 0 Non-equivalent//  20% Comparing 19 out of 94 points, 0 Non-equivalent//  21% Comparing 20 out of 94 points, 0 Non-equivalent//  22% Comparing 21 out of 94 points, 0 Non-equivalent//  23% Comparing 22 out of 94 points, 0 Non-equivalent//  24% Comparing 23 out of 94 points, 0 Non-equivalent//  25% Comparing 24 out of 94 points, 0 Non-equivalent//  26% Comparing 25 out of 94 points, 0 Non-equivalent//  27% Comparing 26 out of 94 points, 0 Non-equivalent//  28% Comparing 27 out of 94 points, 0 Non-equivalent//  29% Comparing 28 out of 94 points, 0 Non-equivalent//  30% Comparing 29 out of 94 points, 0 Non-equivalent//  31% Comparing 30 out of 94 points, 0 Non-equivalent//  32% Comparing 31 out of 94 points, 0 Non-equivalent//  34% Comparing 32 out of 94 points, 0 Non-equivalent//  35% Comparing 33 out of 94 points, 0 Non-equivalent//  36% Comparing 34 out of 94 points, 0 Non-equivalent//  37% Comparing 35 out of 94 points, 0 Non-equivalent//  38% Comparing 36 out of 94 points, 0 Non-equivalent//  39% Comparing 37 out of 94 points, 0 Non-equivalent//  40% Comparing 38 out of 94 points, 0 Non-equivalent//  41% Comparing 39 out of 94 points, 0 Non-equivalent//  42% Comparing 40 out of 94 points, 0 Non-equivalent//  43% Comparing 41 out of 94 points, 0 Non-equivalent//  44% Comparing 42 out of 94 points, 0 Non-equivalent//  45% Comparing 43 out of 94 points, 0 Non-equivalent//  46% Comparing 44 out of 94 points, 0 Non-equivalent//  47% Comparing 45 out of 94 points, 0 Non-equivalent//  48% Comparing 46 out of 94 points, 0 Non-equivalent//  50% Comparing 47 out of 94 points, 0 Non-equivalent//  51% Comparing 48 out of 94 points, 0 Non-equivalent//  52% Comparing 49 out of 94 points, 0 Non-equivalent//  53% Comparing 50 out of 94 points, 0 Non-equivalent//  54% Comparing 51 out of 94 points, 0 Non-equivalent//  55% Comparing 52 out of 94 points, 0 Non-equivalent//  56% Comparing 53 out of 94 points, 0 Non-equivalent//  57% Comparing 54 out of 94 points, 0 Non-equivalent//  58% Comparing 55 out of 94 points, 0 Non-equivalent//  59% Comparing 56 out of 94 points, 0 Non-equivalent//  60% Comparing 57 out of 94 points, 0 Non-equivalent//  61% Comparing 58 out of 94 points, 0 Non-equivalent//  62% Comparing 59 out of 94 points, 0 Non-equivalent//  63% Comparing 60 out of 94 points, 0 Non-equivalent//  64% Comparing 61 out of 94 points, 0 Non-equivalent//  65% Comparing 62 out of 94 points, 0 Non-equivalent//  67% Comparing 63 out of 94 points, 0 Non-equivalent//  68% Comparing 64 out of 94 points, 0 Non-equivalent//  69% Comparing 65 out of 94 points, 0 Non-equivalent//  70% Comparing 66 out of 94 points, 0 Non-equivalent//  71% Comparing 67 out of 94 points, 0 Non-equivalent//  72% Comparing 68 out of 94 points, 0 Non-equivalent//  73% Comparing 69 out of 94 points, 0 Non-equivalent//  74% Comparing 70 out of 94 points, 0 Non-equivalent//  75% Comparing 71 out of 94 points, 0 Non-equivalent//  76% Comparing 72 out of 94 points, 0 Non-equivalent//  77% Comparing 73 out of 94 points, 0 Non-equivalent//  78% Comparing 74 out of 94 points, 0 Non-equivalent//  79% Comparing 75 out of 94 points, 0 Non-equivalent//  80% Comparing 76 out of 94 points, 0 Non-equivalent//  81% Comparing 77 out of 94 points, 0 Non-equivalent//  82% Comparing 78 out of 94 points, 0 Non-equivalent//  84% Comparing 79 out of 94 points, 0 Non-equivalent//  85% Comparing 80 out of 94 points, 0 Non-equivalent//  86% Comparing 81 out of 94 points, 0 Non-equivalent//  87% Comparing 82 out of 94 points, 0 Non-equivalent//  88% Comparing 83 out of 94 points, 0 Non-equivalent//  89% Comparing 84 out of 94 points, 0 Non-equivalent//  90% Comparing 85 out of 94 points, 0 Non-equivalent//  91% Comparing 86 out of 94 points, 0 Non-equivalent//  92% Comparing 87 out of 94 points, 0 Non-equivalent//  93% Comparing 88 out of 94 points, 0 Non-equivalent//  94% Comparing 89 out of 94 points, 0 Non-equivalent//  95% Comparing 90 out of 94 points, 0 Non-equivalent//  96% Comparing 91 out of 94 points, 0 Non-equivalent//  97% Comparing 92 out of 94 points, 0 Non-equivalent//  98% Comparing 93 out of 94 points, 0 Non-equivalent// 100% Comparing 94 out of 94 points, 0 Non-equivalent================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+0 Non-equivalent point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+0 Abort point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          rsa_core          rsa_core          
+
+Primary inputs                                 7                  7
+   Mapped                                      7                  7
+
+Primary outputs                                7                  7
+   Mapped                                      7                  7
+      Equivalent                  7
+
+State key points                              88                 88
+   Mapped                                     87                 87
+      Equivalent                 87
+   Unmapped                                    1                  1
+      Unreachable                              1                  1
+================================================================================
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+================================================================================
+0
+// Command: if {$cmd_error} {
+//              puts stderr "ERRO durante execucao do LEC: $cmd_message"
+//          }
+// Command: set status [get_exit_code]
+// Command: get_exit_code
+0
+// Command: if {$cmd_error && $status == 0} {
+//              set status 4
+//          }
+// Command: if {!$compared && $status == 0} {
+//              set status 2
+//          }
+// Command: set result [expr {$status == 0 && $compared ? "PASS" : "FAIL"}]
+PASS
+// Command: set fh [open [file join $outdir summary.txt] w]
+file14
+// Command: puts $fh "DESIGN=$top"
+// Command: puts $fh "GOLDEN=$golden"
+// Command: puts $fh "REVISED=$revised"
+// Command: puts $fh "COMPARE_EXECUTED=$compared"
+// Command: puts $fh "RESULT=$result"
+// Command: puts $fh "CONFORMAL_EXIT_CODE=$status"
+// Command: puts $fh "CONFORMAL_EXIT_CODE_HEX=[format 0x%X $status]"
+// Command: if {$cmd_error} {
+//              puts $fh "SCRIPT_ERROR=$cmd_message"
+//          }
+// Command: close $fh
+// Command: puts "=== RESULTADO LEC: $result (codigo $status) ==="
+=== RESULTADO LEC: PASS (codigo 0) ===
+// Command: exit $status

@@ -145,7 +145,7 @@ def build(output):
     supplemental_diagrams = []
     for identifier, label, source in (
         ("project-overview", "Visão geral do projeto", "README.md"),
-        ("rsa-integration", "Integração do núcleo RSA", "src/rsa32/README_rsa_apb_top.md"),
+        ("rsa-integration", "Integração do núcleo RSA", "src/MG/rsa32/README_rsa_apb_top.md"),
     ):
         diagrams = re.findall(r"```mermaid\s*\n(.*?)```", read_required(ROOT / source), re.S)
         if not diagrams:
@@ -190,8 +190,8 @@ def build(output):
         "README.md": "README.md",
         "testbenchs/rsa_apb_top/testbench.sv": "testbench.sv",
         "legacy/testbenchs/amba_3_apb_adrec/testbench.sv": "testbench_adrec.sv",
-        "scripts/bash/iverilog.sh": "iverilog.sh",
-        "scripts/bash/verilator.sh": "verilator.sh",
+        "scripts/MG/bash/iverilog.sh": "iverilog.sh",
+        "scripts/MG/bash/verilator.sh": "verilator.sh",
         "scripts/pages/build.py": "build.py",
         ".github/workflows/pages.yml": "pages.yml",
         "docs/apb_protocol.pdf": "apb_protocol.pdf",

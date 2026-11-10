@@ -16,8 +16,8 @@ rsa_operation -> soft_reset -> test_id -> corners_exp -> xz_values
 Na raiz do projeto:
 
 ```bash
-./scripts/bash/xezim_uvm.sh
-./scripts/bash/xezim_uvm.sh -- +TEST_ID_ONLY=1
+./scripts/MG/bash/xezim_uvm.sh
+./scripts/MG/bash/xezim_uvm.sh -- +TEST_ID_ONLY=1
 ```
 
 O segundo comando executa somente o teste de ID. Ele nao executa operacoes
@@ -89,7 +89,7 @@ EXP zeradas e a rejeicao de selecoes conflitantes ou invalidas.
 A regressao encadeada foi executada com:
 
 ```bash
-./scripts/bash/xezim_uvm.sh --no-waves -- +CORNERS_CASES=1
+./scripts/MG/bash/xezim_uvm.sh --no-waves -- +CORNERS_CASES=1
 ```
 
 O [log da integracao](../logs/amba_3_apb_rsa_apb_top/xezim_uvm/2026-11-08_18-24-42_n7nzXX/simulate.log)

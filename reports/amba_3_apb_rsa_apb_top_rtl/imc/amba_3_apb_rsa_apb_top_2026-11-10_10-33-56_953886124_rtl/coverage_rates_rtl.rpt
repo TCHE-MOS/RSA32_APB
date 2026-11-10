@@ -1,0 +1,5 @@
+Legend: Metric* means cumulative e.g. Block* means Cumulative Block Coverage
+name                                     Code* Covered        Fsm* Covered         CoverGroup* Covered  Assertion* Covered   
+-----------------------------------------------------------------------------------------------------------------------------
+uvm_pkg                                  n/a                  n/a                  100.00% (2/2)        n/a                  
+amba_3_apb_rsa_apb_top                   70.32% (3097/4404)   81.48% (66/81)       n/a                  n/a                  

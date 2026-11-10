@@ -1,0 +1,62 @@
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+<> User: aluno
+
+Host: rock8
+
+Report date: Mon 09 Nov 2026 15:18:54 -03
+
+Report options: -detail -metrics covergroup -out /home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_rtl/imc/amba_3_apb_rsa_apb_top_2026-11-09_15-18-48_688391441_rtl/coverage_covergroups_rtl.rpt -inst -all
+
+Coverage database path: /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00
+
+Coverage model files: /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/icc_1ca46e63_3402c7f8.ucm
+
+Coverage data files: /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00/icc_1ca46e63_3402c7f8.ucd
+
+CCF files:  None
+
+
+Coverage database date: Mon 09 Nov 2026 13:41:35 -03
+
+*** There were no refinement files applied ***
+
+ <>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+Coverage Table Legend
+---------------------
+  EXCL       excluded using refinement rule
+  P-EXCL     excluded from parent
+  U-EXCL     excluded and unreachable by IEV
+  T-EXCL     excluded from type
+  S-EXCL     smart excluded using refinement rule
+  EXCL(S)    smart indirect excluded
+  EMPTY      all children are excluded
+  CONST      marked constant during simulation
+  IGN        marked ignored during simulation
+  UNG        marked ungradeable during simulation
+  DES        marked deselected during simulation
+  UNR        marked unreachable by IEV
+  UNG-Expr   expression marked ungradeable during simulation
+  UNG-Toggle toggle marked ungradeable during simulation
+
+
+Covered+Uncovered+Excluded+UNR CoverGroup Detail Report, Instance Based
+=======================================================================
+
+Instance name: uvm_pkg.uvm_test_top.env_h.agent_h.subscriber_h
+Type name: agent_pkg
+File name: /home/aluno/Documents/RSA32_APB/UVM/agent_pkg.svh
+Include Files:
+    /home/aluno/Documents/RSA32_APB/UVM/uvm_subscriber.sv
+Number of covered cover bins: 0 of 2
+Number of uncovered cover bins: 2 of 2
+Number of excluded cover bins: 0
+
+Name                           Average, Covered Grade         Line  Source Code                    
+---------------------------------------------------------------------------------------------------
+apb_rsa                        0.00%, 0.00% (0/2)             16 (uvm_subscriber.sv) covergroup apb_rsa with function sample (seq_item item); 
+|--transaction_type            0.00% (0/2)                    19 (uvm_subscriber.sv) transaction_type: coverpoint item.transaction_type; 
+| |--auto[READ]                0.00% (0/1)                    19 (uvm_subscriber.sv) transaction_type: coverpoint item.transaction_type; 
+| |--auto[WRITE]               0.00% (0/1)                    19 (uvm_subscriber.sv) transaction_type: coverpoint item.transaction_type; 
+

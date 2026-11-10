@@ -1,0 +1,593 @@
+Synthesis: amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28
+Xrun exit status: 0
+Flow exit status: 1
+Log: /home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-35-24_696973460_tsmc28/amba_3_apb_rsa_apb_top_2026-11-10_09-35-24_696973460_tsmc28.log
+SDF annotation: /home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-35-24_696973460_tsmc28/sdf_annotation_tsmc28.log
+Waveform: /home/aluno/Documents/RSA32_APB/waveforms/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-35-24_696973460_tsmc28/waves_tsmc28.shm
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[1594975000] FAIL wait_done: timeout, STATUS=0x0000000X
+[1594975000] FAIL STATUS after SRST at +0: got 0x0000000X expected 0x00000002
+[1595005000] FAIL RESULT after SRST at +0: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[2795275000] FAIL wait_done: timeout, STATUS=0x0000000X
+[2795275000] FAIL STATUS after SRST at +1: got 0x0000000X expected 0x00000002
+[2795305000] FAIL RESULT after SRST at +1: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[3995585000] FAIL wait_done: timeout, STATUS=0x0000000X
+[3995585000] FAIL STATUS after SRST at +2: got 0x0000000X expected 0x00000002
+[3995615000] FAIL RESULT after SRST at +2: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[5195905000] FAIL wait_done: timeout, STATUS=0x0000000X
+[5195905000] FAIL STATUS after SRST at +3: got 0x0000000X expected 0x00000002
+[5195935000] FAIL RESULT after SRST at +3: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[6396235000] FAIL wait_done: timeout, STATUS=0x0000000X
+[6396235000] FAIL STATUS after SRST at +4: got 0x0000000X expected 0x00000002
+[6396265000] FAIL RESULT after SRST at +4: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[7596575000] FAIL wait_done: timeout, STATUS=0x0000000X
+[7596575000] FAIL STATUS after SRST at +5: got 0x0000000X expected 0x00000002
+[7596605000] FAIL RESULT after SRST at +5: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[8796925000] FAIL wait_done: timeout, STATUS=0x0000000X
+[8796925000] FAIL STATUS after SRST at +6: got 0x0000000X expected 0x00000002
+[8796955000] FAIL RESULT after SRST at +6: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[9997285000] FAIL wait_done: timeout, STATUS=0x0000000X
+[9997285000] FAIL STATUS after SRST at +7: got 0x0000000X expected 0x00000002
+[9997315000] FAIL RESULT after SRST at +7: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[11197655000] FAIL wait_done: timeout, STATUS=0x0000000X
+[11197655000] FAIL STATUS after SRST at +8: got 0x0000000X expected 0x00000002
+[11197685000] FAIL RESULT after SRST at +8: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[12398035000] FAIL wait_done: timeout, STATUS=0x0000000X
+[12398035000] FAIL STATUS after SRST at +9: got 0x0000000X expected 0x00000002
+[12398065000] FAIL RESULT after SRST at +9: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[13598425000] FAIL wait_done: timeout, STATUS=0x0000000X
+[13598425000] FAIL STATUS after SRST at +10: got 0x0000000X expected 0x00000002
+[13598455000] FAIL RESULT after SRST at +10: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[14798825000] FAIL wait_done: timeout, STATUS=0x0000000X
+[14798825000] FAIL STATUS after SRST at +11: got 0x0000000X expected 0x00000002
+[14798855000] FAIL RESULT after SRST at +11: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[15999235000] FAIL wait_done: timeout, STATUS=0x0000000X
+[15999235000] FAIL STATUS after SRST at +12: got 0x0000000X expected 0x00000002
+[15999265000] FAIL RESULT after SRST at +12: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[17199655000] FAIL wait_done: timeout, STATUS=0x0000000X
+[17199655000] FAIL STATUS after SRST at +13: got 0x0000000X expected 0x00000002
+[17199685000] FAIL RESULT after SRST at +13: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[18400085000] FAIL wait_done: timeout, STATUS=0x0000000X
+[18400085000] FAIL STATUS after SRST at +14: got 0x0000000X expected 0x00000002
+[18400115000] FAIL RESULT after SRST at +14: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[19600525000] FAIL wait_done: timeout, STATUS=0x0000000X
+[19600525000] FAIL STATUS after SRST at +15: got 0x0000000X expected 0x00000002
+[19600555000] FAIL RESULT after SRST at +15: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[20800975000] FAIL wait_done: timeout, STATUS=0x0000000X
+[20800975000] FAIL STATUS after SRST at +16: got 0x0000000X expected 0x00000002
+[20801005000] FAIL RESULT after SRST at +16: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[22001435000] FAIL wait_done: timeout, STATUS=0x0000000X
+[22001435000] FAIL STATUS after SRST at +17: got 0x0000000X expected 0x00000002
+[22001465000] FAIL RESULT after SRST at +17: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[23201905000] FAIL wait_done: timeout, STATUS=0x0000000X
+[23201905000] FAIL STATUS after SRST at +18: got 0x0000000X expected 0x00000002
+[23201935000] FAIL RESULT after SRST at +18: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[24402385000] FAIL wait_done: timeout, STATUS=0x0000000X
+[24402385000] FAIL STATUS after SRST at +19: got 0x0000000X expected 0x00000002
+[24402415000] FAIL RESULT after SRST at +19: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[25602875000] FAIL wait_done: timeout, STATUS=0x0000000X
+[25602875000] FAIL STATUS after SRST at +20: got 0x0000000X expected 0x00000002
+[25602905000] FAIL RESULT after SRST at +20: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[26803375000] FAIL wait_done: timeout, STATUS=0x0000000X
+[26803375000] FAIL STATUS after SRST at +21: got 0x0000000X expected 0x00000002
+[26803405000] FAIL RESULT after SRST at +21: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[28003885000] FAIL wait_done: timeout, STATUS=0x0000000X
+[28003885000] FAIL STATUS after SRST at +22: got 0x0000000X expected 0x00000002
+[28003915000] FAIL RESULT after SRST at +22: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[29204405000] FAIL wait_done: timeout, STATUS=0x0000000X
+[29204405000] FAIL STATUS after SRST at +23: got 0x0000000X expected 0x00000002
+[29204435000] FAIL RESULT after SRST at +23: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[30404935000] FAIL wait_done: timeout, STATUS=0x0000000X
+[30404935000] FAIL STATUS after SRST at +24: got 0x0000000X expected 0x00000002
+[30404965000] FAIL RESULT after SRST at +24: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[31605475000] FAIL wait_done: timeout, STATUS=0x0000000X
+[31605475000] FAIL STATUS after SRST at +25: got 0x0000000X expected 0x00000002
+[31605505000] FAIL RESULT after SRST at +25: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[32806025000] FAIL wait_done: timeout, STATUS=0x0000000X
+[32806025000] FAIL STATUS after SRST at +26: got 0x0000000X expected 0x00000002
+[32806055000] FAIL RESULT after SRST at +26: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[34006585000] FAIL wait_done: timeout, STATUS=0x0000000X
+[34006585000] FAIL STATUS after SRST at +27: got 0x0000000X expected 0x00000002
+[34006615000] FAIL RESULT after SRST at +27: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[35207155000] FAIL wait_done: timeout, STATUS=0x0000000X
+[35207155000] FAIL STATUS after SRST at +28: got 0x0000000X expected 0x00000002
+[35207185000] FAIL RESULT after SRST at +28: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[36407735000] FAIL wait_done: timeout, STATUS=0x0000000X
+[36407735000] FAIL STATUS after SRST at +29: got 0x0000000X expected 0x00000002
+[36407765000] FAIL RESULT after SRST at +29: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[37608325000] FAIL wait_done: timeout, STATUS=0x0000000X
+[37608325000] FAIL STATUS after SRST at +30: got 0x0000000X expected 0x00000002
+[37608355000] FAIL RESULT after SRST at +30: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[38808925000] FAIL wait_done: timeout, STATUS=0x0000000X
+[38808925000] FAIL STATUS after SRST at +31: got 0x0000000X expected 0x00000002
+[38808955000] FAIL RESULT after SRST at +31: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[40009535000] FAIL wait_done: timeout, STATUS=0x0000000X
+[40009535000] FAIL STATUS after SRST at +32: got 0x0000000X expected 0x00000002
+[40009565000] FAIL RESULT after SRST at +32: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[41210155000] FAIL wait_done: timeout, STATUS=0x0000000X
+[41210155000] FAIL STATUS after SRST at +33: got 0x0000000X expected 0x00000002
+[41210185000] FAIL RESULT after SRST at +33: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[42410785000] FAIL wait_done: timeout, STATUS=0x0000000X
+[42410785000] FAIL STATUS after SRST at +34: got 0x0000000X expected 0x00000002
+[42410815000] FAIL RESULT after SRST at +34: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[43611425000] FAIL wait_done: timeout, STATUS=0x0000000X
+[43611425000] FAIL STATUS after SRST at +35: got 0x0000000X expected 0x00000002
+[43611455000] FAIL RESULT after SRST at +35: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[44812075000] FAIL wait_done: timeout, STATUS=0x0000000X
+[44812075000] FAIL STATUS after SRST at +36: got 0x0000000X expected 0x00000002
+[44812105000] FAIL RESULT after SRST at +36: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[46012735000] FAIL wait_done: timeout, STATUS=0x0000000X
+[46012735000] FAIL STATUS after SRST at +37: got 0x0000000X expected 0x00000002
+[46012765000] FAIL RESULT after SRST at +37: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[47213405000] FAIL wait_done: timeout, STATUS=0x0000000X
+[47213405000] FAIL STATUS after SRST at +38: got 0x0000000X expected 0x00000002
+[47213435000] FAIL RESULT after SRST at +38: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[48414085000] FAIL wait_done: timeout, STATUS=0x0000000X
+[48414085000] FAIL STATUS after SRST at +39: got 0x0000000X expected 0x00000002
+[48414115000] FAIL RESULT after SRST at +39: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[49614775000] FAIL wait_done: timeout, STATUS=0x0000000X
+[49614775000] FAIL STATUS after SRST at +40: got 0x0000000X expected 0x00000002
+[49614805000] FAIL RESULT after SRST at +40: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[50815475000] FAIL wait_done: timeout, STATUS=0x0000000X
+[50815475000] FAIL STATUS after SRST at +41: got 0x0000000X expected 0x00000002
+[50815505000] FAIL RESULT after SRST at +41: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[52016185000] FAIL wait_done: timeout, STATUS=0x0000000X
+[52016185000] FAIL STATUS after SRST at +42: got 0x0000000X expected 0x00000002
+[52016215000] FAIL RESULT after SRST at +42: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[53216905000] FAIL wait_done: timeout, STATUS=0x0000000X
+[53216905000] FAIL STATUS after SRST at +43: got 0x0000000X expected 0x00000002
+[53216935000] FAIL RESULT after SRST at +43: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[54417635000] FAIL wait_done: timeout, STATUS=0x0000000X
+[54417635000] FAIL STATUS after SRST at +44: got 0x0000000X expected 0x00000002
+[54417665000] FAIL RESULT after SRST at +44: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[55618375000] FAIL wait_done: timeout, STATUS=0x0000000X
+[55618375000] FAIL STATUS after SRST at +45: got 0x0000000X expected 0x00000002
+[55618405000] FAIL RESULT after SRST at +45: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[56819125000] FAIL wait_done: timeout, STATUS=0x0000000X
+[56819125000] FAIL STATUS after SRST at +46: got 0x0000000X expected 0x00000002
+[56819155000] FAIL RESULT after SRST at +46: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[58019885000] FAIL wait_done: timeout, STATUS=0x0000000X
+[58019885000] FAIL STATUS after SRST at +47: got 0x0000000X expected 0x00000002
+[58019915000] FAIL RESULT after SRST at +47: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[59220655000] FAIL wait_done: timeout, STATUS=0x0000000X
+[59220655000] FAIL STATUS after SRST at +48: got 0x0000000X expected 0x00000002
+[59220685000] FAIL RESULT after SRST at +48: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[60421435000] FAIL wait_done: timeout, STATUS=0x0000000X
+[60421435000] FAIL STATUS after SRST at +49: got 0x0000000X expected 0x00000002
+[60421465000] FAIL RESULT after SRST at +49: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[61622225000] FAIL wait_done: timeout, STATUS=0x0000000X
+[61622225000] FAIL STATUS after SRST at +50: got 0x0000000X expected 0x00000002
+[61622255000] FAIL RESULT after SRST at +50: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[62823025000] FAIL wait_done: timeout, STATUS=0x0000000X
+[62823025000] FAIL STATUS after SRST at +51: got 0x0000000X expected 0x00000002
+[62823055000] FAIL RESULT after SRST at +51: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[64023835000] FAIL wait_done: timeout, STATUS=0x0000000X
+[64023835000] FAIL STATUS after SRST at +52: got 0x0000000X expected 0x00000002
+[64023865000] FAIL RESULT after SRST at +52: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[65224655000] FAIL wait_done: timeout, STATUS=0x0000000X
+[65224655000] FAIL STATUS after SRST at +53: got 0x0000000X expected 0x00000002
+[65224685000] FAIL RESULT after SRST at +53: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[66425485000] FAIL wait_done: timeout, STATUS=0x0000000X
+[66425485000] FAIL STATUS after SRST at +54: got 0x0000000X expected 0x00000002
+[66425515000] FAIL RESULT after SRST at +54: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[67626325000] FAIL wait_done: timeout, STATUS=0x0000000X
+[67626325000] FAIL STATUS after SRST at +55: got 0x0000000X expected 0x00000002
+[67626355000] FAIL RESULT after SRST at +55: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[68827175000] FAIL wait_done: timeout, STATUS=0x0000000X
+[68827175000] FAIL STATUS after SRST at +56: got 0x0000000X expected 0x00000002
+[68827205000] FAIL RESULT after SRST at +56: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[70028035000] FAIL wait_done: timeout, STATUS=0x0000000X
+[70028035000] FAIL STATUS after SRST at +57: got 0x0000000X expected 0x00000002
+[70028065000] FAIL RESULT after SRST at +57: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[71228905000] FAIL wait_done: timeout, STATUS=0x0000000X
+[71228905000] FAIL STATUS after SRST at +58: got 0x0000000X expected 0x00000002
+[71228935000] FAIL RESULT after SRST at +58: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[72429785000] FAIL wait_done: timeout, STATUS=0x0000000X
+[72429785000] FAIL STATUS after SRST at +59: got 0x0000000X expected 0x00000002
+[72429815000] FAIL RESULT after SRST at +59: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[73630675000] FAIL wait_done: timeout, STATUS=0x0000000X
+[73630675000] FAIL STATUS after SRST at +60: got 0x0000000X expected 0x00000002
+[73630705000] FAIL RESULT after SRST at +60: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[74831575000] FAIL wait_done: timeout, STATUS=0x0000000X
+[74831575000] FAIL STATUS after SRST at +61: got 0x0000000X expected 0x00000002
+[74831605000] FAIL RESULT after SRST at +61: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[76032485000] FAIL wait_done: timeout, STATUS=0x0000000X
+[76032485000] FAIL STATUS after SRST at +62: got 0x0000000X expected 0x00000002
+[76032515000] FAIL RESULT after SRST at +62: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[77233405000] FAIL wait_done: timeout, STATUS=0x0000000X
+[77233405000] FAIL STATUS after SRST at +63: got 0x0000000X expected 0x00000002
+[77233435000] FAIL RESULT after SRST at +63: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[78434335000] FAIL wait_done: timeout, STATUS=0x0000000X
+[78434335000] FAIL STATUS after SRST at +64: got 0x0000000X expected 0x00000002
+[78434365000] FAIL RESULT after SRST at +64: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[79635275000] FAIL wait_done: timeout, STATUS=0x0000000X
+[79635275000] FAIL STATUS after SRST at +65: got 0x0000000X expected 0x00000002
+[79635305000] FAIL RESULT after SRST at +65: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[80836225000] FAIL wait_done: timeout, STATUS=0x0000000X
+[80836225000] FAIL STATUS after SRST at +66: got 0x0000000X expected 0x00000002
+[80836255000] FAIL RESULT after SRST at +66: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[82037185000] FAIL wait_done: timeout, STATUS=0x0000000X
+[82037185000] FAIL STATUS after SRST at +67: got 0x0000000X expected 0x00000002
+[82037215000] FAIL RESULT after SRST at +67: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[83238155000] FAIL wait_done: timeout, STATUS=0x0000000X
+[83238155000] FAIL STATUS after SRST at +68: got 0x0000000X expected 0x00000002
+[83238185000] FAIL RESULT after SRST at +68: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[84439135000] FAIL wait_done: timeout, STATUS=0x0000000X
+[84439135000] FAIL STATUS after SRST at +69: got 0x0000000X expected 0x00000002
+[84439165000] FAIL RESULT after SRST at +69: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[85640125000] FAIL wait_done: timeout, STATUS=0x0000000X
+[85640125000] FAIL STATUS after SRST at +70: got 0x0000000X expected 0x00000002
+[85640155000] FAIL RESULT after SRST at +70: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[86841125000] FAIL wait_done: timeout, STATUS=0x0000000X
+[86841125000] FAIL STATUS after SRST at +71: got 0x0000000X expected 0x00000002
+[86841155000] FAIL RESULT after SRST at +71: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[88042135000] FAIL wait_done: timeout, STATUS=0x0000000X
+[88042135000] FAIL STATUS after SRST at +72: got 0x0000000X expected 0x00000002
+[88042165000] FAIL RESULT after SRST at +72: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[89243155000] FAIL wait_done: timeout, STATUS=0x0000000X
+[89243155000] FAIL STATUS after SRST at +73: got 0x0000000X expected 0x00000002
+[89243185000] FAIL RESULT after SRST at +73: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[90444185000] FAIL wait_done: timeout, STATUS=0x0000000X
+[90444185000] FAIL STATUS after SRST at +74: got 0x0000000X expected 0x00000002
+[90444215000] FAIL RESULT after SRST at +74: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[91645225000] FAIL wait_done: timeout, STATUS=0x0000000X
+[91645225000] FAIL STATUS after SRST at +75: got 0x0000000X expected 0x00000002
+[91645255000] FAIL RESULT after SRST at +75: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[92846275000] FAIL wait_done: timeout, STATUS=0x0000000X
+[92846275000] FAIL STATUS after SRST at +76: got 0x0000000X expected 0x00000002
+[92846305000] FAIL RESULT after SRST at +76: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[94047335000] FAIL wait_done: timeout, STATUS=0x0000000X
+[94047335000] FAIL STATUS after SRST at +77: got 0x0000000X expected 0x00000002
+[94047365000] FAIL RESULT after SRST at +77: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[95248405000] FAIL wait_done: timeout, STATUS=0x0000000X
+[95248405000] FAIL STATUS after SRST at +78: got 0x0000000X expected 0x00000002
+[95248435000] FAIL RESULT after SRST at +78: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[96449485000] FAIL wait_done: timeout, STATUS=0x0000000X
+[96449485000] FAIL STATUS after SRST at +79: got 0x0000000X expected 0x00000002
+[96449515000] FAIL RESULT after SRST at +79: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[97650575000] FAIL wait_done: timeout, STATUS=0x0000000X
+[97650575000] FAIL STATUS after SRST at +80: got 0x0000000X expected 0x00000002
+[97650605000] FAIL RESULT after SRST at +80: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+[98851675000] FAIL wait_done: timeout, STATUS=0x0000000X
+[98851675000] FAIL STATUS after SRST at +81: got 0x0000000X expected 0x00000002
+[98851705000] FAIL RESULT after SRST at +81: got 0xxxxxxxxx expected 0x00000008
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+Warning!  Timing violation
+FAIL: watchdog
+	SDF statistics: 
+		 No. of Pathdelays = 15852   	 No. of Disabled Pathdelays = 0        Annotated = 100.00% (15852/15852) 
+		 No. of Tchecks    = 15454   	 No. of Disabled Tchecks    = 0        Annotated = 41.23% (6372/15454) 
+				        Total(T) 	   Disabled(D) 	    Annotated(A)	  Percentage(A/(T-D))
+		 Path Delays	         15852	             0	             15852	                100.00
+		      $width	          9080	             0	                 0	                  0.00
+		     $recrem	           140	             0	               140	                100.00
+		  $setuphold	          6234	             0	              6232	                 99.97

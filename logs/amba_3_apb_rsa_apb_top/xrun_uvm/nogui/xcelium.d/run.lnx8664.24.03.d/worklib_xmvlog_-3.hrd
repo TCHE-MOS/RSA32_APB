@@ -4,7 +4,7 @@
 //
 -sv
 -INCDIR
-/home/aluno/Documents/RSA_APB_32-bit/UVM
+/home/aluno/Documents/RSA32_APB/UVM
 -I_INCDIR
 /home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2/sv/src
 -DEFINE

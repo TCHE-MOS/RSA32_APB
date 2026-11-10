@@ -1,0 +1,113 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 989 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Parsing file /home/cadence/DDI221/JLS221/etc/rtls/tutorial/libraries/LIB/typical.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv ...
+// Golden root module is set to 'amba_3_apb_rsa_apb_top'
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:1)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:43)
+// Warning: (RTL5.3) Case expressions/items are resized (occurrence:14)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:9)
+// Note: (RTL5.6) Case statement with no default (occurrence:2)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:2)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:16)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:2)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:4)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:3)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+LEC | PDK: gpdk45 | Sintese: amba_3_apb_rsa_apb_top_2026-11-05_14-30-30_264505466_gpdk45
+Golden: RTL em /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb (nucleo RSA32 v2)
+Revised: /home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_gpdk45/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-05_14-30-30_264505466_gpdk45.v
+// Parsing file /home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_gpdk45/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-05_14-30-30_264505466_gpdk45.v ...
+// Revised root module is set to 'amba_3_apb_rsa_apb_top'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:3)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:3)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 1412 out of 1415 DFF/DLATs
+// (F18) Converted 2 DFF/DLAT(s) in (G) to ZERO/ONE
+CPU time     : 0.41    seconds
+Elapse time  : 0       seconds
+Memory usage : 145.25  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 793
+// Revised key points = 790
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            49     35     706       790     
+--------------------------------------------------------------------------------
+Revised           49     35     706       790     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+// Remodeling Golden ...
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            49     35     706       790     
+--------------------------------------------------------------------------------
+Revised           49     35     706       790     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       3         3       
+================================================================================
+// 741 compared points added to compare list
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           35     706       741     
+================================================================================
+Aviso: Diagnostico PSLVERR nao disponivel: 1
+Aviso: Diagnostico PRDATA nao disponivel: 1
+CPU time     : 0.71    seconds
+Elapse time  : 1       seconds
+Memory usage : 152.59  M bytes
+// Command: exit

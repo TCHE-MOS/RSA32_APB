@@ -1,0 +1,10 @@
+DESIGN=amba_3_apb_rsa_apb_top
+PDK=gpdk45
+SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-11-10_09-18-20_416848093_gpdk45
+GOLDEN=/home/aluno/Documents/RSA32_APB/src/MR/RSA_APB
+REVISED=/home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_gpdk45/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-18-20_416848093_gpdk45.v
+RESULT=PASS
+UNMAPPED_EXIT_BIT=0
+UNMAPPED_REPORT=/home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_gpdk45/lec/amba_3_apb_rsa_apb_top_2026-11-10_10-55-50_512332116_gpdk45/lec_unmapped_gpdk45.rpt (inclui flops unreachable removidos pela sintese, que nao ativam o bit)
+CONFORMAL_EXIT_CODE=0
+CONFORMAL_EXIT_CODE_HEX=0x0

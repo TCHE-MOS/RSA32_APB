@@ -1,0 +1,7 @@
+DESIGN=rsa_core
+GOLDEN=/home/aluno/Documents/RSA32_APB/RSA4/src/vlog/rsa_core.v
+REVISED=/home/aluno/Documents/RSA32_APB/RSA4/src/sv/rsa_core.sv
+COMPARE_EXECUTED=1
+RESULT=PASS
+CONFORMAL_EXIT_CODE=0
+CONFORMAL_EXIT_CODE_HEX=0x0

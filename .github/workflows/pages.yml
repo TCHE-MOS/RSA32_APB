@@ -56,10 +56,10 @@ jobs:
         run: echo "$GITHUB_WORKSPACE/.tools/verilator/bin" >> "$GITHUB_PATH"
 
       - name: Executar a bancada com Icarus
-        run: ./scripts/bash/iverilog.sh
+        run: ./scripts/MG/bash/iverilog.sh
 
       - name: Executar Verilator e gerar cobertura LCOV
-        run: ./scripts/bash/verilator.sh
+        run: ./scripts/MG/bash/verilator.sh
 
       - name: Gerar a página a partir dos READMEs e das evidências
         run: |

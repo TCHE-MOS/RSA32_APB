@@ -74,14 +74,14 @@ Para abrir a vista da v1, que carrega seu FST automaticamente:
 gtkwave -a waveforms/amba_3_apb_rsa_apb_top/xezim_uvm/2026-11-08_14-42-58_mdKgMI.apb_rsa.gtkw
 ```
 
-Para outra execução, o [script de visualização](../scripts/tcl/xezim_uvm_wave_view.tcl)
+Para outra execução, o [script de visualização](../scripts/MG/tcl/xezim_uvm_wave_view.tcl)
 seleciona os onze pinos do topo e ajusta o zoom sem fixar um tempo final.
 Nas novas simulações, ele usa `top_tb.th.dut_io_pinout`, um grupo passivo
 sem subinstâncias ou parâmetros locais. Nos arquivos anteriores à inclusão
 do monitor, usa os pinos equivalentes em `top_tb.th.apb_rsa_if`:
 
 ```bash
-gtkwave caminho/execucao.fst -S scripts/tcl/xezim_uvm_wave_view.tcl
+gtkwave caminho/execucao.fst -S scripts/MG/tcl/xezim_uvm_wave_view.tcl
 ```
 
 O launcher aceita `--vcd` para exportar os próximos FSTs também nesse formato.
@@ -264,13 +264,13 @@ responsável; nenhum fonte RTL foi modificado para produzir esse resultado.
 
 ```bash
 # Fluxo original: esperado TEST PASS, 398 verificações.
-bash scripts/bash/xezim.sh
+bash scripts/MG/bash/xezim.sh
 
 # Acrescenta o caso dirigido de módulo zero.
-bash scripts/bash/xezim.sh +MOD_ZERO
+bash scripts/MG/bash/xezim.sh +MOD_ZERO
 ```
 
-O [script](../scripts/bash/xezim.sh) usa RSA v2 e grava comando, log, código
+O [script](../scripts/MG/bash/xezim.sh) usa RSA v2 e grava comando, log, código
 de saída e ondas por execução. Com o DUT atual, a segunda chamada termina
 com código 1, pois as quatro comparações acima falham. A opção não altera
 as cotas ou os estímulos da bancada UVM.
@@ -279,7 +279,7 @@ as cotas ou os estímulos da bancada UVM.
 
 Registro de 08/11/2026. Bancada:
 [tb_rsa_core_fault.sv](../testbenchs/rsa_core_fault/tb_rsa_core_fault.sv);
-script: [xezim_rsa_core_fault.sh](../scripts/bash/xezim_rsa_core_fault.sh).
+script: [xezim_rsa_core_fault.sh](../scripts/MG/bash/xezim_rsa_core_fault.sh).
 
 ### Objetivo
 
@@ -456,8 +456,8 @@ sub-bloco.
 ### Reprodução e evidências
 
 ```bash
-bash scripts/bash/xezim_rsa_core_fault.sh v2
-bash scripts/bash/xezim_rsa_core_fault.sh v1
+bash scripts/MG/bash/xezim_rsa_core_fault.sh v2
+bash scripts/MG/bash/xezim_rsa_core_fault.sh v1
 # Opcionais: +SEED=<n> +N_RANDOM=<n> +RAND_EXP_MAX=<n>
 ```
 

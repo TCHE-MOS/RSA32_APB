@@ -10,8 +10,8 @@ segunda etapa, com uma referência matemática de `MSG^EXP mod MOD`.
 
 - DUT: `src/amba_3_apb/amba_3_apb_rsa_apb_top.sv`.
 - Bancada: `testbenchs/rsa_apb_top/testbench.sv`.
-- Execução: `scripts/bash/iverilog.sh`.
-- Execução com cobertura: `scripts/bash/verilator.sh`.
+- Execução: `scripts/MG/bash/iverilog.sh`.
+- Execução com cobertura: `scripts/MG/bash/verilator.sh`.
 
 O nome declarado no RTL atual é `amba_3_apb_rsa_apb_top`. A bancada permanece
 no diretório existente `testbenchs/rsa_apb_top`, mas instancia esse módulo atual.
@@ -209,8 +209,8 @@ blocos do topo; não depende de Xcelium nem de `filelist.f` externo.
 Na raiz do projeto:
 
 ```bash
-./scripts/bash/iverilog.sh
-./scripts/bash/iverilog.sh +DATA=DEADBEEF
+./scripts/MG/bash/iverilog.sh
+./scripts/MG/bash/iverilog.sh +DATA=DEADBEEF
 ```
 
 Também é possível chamar o script por caminho absoluto a partir de outro
@@ -230,7 +230,7 @@ da compilação e o resumo da bancada para determinar aprovação.
 
 ## Simulação e cobertura com Verilator
 
-O script `scripts/bash/verilator.sh` compila e executa
+O script `scripts/MG/bash/verilator.sh` compila e executa
 a mesma bancada usando `--binary --timing --assert --coverage --trace`.
 As temporizações, tasks e as duas etapas do teste são preservadas.
 O fluxo usa os comandos de relatório do Verilator 5.052, versão validada
@@ -239,9 +239,9 @@ suporte a corrotinas C++20 no PATH. `genhtml`, fornecido pelo pacote LCOV,
 é opcional para a apresentação em HTML.
 
 ```bash
-./scripts/bash/verilator.sh
-./scripts/bash/verilator.sh +DATA=DEADBEEF
-VERILATOR_JOBS=4 ./scripts/bash/verilator.sh
+./scripts/MG/bash/verilator.sh
+./scripts/MG/bash/verilator.sh +DATA=DEADBEEF
+VERILATOR_JOBS=4 ./scripts/MG/bash/verilator.sh
 ```
 
 Os argumentos são encaminhados ao executável. O script também pode ser

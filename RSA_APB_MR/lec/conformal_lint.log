@@ -1,0 +1,143 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 989 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read design -systemverilog -golden \
+//              ../rtl/RSA_APB/rsa_core_32bits.sv \
+//              ../rtl/RSA_APB/rsa_apb_top.sv
+// Parsing file ../rtl/RSA_APB/rsa_core_32bits.sv ...
+// Parsing file ../rtl/RSA_APB/rsa_apb_top.sv ...
+// Golden root module is set to 'amba_3_apb_rsa_apb_top'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:4)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:13)
+// Warning: (RTL1.9c) Parameter bit width is sufficient to hold RHS value but does not match RHS bit width (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:7)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:3)
+// Warning: (RTL6.4a) Enum value might need constraint (occurrence:4)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:4)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:2)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+// Command: set root module amba_3_apb_rsa_apb_top -golden
+// Warning: Golden root module is already at 'amba_3_apb_rsa_apb_top'
+// Command: report rule check -RTL -status FAIL -verbose
+RTL1.2: Variable/signal is assigned by multiple non-blocking assignments
+    Type: Golden      Severity: Warning    Occurrence: 4
+    1: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12/st_done
+       on line 325 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    2: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12/st_err
+       on line 326 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    3: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12/st_done
+       on line 331 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    4: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12/st_err
+       on line 335 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+RTL1.5b: Potential loss of RHS msb or carry-out bit
+    Type: Golden      Severity: Warning    Occurrence: 13
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:e_reg LHS:32 RHS:33
+       on line 381 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:e_reg LHS:32 RHS:33
+       on line 385 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    3: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:e_reg LHS:32 RHS:33
+       on line 389 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    4: rsa_core_mod_DATA_WIDTH32_RESET1_START1:a_cnt LHS:33 RHS:34
+       on line 205 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    5: rsa_core_mod_DATA_WIDTH32_RESET1_START1:t_reg LHS:64 RHS:65
+       on line 212 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    6: rsa_core_mod_DATA_WIDTH32_RESET1_START1:a_cnt LHS:33 RHS:34
+       on line 214 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    7: rsa_core_mod_DATA_WIDTH32_RESET1_START1:a_cnt LHS:33 RHS:34
+       on line 218 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    8: rsa_core_mult_DATA_WIDTH32_RESET1_START1:p_reg LHS:64 RHS:65
+       on line 92 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    9: rsa_core_mult_DATA_WIDTH32_RESET1_START1:a_cnt LHS:6 RHS:7
+       on line 93 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+   10: rsa_core_mult_DATA_WIDTH32_RESET1_START1:a_cnt LHS:6 RHS:7
+       on line 98 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+   11: rsa_apb_seq_LOAD_GAP1:gap_cnt LHS:1 RHS:2
+       on line 148 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+   12: rsa_apb_seq_LOAD_GAP1:gap_cnt LHS:1 RHS:2
+       on line 157 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+   13: amba_3_apb_rsa_apb_top:srst_cnt LHS:2 RHS:3
+       on line 433 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+RTL1.9c: Parameter bit width is sufficient to hold RHS value but does not match RHS bit width
+    Type: Golden      Severity: Warning    Occurrence: 1
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1: LHS:32 RHS:1
+       on line 262 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+RTL5.5a: Default case item with non-X assignment(s)
+    Type: Golden      Severity: Note       Occurrence: 7
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1
+       on line 337 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: rsa_core_mod_DATA_WIDTH32_RESET1_START1
+       on line 185 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    3: rsa_core_mult_DATA_WIDTH32_RESET1_START1
+       on line 72 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    4: rsa_apb_seq_LOAD_GAP1
+       on line 164 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    5: rsa_apb_seq_LOAD_GAP1
+       on line 179 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    6: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12
+       on line 356 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    7: amba_3_apb_rsa_apb_top
+       on line 498 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+RTL5.7: Default case item with inconsistent assignment(s).
+    Type: Golden      Severity: Note       Occurrence: 3
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1: incomplete assignments to: c_reg done_ff e_reg err_ff m_reg n_reg start_ff x_reg 
+       on line 344 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: rsa_core_mult_DATA_WIDTH32_RESET1_START1: incomplete assignments to: a_cnt a_reg b_reg c_reg done_ff p_reg 
+       on line 80 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    3: rsa_apb_seq_LOAD_GAP1: incomplete assignments to: gap_cnt 
+       on line 137 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+RTL6.4a: Enum value might need constraint
+    Type: Golden      Severity: Warning    Occurrence: 4
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:enum var 'state_reg', referenced at: line 300, line 344
+       on line 281 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:enum var 'state_ns', referenced at: line 394
+       on line 281 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    3: rsa_core_mult_DATA_WIDTH32_RESET1_START1:enum var 'state_reg', referenced at: line 44, line 80
+       on line 28 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    4: rsa_core_mult_DATA_WIDTH32_RESET1_START1:enum var 'state_ns', referenced at: line 108
+       on line 28 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+RTL7.10a: Comparison with different data sizes
+    Type: Golden      Severity: Warning    Occurrence: 4
+    1: rsa_core_ctrl_DATA_WIDTH32_RESET1_LOAD1:sizes are 32-bit at col 30 vs. 1-bit at col 39
+       on line 315 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: rsa_core_mult_DATA_WIDTH32_RESET1_START1:sizes are 6-bit at col 25 vs. 32-bit at col 46
+       on line 54 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    3: rsa_core_mult_DATA_WIDTH32_RESET1_START1:sizes are 6-bit at col 25 vs. 32-bit at col 46
+       on line 61 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    4: rsa_apb_seq_LOAD_GAP1:sizes are 1-bit at col 22 vs. 32-bit at col 38
+       on line 124 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+VLG6.4: Supported system datapath function call
+    Type: Golden      Severity: Note       Occurrence: 2
+    1: amba_3_apb_rsa_apb_top/$log2
+       on line 411 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    2: rsa_core_mult_DATA_WIDTH32_RESET1_START1/$log2
+       on line 30 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+DIR6.1: Ignored compiler directive is detected
+    Type: Golden      Severity: Warning    Occurrence: 2
+    1: timescale
+       on line 1 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: timescale
+       on line 49 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+HRC3.5b: Open output port connection is detected
+    Type: Golden      Severity: Note       Occurrence: 2
+    1: rsa_core_DATA_WIDTH32_RESET1_LOAD1:On instance rsa_core_mod_blk: mod_err
+       on line 452 in file '../rtl/RSA_APB/rsa_core_32bits.sv'
+    2: amba_3_apb_rsa_apb_top:On instance u_rsa_core: core_clk_o
+       on line 509 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+HRC3.10a: An input port is declared, but it is not completely used in the module
+    Type: Golden      Severity: Warning    Occurrence: 2
+    1: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12:Input paddr[1] is unused
+       on line 193 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+    2: rsa_apb_regs_DATA_WIDTH32_ADDR_WIDTH12:Input paddr[0] is unused
+       on line 193 in file '../rtl/RSA_APB/rsa_apb_top.sv'
+// Command: exit -force

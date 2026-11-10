@@ -1,0 +1,279 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 09, 2026 at 14:24:00 -03
+xrun
+	-64bit
+	-sv
+	-uvm
+	-uvmhome CDNS-1.2
+	-timescale 1ns/1ps
+	-input /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/xrun_uvm_nogui.tcl
+	-top top_tb
+	-access +rwc
+	-incdir /home/aluno/Documents/RSA32_APB/UVM
+	-svseed 1
+	-coverage all
+	-covoverwrite
+	-covdut amba_3_apb_rsa_apb_top
+	-covworkdir /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm
+	-covtest amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00
+	-l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/nogui/amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00.log
+	/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv
+	/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv
+	/home/aluno/Documents/RSA32_APB/UVM/testbench.svh
+	+UVM_TESTNAME=test_rsa_operation
+	+UVM_VERBOSITY=UVM_MEDIUM
+	+CORNERS_CASES=13
+	+CORNERS_BASE_CYCLES=1024
+	+CORNERS_CYCLES_PER_EXP=256
+	+CORNERS_POLL_CYCLES=16
+	+CORNERS_MAX_READS=0
+	+UVM_TIMEOUT=13744132099590,YES
+
+   User defined plus("+") options:
+	+UVM_VERBOSITY=UVM_MEDIUM
+	+CORNERS_CASES=13
+	+CORNERS_BASE_CYCLES=1024
+	+CORNERS_CYCLES_PER_EXP=256
+	+CORNERS_POLL_CYCLES=16
+	+CORNERS_MAX_READS=0
+	+UVM_TIMEOUT=13744132099590,YES
+
+Recompiling... reason: file '/home/aluno/Documents/RSA32_APB/UVM/top_tb_pkg.svh' is newer than expected.
+	expected: Mon Nov  9 13:39:09 2026
+	actual:   Mon Nov  9 14:23:46 2026
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2
+file: /home/aluno/Documents/RSA32_APB/UVM/testbench.svh
+	package worklib.top_tb_pkg:svh
+		errors: 0, warnings: 0
+	package worklib.sequence_pkg:svh
+		errors: 0, warnings: 0
+	package worklib.agent_pkg:svh
+		errors: 0, warnings: 0
+	package worklib.env_pkg:svh
+		errors: 0, warnings: 0
+	package worklib.top_seq_pkg:svh
+		errors: 0, warnings: 0
+	package worklib.top_test_pkg:svh
+		errors: 0, warnings: 0
+	module worklib.apb_protocol_sva:sv
+		errors: 0, warnings: 0
+	module worklib.rsa_operation_sva:sv
+		errors: 0, warnings: 0
+	module worklib.soft_reset_sva:sv
+		errors: 0, warnings: 0
+	module worklib.test_id_sva:sv
+		errors: 0, warnings: 0
+	module worklib.corners_exp_sva:sv
+		errors: 0, warnings: 0
+	module worklib.dut_io_pinout_monitor:sv
+		errors: 0, warnings: 0
+	module worklib.top_th:svh
+		errors: 0, warnings: 0
+	module worklib.top_tb:svh
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		$unit_0x64c722e7
+		top_tb_pkg
+		sequence_pkg
+		agent_pkg
+		env_pkg
+		top_seq_pkg
+		top_test_pkg
+		top_tb
+
+	Extracting FSMs for coverage:
+		worklib.amba_3_apb_adrec
+		worklib.amba_3_apb_data_o_mux
+		worklib.amba_3_apb_data_io_top
+		worklib.amba_3_apb_control
+		worklib.amba_3_apb_regbank
+		worklib.amba_3_apb_reset
+		worklib.amba_3_apb_rsa_wrapper_control
+			FSM extracted for state register c_state
+		worklib.amba_3_apb_rsa_wrapper_data
+		worklib.kogge_stone_adder
+		worklib.rsa_core_mult
+			FSM extracted for state register state_reg
+		worklib.rsa_core_mod
+			FSM extracted for state register state_reg
+		worklib.rsa_core_ctrl
+			FSM extracted for state register state_reg
+		worklib.rsa_core
+		worklib.amba_3_apb_rsa_wrapper_top
+		worklib.amba_3_apb_rsa_apb_top
+	Total FSMs extracted = 4
+xmelab: *W,COVSCE: Expression coverage is supported for expressions with static cast as a default configuration. To continue merging older databases, use the "set_backward_compat -disable_static_cast" backward compatibility command in the coverage configuration file. This command disables the support of expression coverage with static cast.
+	Building instance overlay tables: ......
+xmelab: *W,COVFDP: FSM description matching across instance of a module for "COVFDM" warning has been moved from elaboration to simulation dumping. To restore old matching behavior, use "set_backward_compat -COVFDM_during_elab". Also, it is recommended to use set_parameterized_module_coverage CCF command to avoid coverage loss due to FSM description difference across instances of a module.
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+.............. Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.corners_exp_sva:sv <0x60a04ad2>
+			streams:  97, words: 77685
+		worklib.test_id_sva:sv <0x12dc18da>
+			streams:  57, words: 44060
+		worklib.soft_reset_sva:sv <0x4e1d30f0>
+			streams:  35, words: 38561
+		worklib.rsa_operation_sva:sv <0x6873212c>
+			streams:  69, words: 66108
+		worklib.apb_protocol_sva:sv <0x5125b5b4>
+			streams: 198, words: 158553
+		worklib.top_tb:svh <0x721e084d>
+			streams: 961, words: 1302870
+		worklib.top_th:svh <0x7607294d>
+			streams:  17, words:  4165
+    logic [DATA_WIDTH-1:0] p_stage [0:LEVELS];
+                                 |
+xmelab: *W,COVMDD (/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv,22|33): Toggle coverage for bit, logic, reg, wire, enum and struct multi-dimensional static arrays and vectors is not supported by default. To enable toggle coverage for enum multi-dimensional static arrays specify 'set_toggle_scoring -sv_enum enable_mda' and for other multi-dimensional static arrays, specify 'set_toggle_scoring -sv_mda [<max_bit_base2_exponent>] [-sv_mda_of_struct]' ccf command in the coverage configuration file.
+	Building instance specific data structures.
+xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
+xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                       26      23
+		Interfaces:                     1       1
+		Verilog packages:              10      10
+		Registers:                 17,891  12,649
+		Scalar wires:               2,816       -
+		Vectored wires:               120       -
+		Named events:                  84      92
+		Always blocks:                348     348
+		Initial blocks:               461     275
+		Final blocks:                   1       1
+		Parallel blocks:               27      28
+		Cont. assignments:          2,724      89
+		Pseudo assignments:           127       -
+		Assertions:                    84      84
+		Covergroup Instances:           0       1
+		Compilation units:              1       1
+		SV Class declarations:        245     360
+		SV Class specializations:     469     469
+		Process Clocks:                89       4
+		Simulation timescale:         1ps
+	Writing initial simulation snapshot: worklib.top_tb:svh
+Loading snapshot worklib.top_tb:svh .................... Done
+SVSEED set from command line: 1
+xcelium> source /home/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> source /home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> # Ondas do topo UVM, incluindo interface APB e DUT.
+xcelium> database -open waves -into $::env(WAVE_FILE) -event -default
+Created default SHM database waves
+xcelium> probe -create top_tb -all -depth all -database waves
+Created probe 1
+xcelium> # VCD portavel com os sinais da hierarquia estatica (interface APB e DUT).
+xcelium> database -open waves_vcd -vcd -into $::env(VCD_FILE)
+Created VCD database waves_vcd
+xcelium> probe -create top_tb -all -depth all -database waves_vcd
+Created probe 2
+xcelium> run
+UVM_INFO /home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (24.03-s013)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test_rsa_operation...
+UVM_INFO @ 0: reporter [TIMOUTSET] '+UVM_TIMEOUT=13744132099590,YES' provided on the command line is being applied.
+SDI/Verilog Transaction Recording Facility Version 24.03-s013
+UVM_INFO /home/aluno/Documents/RSA32_APB/UVM/uvm_vseq.sv(90) @ 0: uvm_test_top.env_h.vsequencer_h@@vseq_h [SEQ_BEGIN] [rsa_operation] INICIO | EXP=8 bits | max_status_reads=25000
+xmsim: *E,TRTOVF: simulated time overflow.
+          File: /home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_phase.svh, line = 1488, pos = 46
+         Scope: worklib.uvm_pkg::uvm_phase@1302_1.execute_phase
+          Time: 0 FS + 58
+
+/home/cadence/XCELIUM2403/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_phase.svh:1488                   `uvm_delay(top.phase_timeout)
+xcelium> exit
+[TIMING] Tempo simulado global: 0.000 ns
+
+[SVA] RESULTADOS DAS ASSERTIONS | EXECUCAO INTERROMPIDA | cenario atual: rsa_operation
++----------------+----------------------------+-------------+---------+---------+--------------+
+| Cenario        | Assertion                  | Resultado   | Acertos |  Falhas | Instante(ns) |
++----------------+----------------------------+-------------+---------+---------+--------------+
+| APB            | APB_SETUP_ACCESS           | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ZERO_WAIT              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_CTRL_READ_ZERO         | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ID_VALUE               | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_STATUS_RESERVED        | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_IER_RESERVED           | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_IRQ_STATUS             | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_CONTROL_STABLE         | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_WRITE_DATA_STABLE      | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_WAIT_HOLD              | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ACCESS_END             | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_ACCESS_ENTRY           | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_PHASE            | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_CONTROL          | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_WRITE_DATA       | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_READY            | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_ERROR            | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | APB_KNOWN_READ_DATA        | NAO EXERC.  |       0 |       0 |           -- |
+| APB            | SVA_SCENARIO_CONFLICT      | NAO EXERC.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_OPERATION_ORDER        | INTERROMP.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_OPERATION_RESPONSE     | INTERROMP.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_RESULT_BEFORE_DONE     | INTERROMP.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_RESULT_VALUE           | INTERROMP.  |       0 |       0 |           -- |
+| rsa_operation  | RSA_STATUS_VALUE           | INTERROMP.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_ORDER           | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_RESPONSE        | NAO EXERC.  |       0 |       0 |           -- |
+| soft_reset     | SOFT_RESET_STATUS          | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_SCENARIO_RUN            | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_READ_RESPONSE           | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_READ_KNOWN              | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_READ_STABLE             | NAO EXERC.  |       0 |       0 |           -- |
+| test_id        | ID_WRITE_RESPONSE          | NAO EXERC.  |       0 |       0 |           -- |
++----------------+----------------------------+-------------+---------+---------+--------------+
+[SVA] Assertions: 0 PASS | 0 FAIL | 27 NAO EXERCITADAS | 5 INTERROMPIDAS
+[SVA] Instante indica a ultima ocorrencia; havendo falha, indica a ultima falha.
+[SVA] Contagens finais UVM: ERROR=0 | FATAL=0
+
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGDEFN: Default name "worklib.uvm_pkg::.apb_rsa" will be generated for covergroup instance "apb_rsa" as the name of the covergroup instance is not specified explicitly: /home/aluno/Documents/RSA32_APB/UVM/uvm_subscriber.sv, 16.
+
+coverage setup:
+  workdir  :  /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm
+  dutinst  :  top_tb.th.dut(amba_3_apb_rsa_apb_top)
+  scope    :  scope
+  testname :  amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00
+
+coverage files:
+  model(design data) :  /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/icc_1ca46e63_3402c7f8.ucm (reused)
+  data               :  /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00/icc_1ca46e63_3402c7f8.ucd
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 09, 2026 at 14:24:02 -03  (total: 00:00:02)

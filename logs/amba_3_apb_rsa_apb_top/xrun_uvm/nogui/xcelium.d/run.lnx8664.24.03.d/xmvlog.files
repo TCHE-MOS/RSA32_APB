@@ -2,19 +2,19 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/aluno/Documents/RSA_APB_32-bit/src/rsa32/v2/rsa32_core_kogge_stone_adder.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/rsa32/v2/rsa32_core_mult.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/rsa32/v2/rsa32_core_mod.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/rsa32/v2/rsa32_core_ctrl.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/rsa32/v2/rsa32_core_top.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_adrec.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_data_o_mux.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_data_io_top.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_control.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_regbank.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_reset.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv
-/home/aluno/Documents/RSA_APB_32-bit/src/amba_3_apb/amba_3_apb_rsa_apb_top.sv
-/home/aluno/Documents/RSA_APB_32-bit/UVM/testbench.svh
+/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv
+/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv
+/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv
+/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv
+/home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv
+/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv
+/home/aluno/Documents/RSA32_APB/UVM/testbench.svh

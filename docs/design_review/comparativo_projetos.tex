@@ -1,0 +1,272 @@
+% =====================================================================
+% Comparativo RSA_APB — Modalidade 1 (MG) × Modalidade 2 (MR)
+% Compilar: pdflatex comparativo_projetos.tex (duas vezes)
+%
+% Fontes dos dados
+%   MG: RSA4/, RSA32_opt/, src/MG, reports/ e logs/ deste repositório,
+%       e os números já apresentados em design_review.tex (E02–E09).
+%   MR: RSA_APB_MR/ (rtl, xcelium, lec, sdc, genus).
+%   †  : reexecutado em 09/11/2026 numa cópia isolada (scratchpad),
+%        com os scripts/dofiles do próprio projeto, porque o log original
+%        não existia ou tinha sido sobrescrito.
+% =====================================================================
+\documentclass[aspectratio=169,10pt,t]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{tabularx}
+\usepackage{array}
+
+\newcommand{\tmLogoPath}{..}   % logos ficam em docs/
+\usetheme{TcheMOS}
+
+% Sem slide divisor por seção (o tema insere um por padrão)
+\AtBeginSection[]{}
+
+% Selos curtos para as tabelas
+\newcommand{\sOK}{\textcolor{tmOliva}{\textbf{OK}}}
+\newcommand{\sNao}{\textcolor{tmVermelho}{\textbf{não}}}
+\newcommand{\sParc}{\textcolor{tmDourado}{\textbf{parcial}}}
+\newcommand{\rex}{$^{\dagger}$}
+\newcommand{\MG}{\textbf{\color{tmCafe}MG}}
+\newcommand{\MR}{\textbf{\color{tmVermelho}MR}}
+
+\title[Comparativo · RSA\_APB MG $\times$ MR]{Comparativo — RSA\_APB}
+\subtitle{Modalidade 1 (MG) $\times$ Modalidade 2 (MR) · 4 e 32 bits · TSMC 28\,nm}
+\author[Matheus Grossi · Milena Resmer]{Matheus Grossi \quad·\quad Milena Resmer}
+\manager{Alcides Costa}
+\institute{TchêMOS — Semiconductor Design House}
+\date{Novembro de 2026}
+
+\begin{document}
+
+% ---------------------------------------------------------------------
+\begin{frame}[plain,noframenumbering]
+  \titlepage
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Os dois projetos}{Mesma especificação (\texttt{apb\_integration.pdf}), arquiteturas diferentes}
+  \scriptsize
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+     & \MG\ — Modalidade 1 & \MR\ — Modalidade 2 \\
+    \midrule
+    Pasta & \texttt{src/MG}, \texttt{RSA4/}, \texttt{RSA32\_opt/} & \texttt{RSA\_APB\_MR/} \\
+    Núcleo de 32 bits & \texttt{rsa32/v2}: núcleo otimizado, com somadores \emph{Kogge-Stone} (4 instâncias) & \texttt{rsa\_core\_32bits.sv}: tradução em SV do núcleo do cliente, com \texttt{DATA\_WIDTH = 32} \\
+    Topo APB & 5 blocos + \emph{wrapper}: \texttt{data\_io\_top} (\texttt{adrec}, \texttt{data\_o\_mux}), \texttt{control}, \texttt{regbank}, \texttt{reset}, \texttt{rsa\_wrapper\_top} (\texttt{control}, \texttt{data}) & 3 blocos: \texttt{rsa\_apb\_regs} (APB, mapa, PSLVERR, IRQ), \texttt{rsa\_apb\_seq} (sequenciador de START), \texttt{rsa\_apb\_rst\_sync} \\
+    Núcleo dentro do topo & núcleo v2 integrado ao \emph{wrapper} & núcleo reutilizado sem alteração; o \emph{wrapper} decodifica \texttt{core\_done}/\texttt{core\_err} \\
+    Parâmetros do topo & 32 bits de dados · 12 bits de endereço · \texttt{LOAD\_GAP = 1} & 32 bits de dados · 12 bits de endereço · \texttt{LOAD\_GAP = 1} · \texttt{SRST\_CYCLES = 2} \\
+    Verificação do topo & testbench dirigido + ambiente UVM (6 testes, 5 módulos SVA, cobertura IMC) & testbench dirigido em SV (sem UVM) \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Fluxo percorrido por cada projeto}{Etapas do design review (E01–E10)}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.18}
+  \begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X c c@{}}
+    \toprule
+    Etapa & Evidência & \MG & \MR \\
+    \midrule
+    4 bits & Simulação do núcleo (Verilog e SV) & \sOK\rex & \sOK\rex \\
+    4 bits & LEC Verilog $\times$ SystemVerilog & \sOK & \sParc\rex \\
+    32 bits & Simulação do núcleo & \sOK & \sOK\rex \\
+    Topo APB & Simulação dirigida (RTL) & \sOK & \sOK \\
+    Topo APB & Ambiente UVM, SVA e cobertura & \sOK & \sNao \\
+    Topo APB & Lint (Conformal) & \sOK & \sOK \\
+    Síntese & Netlist TSMC 28\,nm (Genus 22.18) & \sOK & \sOK \\
+    Síntese & Restrições de tempo aplicadas (SDC) & \sOK & \sNao \\
+    Pós-síntese & LEC RTL $\times$ netlist & \sOK & \sNao \\
+    Pós-síntese & STA (setup) & \sOK & \sNao \\
+    Pós-síntese & Simulação gate-level com SDF & \sOK & \sNao \\
+    Automação & Scripts do fluxo & \sOK & \sParc \\
+    \bottomrule
+  \end{tabularx}\\[0.1cm]
+  {\tiny \rex\ Reexecutado em 09/11/2026 numa cópia isolada, com os scripts e testbenches do próprio projeto, porque o log original não existia ou tinha sido sobrescrito.}
+\end{frame}
+
+% =====================================================================
+\section{RSA de 4 bits}
+\begin{frame}{RSA de 4 bits}{Simulação e equivalência lógica Verilog $\times$ SystemVerilog}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}Simulação\rex\ — Xcelium 24.03, 40 vetores}\\[0.1cm]
+      \begin{tabular}{@{}llcc@{}}
+        \toprule
+        Núcleo & Testbench & \MG & \MR \\
+        \midrule
+        Verilog & \texttt{rsa\_core\_tb.sv} & 40/40 & 40/40 \\
+        SV      & \texttt{rsa\_core\_tb.sv} & 40/40 & 40/40 \\
+        Verilog & \texttt{rsa\_core\_tb.v}  & \alert{7/40} & \alert{7/40} \\
+        SV      & \texttt{rsa\_core\_tb.v}  & \alert{7/40} & — \\
+        \bottomrule
+      \end{tabular}\\[0.15cm]
+      {\tiny O \texttt{rsa\_core\_tb.v} é o mesmo arquivo nos dois projetos. Com ele, todo resultado sai 15; os 7 ``aprovados'' são os casos com $n = 0$, que esperam 15. Os mesmos núcleos passam 40/40 com o \texttt{rsa\_core\_tb.sv} do MR: o defeito está no testbench Verilog, não nos núcleos.}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \scriptsize
+      \textbf{\color{tmCafe}LEC — Conformal 23.20}\\[0.1cm]
+      \begin{tabular}{@{}lcc@{}}
+        \toprule
+         & \MG & \MR\rex \\
+        \midrule
+        Equivalentes & 94 & 93 \\
+        \quad saídas / DFF & 7 / 87 & 6 / 87 \\
+        Não equivalentes & 0 & 0 \\
+        Abortados & 0 & 0 \\
+        Resultado & \textbf{\color{tmOliva}PASS} & \textbf{\color{tmDourado}INCOMPLETE} \\
+        \bottomrule
+      \end{tabular}\\[0.15cm]
+      {\tiny No MR, a versão SV tem a saída \texttt{core\_clk\_o}, que o \texttt{rsa\_core.v} não tem. Todos os pontos comparados são equivalentes, mas a saída sem par deixa a verificação incompleta. No MG, as duas versões têm \texttt{core\_clk\_o}.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =====================================================================
+\section{Núcleo RSA de 32 bits}
+\begin{frame}{Núcleo RSA de 32 bits}{Simulação isolada do núcleo, sem APB}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+     & \MG & \MR \\
+    \midrule
+    RTL & \texttt{rsa32/v2}: \texttt{ctrl}, \texttt{mult}, \texttt{mod}, \texttt{top} + \texttt{kogge\_stone\_adder} & \texttt{rsa\_core\_32bits.sv}: \texttt{ctrl}, \texttt{mult}, \texttt{mod}, \texttt{core} \\
+    Testbench & \texttt{RSA32\_opt/testbenches/testbench.sv} & \texttt{rtl/rsa\_core\_tb\_32bits.sv} \\
+    Vetores & 55 (inclui $N = 0$, operandos nulos/unitários e de 32 bits) & 40 \\
+    Resultado & \textbf{\color{tmOliva}55 / 55 PASSED} & \textbf{\color{tmOliva}40 / 40 PASSED}\rex \\
+    Execução & Xcelium 24.03, 05/11/2026 (E01/E03) & Xcelium 24.03, reexecução de 09/11/2026 \\
+    \bottomrule
+  \end{tabularx}\\[0.25cm]
+  \begin{block}{Defeitos conhecidos do núcleo}
+    \scriptsize
+    A bancada \texttt{tb\_rsa\_core\_fault} encontrou no núcleo do MG 7 divergências: DONE e ERROR juntos com $n = 0$, erro que não volta a zero e cargas sem intervalo (\texttt{LOAD\_GAP = 0}). O cabeçalho do \texttt{rsa\_apb\_top.sv} do MR descreve os mesmos comportamentos no núcleo do cliente e os contorna no \emph{wrapper}. Essa bancada não foi executada no núcleo do MR.
+  \end{block}
+\end{frame}
+
+% =====================================================================
+\section{Topo APB de 32 bits}
+\begin{frame}{Topo APB de 32 bits}{Verificação funcional em RTL}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.6cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+     & \MG & \MR \\
+    \midrule
+    Testbench dirigido & \texttt{testbench.sv}: \textbf{398 / 398} verificações, 134,98\,$\mu$s & \texttt{rsa\_apb\_tb.sv}: \textbf{PASS, 2\,236 verificações}, 2\,293,98\,$\mu$s \\
+    Escopo do dirigido & reset, banco de registradores (30 $\times$ 8), 10 operações RSA & reset, ID, campos reservados, vetores de borda e aleatórios, $n = 0$, IRQ, PSLVERR com BUSY, SRST em 300 instantes, PRESETn no meio da operação \\
+    UVM & 6 testes, 5 módulos SVA, cobertura geral 89,15\,\%, funcional 100\,\% (4/4) & não há \\
+    Lint (Conformal) & 0 erros · 22 \emph{warnings} · 61 \emph{notes} & 0 erros · 30 \emph{warnings} · 14 \emph{notes} \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.2cm}
+  \begin{alertblock}{Operação com módulo $n = 0$ (falhas F01/F02 do design review)}
+    \scriptsize
+    \MG: STATUS = \texttt{0x06} (DONE e ERROR) e RESULT sobrescrito por \texttt{0xFFFFFFFF}.\quad
+    \MR: o testbench verifica STATUS = \texttt{0x04} (só ERROR) e RESULT mantido, e passa. O \emph{wrapper} do MR trata \texttt{core\_done \& core\_err} como ERROR e só captura RESULT em \texttt{core\_done \& \textasciitilde core\_err}.
+  \end{alertblock}
+\end{frame}
+
+% =====================================================================
+\section{Síntese TSMC 28\,nm}
+\begin{frame}{Síntese TSMC 28\,nm}{Genus 22.18 · \texttt{tcbn28hpcplusbwp30p140} · tt1v25c}
+  \begin{columns}[T]
+    \begin{column}{0.63\textwidth}
+      \scriptsize
+      \renewcommand{\arraystretch}{1.12}
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabular}{@{}lrrr@{}}
+        \toprule
+         & \MG & \MR & MR $-$ MG \\
+        \midrule
+        Células & 2\,562 & 2\,188 & $-$374 \,($-$14,6\,\%) \\
+        \quad sequenciais & 706 & 706 & 0 \\
+        \quad inversores & 176 & 173 & $-$3 \\
+        \quad lógica / \emph{buffer} & 1\,680 & 1\,309 & $-$371 \\
+        Área ($\mu$m²) & 2\,808,16 & 2\,715,55 & $-$92,6 ($-$3,3\,\%) \\
+        \quad sequencial & 1\,747,49 & 1\,707,17 & $-$40,3 \\
+        \quad combinacional & 1\,060,67 & 1\,008,38 & $-$52,3 \\
+        \midrule
+        Clock aplicado & 10\,ns (100\,MHz) & \alert{nenhum} & \\
+        WNS / TNS & +5\,470\,ps / 0 & sem caminhos & \\
+        Potência de fuga ($\mu$W) & 20,25 & 18,60 & $-$1,65 \\
+        Potência total ($\mu$W) & 529,4 & 123,5 & n/c$^{*}$ \\
+        \bottomrule
+      \end{tabular}\\[0.05cm]
+      {\tiny $^{*}$ n/c: não comparável, porque o MR não tem clock definido.}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{alertblock}{MR sintetizado sem restrições}
+        \scriptsize
+        O \texttt{run.tcl} lê \texttt{sdc/rsa\_core.sdc}, que cria o clock na porta \texttt{core\_clk}. O topo APB não tem essa porta (o clock é \texttt{pclk\_i}), e os 7 comandos do SDC falharam. Sem clock, não há análise de tempo, e a potência dinâmica não tem frequência de referência. O \texttt{sdc/rsa\_apb.sdc}, que é o SDC correto, não foi usado.
+      \end{alertblock}
+      \scriptsize
+      \begin{itemize}
+        \item O MR também não roda \texttt{syn\_opt} (comentado no \texttt{run.tcl}).
+        \item Uma síntese sem restrição de tempo tende a priorizar área. Por isso, a diferença de área ainda não é uma comparação justa.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =====================================================================
+\section{Pós-síntese}
+\begin{frame}{Pós-síntese}{Netlist, equivalência, STA e simulação com SDF}
+  \footnotesize
+  \renewcommand{\arraystretch}{1.22}
+  \begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.9cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+    \toprule
+     & \MG & \MR \\
+    \midrule
+    Netlist e SDF & gerados (\texttt{write\_hdl}, \texttt{write\_sdf}) & gerados (\texttt{amba\_3\_apb\_rsa\_apb\_top-gatelevel.v} / \texttt{.sdf}) \\
+    LEC RTL $\times$ netlist & \textbf{PASS}: 741 pontos equivalentes (35 saídas + 706 DFF), 0 não equivalentes & não executado: o \texttt{run-svlg2gates.do} aponta para \texttt{../lib/typical.lib} e \texttt{genus/synth/rsa\_core-gatelevel.v}, que não existem \\
+    STA (setup) & sem violações a 100\,MHz; pior caminho \texttt{paddr\_i[6]} $\rightarrow$ \texttt{pslverr\_o}, slack +5\,470\,ps & sem clock definido, não há caminhos analisados \\
+    Simulação com SDF & \textbf{398 / 398}, 0 \emph{timing violations}, 100\,\% dos atrasos do SDF anotados & não executada \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+% =====================================================================
+\section{Conclusões}
+\begin{frame}{Conclusões}{O que cada projeto tem de mais forte e o que falta}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{MG — fluxo completo}
+        \scriptsize
+        \begin{itemize}
+          \item Fluxo completo até a simulação gate-level com SDF.
+          \item UVM com cobertura medida e LEC RTL $\times$ netlist PASS.
+          \item Falta: o topo ainda expõe F01/F02 com $n = 0$ (STATUS \texttt{0x06}, RESULT sobrescrito).
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{MR — topo mais enxuto e robusto a erro}
+        \scriptsize
+        \begin{itemize}
+          \item Topo com 3 blocos e 14,6\,\% menos células.
+          \item Testbench dirigido mais amplo (2\,236 verificações), e o caso $n = 0$ se comporta como pede o datasheet.
+          \item Falta: síntese com \texttt{rsa\_apb.sdc}, STA, LEC RTL $\times$ netlist, simulação com SDF e cobertura.
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{0.2cm}
+  \begin{alertblock}{Pendências encontradas nesta comparação}
+    \scriptsize
+    \begin{itemize}
+      \item \texttt{rsa\_core\_tb.v} (comum aos dois) reprova núcleos corretos: 7/40.
+      \item MR: os scripts gravam todos no mesmo \texttt{logs/xrun\_svlog.log}, e só o log do topo APB sobreviveu. O \texttt{xrun\_svlog\_apb.sh} aponta para \texttt{../rtl/rsa\_apb\_top.sv} e \texttt{../rtl/rsa\_apb\_tb.sv}, mas esses arquivos hoje estão em \texttt{rtl/RSA\_APB/}.
+    \end{itemize}
+  \end{alertblock}
+\end{frame}
+
+\end{document}

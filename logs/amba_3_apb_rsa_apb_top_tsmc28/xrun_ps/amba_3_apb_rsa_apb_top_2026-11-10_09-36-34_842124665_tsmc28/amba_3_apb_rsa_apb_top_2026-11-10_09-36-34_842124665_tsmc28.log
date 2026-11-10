@@ -1,0 +1,2243 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 10, 2026 at 09:36:34 -03
+xrun
+	-64bit
+	-sv
+	-timescale 1ns/1ps
+	+define+POST_SYNTHESIS+NTC+RECREM
+	-top testbench
+	-defparam testbench.CLOCK_PERIOD_NS=10.0
+	-access +rwc
+	-input /home/aluno/Documents/RSA32_APB/scripts/MG/bash/../tcl/xrun_ps_tsmc28.tcl
+	-sdf_cmd_file /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28/sdf_annotation_tsmc28.cmd
+	-sdf_verbose
+	-sdfstats /home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28/sdf_unannotated_tsmc28.rpt
+	-l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28.log
+	-v /tsmc28/tcbn28hpcplusbwp30p140.v
+	/home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.v
+	/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/testbench.sv
+file: /home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.v
+	module worklib.amba_3_apb_rsa_apb_top:v
+		errors: 0, warnings: 0
+file: /home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/testbench.sv
+	module worklib.testbench:sv
+		errors: 0, warnings: 0
+file: /tsmc28/tcbn28hpcplusbwp30p140.v
+	module tcbn28hpcplusbwp30p140.AN2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AN3D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AN4D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AN4D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AO211D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AO21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AO22D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI211D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI21D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI221D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI221D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI222D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI222D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI22D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI22D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI31D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.AOI32D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.CKAN2D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.CKAN2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.CKND1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.CKND2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFCND1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFCNQD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFKCND1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFKCNQD2BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFMQD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.DFQD2BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.EDFCNQD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.FA1D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.IAO21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.IND2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.IND3D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.IND4D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.INR2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.INR3D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.INR4D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.INVD0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.INVD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.IOA21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.MAOI222D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.MAOI22D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.MOAI22D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.MUX2NUD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND2D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND2OPTIBD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND3D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND3D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.ND4D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR2D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR2OPTIBD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR3D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR3D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.NR4D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OA211D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OA21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI211D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI21D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI21D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI221D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI222D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI22D0P7BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI22D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI31D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI32D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OAI33D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OR2D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OR2D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OR3D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OR4D0BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.OR4D1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.XNR2UD1BWP30P140:v
+		errors: 0, warnings: 0
+	module tcbn28hpcplusbwp30p140.XOR2UD1BWP30P140:v
+		errors: 0, warnings: 0
+	primitive tcbn28hpcplusbwp30p140.tsmc_dff:v
+		errors: 0, warnings: 0
+	primitive tcbn28hpcplusbwp30p140.tsmc_mux:v
+		errors: 0, warnings: 0
+	primitive tcbn28hpcplusbwp30p140.tsmc_xbuf:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+		Caching library 'tcbn28hpcplusbwp30p140' ....... Done
+	Top level design units:
+		testbench
+	Reading SDF file from location "/home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/sdf/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.sdf"
+	Writing compiled SDF file to "synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.sdf.X".
+	Annotating SDF timing data:
+		Compiled SDF file:     synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.sdf.X
+		Log file:              /home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28/sdf_annotation_tsmc28.log
+		Backannotation scope:  testbench.dut
+		Configuration file:    
+		MTM control:           MAXIMUM
+		Scale factors:         
+		Scale type:            FROM_MTM
+	Annotation completed successfully...
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[20] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[2] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[28] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[16] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[1] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[15] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[11] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[3] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[8] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[4] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[5] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[6] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[7] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[31] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[22] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[23] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[24] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[25] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[26] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[27] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[9] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[30] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[21] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[0] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[29] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[10] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[12] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[14] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[13] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[17] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[19] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_exp_reg_reg[18] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_exp_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[9] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[27] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[17] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[31] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[24] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[11] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[7] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[8] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[6] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[5] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[19] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[4] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[23] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[14] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[16] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[15] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[18] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[0] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[1] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[2] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[3] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[21] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[22] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[13] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[25] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[26] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[28] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[29] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[30] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[12] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[10] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_mod_reg_reg[20] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_mod_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[5] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[5] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[3] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[3] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[21] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[21] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[25] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[25] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[13] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[13] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[7] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[7] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[17] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[17] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[4] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[4] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[2] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[2] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[1] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[1] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[12] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[12] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[8] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[8] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[0] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[0] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[11] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[11] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[14] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[14] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[15] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[15] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[16] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[16] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[18] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[18] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[19] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[19] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[20] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[20] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[22] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[22] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[9] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[9] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[28] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[28] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[29] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[29] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[30] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[30] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[31] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[31] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[23] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[23] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[26] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[26] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[27] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[27] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[24] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[24] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[6] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[6] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_msg_reg_reg[10] .
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.\regbank_inst_msg_reg_reg[10] "
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[9] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[0] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[26] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[23] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[19] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[4] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[12] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[28] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[25] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[24] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[15] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[30] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[29] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[31] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[1] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[2] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[3] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[6] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[5] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[7] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[8] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[10] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[11] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[13] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[14] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[16] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[17] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[18] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[20] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[21] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[22] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.\regbank_inst_result_reg_reg[27] .
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.regbank_inst_ier_done_ie_reg_reg.
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.regbank_inst_ier_done_ie_reg_reg"
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.regbank_inst_ier_done_ie_reg_reg"
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.regbank_inst_ier_err_ie_reg_reg.
+    $width (posedge CP &&& CDN_D_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12560|9): The $width check in instance "testbench.dut.regbank_inst_ier_err_ie_reg_reg"
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+    $width (posedge CP &&& CDN_nD_E_SDFCHK, 0, 0, notifier);
+         |
+xmelab: *W,NTCWID (/tsmc28/tcbn28hpcplusbwp30p140.v,12562|9): The $width check in instance "testbench.dut.regbank_inst_ier_err_ie_reg_reg"
+is being disabled because the difference in the NTC rise fall delay is greater then the tcheck limit.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.rsa_wrapper_inst_rsa_core_inst_rsa_core_ctrl_blk_err_ff_reg.
+xmelab: *W,NTCNNC: Non-convergence of negative timing check values in instance testbench.dut.rsa_wrapper_inst_rsa_core_inst_rsa_core_mod_blk_mod_done_ff_reg.
+	SDF statistics: 
+		 No. of Pathdelays = 14871   	 No. of Disabled Pathdelays = 0        Annotated = 100.00% (14871/14871) 
+		 No. of Tchecks    = 17826   	 No. of Disabled Tchecks    = 0        Annotated = 41.80% (7452/17826) 
+				        Total(T) 	   Disabled(D) 	    Annotated(A)	  Percentage(A/(T-D))
+		 Path Delays	         14871	             0	             14871	                100.00
+		      $width	         10372	             0	                 0	                  0.00
+		     $recrem	           140	             0	               140	                100.00
+		  $setuphold	          7314	             0	              7312	                 99.97
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.amba_3_apb_rsa_apb_top:v <0x5dc5b0cc>
+			streams:   2, words:   338
+		worklib.testbench:sv <0x5291abd9>
+			streams:  43, words: 63576
+		tcbn28hpcplusbwp30p140.DFKCND1BWP30P140:v <0x05ff9a43>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFD1BWP30P140:v <0x79fbb402>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFKCND1BWP30P140:v <0x58ea590e>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFCND1BWP30P140:v <0x771b94a2>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFD1BWP30P140:v <0x27f19af2>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFCNQD1BWP30P140:v <0x53248e1c>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI22D1BWP30P140:v <0x3a10ca82>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.FA1D1BWP30P140:v <0x0e55f0cd>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI222D0BWP30P140:v <0x7f10b427>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MOAI22D1BWP30P140:v <0x68a72b7d>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI22D0P7BWP30P140:v <0x5818ff12>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI221D1BWP30P140:v <0x3f2a91aa>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO211D1BWP30P140:v <0x09caaba8>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MAOI222D1BWP30P140:v <0x23e85930>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.IAO21D1BWP30P140:v <0x779f06de>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.XNR2UD1BWP30P140:v <0x0114a9e3>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO21D1BWP30P140:v <0x01898ee3>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OA21D1BWP30P140:v <0x786924e2>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI21D0P7BWP30P140:v <0x716e885a>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OA211D1BWP30P140:v <0x63340892>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI222D1BWP30P140:v <0x24a6ddb7>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO211D1BWP30P140:v <0x5da6dce7>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO22D0BWP30P140:v <0x04ce7d30>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OA211D1BWP30P140:v <0x37587fdd>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI21D0P7BWP30P140:v <0x5720b16b>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFKCNQD2BWP30P140:v <0x2ca7f72a>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFCNQD1BWP30P140:v <0x6a8bf8cf>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI31D1BWP30P140:v <0x2c55cc1f>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.EDFCNQD1BWP30P140:v <0x7a78c1a9>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI22D0P7BWP30P140:v <0x6dd29dc9>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MUX2NUD1BWP30P140:v <0x61f4c558>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI21D1BWP30P140:v <0x5956cb2f>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFQD2BWP30P140:v <0x2e29a7ab>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI222D1BWP30P140:v <0x0e4c2cd6>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MUX2NUD1BWP30P140:v <0x28960474>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MAOI22D1BWP30P140:v <0x077e018f>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI33D1BWP30P140:v <0x3db76f6a>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI221D0BWP30P140:v <0x7d65ac04>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI22D1BWP30P140:v <0x7d8969f1>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO21D1BWP30P140:v <0x28be5938>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI21D1BWP30P140:v <0x34018f07>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI31D1BWP30P140:v <0x5761cab5>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI31D1BWP30P140:v <0x30e12c5f>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI32D1BWP30P140:v <0x1f417b87>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI22D0P7BWP30P140:v <0x2a4b3eba>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI32D1BWP30P140:v <0x275af12a>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.IOA21D1BWP30P140:v <0x7de0732f>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI211D1BWP30P140:v <0x28a7278c>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI211D1BWP30P140:v <0x54000f5e>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI22D1BWP30P140:v <0x46e2f804>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI221D1BWP30P140:v <0x5835b279>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.OAI21D1BWP30P140:v <0x54bca2e6>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AOI21D1BWP30P140:v <0x39ebe6ce>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.XOR2UD1BWP30P140:v <0x39d13c4d>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.MOAI22D1BWP30P140:v <0x2f3e880e>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.AO22D0BWP30P140:v <0x39ee8a7a>
+			streams:   0, words:     0
+		tcbn28hpcplusbwp30p140.DFMQD1BWP30P140:v <0x33243995>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                      Instances  Unique
+		Modules:                  2,564      78
+		UDPs:                    13,501       3
+		Primitives:              21,746       6
+		Timing outputs:           2,593      48
+		Registers:                  789      92
+		Scalar wires:             3,578       -
+		Expanded wires:              44       2
+		Always blocks:                1       1
+		Initial blocks:               7       7
+		Cont. assignments:            1       1
+		Pseudo assignments:           8       -
+		Timing checks:           25,280   5,002
+		Interconnect:             8,124       -
+		Delayed tcheck signals:   2,762   1,073
+		Simulation timescale:       1ps
+	Writing initial simulation snapshot: worklib.testbench:sv
+Loading snapshot worklib.testbench:sv .................... Done
+xcelium> source /home/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> # Xcelium gate-level run. SDF is annotated at elaboration by -sdf_cmd_file.
+xcelium> # Xrun -input evaluates commands interactively: info script may be empty.
+xcelium> source [file join $::env(PROJECT_ROOT) scripts MG tcl report_common.tcl]
+xcelium> flow_reports::init $::env(REPORT_DIR) tsmc28
+/home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-36-34_842124665_tsmc28
+xcelium> 
+xcelium> set provenance [open [flow_reports::path simulation_inputs txt] w]
+file11
+xcelium> foreach name {SYNTH_RUN NETLIST_FILE SDF_FILE TSMC28_VERILOG_FILE CLOCK_PERIOD_NS SDF_LOG} {
+>     puts $provenance "$name: $::env($name)"
+> }
+xcelium> puts $provenance "DUT scope: testbench.dut"
+xcelium> puts $provenance "Model defines: POST_SYNTHESIS, NTC, RECREM"
+xcelium> puts $provenance "SDF selection: MAXIMUM (corner characterized by the synthesis Liberty)"
+xcelium> close $provenance
+xcelium> 
+xcelium> database -open waves -into $::env(WAVE_FILE) -event -default
+Created default SHM database waves
+xcelium> probe -create testbench -all -depth all -database waves
+xmsim: *W,PRLDYN: The design contains dynamic objects. The "-all" option excludes dynamic objects to improve performance. To enable probing of dynamic objects the "-all -dynamic" options should be added to the probe command.
+xmsim: *W,PRHOPT: The design contains optimized signals. To improve simulation performance these signals are excluded.
+Created probe 1
+xcelium> run
+
+[TEST] amba_3_apb_rsa_apb_top | clock=10.000000 ns | dado=0x1234567b | rodadas=30
+[RESET] CTRL.SRST enviado; 5 clocks de espera concluidos.
+
+[SCB] Valores apos reset
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   1 |        160 | CTRL        | 0x000 | 0x00000002 | 0x00000000 | 0x00000000 | PASS   |
+|   2 |        190 | STATUS      | 0x004 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   3 |        220 | IER         | 0x008 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   4 |        250 | MSG         | 0x00c | --         | 0x00000000 | 0x00000000 | PASS   |
+|   5 |        280 | EXP         | 0x010 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   6 |        310 | MOD         | 0x014 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   7 |        340 | RESULT      | 0x018 | --         | 0x00000000 | 0x00000000 | PASS   |
+|   8 |        370 | ID          | 0x01c | --         | 0x52530200 | 0x52530200 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 01/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   9 |        430 | IER         | 0x008 | 0x1234567b | 0x00000003 | 0x00000003 | PASS   |
+|  10 |        490 | MSG         | 0x00c | 0x1234567b | 0x1234567b | 0x1234567b | PASS   |
+|  11 |        550 | EXP         | 0x010 | 0xb791f3de | 0xb791f3de | 0xb791f3de | PASS   |
+|  12 |        610 | MOD         | 0x014 | 0x486e0c21 | 0x486e0c21 | 0x486e0c21 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 01/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  13 |        640 | IER         | 0x008 | 0x1234567b | 0x00000003 | 0x00000003 | PASS   |
+|  14 |        670 | MSG         | 0x00c | 0x1234567b | 0x1234567b | 0x1234567b | PASS   |
+|  15 |        700 | EXP         | 0x010 | 0xb791f3de | 0xb791f3de | 0xb791f3de | PASS   |
+|  16 |        730 | MOD         | 0x014 | 0x486e0c21 | 0x486e0c21 | 0x486e0c21 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 02/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  17 |        790 | IER         | 0x008 | 0xb06bd034 | 0x00000000 | 0x00000000 | PASS   |
+|  18 |        850 | MSG         | 0x00c | 0xb06bd034 | 0xb06bd034 | 0xb06bd034 | PASS   |
+|  19 |        910 | EXP         | 0x010 | 0x15ce7591 | 0x15ce7591 | 0x15ce7591 | PASS   |
+|  20 |        970 | MOD         | 0x014 | 0xea318a6e | 0xea318a6e | 0xea318a6e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 02/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  21 |       1000 | IER         | 0x008 | 0xb06bd034 | 0x00000000 | 0x00000000 | PASS   |
+|  22 |       1030 | MSG         | 0x00c | 0xb06bd034 | 0xb06bd034 | 0xb06bd034 | PASS   |
+|  23 |       1060 | EXP         | 0x010 | 0x15ce7591 | 0x15ce7591 | 0x15ce7591 | PASS   |
+|  24 |       1090 | MOD         | 0x014 | 0xea318a6e | 0xea318a6e | 0xea318a6e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 03/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  25 |       1150 | IER         | 0x008 | 0x4ea349ed | 0x00000001 | 0x00000001 | PASS   |
+|  26 |       1210 | MSG         | 0x00c | 0x4ea349ed | 0x4ea349ed | 0x4ea349ed | PASS   |
+|  27 |       1270 | EXP         | 0x010 | 0xeb06ec48 | 0xeb06ec48 | 0xeb06ec48 | PASS   |
+|  28 |       1330 | MOD         | 0x014 | 0x14f913b7 | 0x14f913b7 | 0x14f913b7 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 03/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  29 |       1360 | IER         | 0x008 | 0x4ea349ed | 0x00000001 | 0x00000001 | PASS   |
+|  30 |       1390 | MSG         | 0x00c | 0x4ea349ed | 0x4ea349ed | 0x4ea349ed | PASS   |
+|  31 |       1420 | EXP         | 0x010 | 0xeb06ec48 | 0xeb06ec48 | 0xeb06ec48 | PASS   |
+|  32 |       1450 | MOD         | 0x014 | 0x14f913b7 | 0x14f913b7 | 0x14f913b7 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 04/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  33 |       1510 | IER         | 0x008 | 0xecdac3a6 | 0x00000002 | 0x00000002 | PASS   |
+|  34 |       1570 | MSG         | 0x00c | 0xecdac3a6 | 0xecdac3a6 | 0xecdac3a6 | PASS   |
+|  35 |       1630 | EXP         | 0x010 | 0x497f6603 | 0x497f6603 | 0x497f6603 | PASS   |
+|  36 |       1690 | MOD         | 0x014 | 0xb68099fc | 0xb68099fc | 0xb68099fc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 04/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  37 |       1720 | IER         | 0x008 | 0xecdac3a6 | 0x00000002 | 0x00000002 | PASS   |
+|  38 |       1750 | MSG         | 0x00c | 0xecdac3a6 | 0xecdac3a6 | 0xecdac3a6 | PASS   |
+|  39 |       1780 | EXP         | 0x010 | 0x497f6603 | 0x497f6603 | 0x497f6603 | PASS   |
+|  40 |       1810 | MOD         | 0x014 | 0xb68099fc | 0xb68099fc | 0xb68099fc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 05/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  41 |       1870 | IER         | 0x008 | 0x8b123d5f | 0x00000003 | 0x00000003 | PASS   |
+|  42 |       1930 | MSG         | 0x00c | 0x8b123d5f | 0x8b123d5f | 0x8b123d5f | PASS   |
+|  43 |       1990 | EXP         | 0x010 | 0x2eb798fa | 0x2eb798fa | 0x2eb798fa | PASS   |
+|  44 |       2050 | MOD         | 0x014 | 0xd1486705 | 0xd1486705 | 0xd1486705 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 05/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  45 |       2080 | IER         | 0x008 | 0x8b123d5f | 0x00000003 | 0x00000003 | PASS   |
+|  46 |       2110 | MSG         | 0x00c | 0x8b123d5f | 0x8b123d5f | 0x8b123d5f | PASS   |
+|  47 |       2140 | EXP         | 0x010 | 0x2eb798fa | 0x2eb798fa | 0x2eb798fa | PASS   |
+|  48 |       2170 | MOD         | 0x014 | 0xd1486705 | 0xd1486705 | 0xd1486705 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 06/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  49 |       2230 | IER         | 0x008 | 0x2949b718 | 0x00000000 | 0x00000000 | PASS   |
+|  50 |       2290 | MSG         | 0x00c | 0x2949b718 | 0x2949b718 | 0x2949b718 | PASS   |
+|  51 |       2350 | EXP         | 0x010 | 0x8cec12bd | 0x8cec12bd | 0x8cec12bd | PASS   |
+|  52 |       2410 | MOD         | 0x014 | 0x7313ed42 | 0x7313ed42 | 0x7313ed42 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 06/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  53 |       2440 | IER         | 0x008 | 0x2949b718 | 0x00000000 | 0x00000000 | PASS   |
+|  54 |       2470 | MSG         | 0x00c | 0x2949b718 | 0x2949b718 | 0x2949b718 | PASS   |
+|  55 |       2500 | EXP         | 0x010 | 0x8cec12bd | 0x8cec12bd | 0x8cec12bd | PASS   |
+|  56 |       2530 | MOD         | 0x014 | 0x7313ed42 | 0x7313ed42 | 0x7313ed42 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 07/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  57 |       2590 | IER         | 0x008 | 0xc78130d1 | 0x00000001 | 0x00000001 | PASS   |
+|  58 |       2650 | MSG         | 0x00c | 0xc78130d1 | 0xc78130d1 | 0xc78130d1 | PASS   |
+|  59 |       2710 | EXP         | 0x010 | 0x62249574 | 0x62249574 | 0x62249574 | PASS   |
+|  60 |       2770 | MOD         | 0x014 | 0x9ddb6a8b | 0x9ddb6a8b | 0x9ddb6a8b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 07/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  61 |       2800 | IER         | 0x008 | 0xc78130d1 | 0x00000001 | 0x00000001 | PASS   |
+|  62 |       2830 | MSG         | 0x00c | 0xc78130d1 | 0xc78130d1 | 0xc78130d1 | PASS   |
+|  63 |       2860 | EXP         | 0x010 | 0x62249574 | 0x62249574 | 0x62249574 | PASS   |
+|  64 |       2890 | MOD         | 0x014 | 0x9ddb6a8b | 0x9ddb6a8b | 0x9ddb6a8b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 08/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  65 |       2950 | IER         | 0x008 | 0x65b8aa8a | 0x00000002 | 0x00000002 | PASS   |
+|  66 |       3010 | MSG         | 0x00c | 0x65b8aa8a | 0x65b8aa8a | 0x65b8aa8a | PASS   |
+|  67 |       3070 | EXP         | 0x010 | 0xc01d0f2f | 0xc01d0f2f | 0xc01d0f2f | PASS   |
+|  68 |       3130 | MOD         | 0x014 | 0x3fe2f0d0 | 0x3fe2f0d0 | 0x3fe2f0d0 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 08/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  69 |       3160 | IER         | 0x008 | 0x65b8aa8a | 0x00000002 | 0x00000002 | PASS   |
+|  70 |       3190 | MSG         | 0x00c | 0x65b8aa8a | 0x65b8aa8a | 0x65b8aa8a | PASS   |
+|  71 |       3220 | EXP         | 0x010 | 0xc01d0f2f | 0xc01d0f2f | 0xc01d0f2f | PASS   |
+|  72 |       3250 | MOD         | 0x014 | 0x3fe2f0d0 | 0x3fe2f0d0 | 0x3fe2f0d0 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 09/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  73 |       3310 | IER         | 0x008 | 0x03f02443 | 0x00000003 | 0x00000003 | PASS   |
+|  74 |       3370 | MSG         | 0x00c | 0x03f02443 | 0x03f02443 | 0x03f02443 | PASS   |
+|  75 |       3430 | EXP         | 0x010 | 0xa65581e6 | 0xa65581e6 | 0xa65581e6 | PASS   |
+|  76 |       3490 | MOD         | 0x014 | 0x59aa7e19 | 0x59aa7e19 | 0x59aa7e19 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 09/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  77 |       3520 | IER         | 0x008 | 0x03f02443 | 0x00000003 | 0x00000003 | PASS   |
+|  78 |       3550 | MSG         | 0x00c | 0x03f02443 | 0x03f02443 | 0x03f02443 | PASS   |
+|  79 |       3580 | EXP         | 0x010 | 0xa65581e6 | 0xa65581e6 | 0xa65581e6 | PASS   |
+|  80 |       3610 | MOD         | 0x014 | 0x59aa7e19 | 0x59aa7e19 | 0x59aa7e19 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 10/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  81 |       3670 | IER         | 0x008 | 0xa2279dfc | 0x00000000 | 0x00000000 | PASS   |
+|  82 |       3730 | MSG         | 0x00c | 0xa2279dfc | 0xa2279dfc | 0xa2279dfc | PASS   |
+|  83 |       3790 | EXP         | 0x010 | 0x07823859 | 0x07823859 | 0x07823859 | PASS   |
+|  84 |       3850 | MOD         | 0x014 | 0xf87dc7a6 | 0xf87dc7a6 | 0xf87dc7a6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 10/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  85 |       3880 | IER         | 0x008 | 0xa2279dfc | 0x00000000 | 0x00000000 | PASS   |
+|  86 |       3910 | MSG         | 0x00c | 0xa2279dfc | 0xa2279dfc | 0xa2279dfc | PASS   |
+|  87 |       3940 | EXP         | 0x010 | 0x07823859 | 0x07823859 | 0x07823859 | PASS   |
+|  88 |       3970 | MOD         | 0x014 | 0xf87dc7a6 | 0xf87dc7a6 | 0xf87dc7a6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 11/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  89 |       4030 | IER         | 0x008 | 0x405f17b5 | 0x00000001 | 0x00000001 | PASS   |
+|  90 |       4090 | MSG         | 0x00c | 0x405f17b5 | 0x405f17b5 | 0x405f17b5 | PASS   |
+|  91 |       4150 | EXP         | 0x010 | 0xe5fab210 | 0xe5fab210 | 0xe5fab210 | PASS   |
+|  92 |       4210 | MOD         | 0x014 | 0x1a054def | 0x1a054def | 0x1a054def | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 11/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  93 |       4240 | IER         | 0x008 | 0x405f17b5 | 0x00000001 | 0x00000001 | PASS   |
+|  94 |       4270 | MSG         | 0x00c | 0x405f17b5 | 0x405f17b5 | 0x405f17b5 | PASS   |
+|  95 |       4300 | EXP         | 0x010 | 0xe5fab210 | 0xe5fab210 | 0xe5fab210 | PASS   |
+|  96 |       4330 | MOD         | 0x014 | 0x1a054def | 0x1a054def | 0x1a054def | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 12/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|  97 |       4390 | IER         | 0x008 | 0xde96916e | 0x00000002 | 0x00000002 | PASS   |
+|  98 |       4450 | MSG         | 0x00c | 0xde96916e | 0xde96916e | 0xde96916e | PASS   |
+|  99 |       4510 | EXP         | 0x010 | 0x7b3334cb | 0x7b3334cb | 0x7b3334cb | PASS   |
+| 100 |       4570 | MOD         | 0x014 | 0x84cccb34 | 0x84cccb34 | 0x84cccb34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 12/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 101 |       4600 | IER         | 0x008 | 0xde96916e | 0x00000002 | 0x00000002 | PASS   |
+| 102 |       4630 | MSG         | 0x00c | 0xde96916e | 0xde96916e | 0xde96916e | PASS   |
+| 103 |       4660 | EXP         | 0x010 | 0x7b3334cb | 0x7b3334cb | 0x7b3334cb | PASS   |
+| 104 |       4690 | MOD         | 0x014 | 0x84cccb34 | 0x84cccb34 | 0x84cccb34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 13/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 105 |       4750 | IER         | 0x008 | 0x7cce0b27 | 0x00000003 | 0x00000003 | PASS   |
+| 106 |       4810 | MSG         | 0x00c | 0x7cce0b27 | 0x7cce0b27 | 0x7cce0b27 | PASS   |
+| 107 |       4870 | EXP         | 0x010 | 0xd96bae82 | 0xd96bae82 | 0xd96bae82 | PASS   |
+| 108 |       4930 | MOD         | 0x014 | 0x2694517d | 0x2694517d | 0x2694517d | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 13/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 109 |       4960 | IER         | 0x008 | 0x7cce0b27 | 0x00000003 | 0x00000003 | PASS   |
+| 110 |       4990 | MSG         | 0x00c | 0x7cce0b27 | 0x7cce0b27 | 0x7cce0b27 | PASS   |
+| 111 |       5020 | EXP         | 0x010 | 0xd96bae82 | 0xd96bae82 | 0xd96bae82 | PASS   |
+| 112 |       5050 | MOD         | 0x014 | 0x2694517d | 0x2694517d | 0x2694517d | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 14/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 113 |       5110 | IER         | 0x008 | 0x1b0584e0 | 0x00000000 | 0x00000000 | PASS   |
+| 114 |       5170 | MSG         | 0x00c | 0x1b0584e0 | 0x1b0584e0 | 0x1b0584e0 | PASS   |
+| 115 |       5230 | EXP         | 0x010 | 0xbea02145 | 0xbea02145 | 0xbea02145 | PASS   |
+| 116 |       5290 | MOD         | 0x014 | 0x415fdeba | 0x415fdeba | 0x415fdeba | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 14/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 117 |       5320 | IER         | 0x008 | 0x1b0584e0 | 0x00000000 | 0x00000000 | PASS   |
+| 118 |       5350 | MSG         | 0x00c | 0x1b0584e0 | 0x1b0584e0 | 0x1b0584e0 | PASS   |
+| 119 |       5380 | EXP         | 0x010 | 0xbea02145 | 0xbea02145 | 0xbea02145 | PASS   |
+| 120 |       5410 | MOD         | 0x014 | 0x415fdeba | 0x415fdeba | 0x415fdeba | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 15/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 121 |       5470 | IER         | 0x008 | 0xb93cfe99 | 0x00000001 | 0x00000001 | PASS   |
+| 122 |       5530 | MSG         | 0x00c | 0xb93cfe99 | 0xb93cfe99 | 0xb93cfe99 | PASS   |
+| 123 |       5590 | EXP         | 0x010 | 0x1c995b3c | 0x1c995b3c | 0x1c995b3c | PASS   |
+| 124 |       5650 | MOD         | 0x014 | 0xe366a4c3 | 0xe366a4c3 | 0xe366a4c3 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 15/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 125 |       5680 | IER         | 0x008 | 0xb93cfe99 | 0x00000001 | 0x00000001 | PASS   |
+| 126 |       5710 | MSG         | 0x00c | 0xb93cfe99 | 0xb93cfe99 | 0xb93cfe99 | PASS   |
+| 127 |       5740 | EXP         | 0x010 | 0x1c995b3c | 0x1c995b3c | 0x1c995b3c | PASS   |
+| 128 |       5770 | MOD         | 0x014 | 0xe366a4c3 | 0xe366a4c3 | 0xe366a4c3 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 16/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 129 |       5830 | IER         | 0x008 | 0x57747852 | 0x00000002 | 0x00000002 | PASS   |
+| 130 |       5890 | MSG         | 0x00c | 0x57747852 | 0x57747852 | 0x57747852 | PASS   |
+| 131 |       5950 | EXP         | 0x010 | 0xf2d1ddf7 | 0xf2d1ddf7 | 0xf2d1ddf7 | PASS   |
+| 132 |       6010 | MOD         | 0x014 | 0x0d2e2208 | 0x0d2e2208 | 0x0d2e2208 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 16/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 133 |       6040 | IER         | 0x008 | 0x57747852 | 0x00000002 | 0x00000002 | PASS   |
+| 134 |       6070 | MSG         | 0x00c | 0x57747852 | 0x57747852 | 0x57747852 | PASS   |
+| 135 |       6100 | EXP         | 0x010 | 0xf2d1ddf7 | 0xf2d1ddf7 | 0xf2d1ddf7 | PASS   |
+| 136 |       6130 | MOD         | 0x014 | 0x0d2e2208 | 0x0d2e2208 | 0x0d2e2208 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 17/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 137 |       6190 | IER         | 0x008 | 0xf5abf20b | 0x00000003 | 0x00000003 | PASS   |
+| 138 |       6250 | MSG         | 0x00c | 0xf5abf20b | 0xf5abf20b | 0xf5abf20b | PASS   |
+| 139 |       6310 | EXP         | 0x010 | 0x500e57ae | 0x500e57ae | 0x500e57ae | PASS   |
+| 140 |       6370 | MOD         | 0x014 | 0xaff1a851 | 0xaff1a851 | 0xaff1a851 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 17/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 141 |       6400 | IER         | 0x008 | 0xf5abf20b | 0x00000003 | 0x00000003 | PASS   |
+| 142 |       6430 | MSG         | 0x00c | 0xf5abf20b | 0xf5abf20b | 0xf5abf20b | PASS   |
+| 143 |       6460 | EXP         | 0x010 | 0x500e57ae | 0x500e57ae | 0x500e57ae | PASS   |
+| 144 |       6490 | MOD         | 0x014 | 0xaff1a851 | 0xaff1a851 | 0xaff1a851 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 18/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 145 |       6550 | IER         | 0x008 | 0x93e36bc4 | 0x00000000 | 0x00000000 | PASS   |
+| 146 |       6610 | MSG         | 0x00c | 0x93e36bc4 | 0x93e36bc4 | 0x93e36bc4 | PASS   |
+| 147 |       6670 | EXP         | 0x010 | 0x3646ce61 | 0x3646ce61 | 0x3646ce61 | PASS   |
+| 148 |       6730 | MOD         | 0x014 | 0xc9b9319e | 0xc9b9319e | 0xc9b9319e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 18/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 149 |       6760 | IER         | 0x008 | 0x93e36bc4 | 0x00000000 | 0x00000000 | PASS   |
+| 150 |       6790 | MSG         | 0x00c | 0x93e36bc4 | 0x93e36bc4 | 0x93e36bc4 | PASS   |
+| 151 |       6820 | EXP         | 0x010 | 0x3646ce61 | 0x3646ce61 | 0x3646ce61 | PASS   |
+| 152 |       6850 | MOD         | 0x014 | 0xc9b9319e | 0xc9b9319e | 0xc9b9319e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 19/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 153 |       6910 | IER         | 0x008 | 0x321ae57d | 0x00000001 | 0x00000001 | PASS   |
+| 154 |       6970 | MSG         | 0x00c | 0x321ae57d | 0x321ae57d | 0x321ae57d | PASS   |
+| 155 |       7030 | EXP         | 0x010 | 0x97bf40d8 | 0x97bf40d8 | 0x97bf40d8 | PASS   |
+| 156 |       7090 | MOD         | 0x014 | 0x6840bf27 | 0x6840bf27 | 0x6840bf27 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 19/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 157 |       7120 | IER         | 0x008 | 0x321ae57d | 0x00000001 | 0x00000001 | PASS   |
+| 158 |       7150 | MSG         | 0x00c | 0x321ae57d | 0x321ae57d | 0x321ae57d | PASS   |
+| 159 |       7180 | EXP         | 0x010 | 0x97bf40d8 | 0x97bf40d8 | 0x97bf40d8 | PASS   |
+| 160 |       7210 | MOD         | 0x014 | 0x6840bf27 | 0x6840bf27 | 0x6840bf27 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 20/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 161 |       7270 | IER         | 0x008 | 0xd0525f36 | 0x00000002 | 0x00000002 | PASS   |
+| 162 |       7330 | MSG         | 0x00c | 0xd0525f36 | 0xd0525f36 | 0xd0525f36 | PASS   |
+| 163 |       7390 | EXP         | 0x010 | 0x75f7fa93 | 0x75f7fa93 | 0x75f7fa93 | PASS   |
+| 164 |       7450 | MOD         | 0x014 | 0x8a08056c | 0x8a08056c | 0x8a08056c | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 20/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 165 |       7480 | IER         | 0x008 | 0xd0525f36 | 0x00000002 | 0x00000002 | PASS   |
+| 166 |       7510 | MSG         | 0x00c | 0xd0525f36 | 0xd0525f36 | 0xd0525f36 | PASS   |
+| 167 |       7540 | EXP         | 0x010 | 0x75f7fa93 | 0x75f7fa93 | 0x75f7fa93 | PASS   |
+| 168 |       7570 | MOD         | 0x014 | 0x8a08056c | 0x8a08056c | 0x8a08056c | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 21/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 169 |       7630 | IER         | 0x008 | 0x6e89d8ef | 0x00000003 | 0x00000003 | PASS   |
+| 170 |       7690 | MSG         | 0x00c | 0x6e89d8ef | 0x6e89d8ef | 0x6e89d8ef | PASS   |
+| 171 |       7750 | EXP         | 0x010 | 0xcb2c7d4a | 0xcb2c7d4a | 0xcb2c7d4a | PASS   |
+| 172 |       7810 | MOD         | 0x014 | 0x34d382b5 | 0x34d382b5 | 0x34d382b5 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 21/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 173 |       7840 | IER         | 0x008 | 0x6e89d8ef | 0x00000003 | 0x00000003 | PASS   |
+| 174 |       7870 | MSG         | 0x00c | 0x6e89d8ef | 0x6e89d8ef | 0x6e89d8ef | PASS   |
+| 175 |       7900 | EXP         | 0x010 | 0xcb2c7d4a | 0xcb2c7d4a | 0xcb2c7d4a | PASS   |
+| 176 |       7930 | MOD         | 0x014 | 0x34d382b5 | 0x34d382b5 | 0x34d382b5 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 22/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 177 |       7990 | IER         | 0x008 | 0x0cc152a8 | 0x00000000 | 0x00000000 | PASS   |
+| 178 |       8050 | MSG         | 0x00c | 0x0cc152a8 | 0x0cc152a8 | 0x0cc152a8 | PASS   |
+| 179 |       8110 | EXP         | 0x010 | 0xa964f70d | 0xa964f70d | 0xa964f70d | PASS   |
+| 180 |       8170 | MOD         | 0x014 | 0x569b08f2 | 0x569b08f2 | 0x569b08f2 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 22/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 181 |       8200 | IER         | 0x008 | 0x0cc152a8 | 0x00000000 | 0x00000000 | PASS   |
+| 182 |       8230 | MSG         | 0x00c | 0x0cc152a8 | 0x0cc152a8 | 0x0cc152a8 | PASS   |
+| 183 |       8260 | EXP         | 0x010 | 0xa964f70d | 0xa964f70d | 0xa964f70d | PASS   |
+| 184 |       8290 | MOD         | 0x014 | 0x569b08f2 | 0x569b08f2 | 0x569b08f2 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 23/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 185 |       8350 | IER         | 0x008 | 0xaaf8cc61 | 0x00000001 | 0x00000001 | PASS   |
+| 186 |       8410 | MSG         | 0x00c | 0xaaf8cc61 | 0xaaf8cc61 | 0xaaf8cc61 | PASS   |
+| 187 |       8470 | EXP         | 0x010 | 0x0f5d69c4 | 0x0f5d69c4 | 0x0f5d69c4 | PASS   |
+| 188 |       8530 | MOD         | 0x014 | 0xf0a2963b | 0xf0a2963b | 0xf0a2963b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 23/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 189 |       8560 | IER         | 0x008 | 0xaaf8cc61 | 0x00000001 | 0x00000001 | PASS   |
+| 190 |       8590 | MSG         | 0x00c | 0xaaf8cc61 | 0xaaf8cc61 | 0xaaf8cc61 | PASS   |
+| 191 |       8620 | EXP         | 0x010 | 0x0f5d69c4 | 0x0f5d69c4 | 0x0f5d69c4 | PASS   |
+| 192 |       8650 | MOD         | 0x014 | 0xf0a2963b | 0xf0a2963b | 0xf0a2963b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 24/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 193 |       8710 | IER         | 0x008 | 0x4930461a | 0x00000002 | 0x00000002 | PASS   |
+| 194 |       8770 | MSG         | 0x00c | 0x4930461a | 0x4930461a | 0x4930461a | PASS   |
+| 195 |       8830 | EXP         | 0x010 | 0xec95e3bf | 0xec95e3bf | 0xec95e3bf | PASS   |
+| 196 |       8890 | MOD         | 0x014 | 0x136a1c40 | 0x136a1c40 | 0x136a1c40 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 24/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 197 |       8920 | IER         | 0x008 | 0x4930461a | 0x00000002 | 0x00000002 | PASS   |
+| 198 |       8950 | MSG         | 0x00c | 0x4930461a | 0x4930461a | 0x4930461a | PASS   |
+| 199 |       8980 | EXP         | 0x010 | 0xec95e3bf | 0xec95e3bf | 0xec95e3bf | PASS   |
+| 200 |       9010 | MOD         | 0x014 | 0x136a1c40 | 0x136a1c40 | 0x136a1c40 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 25/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 201 |       9070 | IER         | 0x008 | 0xe767bfd3 | 0x00000003 | 0x00000003 | PASS   |
+| 202 |       9130 | MSG         | 0x00c | 0xe767bfd3 | 0xe767bfd3 | 0xe767bfd3 | PASS   |
+| 203 |       9190 | EXP         | 0x010 | 0x42c21a76 | 0x42c21a76 | 0x42c21a76 | PASS   |
+| 204 |       9250 | MOD         | 0x014 | 0xbd3de589 | 0xbd3de589 | 0xbd3de589 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 25/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 205 |       9280 | IER         | 0x008 | 0xe767bfd3 | 0x00000003 | 0x00000003 | PASS   |
+| 206 |       9310 | MSG         | 0x00c | 0xe767bfd3 | 0xe767bfd3 | 0xe767bfd3 | PASS   |
+| 207 |       9340 | EXP         | 0x010 | 0x42c21a76 | 0x42c21a76 | 0x42c21a76 | PASS   |
+| 208 |       9370 | MOD         | 0x014 | 0xbd3de589 | 0xbd3de589 | 0xbd3de589 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 26/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 209 |       9430 | IER         | 0x008 | 0x859f398c | 0x00000000 | 0x00000000 | PASS   |
+| 210 |       9490 | MSG         | 0x00c | 0x859f398c | 0x859f398c | 0x859f398c | PASS   |
+| 211 |       9550 | EXP         | 0x010 | 0x203a9c29 | 0x203a9c29 | 0x203a9c29 | PASS   |
+| 212 |       9610 | MOD         | 0x014 | 0xdfc563d6 | 0xdfc563d6 | 0xdfc563d6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 26/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 213 |       9640 | IER         | 0x008 | 0x859f398c | 0x00000000 | 0x00000000 | PASS   |
+| 214 |       9670 | MSG         | 0x00c | 0x859f398c | 0x859f398c | 0x859f398c | PASS   |
+| 215 |       9700 | EXP         | 0x010 | 0x203a9c29 | 0x203a9c29 | 0x203a9c29 | PASS   |
+| 216 |       9730 | MOD         | 0x014 | 0xdfc563d6 | 0xdfc563d6 | 0xdfc563d6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 27/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 217 |       9790 | IER         | 0x008 | 0x23d6b345 | 0x00000001 | 0x00000001 | PASS   |
+| 218 |       9850 | MSG         | 0x00c | 0x23d6b345 | 0x23d6b345 | 0x23d6b345 | PASS   |
+| 219 |       9910 | EXP         | 0x010 | 0x867316e0 | 0x867316e0 | 0x867316e0 | PASS   |
+| 220 |       9970 | MOD         | 0x014 | 0x798ce91f | 0x798ce91f | 0x798ce91f | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 27/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 221 |      10000 | IER         | 0x008 | 0x23d6b345 | 0x00000001 | 0x00000001 | PASS   |
+| 222 |      10030 | MSG         | 0x00c | 0x23d6b345 | 0x23d6b345 | 0x23d6b345 | PASS   |
+| 223 |      10060 | EXP         | 0x010 | 0x867316e0 | 0x867316e0 | 0x867316e0 | PASS   |
+| 224 |      10090 | MOD         | 0x014 | 0x798ce91f | 0x798ce91f | 0x798ce91f | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 28/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 225 |      10150 | IER         | 0x008 | 0xc20e2cfe | 0x00000002 | 0x00000002 | PASS   |
+| 226 |      10210 | MSG         | 0x00c | 0xc20e2cfe | 0xc20e2cfe | 0xc20e2cfe | PASS   |
+| 227 |      10270 | EXP         | 0x010 | 0x67ab895b | 0x67ab895b | 0x67ab895b | PASS   |
+| 228 |      10330 | MOD         | 0x014 | 0x985476a4 | 0x985476a4 | 0x985476a4 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 28/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 229 |      10360 | IER         | 0x008 | 0xc20e2cfe | 0x00000002 | 0x00000002 | PASS   |
+| 230 |      10390 | MSG         | 0x00c | 0xc20e2cfe | 0xc20e2cfe | 0xc20e2cfe | PASS   |
+| 231 |      10420 | EXP         | 0x010 | 0x67ab895b | 0x67ab895b | 0x67ab895b | PASS   |
+| 232 |      10450 | MOD         | 0x014 | 0x985476a4 | 0x985476a4 | 0x985476a4 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 29/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 233 |      10510 | IER         | 0x008 | 0x6045a6b7 | 0x00000003 | 0x00000003 | PASS   |
+| 234 |      10570 | MSG         | 0x00c | 0x6045a6b7 | 0x6045a6b7 | 0x6045a6b7 | PASS   |
+| 235 |      10630 | EXP         | 0x010 | 0xc5e00312 | 0xc5e00312 | 0xc5e00312 | PASS   |
+| 236 |      10690 | MOD         | 0x014 | 0x3a1ffced | 0x3a1ffced | 0x3a1ffced | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 29/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 237 |      10720 | IER         | 0x008 | 0x6045a6b7 | 0x00000003 | 0x00000003 | PASS   |
+| 238 |      10750 | MSG         | 0x00c | 0x6045a6b7 | 0x6045a6b7 | 0x6045a6b7 | PASS   |
+| 239 |      10780 | EXP         | 0x010 | 0xc5e00312 | 0xc5e00312 | 0xc5e00312 | PASS   |
+| 240 |      10810 | MOD         | 0x014 | 0x3a1ffced | 0x3a1ffced | 0x3a1ffced | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 30/30 | Escrita e leitura imediata
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 241 |      10870 | IER         | 0x008 | 0xfe7d2070 | 0x00000000 | 0x00000000 | PASS   |
+| 242 |      10930 | MSG         | 0x00c | 0xfe7d2070 | 0xfe7d2070 | 0xfe7d2070 | PASS   |
+| 243 |      10990 | EXP         | 0x010 | 0x5bd885d5 | 0x5bd885d5 | 0x5bd885d5 | PASS   |
+| 244 |      11050 | MOD         | 0x014 | 0xa4277a2a | 0xa4277a2a | 0xa4277a2a | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] Rodada 30/30 | Retencao apos todas as escritas
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 245 |      11080 | IER         | 0x008 | 0xfe7d2070 | 0x00000000 | 0x00000000 | PASS   |
+| 246 |      11110 | MSG         | 0x00c | 0xfe7d2070 | 0xfe7d2070 | 0xfe7d2070 | PASS   |
+| 247 |      11140 | EXP         | 0x010 | 0x5bd885d5 | 0x5bd885d5 | 0x5bd885d5 | PASS   |
+| 248 |      11170 | MOD         | 0x014 | 0xa4277a2a | 0xa4277a2a | 0xa4277a2a | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 01/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 249 |      11230 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 250 |      11290 | MSG         | 0x00c | 0x00000041 | 0x00000041 | 0x00000041 | PASS   |
+| 251 |      11350 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 252 |      11410 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 01/10 | Execucao: MSG^EXP mod MOD = 0x00000ae6
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 253 |      11440 | STATUS.IDLE | 0x004 | --         | 0x00000000 | 0x00000000 | PASS   |
+| 254 |      11440 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 255 |      11500 | STATUS.BUSY | 0x004 | --         | 0x00000001 | 0x00000001 | PASS   |
+| 256 |      43240 | STATUS.DONE | 0x004 | --         | 0x00000002 | 0x00000002 | PASS   |
+| 257 |      43240 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 258 |      43270 | RESULT      | 0x018 | --         | 0x00000ae6 | 0x00000ae6 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 01/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 259 |      43300 | MSG         | 0x00c | 0x00000041 | 0x00000041 | 0x00000041 | PASS   |
+| 260 |      43330 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 261 |      43360 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
+| 262 |      43420 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 263 |      43420 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 02/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 264 |      43480 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 265 |      43540 | MSG         | 0x00c | 0x0000007b | 0x0000007b | 0x0000007b | PASS   |
+| 266 |      43600 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 267 |      43660 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 02/10 | Execucao: MSG^EXP mod MOD = 0x00000b34
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 268 |      43690 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 269 |      43690 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 270 |      43750 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 271 |      55690 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 272 |      55690 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 273 |      55720 | RESULT      | 0x018 | --         | 0x00000b34 | 0x00000b34 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 02/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 274 |      55750 | MSG         | 0x00c | 0x0000007b | 0x0000007b | 0x0000007b | PASS   |
+| 275 |      55780 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 276 |      55810 | MOD         | 0x014 | 0x00000ca1 | 0x00000ca1 | 0x00000ca1 | PASS   |
+| 277 |      55870 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 278 |      55870 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 03/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 279 |      55930 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 280 |      55990 | MSG         | 0x00c | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 281 |      56050 | EXP         | 0x010 | 0x00000005 | 0x00000005 | 0x00000005 | PASS   |
+| 282 |      56110 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 03/10 | Execucao: MSG^EXP mod MOD = 0x00000000
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 283 |      56140 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 284 |      56140 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 285 |      56200 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 286 |      64780 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 287 |      64780 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 288 |      64810 | RESULT      | 0x018 | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 03/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 289 |      64840 | MSG         | 0x00c | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 290 |      64870 | EXP         | 0x010 | 0x00000005 | 0x00000005 | 0x00000005 | PASS   |
+| 291 |      64900 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
+| 292 |      64960 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 293 |      64960 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 04/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 294 |      65020 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 295 |      65080 | MSG         | 0x00c | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 296 |      65140 | EXP         | 0x010 | 0x0000000d | 0x0000000d | 0x0000000d | PASS   |
+| 297 |      65200 | MOD         | 0x014 | 0x00000101 | 0x00000101 | 0x00000101 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 04/10 | Execucao: MSG^EXP mod MOD = 0x00000001
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 298 |      65230 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 299 |      65230 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 300 |      65290 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 301 |      90190 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 302 |      90190 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 303 |      90220 | RESULT      | 0x018 | --         | 0x00000001 | 0x00000001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 04/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 304 |      90250 | MSG         | 0x00c | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 305 |      90280 | EXP         | 0x010 | 0x0000000d | 0x0000000d | 0x0000000d | PASS   |
+| 306 |      90310 | MOD         | 0x014 | 0x00000101 | 0x00000101 | 0x00000101 | PASS   |
+| 307 |      90370 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 308 |      90370 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 05/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 309 |      90430 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 310 |      90490 | MSG         | 0x00c | 0x0000002a | 0x0000002a | 0x0000002a | PASS   |
+| 311 |      90550 | EXP         | 0x010 | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 312 |      90610 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 05/10 | Execucao: MSG^EXP mod MOD = 0x00000001
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 313 |      90640 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 314 |      90640 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 315 |      90700 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 316 |      92890 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 317 |      92890 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 318 |      92920 | RESULT      | 0x018 | --         | 0x00000001 | 0x00000001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 05/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 319 |      92950 | MSG         | 0x00c | 0x0000002a | 0x0000002a | 0x0000002a | PASS   |
+| 320 |      92980 | EXP         | 0x010 | 0x00000000 | 0x00000000 | 0x00000000 | PASS   |
+| 321 |      93010 | MOD         | 0x014 | 0x00000061 | 0x00000061 | 0x00000061 | PASS   |
+| 322 |      93070 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 323 |      93070 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 06/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 324 |      93130 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 325 |      93190 | MSG         | 0x00c | 0x12345678 | 0x12345678 | 0x12345678 | PASS   |
+| 326 |      93250 | EXP         | 0x010 | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 327 |      93310 | MOD         | 0x014 | 0x0000fff1 | 0x0000fff1 | 0x0000fff1 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 06/10 | Execucao: MSG^EXP mod MOD = 0x00006793
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 328 |      93340 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 329 |      93340 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 330 |      93400 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 331 |      95320 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 332 |      95320 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 333 |      95350 | RESULT      | 0x018 | --         | 0x00006793 | 0x00006793 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 06/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 334 |      95380 | MSG         | 0x00c | 0x12345678 | 0x12345678 | 0x12345678 | PASS   |
+| 335 |      95410 | EXP         | 0x010 | 0x00000001 | 0x00000001 | 0x00000001 | PASS   |
+| 336 |      95440 | MOD         | 0x014 | 0x0000fff1 | 0x0000fff1 | 0x0000fff1 | PASS   |
+| 337 |      95500 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 338 |      95500 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 07/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 339 |      95560 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 340 |      95620 | MSG         | 0x00c | 0x80000001 | 0x80000001 | 0x80000001 | PASS   |
+| 341 |      95680 | EXP         | 0x010 | 0x00000002 | 0x00000002 | 0x00000002 | PASS   |
+| 342 |      95740 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 07/10 | Execucao: MSG^EXP mod MOD = 0x4000000b
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 343 |      95770 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 344 |      95770 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 345 |      95830 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 346 |      97270 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 347 |      97270 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 348 |      97300 | RESULT      | 0x018 | --         | 0x4000000b | 0x4000000b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 07/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 349 |      97330 | MSG         | 0x00c | 0x80000001 | 0x80000001 | 0x80000001 | PASS   |
+| 350 |      97360 | EXP         | 0x010 | 0x00000002 | 0x00000002 | 0x00000002 | PASS   |
+| 351 |      97390 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
+| 352 |      97450 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 353 |      97450 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 08/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 354 |      97510 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 355 |      97570 | MSG         | 0x00c | 0xffffffff | 0xffffffff | 0xffffffff | PASS   |
+| 356 |      97630 | EXP         | 0x010 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 357 |      97690 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 08/10 | Execucao: MSG^EXP mod MOD = 0x00000040
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 358 |      97720 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 359 |      97720 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 360 |      97780 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 361 |     100600 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 362 |     100600 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 363 |     100630 | RESULT      | 0x018 | --         | 0x00000040 | 0x00000040 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 08/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 364 |     100660 | MSG         | 0x00c | 0xffffffff | 0xffffffff | 0xffffffff | PASS   |
+| 365 |     100690 | EXP         | 0x010 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 366 |     100720 | MOD         | 0x014 | 0xfffffffb | 0xfffffffb | 0xfffffffb | PASS   |
+| 367 |     100780 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 368 |     100780 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 09/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 369 |     100840 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 370 |     100900 | MSG         | 0x00c | 0x075bcd15 | 0x075bcd15 | 0x075bcd15 | PASS   |
+| 371 |     100960 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 372 |     101020 | MOD         | 0x014 | 0x00010001 | 0x00010001 | 0x00010001 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 09/10 | Execucao: MSG^EXP mod MOD = 0x00008a8e
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 373 |     101050 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 374 |     101050 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 375 |     101110 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 376 |     112150 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 377 |     112150 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 378 |     112180 | RESULT      | 0x018 | --         | 0x00008a8e | 0x00008a8e | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 09/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 379 |     112210 | MSG         | 0x00c | 0x075bcd15 | 0x075bcd15 | 0x075bcd15 | PASS   |
+| 380 |     112240 | EXP         | 0x010 | 0x00000007 | 0x00000007 | 0x00000007 | PASS   |
+| 381 |     112270 | MOD         | 0x014 | 0x00010001 | 0x00010001 | 0x00010001 | PASS   |
+| 382 |     112330 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 383 |     112330 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Carga dos operandos
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 384 |     112390 | IER         | 0x008 | 0x00000003 | 0x00000003 | 0x00000003 | PASS   |
+| 385 |     112450 | MSG         | 0x00c | 0xfedcba98 | 0xfedcba98 | 0xfedcba98 | PASS   |
+| 386 |     112510 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 387 |     112570 | MOD         | 0x014 | 0x8000000b | 0x8000000b | 0x8000000b | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Execucao: MSG^EXP mod MOD = 0x14adadfc
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 388 |     112600 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 389 |     112600 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
+| 390 |     112660 | STATUS.BUSY | 0x004 | 0x00000006 | 0x00000001 | 0x00000001 | PASS   |
+| 391 |     134800 | STATUS.DONE | 0x004 | 0x00000006 | 0x00000002 | 0x00000002 | PASS   |
+| 392 |     134800 | IRQ         | --    | --         | 0x00000001 | 0x00000001 | PASS   |
+| 393 |     134830 | RESULT      | 0x018 | --         | 0x14adadfc | 0x14adadfc | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RSA 10/10 | Preservacao dos operandos e limpeza
++-----+------------+-------------+-------+------------+------------+------------+--------+
+|   # | Tempo (ns) | Registro    | End.  | Enviado    | Esperado   | Lido       | Status |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+| 394 |     134860 | MSG         | 0x00c | 0xfedcba98 | 0xfedcba98 | 0xfedcba98 | PASS   |
+| 395 |     134890 | EXP         | 0x010 | 0x00000011 | 0x00000011 | 0x00000011 | PASS   |
+| 396 |     134920 | MOD         | 0x014 | 0x8000000b | 0x8000000b | 0x8000000b | PASS   |
+| 397 |     134980 | STATUS.IDLE | 0x004 | 0x00000006 | 0x00000000 | 0x00000000 | PASS   |
+| 398 |     134980 | IRQ         | --    | --         | 0x00000000 | 0x00000000 | PASS   |
++-----+------------+-------------+-------+------------+------------+------------+--------+
+
+[SCB] RESUMO | regbank=30 rodadas | RSA=10 rodadas | MOD_ZERO=0 | previstas=398 | realizadas=398 | acertos=398 | falhas=0 | tempo=134980 ns
+TEST PASS: 398 checks, 0 errors
+Simulation complete via $finish(1) at time 134980 NS + 0
+/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/testbench.sv:500         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 10, 2026 at 09:36:36 -03  (total: 00:00:02)

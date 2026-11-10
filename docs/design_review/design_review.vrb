@@ -1,0 +1,91 @@
+\frametitle{E10~— Scripts de automação}\framesubtitle {Árvore de \texttt {scripts/} (4/4) · \texttt {MR/tcl}, \texttt {RSA32}, \texttt {RSA4} e comuns}
+  \vspace*{-0.3cm}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   └── tcl
+│       ├── 1.innovus_check.tcl
+│       ├── 2.innovus_floorplan.tcl
+│       ├── 3.innovus_power.tcl
+│       ├── 4.innovus_place.tcl
+│       ├── 5.innovus_cts.tcl
+│       ├── 6.innovus_route.tcl
+│       ├── 7.innovus_postroute.tcl
+│       ├── 8.innovus_verify.tcl
+│       ├── 9.innovus_export.tcl
+│       ├── imc.tcl
+│       ├── innovus_common.tcl
+│       ├── innovus_gui.tcl
+│       ├── innovus_init.tcl
+│       ├── innovus_mmmc.tcl
+│       ├── lec_common.tcl
+│       ├── lec_gui.tcl
+│       ├── lec.tcl
+│       ├── lint.tcl
+│       ├── open_genus_gui.tcl
+│       ├── pdk_common.tcl
+│       ├── pdks
+│       │   ├── free45.tcl
+│       │   ├── gpdk45.tcl
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│       │   ├── ics55.tcl
+│       │   ├── sky130.tcl
+│       │   └── tsmc28.tcl
+│       ├── report_common.tcl
+│       ├── run_genus_free45.tcl
+│       ├── run_genus_gpdk45.tcl
+│       ├── run_genus_ics55.tcl
+│       ├── run_genus_sky130.tcl
+│       ├── run_genus.tcl
+│       ├── run_genus_tsmc28.tcl
+│       ├── run_innovus_free45.tcl
+│       ├── run_innovus_gpdk45.tcl
+│       ├── run_innovus_ics55.tcl
+│       ├── run_innovus_sky130.tcl
+│       ├── xezim_uvm_wave_view.tcl
+│       ├── xrun_ps_tsmc28.tcl
+│       ├── xrun.tcl
+│       ├── xrun_uvm_gui.tcl
+│       ├── xrun_uvm_nogui.tcl
+│       └── xrun_wgui.tcl
+├── pages
+│   ├── build.py
+│   ├── coverage_theme.py
+│   ├── documents.py
+\end{verbatim}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+\tmTree
+\begin{verbatim}
+│   └── requirements.txt
+├── README.md
+├── README_SKY130.md
+├── RSA32
+│   ├── bash
+│   │   ├── xrun_ps.sh
+│   │   ├── xrun.sh
+│   │   └── xrun_wgui.sh
+│   └── tcl
+│       └── xrun_wgui.tcl
+├── RSA4
+│   ├── bash
+│   │   └── run_rsa_lec.sh
+│   └── tcl
+│       └── rsa_lec.tcl
+└── validation
+    ├── report_xezim_coverage.py
+    ├── test_uvm_campaign_timing.py
+    ├── uvm_campaign_timing.py
+    └── xezim_coverage.html
+\end{verbatim}
+      \vspace{0.05cm}
+      {\tiny
+      \texttt{RSA32/}: simulação Xcelium do \texttt{rsa\_core} de 32 bits (RTL e TB em \texttt{RSA32\_opt}).\\[0.05cm]
+      \texttt{RSA4/}: LEC RTL $\times$ RTL do RSA de 4 bits (\texttt{.v} $\times$ \texttt{.sv}).\par}
+    \end{column}
+  \end{columns}

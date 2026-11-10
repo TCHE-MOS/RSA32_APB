@@ -1,0 +1,117 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 990 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Parsing file /tsmc28/tcbn28hpcplusbwp30p140tt1v25c.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:43)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:23)
+// Note: Read Liberty library successfully
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MR/RSA_APB/rsa_core_32bits.sv ...
+// Parsing file /home/aluno/Documents/RSA32_APB/src/MR/RSA_APB/rsa_apb_top.sv ...
+// Golden root module is set to 'amba_3_apb_rsa_apb_top'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:4)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:13)
+// Warning: (RTL1.9c) Parameter bit width is sufficient to hold RHS value but does not match RHS bit width (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:7)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:3)
+// Warning: (RTL6.4a) Enum value might need constraint (occurrence:4)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:4)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:2)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:2)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+LEC | PDK: tsmc28 | Sintese: amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28
+Golden: RTL em /home/aluno/Documents/RSA32_APB/src/MR/RSA_APB (implementacao MR)
+Revised: /home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28.v
+// Parsing file /home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28.v ...
+// Revised root module is set to 'amba_3_apb_rsa_apb_top'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:1)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling (auto) mapped 1412 out of 1414 DFF/DLATs
+// (F18) Converted 1 DFF/DLAT(s) in (G) to ZERO/ONE
+CPU time     : 0.78    seconds
+Elapse time  : 1       seconds
+Memory usage : 176.30  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 792
+// Revised key points = 790
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            49     35     706       790     
+--------------------------------------------------------------------------------
+Revised           49     35     706       790     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// Remodeling Golden ...
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            49     35     706       790     
+--------------------------------------------------------------------------------
+Revised           49     35     706       790     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================
+// 741 compared points added to compare list
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           35     706       741     
+================================================================================
+// Command: get_exit_code
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+================================================================================
+Resumo: /home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_tsmc28/lec/amba_3_apb_rsa_apb_top_2026-11-10_10-45-19_800011526_tsmc28/lec_summary_tsmc28.txt
+=== RESULTADO LEC: PASS (codigo 0) | PDK: tsmc28 | Sintese: amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28 ===
+CPU time     : 0.91    seconds
+Elapse time  : 1       seconds
+Memory usage : 188.24  M bytes
+// Command: exit $lec_status

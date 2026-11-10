@@ -1,0 +1,13 @@
+Unmapped point (unreachable: all paths to outputs are blocked):
+  (G)   222  DFF  /u_seq/gap_cnt_reg[0]
+Unmapped point (unreachable: all paths to outputs are blocked):
+  (G)   428  DFF  /u_rsa_core/rsa_core_mod_blk/mod_err_ff_reg
+
+2 unmapped points reported
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       2         2       
+================================================================================

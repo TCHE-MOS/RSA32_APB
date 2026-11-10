@@ -1,1 +1,14 @@
 \babel@toc {brazilian}{}\relax 
+\beamer@sectionintoc {1}{Entregáveis e arquitetura}{3}{0}{1}
+\beamer@sectionintoc {2}{E01 — Coprocessador RSA de 32 bits e testbench}{9}{0}{2}
+\beamer@sectionintoc {3}{E02 — Equivalência lógica RSA 4 bits}{11}{0}{3}
+\beamer@sectionintoc {4}{E03 — Simulação funcional do \texttt {rsa\_core32b}}{13}{0}{4}
+\beamer@sectionintoc {5}{E04 — Ambiente de verificação UVM}{15}{0}{5}
+\beamer@sectionintoc {6}{E05 — Simulação funcional do RSA\_APB}{18}{0}{6}
+\beamer@sectionintoc {7}{E06 — Cobertura funcional do RSA\_APB}{20}{0}{7}
+\beamer@sectionintoc {8}{E07 — Gate-level netlist TSMC 28\,nm}{21}{0}{8}
+\beamer@sectionintoc {9}{E08 — Análise estática de temporização}{24}{0}{9}
+\beamer@sectionintoc {10}{Comparativo MG × MR — síntese TSMC 28\,nm}{28}{0}{10}
+\beamer@sectionintoc {11}{E09 — Simulação pós-síntese com SDF}{29}{0}{11}
+\beamer@sectionintoc {12}{E10 — Scripts de automação}{31}{0}{12}
+\beamer@sectionintoc {13}{Falhas encontradas no RSA32}{35}{0}{13}

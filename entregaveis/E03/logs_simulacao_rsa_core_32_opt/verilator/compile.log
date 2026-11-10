@@ -1,0 +1,65 @@
+%Warning-DECLFILENAME: /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:9: Filename 'rsa32_core_kogge_stone_adder' does not match MODULE name: 'kogge_stone_adder'
+module kogge_stone_adder #(
+       ^~~~~~~~~~~~~~~~~
+                       ... Use "/* verilator lint_off DECLFILENAME */" and lint_on around source to disable this message.
+%Warning-DECLFILENAME: /home/aluno/Documents/rsa32_opt/src/rsa32_core_mult.sv:5: Filename 'rsa32_core_mult' does not match MODULE name: 'rsa_core_mult'
+module rsa_core_mult #(
+       ^~~~~~~~~~~~~
+%Warning-DECLFILENAME: /home/aluno/Documents/rsa32_opt/src/rsa32_core_mod.sv:2: Filename 'rsa32_core_mod' does not match MODULE name: 'rsa_core_mod'
+module rsa_core_mod #(
+       ^~~~~~~~~~~~
+%Warning-PINCONNECTEMPTY: /home/aluno/Documents/rsa32_opt/src/rsa32_core_mod.sv:65: Cell pin connected by name with empty reference: 'cout_o'
+        .cout_o ()
+         ^~~~~~
+%Warning-PINCONNECTEMPTY: /home/aluno/Documents/rsa32_opt/src/rsa32_core_mod.sv:83: Cell pin connected by name with empty reference: 'cout_o'
+        .cout_o ()
+         ^~~~~~
+%Warning-DECLFILENAME: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:5: Filename 'rsa32_core_ctrl' does not match MODULE name: 'rsa_core_ctrl'
+module rsa_core_ctrl #(
+       ^~~~~~~~~~~~~
+%Warning-PINCONNECTEMPTY: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:70: Cell pin connected by name with empty reference: 'cout_o'
+    .cout_o ()
+     ^~~~~~
+%Warning-DECLFILENAME: /home/aluno/Documents/rsa32_opt/src/rsa32_core_top.sv:14: Filename 'rsa32_core_top' does not match MODULE name: 'rsa_core'
+module rsa_core #(
+       ^~~~~~~~
+%Warning-WIDTH: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:178: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'ONE' generates 8 bits.
+                                                                          : ... In instance rsa_core.rsa_core_ctrl_blk
+                      m_reg  <= ONE;
+                             ^~
+%Warning-WIDTH: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:179: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'ONE' generates 8 bits.
+                                                                          : ... In instance rsa_core.rsa_core_ctrl_blk
+                      x_reg  <= ONE;
+                             ^~
+%Warning-WIDTH: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:197: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'ONE' generates 8 bits.
+                                                                          : ... In instance rsa_core.rsa_core_ctrl_blk
+                      x_reg  <= ONE;
+                             ^~
+%Warning-CASEINCOMPLETE: /home/aluno/Documents/rsa32_opt/src/rsa32_core_mult.sv:143: Case values incompletely covered (example pattern 0x5)
+            case (state_reg)
+            ^~~~
+%Warning-CASEINCOMPLETE: /home/aluno/Documents/rsa32_opt/src/rsa32_core_ctrl.sv:142: Case values incompletely covered (example pattern 0x6)
+        case (state_reg)
+        ^~~~
+%Warning-UNOPTFLAT: /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:25: Signal unoptimizable: Feedback to clock or circular logic: 'rsa_core.rsa_core_mod_blk.u_kogge_stone.g_stage'
+    logic [DATA_WIDTH-1:0] g_stage [0:LEVELS];
+                           ^~~~~~~
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:25:      Example path: rsa_core.rsa_core_mod_blk.u_kogge_stone.g_stage
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:57:      Example path: ASSIGNW
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:25:      Example path: rsa_core.rsa_core_mod_blk.u_kogge_stone.g_stage
+%Warning-UNOPTFLAT: /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:24: Signal unoptimizable: Feedback to clock or circular logic: 'rsa_core.rsa_core_mod_blk.u_kogge_stone.p_stage'
+    logic [DATA_WIDTH-1:0] p_stage [0:LEVELS];
+                           ^~~~~~~
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:24:      Example path: rsa_core.rsa_core_mod_blk.u_kogge_stone.p_stage
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:60:      Example path: ASSIGNW
+                    /home/aluno/Documents/rsa32_opt/src/rsa32_core_kogge_stone_adder.sv:24:      Example path: rsa_core.rsa_core_mod_blk.u_kogge_stone.p_stage
+make: Entering directory '/home/aluno/Documents/rsa32_opt/logs/rsa_core_32_opt/verilator/obj_dir'
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -c -o verilator_main.o /home/aluno/Documents/rsa32_opt/testbenches/verilator_main.cpp
+/usr/bin/perl /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vrsa_core.cpp > Vrsa_core__ALLcls.cpp
+/usr/bin/perl /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vrsa_core__Trace.cpp Vrsa_core__Syms.cpp Vrsa_core__Trace__Slow.cpp > Vrsa_core__ALLsup.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -c -o Vrsa_core__ALLcls.o Vrsa_core__ALLcls.cpp
+g++  -I.  -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=1 -DVM_SC=0 -DVM_TRACE=1 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-sign-compare -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable -Wno-shadow       -c -o Vrsa_core__ALLsup.o Vrsa_core__ALLsup.cpp
+ar -cr Vrsa_core__ALL.a Vrsa_core__ALLcls.o Vrsa_core__ALLsup.o
+ranlib Vrsa_core__ALL.a
+g++    verilator_main.o verilated.o verilated_cov.o verilated_vcd_c.o Vrsa_core__ALL.a    -o Vrsa_core -lm -lstdc++ 
+make: Leaving directory '/home/aluno/Documents/rsa32_opt/logs/rsa_core_32_opt/verilator/obj_dir'

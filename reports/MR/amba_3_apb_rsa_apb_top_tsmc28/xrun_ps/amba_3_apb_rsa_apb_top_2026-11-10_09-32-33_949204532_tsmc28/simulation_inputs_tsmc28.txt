@@ -1,0 +1,10 @@
+SYNTH_RUN: amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28
+NETLIST_FILE: /home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28.v
+SDF_FILE: /home/aluno/Documents/RSA32_APB/ps_files/MR/rsa_apb_top_tsmc28/sdf/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28.sdf
+TSMC28_VERILOG_FILE: /tsmc28/tcbn28hpcplusbwp30p140.v
+CLOCK_PERIOD_NS: 10.0
+SDF_LOG: /home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-32-33_949204532_tsmc28/sdf_annotation_tsmc28.log
+Testbench: /home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv
+DUT scope: tb.dut
+Model defines: POST_SYNTHESIS, NTC, RECREM
+SDF selection: MAXIMUM (corner characterized by the synthesis Liberty)

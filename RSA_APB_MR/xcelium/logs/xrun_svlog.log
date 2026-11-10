@@ -1,0 +1,82 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 09, 2026 at 15:52:20 -03
+xrun
+	-64bit
+	-sv
+	-makelib svlib
+	../rtl/rsa_core_32bits.sv
+	../rtl/rsa_apb_top.sv
+	../rtl/rsa_apb_tb.sv
+	-endlib
+	-top svlib.tb
+	-l logs/xrun_svlog.log
+	-history_file logs/xrun.history
+	-xmlibdirname xcelium.d
+file: ../rtl/rsa_core_32bits.sv
+	module svlib.rsa_core_mult:sv
+		errors: 0, warnings: 0
+	module svlib.rsa_core_mod:sv
+		errors: 0, warnings: 0
+	module svlib.rsa_core_ctrl:sv
+		errors: 0, warnings: 0
+	module svlib.rsa_core:sv
+		errors: 0, warnings: 0
+file: ../rtl/rsa_apb_top.sv
+	module svlib.rsa_apb_rst_sync:sv
+		errors: 0, warnings: 0
+	module svlib.rsa_apb_seq:sv
+		errors: 0, warnings: 0
+	module svlib.rsa_apb_regs:sv
+		errors: 0, warnings: 0
+	module svlib.amba_3_apb_rsa_apb_top:sv
+		errors: 0, warnings: 0
+file: ../rtl/rsa_apb_tb.sv
+	module svlib.tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'svlib' ....... Done
+	Top level design units:
+		tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		svlib.rsa_core_ctrl:sv <0x2a9e0a6d>
+			streams:  21, words:  7832
+		svlib.rsa_core_mod:sv <0x004485c7>
+			streams:  11, words:  6019
+		svlib.rsa_core_mult:sv <0x7374005b>
+			streams:  10, words:  4365
+		svlib.rsa_core:sv <0x63c87367>
+			streams:  19, words:  4480
+		svlib.rsa_apb_seq:sv <0x26830b6d>
+			streams:   7, words:  3811
+		svlib.rsa_apb_regs:sv <0x6eba3760>
+			streams:  15, words:  6755
+		svlib.rsa_apb_rst_sync:sv <0x1a344918>
+			streams:   4, words:   741
+		svlib.amba_3_apb_rsa_apb_top:sv <0x391ad1a0>
+			streams:  33, words:  8856
+		svlib.tb:sv <0x091c80ba>
+			streams:  33, words: 48684
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:             163     165
+		Scalar wires:           88       -
+		Vectored wires:         42       -
+		Always blocks:          14      14
+		Initial blocks:         12      12
+		Cont. assignments:      23      39
+		Pseudo assignments:     50       -
+		Process Clocks:          7       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb:sv
+Loading snapshot worklib.tb:sv .................... Done
+SVSEED default: 1
+xcelium> run
+PASS: 2236 checks
+Simulation complete via $finish(1) at time 2293975 NS + 0
+../rtl/rsa_apb_tb.sv:278         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 09, 2026 at 15:52:21 -03  (total: 00:00:01)

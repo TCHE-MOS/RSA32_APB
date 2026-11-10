@@ -1,0 +1,8 @@
+IMC(64): 24.03-s002: (c) Copyright 1995-2024 Cadence Design Systems Inc - Simulator version: 24.03-s013 - Coverage engine version: 24.03-s013
+Starting batch mode
+imc> source "/home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/imc.tcl"
+imc: *I,RUNLD: Successfully loaded run /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-09_14-24-00.
+imc: *W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+imc: *W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+imc: *W,REPDEP: This is a legacy report and no future enhancement is planned for this report. It is recommended that you use the 'report_metrics' command and generate a dynamic report.
+Metrics report written to /home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_rtl/imc/amba_3_apb_rsa_apb_top_2026-11-09_15-18-48_688391441_rtl/coverage_html_rtl/index.html

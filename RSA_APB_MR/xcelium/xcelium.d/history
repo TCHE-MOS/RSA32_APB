@@ -1,0 +1,10 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(09Nov2026:14:06:11):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core.sv ../rtl/rsa_core_tb.sv -endlib -top svlib.rsa_core_tb -l logs/xrun_svlog.log -history_file logs/xrun.history -xmlibdirname xcelium.d )&&(./xcelium.d/env.d/env.history.09Nov2026_14_06_11)
+s2::(09Nov2026:14:10:23):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core.sv ../rtl/rsa_core_tb.sv -endlib -top svlib.rsa_core_tb -l logs/xrun_svlog.log -history_file logs/xrun.history -xmlibdirname xcelium.d )&&(./xcelium.d/env.d/env.history.09Nov2026_14_10_23)
+s3::(09Nov2026:14:59:22):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core_32bits.sv ../rtl/rsa_core_tb_32bits.sv -endlib -top svlib.rsa_core_tb -l logs/xrun_svlog.log -history_file logs/xrun.history -xmlibdirname xcelium.d )&&(./xcelium.d/env.d/env.history.09Nov2026_14_59_22)
+s4::(09Nov2026:15:12:35):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core_32bits.sv ../rtl/rsa_core_tb_32bits.sv -endlib -top svlib.rsa_core_tb -l logs/xrun_svlog.log -history_file logs/xrun.history -xmlibdirname xcelium.d )&&(./xcelium.d/env.d/env.history.09Nov2026_15_12_35)
+s5::(09Nov2026:15:46:48):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core_32bits.sv ../rtl/rsa_apb_top.sv ../rtl/rsa_apb_tb.sv )&&(./xcelium.d/env.d/env.history.09Nov2026_15_46_48)
+s6::(09Nov2026:15:52:20):( xrun -64bit -sv -makelib svlib ../rtl/rsa_core_32bits.sv ../rtl/rsa_apb_top.sv ../rtl/rsa_apb_tb.sv -endlib -top svlib.tb -l logs/xrun_svlog.log -history_file logs/xrun.history -xmlibdirname xcelium.d )&&(./xcelium.d/env.d/env.history.09Nov2026_15_52_20)

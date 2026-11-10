@@ -1,0 +1,49 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 989 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read design -systemverilog -golden ../rtl/RSA_APB/*.sv
+// Parsing file ../rtl/RSA_APB/rsa_apb_tb.sv ...
+// Warning: Unsupported 'string' data type
+//          near token 'string' on line 60 in file '../rtl/RSA_APB/rsa_apb_tb.sv'
+// Warning: Unsupported 'string' data type
+//          near token 'string' on line 69 in file '../rtl/RSA_APB/rsa_apb_tb.sv'
+// Warning: Unsupported 'string' data type
+//          near token 'string' on line 74 in file '../rtl/RSA_APB/rsa_apb_tb.sv'
+// Parsing file ../rtl/RSA_APB/rsa_apb_top.sv ...
+// Parsing file ../rtl/RSA_APB/rsa_core_32bits.sv ...
+// Golden root module is set to 'tb'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:4)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:13)
+// Warning: (RTL1.9c) Parameter bit width is sufficient to hold RHS value but does not match RHS bit width (occurrence:1)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:48)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:7)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:3)
+// Warning: (RTL6.4a) Enum value might need constraint (occurrence:4)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:4)
+// Warning: (RTL12) Referenced variable(s)/signal(s) are not in sensitivity list (occurrence:1)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:35)
+// Warning: (VLG6.3) Unsupported system function call (converted to 1'b1) (occurrence:7)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:2)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:3)
+// Warning: (DIR6.2) Supported compiler directive is detected (occurrence:2)
+// Note: (DIR6.3) Conditional compiler directive clause is effective (occurrence:1)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:12)
+// Warning: (IGN2.1) Delay value(s) are ignored (occurrence:2)
+// Warning: (HRC3.2a) Module/entity has no I/O ports (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:2)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:2)
+// Warning: There are 48 undriven nets in Golden
+// Note: Read VERILOG design successfully
+// Command: set root module amba_3_apb_rsa_apb_top -golden
+// Error: Specified module 'amba_3_apb_rsa_apb_top' is a template.
+// 'dofile /home/aluno/Documents/MResmer/AMBA-3-RSA_APB/lec/lint_apb.do' is aborted at line 8
+// Command: exit

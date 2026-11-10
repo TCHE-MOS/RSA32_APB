@@ -1,0 +1,16 @@
+Synthesis: amba_3_apb_rsa_apb_top_2026-11-10_09-31-35_358650711_tsmc28
+Xrun exit status: 0
+Flow exit status: 0
+Log: /home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-57-21_269280902_tsmc28/amba_3_apb_rsa_apb_top_2026-11-10_09-57-21_269280902_tsmc28.log
+SDF annotation: /home/aluno/Documents/RSA32_APB/reports/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-57-21_269280902_tsmc28/sdf_annotation_tsmc28.log
+Waveform: /home/aluno/Documents/RSA32_APB/waveforms/MR/amba_3_apb_rsa_apb_top_tsmc28/xrun_ps/amba_3_apb_rsa_apb_top_2026-11-10_09-57-21_269280902_tsmc28/waves_tsmc28.shm
+[SCB] RESUMO | regbank=30 rodadas | RSA=10 rodadas | MOD_ZERO=0 | previstas=398 | realizadas=398 | acertos=398 | falhas=0 | tempo=135280 ns
+TEST PASS: 398 checks, 0 errors
+	SDF statistics: 
+		 No. of Pathdelays = 15852   	 No. of Disabled Pathdelays = 0        Annotated = 100.00% (15852/15852) 
+		 No. of Tchecks    = 15454   	 No. of Disabled Tchecks    = 0        Annotated = 41.23% (6372/15454) 
+				        Total(T) 	   Disabled(D) 	    Annotated(A)	  Percentage(A/(T-D))
+		 Path Delays	         15852	             0	             15852	                100.00
+		      $width	          9080	             0	                 0	                  0.00
+		     $recrem	           140	             0	               140	                100.00
+		  $setuphold	          6234	             0	              6232	                 99.97

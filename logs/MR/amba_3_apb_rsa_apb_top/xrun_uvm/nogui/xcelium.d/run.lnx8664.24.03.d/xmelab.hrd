@@ -1,0 +1,14 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-timescale
+1ns/1ps
+
+top_tb
+-ACCESS
++rwc
+-COVERAGE
+all
+-COVDUT
+amba_3_apb_rsa_apb_top

@@ -1,0 +1,188 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[14:07:32.048010] Configured Lic search path (22.01-s003): 5280@logus.unisinos.br:27020@modelab.unisinos.br
+
+Version: 22.18-s061_1, built Fri Apr 25 06:12:05 PDT 2025
+Options: -files /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/open_genus_gui.tcl -log /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top_tsmc28/genus/gui/amba_3_apb_rsa_apb_top_2026-11-09_14-07-31_769589494_tsmc28/amba_3_apb_rsa_apb_top_2026-11-09_14-07-31_769589494_tsmc28.log 
+Date:    Mon Nov 09 14:07:32 2026
+Host:    rock8 (x86_64 w/Linux 4.18.0-553.183.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*Intel(R) Core(TM) i5-14500 24576KB) (32331724KB)
+PID:     221314
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[14:07:32.099280] Periodic Lic check successful
+[14:07:32.099288] Feature usage summary:
+[14:07:32.099288] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (5 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/open_genus_gui.tcl
+#@ Begin verbose source /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/open_genus_gui.tcl
+@file(open_genus_gui.tcl) 1: if {![info exists ::env(DB_FILE)] || ![file isfile $::env(DB_FILE)]} {
+    error "Genus database not found. Run genus_nogui.sh before genus_gui.sh."
+}
+@file(open_genus_gui.tcl) 5: read_db $::env(DB_FILE)
+Reading database file '/home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/db/synth_amba_3_apb_rsa_apb_top_2026-11-05_14-36-09_068054729_tsmc28.db'.
+
+  Message Summary for Library tcbn28hpcplusbwp30p140tt1v25c.lib:
+  **************************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  **************************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.000000, 25.000000) in library 'tcbn28hpcplusbwp30p140tt1v25c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP30P140' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNABWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_LEFTBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BOUNDARY_RIGHTBWP30P140' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20BWP30P140'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24BWP30P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20BWP30P140'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24BWP30P140'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL16BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL2BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL2BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL32BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL32BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL3BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL3BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL4BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL4BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL64BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL64BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL8BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'FILL8BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10MCOBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10MCOBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12MCOBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP12MCOBWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2BWP30P140' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2BWP30P140' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '40' reached for message 'LBR-9'.
+==================================
+Stage : incr_opt 
+==================================
+  =================
+   Message Summary
+  =================
+--------------------------------------------------------------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                                              Message Text                                              |
+--------------------------------------------------------------------------------------------------------------------------------
+|LBR-9  |Warning|   86|Library cell has no output pins defined.                                                                |
+|       |       |     |Add the missing output pin(s)                                                                           |
+|       |       |     | , then reload the library. Else the library cell will be marked as timing model i.e. unusable.         |
+|       |       |     | Timing_model means that the cell does not have any defined function. If there is no output pin, Genus  |
+|       |       |     | will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the        |
+|       |       |     | libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for |
+|       |       |     | synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell  |
+|       |       |     | has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground  |
+|       |       |     | pins. Genus will depend upon the output function defined in the pin group (output pin)                 |
+|       |       |     | of the cell, to use it for mapping. The pg_pin will not have any function defined.                     |
+|LBR-40 |Info   |    1|An unsupported construct was detected in this library.                                                  |
+|       |       |     |Check to see if this construct is really needed for synthesis. Many liberty constructs are not actually |
+|       |       |     | required.                                                                                              |
+|LBR-41 |Info   |    1|An output library pin lacks a function attribute.                                                       |
+|       |       |     |If the remainder of this library cell's semantic checks are successful, it will be considered as a      |
+|       |       |     | timing-model (because one of its outputs does not have a valid function.                               |
+|LBR-101|Warning|    4|Unusable clock gating integrated cell found at the time of loading libraries. This warning happens      |
+|       |       |     | because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use'         |
+|       |       |     | attribute is defined as true in the liberty library. To make Genus use this cell for clock gating      |
+|       |       |     | insertion, 'dont_use' attribute should be set to false.                                                |
+|       |       |     |To make the cell usable, change the value of 'dont_use' attribute to false.                             |
+|LBR-412|Info   |    1|Created nominal operating condition.                                                                    |
+|       |       |     |The nominal operating condition is represented, either by the nominal PVT values specified in the       |
+|       |       |     | library source (via nom_process,nom_voltage and nom_temperature respectively)                          |
+|       |       |     | , or by the default PVT values (1.0,1.0,1.0).                                                          |
+|LBR-518|Info   |    1|Missing a function attribute in the output pin definition.                                              |
+--------------------------------------------------------------------------------------------------------------------------------
+@file(open_genus_gui.tcl) 6: gui_show
+#@ End verbose source /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/open_genus_gui.tcl
+WARNING: This version of the tool is 563 days old.
+GTD-INFO: Parsing file top.mtarpt...
+
+Lic Summary:
+[14:08:35.440097] Cdslmd servers: Logus
+[14:08:35.440098] Feature usage summary:
+[14:08:35.440098] Genus_Synthesis
+
+Normal exit.

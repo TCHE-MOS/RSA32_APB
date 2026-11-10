@@ -1,0 +1,16 @@
+[INFO ] 2026-10-19 14:28:33 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 42763
+[ERROR] 2026-10-19 14:28:33 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool-1] - Cannot read directory '/scope/'. Check if the directory has read permission, and rerun the command	   
+[ERROR] 2026-10-19 14:28:33 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool-1] - Valid model file not found for run directory /scope/. Specify a valid run directory with correct ucm, ucd files and rerun the command.
+[INFO ] 2026-10-19 15:07:49 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 36907
+[ERROR] 2026-10-19 15:07:50 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool-1] - couldn't read file "/home/aluno/Documents/RSA_APB_32-bit/scripts/amba_3_apb_rsa_apb_top/bash/imc.tcl": no such file or directory.
+[INFO ] 2026-10-19 15:12:24 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 34495
+[ERROR] 2026-10-19 15:12:24 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool-1] - couldn't read file "/home/aluno/Documents/RSA_APB_32-bit/scripts/amba_3_apb_rsa_apb_top/bash/imc.tcl": no such file or directory.
+[INFO ] 2026-10-19 15:12:26 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 39775
+[INFO ] 2026-10-19 15:12:40 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 34023
+[INFO ] 2026-10-19 16:29:48 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 45809
+[INFO ] 2026-10-19 16:47:24 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 37071
+[INFO ] 2026-10-20 11:32:05 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 36583
+[ERROR] 2026-10-20 11:32:05 [com.cadence.mdv.messaging.MDVASynchronicMessaging] [frontend-pool-1] - couldn't read file "/home/aluno/Documents/RSA_APB_32-bit/scripts/amba_3_apb_rsa_apb_top/bash/imc.tcl": no such file or directory.
+[INFO ] 2026-10-20 11:32:08 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 45029
+[INFO ] 2026-10-20 11:33:33 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 41159
+[INFO ] 2026-10-20 11:33:52 [com.cadence.mdv.imc.Main] [main] - Binding debug tools http on port: 42893

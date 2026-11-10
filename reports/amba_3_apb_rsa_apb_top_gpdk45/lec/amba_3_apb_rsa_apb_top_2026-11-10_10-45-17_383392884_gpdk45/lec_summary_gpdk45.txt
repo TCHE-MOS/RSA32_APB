@@ -1,0 +1,9 @@
+DESIGN=amba_3_apb_rsa_apb_top
+PDK=gpdk45
+SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-11-05_14-30-30_264505466_gpdk45
+GOLDEN=/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb
+REVISED=/home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_gpdk45/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-05_14-30-30_264505466_gpdk45.v
+RESULT=PASS
+UNMAPPED_POINTS=nao
+CONFORMAL_EXIT_CODE=0
+CONFORMAL_EXIT_CODE_HEX=0x0

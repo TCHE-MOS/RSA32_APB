@@ -1,0 +1,95 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 10, 2026 at 09:32:06 -03
+xrun
+	-64bit
+	-timescale 1ns/1ps
+	-input /home/aluno/Documents/RSA32_APB/scripts/MR/bash/../tcl/xrun.tcl
+	-top tb
+	-access +rwc
+	-coverage all
+	-covoverwrite
+	-covworkdir /home/aluno/Documents/RSA32_APB/coverage/MR/amba_3_apb_rsa_apb_top
+	-covtest amba_3_apb_rsa_apb_top_2026-11-10_09-32-06
+	-l /home/aluno/Documents/RSA32_APB/logs/MR/amba_3_apb_rsa_apb_top/xrun/amba_3_apb_rsa_apb_top_2026-11-10_09-32-06.log
+	/home/aluno/Documents/RSA32_APB/src/MR/RSA_APB/rsa_core_32bits.sv
+	/home/aluno/Documents/RSA32_APB/src/MR/RSA_APB/rsa_apb_top.sv
+	/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv
+Recompiling... reason: file '/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv' is newer than expected.
+	expected: Mon Nov  9 13:45:41 2026
+	actual:   Tue Nov 10 09:31:47 2026
+file: /home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv
+	module worklib.tb:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb
+
+	Extracting FSMs for coverage:
+		worklib.rsa_apb_rst_sync
+		worklib.rsa_apb_regs
+		worklib.rsa_apb_seq
+			FSM extracted for state register state
+		worklib.rsa_core_mult
+			FSM extracted for state register state_reg
+		worklib.rsa_core_mod
+			FSM extracted for state register state_reg
+		worklib.rsa_core_ctrl
+			FSM extracted for state register state_reg
+		worklib.rsa_core
+		worklib.amba_3_apb_rsa_apb_top
+		worklib.tb
+	Total FSMs extracted = 4
+	Building instance overlay tables: ...........
+xmelab: *W,COVFDP: FSM description matching across instance of a module for "COVFDM" warning has been moved from elaboration to simulation dumping. To restore old matching behavior, use "set_backward_compat -COVFDM_during_elab". Also, it is recommended to use set_parameterized_module_coverage CCF command to avoid coverage loss due to FSM description difference across instances of a module.
+xmelab: *W,COVFHT: FSM hold transitions (transitions to the current state) are not extracted for any FSM in default mode.
+......... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog logical operators (|| and &&) and VHDL logical operators (OR, AND, NOR, and NAND), and is scored only in condition expressions. To score coverage for other operators and for expressions in other statements, use the "set_expr_coverable_operators" and "set_expr_coverable_statements" coverage configuration file commands with suitable options at elaboration.
+	Generating native compiled code:
+		worklib.tb:sv <0x6461830c>
+			streams:  40, words: 84220
+xmelab: *W,COVNOEN: By default, toggle coverage is not supported for systemverilog enumerated nets and variables. To enable toggle coverage of these objects, specify the 'set_toggle_scoring -sv_enum' command in the coverage configuration file.
+    int errors = 0;
+             |
+xmelab: *W,COVUTA (/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv,38|13): Toggle coverage is not supported for SystemVerilog integer, real array, string, dynamic array, sparse memory and reference ports. It is also not supported for VHDL multi-dimensional array and array of record. There may also be other such objects in the design.
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       9
+		Registers:             165     165
+		Scalar wires:           90       -
+		Vectored wires:         42       -
+		Always blocks:          14      14
+		Initial blocks:         12      12
+		Cont. assignments:      26      39
+		Pseudo assignments:     60       -
+		Process Clocks:          7       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb:sv
+Loading snapshot worklib.tb:sv .................... Done
+SVSEED default: 1
+xcelium> source /home/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> # Simulacao RTL em batch do testbench MR (tb): o TB nao grava ondas,
+xcelium> # entao o banco SHM e criado aqui.
+xcelium> database -open waves -into $::env(WAVE_FILE) -event -default
+Created default SHM database waves
+xcelium> probe -create tb -all -depth all -database waves
+Created probe 1
+xcelium> run
+PASS: 2236 checks
+Simulation complete via $finish(1) at time 2293975 NS + 0
+/home/aluno/Documents/RSA32_APB/testbenchs/rsa_apb_top/rsa_apb_tb.sv:286         $finish;
+xcelium> exit
+
+coverage setup:
+  workdir  :  /home/aluno/Documents/RSA32_APB/coverage/MR/amba_3_apb_rsa_apb_top
+  dutinst  :  tb(tb)
+  scope    :  scope
+  testname :  amba_3_apb_rsa_apb_top_2026-11-10_09-32-06
+
+coverage files:
+  model(design data) :  /home/aluno/Documents/RSA32_APB/coverage/MR/amba_3_apb_rsa_apb_top/scope/icc_403d3a30_00000000.ucm (reused)
+  data               :  /home/aluno/Documents/RSA32_APB/coverage/MR/amba_3_apb_rsa_apb_top/scope/amba_3_apb_rsa_apb_top_2026-11-10_09-32-06/icc_403d3a30_00000000.ucd
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 10, 2026 at 09:32:06 -03  (total: 00:00:00)

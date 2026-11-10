@@ -1,0 +1,13 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-VFILE
+/tsmc28/tcbn28hpcplusbwp30p140.v
+-sv
+-DEFINE
+POST_SYNTHESIS
+-DEFINE
+NTC
+-DEFINE
+RECREM

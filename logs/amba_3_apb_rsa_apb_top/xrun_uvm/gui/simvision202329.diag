@@ -1,0 +1,104 @@
+*** Message Type: info ***
+When: Mon Nov 09 13:51:28 -03 2026
+SimVision started.
+Version: TOOL:  simvision(64)   24.03-s013
+User: aluno
+Host: rock8.asav.brm
+Platform: Linux/x86_64/4.18.0-553.183.1.el8_10.x86_64
+Started: Mon Nov 09 13:51:28 -03 2026
+Command: /home/cadence/XCELIUM2403/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:rock8.asav.brm:50973 -64BIT -nocopyright
+Work Directory: /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:51:28 -03 2026
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:51:29 -03 2026
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:51:30 -03 2026
+Connect to Simulator
+      Design: worklib.top_tb:svh
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       24.03-s013
+        User: aluno
+        Host: rock8.asav.brm
+Time Started: Mon Nov 09 13:51:28 -03 2026
+  Process ID: 202311
+   Directory: /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui
+     Command: xrun -64bit -sv -uvm -uvmhome CDNS-1.2 -gui -timescale 1ns/1ps -input /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/xrun_uvm_gui.tcl -top top_tb -access +rwc -incdir /home/aluno/Documents/RSA32_APB/UVM -svseed 1 -coverage all -covoverwrite -covdut amba_3_apb_rsa_apb_top -covworkdir /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm -covtest amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27 -l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui/amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27.log /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv /home/aluno/Documents/RSA32_APB/UVM/testbench.svh +UVM_TESTNAME=test_rsa_operation +UVM_VERBOSITY=UVM_MEDIUM +CORNERS_CASES=1 +CORNERS_BASE_CYCLES=1024 +CORNERS_CYCLES_PER_EXP=256 +CORNERS_POLL_CYCLES=16 +CORNERS_MAX_READS=0 +UVM_TIMEOUT=5725590,YES
+
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:51:30 -03 2026
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:51:51 -03 2026
+Create schematic window: "Schematic Tracer 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:54:31 -03 2026
+Delete schematic window: "Schematic Tracer 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:55:00 -03 2026
+Create schematic window: "Schematic Tracer 2"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:56:22 -03 2026
+Delete schematic window: "Schematic Tracer 2"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:56:29 -03 2026
+Delete browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:56:58 -03 2026
+Exit XM-Sim: user
+      Design: worklib.top_tb:svh
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       24.03-s013
+        User: aluno
+        Host: rock8.asav.brm
+Time Started: Mon Nov 09 13:51:28 -03 2026
+  Process ID: 202311
+   Directory: /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui
+     Command: xrun -64bit -sv -uvm -uvmhome CDNS-1.2 -gui -timescale 1ns/1ps -input /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/xrun_uvm_gui.tcl -top top_tb -access +rwc -incdir /home/aluno/Documents/RSA32_APB/UVM -svseed 1 -coverage all -covoverwrite -covdut amba_3_apb_rsa_apb_top -covworkdir /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm -covtest amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27 -l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui/amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27.log /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv /home/aluno/Documents/RSA32_APB/UVM/testbench.svh +UVM_TESTNAME=test_rsa_operation +UVM_VERBOSITY=UVM_MEDIUM +CORNERS_CASES=1 +CORNERS_BASE_CYCLES=1024 +CORNERS_CYCLES_PER_EXP=256 +CORNERS_POLL_CYCLES=16 +CORNERS_MAX_READS=0 +UVM_TIMEOUT=5725590,YES
+
+ 
+*** Message Type: error ***
+When: Mon Nov 09 13:56:58 -03 2026
+XM-Sim Crashed:
+      Design: worklib.top_tb:svh
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       24.03-s013
+        User: aluno
+        Host: rock8.asav.brm
+Time Started: Mon Nov 09 13:51:28 -03 2026
+  Process ID: 202311
+   Directory: /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui
+     Command: xrun -64bit -sv -uvm -uvmhome CDNS-1.2 -gui -timescale 1ns/1ps -input /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/xrun_uvm_gui.tcl -top top_tb -access +rwc -incdir /home/aluno/Documents/RSA32_APB/UVM -svseed 1 -coverage all -covoverwrite -covdut amba_3_apb_rsa_apb_top -covworkdir /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm -covtest amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27 -l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui/amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27.log /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv /home/aluno/Documents/RSA32_APB/UVM/testbench.svh +UVM_TESTNAME=test_rsa_operation +UVM_VERBOSITY=UVM_MEDIUM +CORNERS_CASES=1 +CORNERS_BASE_CYCLES=1024 +CORNERS_CYCLES_PER_EXP=256 +CORNERS_POLL_CYCLES=16 +CORNERS_MAX_READS=0 +UVM_TIMEOUT=5725590,YES
+      Design: worklib.top_tb:svh
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:  xmsim(64)       24.03-s013
+        User: aluno
+        Host: rock8.asav.brm
+Time Started: Mon Nov 09 13:51:28 -03 2026
+  Process ID: 202311
+   Directory: /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui
+     Command: xrun -64bit -sv -uvm -uvmhome CDNS-1.2 -gui -timescale 1ns/1ps -input /home/aluno/Documents/RSA32_APB/scripts/bash/../tcl/xrun_uvm_gui.tcl -top top_tb -access +rwc -incdir /home/aluno/Documents/RSA32_APB/UVM -svseed 1 -coverage all -covoverwrite -covdut amba_3_apb_rsa_apb_top -covworkdir /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm -covtest amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27 -l /home/aluno/Documents/RSA32_APB/logs/amba_3_apb_rsa_apb_top/xrun_uvm/gui/amba_3_apb_rsa_apb_top_uvm_2026-11-09_13-51-27.log /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_kogge_stone_adder.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mult.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_mod.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_ctrl.sv /home/aluno/Documents/RSA32_APB/src/MG/rsa32/v2/rsa32_core_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_adrec.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_o_mux.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_data_io_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_regbank.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_reset.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_control.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_data.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_wrapper_top.sv /home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb/amba_3_apb_rsa_apb_top.sv /home/aluno/Documents/RSA32_APB/UVM/testbench.svh +UVM_TESTNAME=test_rsa_operation +UVM_VERBOSITY=UVM_MEDIUM +CORNERS_CASES=1 +CORNERS_BASE_CYCLES=1024 +CORNERS_CYCLES_PER_EXP=256 +CORNERS_POLL_CYCLES=16 +CORNERS_MAX_READS=0 +UVM_TIMEOUT=5725590,YES
+
+Outstanding STRAP Requests:
+        strap::report enable out
+ 
+*** Message Type: info ***
+When: Mon Nov 09 13:57:01 -03 2026
+SimVision Exit.
+ 

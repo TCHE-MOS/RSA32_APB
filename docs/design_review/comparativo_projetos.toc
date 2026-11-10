@@ -1,0 +1,7 @@
+\babel@toc {brazilian}{}\relax 
+\beamer@sectionintoc {1}{RSA de 4 bits}{4}{0}{1}
+\beamer@sectionintoc {2}{Núcleo RSA de 32 bits}{5}{0}{2}
+\beamer@sectionintoc {3}{Topo APB de 32 bits}{6}{0}{3}
+\beamer@sectionintoc {4}{Síntese TSMC 28\,nm}{7}{0}{4}
+\beamer@sectionintoc {5}{Pós-síntese}{8}{0}{5}
+\beamer@sectionintoc {6}{Conclusões}{9}{0}{6}

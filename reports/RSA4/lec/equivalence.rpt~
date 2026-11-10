@@ -1,0 +1,244 @@
+                          CONFORMAL (R)
+                   Version 23.20-s200 (23-Feb-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2023. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 990 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: foreach name {LEC_GOLDEN LEC_REVISED LEC_TOP LEC_OUTPUT_DIR} {
+//              if {![info exists ::env($name)] || $::env($name) eq ""} {
+//                  puts stderr "ERRO: variavel de ambiente $name ausente."
+//                  exit 2
+//              }
+//          }
+// Command: set golden  $::env(LEC_GOLDEN)
+/home/aluno/Documents/RSA32_APB/RSA4/src/vlog/rsa_core.v
+// Command: set revised $::env(LEC_REVISED)
+/home/aluno/Documents/RSA32_APB/RSA4/src/sv/rsa_core.sv
+// Command: set top     $::env(LEC_TOP)
+rsa_core
+// Command: set outdir  $::env(LEC_OUTPUT_DIR)
+/home/aluno/Documents/RSA32_APB/reports/RSA4/lec
+// Command: set compared 0
+0
+// Command: puts "=== LEC: $top | Golden (Verilog) vs Revised (SystemVerilog) ==="
+=== LEC: rsa_core | Golden (Verilog) vs Revised (SystemVerilog) ===
+// Command: set cmd_error [catch {
+//              read_design $golden  -verilog2k    -golden  -root $top
+//              read_design $revised -systemverilog -revised -root $top
+//              report_design_data -both
+//              report_black_box -detail
+//              set_system_mode lec
+//              report_mapped_points -summary
+//              report_unmapped_points -summary
+//              add_compared_points -all
+//              set_compare_effort high
+//              compare
+//              set compared 1
+//              report_compare_data -summary
+//              report_compare_data -class nonequivalent
+//              report_compare_data -class abort
+//              report_statistics
+//              report_verification
+//          } cmd_message]
+// Parsing file /home/aluno/Documents/RSA32_APB/RSA4/src/vlog/rsa_core.v ...
+// Golden root module is set to 'rsa_core'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:3)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:10)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:21)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:3)
+// Note: (RTL5.6) Case statement with no default (occurrence:2)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+// Parsing file /home/aluno/Documents/RSA32_APB/RSA4/src/sv/rsa_core.sv ...
+// Revised root module is set to 'rsa_core'
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:3)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:10)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:21)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:3)
+// Note: (RTL5.6) Case statement with no default (occurrence:2)
+// Warning: (RTL7.10a) Comparison with different data sizes (occurrence:2)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:1)
+// Note: Read VERILOG design successfully
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules         5               5
+Library-cells         53              53
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT                7                    7
+OUTPUT               7                    7
+--------------------------------------------
+AND                376                  376
+BUF                 15                   15
+DFF                 88                   88
+INV                 45                   45
+MUX                 24                   24
+NAND                 1                    1
+NOR                 22                   22
+OR                 214                  214
+WIRE                35                   35
+XNOR                16                   16
+XOR                 30                   30
+------ word-level --------------------------
+ADD                  3                    3
+GE                   1                    1
+SUBTRACT             4                    4
+WMUX                22                   22
+WSEL                24                   24
+--------------------------------------------
+Total              866                  866
+
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Mapping key points ...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      87        101     
+--------------------------------------------------------------------------------
+Revised           7      7      87        101     
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            7      7      87        101     
+--------------------------------------------------------------------------------
+Revised           7      7      87        101     
+================================================================================
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1         1       
+================================================================================
+// 94 compared points added to compare list
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+0 Non-equivalent point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+0 Abort point(s) reported
+0 compared point(s) reported
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           7      87        94      
+================================================================================
+Mapping and compare statistics
+================================================================================
+                     Compare Result       Golden            Revised
+--------------------------------------------------------------------------------
+Root module name                          rsa_core          rsa_core          
+
+Primary inputs                                 7                  7
+   Mapped                                      7                  7
+
+Primary outputs                                7                  7
+   Mapped                                      7                  7
+      Equivalent                  7
+
+State key points                              88                 88
+   Mapped                                     87                 87
+      Equivalent                 87
+   Unmapped                                    1                  1
+      Unreachable                              1                  1
+================================================================================
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      0
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+================================================================================
+0
+// Command: if {$cmd_error} {
+//              puts stderr "ERRO durante execucao do LEC: $cmd_message"
+//          }
+// Command: set status [get_exit_code]
+// Command: get_exit_code
+0
+// Command: if {$cmd_error && $status == 0} {
+//              set status 4
+//          }
+// Command: if {!$compared && $status == 0} {
+//              set status 2
+//          }
+// Command: set result [expr {$status == 0 && $compared ? "PASS" : "FAIL"}]
+PASS
+// Command: set fh [open [file join $outdir summary.txt] w]
+file14
+// Command: puts $fh "DESIGN=$top"
+// Command: puts $fh "GOLDEN=$golden"
+// Command: puts $fh "REVISED=$revised"
+// Command: puts $fh "COMPARE_EXECUTED=$compared"
+// Command: puts $fh "RESULT=$result"
+// Command: puts $fh "CONFORMAL_EXIT_CODE=$status"
+// Command: puts $fh "CONFORMAL_EXIT_CODE_HEX=[format 0x%X $status]"
+// Command: if {$cmd_error} {
+//              puts $fh "SCRIPT_ERROR=$cmd_message"
+//          }
+// Command: close $fh
+// Command: puts "=== RESULTADO LEC: $result (codigo $status) ==="
+=== RESULTADO LEC: PASS (codigo 0) ===
+// Command: exit $status

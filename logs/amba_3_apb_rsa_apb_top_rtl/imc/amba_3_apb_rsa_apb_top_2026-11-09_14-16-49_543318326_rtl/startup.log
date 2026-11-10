@@ -1,0 +1,21 @@
+java.lang.RuntimeException: Failed to initialize license api
+	at com.cadence.mdv.central.utils.license.SharedLicenseBridgeHandler.getLmApiInstanceOne(SharedLicenseBridgeHandler.java:65)
+	at com.cadence.mdv.central.utils.license.SharedLicenseBridgeHandler.fullSync(SharedLicenseBridgeHandler.java:121)
+	at com.cadence.mdv.central.utils.license.SharedLicenseBridgeHandler.acquire(SharedLicenseBridgeHandler.java:155)
+	at com.cadence.mdv.license.bridge.LicenseControlBridge.acquire(LicenseControlBridge.java:42)
+	at com.cadence.mdv.license.acquirer.AbstractAcquirer.pushAcquire0(AbstractAcquirer.java:34)
+	at com.cadence.mdv.license.acquirer.IMCAcquirer._implInitialLicenseAcquire(IMCAcquirer.java:43)
+	at com.cadence.mdv.license.acquirer.AbstractAcquirer.doLicenseAcquire(AbstractAcquirer.java:73)
+	at com.cadence.mdv.license.acquirer.IMCAcquirer.doLicenseAcquire(IMCAcquirer.java:18)
+	at com.cadence.mdv.imc.Main.lambda$createPreGUIRunnable$2(Main.java:700)
+	at com.cadence.ufi.GUFIManager.runMain(GUFIManager.java:443)
+	at com.cadence.mdv.imc.Main.main(Main.java:576)
+Caused by: com.cadence.softshare.model.LmApiException: (LMC-01902): License call failed. The license server search path is defined as null. Can't find license file
+
+Run 'lic_error LMC-01902' for more information.
+	at com.cadence.softshare.flex.FlexApi.<init>(FlexApi.java:159)
+	at com.cadence.softshare.flex.FlexApi.getInstance(FlexApi.java:190)
+	at com.cadence.softshare.service.ApiForwarder.lmInit(ApiForwarder.java:94)
+	at com.cadence.softshare.service.LmApi.getInstance(LmApi.java:57)
+	at com.cadence.mdv.central.utils.license.SharedLicenseBridgeHandler.getLmApiInstanceOne(SharedLicenseBridgeHandler.java:63)
+	... 10 more

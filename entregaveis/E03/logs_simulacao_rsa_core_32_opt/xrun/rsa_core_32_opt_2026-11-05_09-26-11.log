@@ -1,0 +1,140 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 05, 2026 at 09:26:11 -03
+xrun
+	-64bit
+	-gui
+	-timescale 1ns/1ps
+	-input /home/aluno/Documents/rsa32_opt/scripts_opt/bash/../tcl/xrun_wgui.tcl
+	-top testbench
+	-access +rwc
+	-l /home/aluno/Documents/rsa32_opt/logs/rsa_core_32_opt/xrun/rsa_core_32_opt_2026-11-05_09-26-11.log
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_kogge_stone_adder.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mult.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_mod.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_ctrl.sv
+	/home/aluno/Documents/rsa32_opt/src/v2/rsa32_core_top.sv
+	/home/aluno/Documents/rsa32_opt/testbenches/testbench.sv
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		testbench
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.rsa_core_ctrl:sv <0x0411e703>
+			streams:  25, words: 10665
+		worklib.rsa_core_mod:sv <0x135758fc>
+			streams:  22, words: 12049
+		worklib.rsa_core:sv <0x60bb33c8>
+			streams:  20, words:  5265
+		worklib.testbench:sv <0x2b8882b6>
+			streams:  12, words: 31691
+		worklib.kogge_stone_adder:sv <0x4c179663>
+			streams:  29, words: 22920
+		worklib.rsa_core_mult:sv <0x548b2341>
+			streams:  19, words:  8974
+		worklib.kogge_stone_adder:sv <0x689227db>
+			streams:  29, words: 22838
+		worklib.kogge_stone_adder:sv <0x05021485>
+			streams:  29, words: 23856
+		worklib.kogge_stone_adder:sv <0x06ede703>
+			streams:  25, words: 19457
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                   9       6
+		Registers:                98      83
+		Scalar wires:          2,686       -
+		Vectored wires:           51       -
+		Always blocks:             6       6
+		Initial blocks:            4       4
+		Cont. assignments:     2,669      27
+		Pseudo assignments:       44       -
+		Process Clocks:            3       1
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.testbench:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into $::env(WAVE_FILE) -event -default
+Created default SHM database waves
+xcelium> probe -create [scope -tops] -all -depth all -database waves
+xmsim: *W,PRLDYN: The design contains dynamic objects. The "-all" option excludes dynamic objects to improve performance. To enable probing of dynamic objects the "-all -dynamic" options should be added to the probe command.
+Created probe 1
+xcelium> run
+------------------------------------------------------------------------------------------------
+RSA Core - 32-bit SystemVerilog Testbench
+------------------------------------------------------------------------------------------------
+       Message   Exponent    Modulus    Result       Expected
+------------------------------------------------------------------------------------------------
+Test  1: M=00000000 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  2: M=00000000 E=00000000 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test  3: M=00000000 E=00000000 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test  4: M=00000000 E=00000000 N=0000000f -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test  5: M=00000000 E=00000001 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  6: M=00000000 E=00000002 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  7: M=00000000 E=0000000f N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  8: M=00000001 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test  9: M=00000002 E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test 10: M=0000000f E=00000000 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+Test 11: M=00000001 E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 12: M=00000001 E=00000001 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 13: M=00000001 E=00000001 N=0000000f -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 14: M=00000001 E=00000002 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 15: M=00000001 E=0000000f N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 16: M=00000002 E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 17: M=0000000f E=00000001 N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 18: M=00000002 E=00000002 N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 19: M=00000002 E=00000002 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 20: M=00000002 E=00000002 N=0000000f -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 21: M=00000002 E=00000003 N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 22: M=00000002 E=0000000f N=00000002 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 23: M=00000003 E=00000002 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 24: M=0000000f E=00000002 N=00000002 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 25: M=00000004 E=0000000a N=00000009 -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 26: M=0000000b E=00000001 N=00000007 -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 27: M=00000009 E=00000004 N=00000007 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 28: M=00000009 E=00000009 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 29: M=00000008 E=0000000a N=00000001 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 30: M=00000002 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 31: M=00000009 E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 32: M=00000008 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 33: M=0000000e E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 34: M=00000002 E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 35: M=0000000c E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 36: M=00000001 E=00000005 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 37: M=00000007 E=00000005 N=00000003 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 38: M=00000000 E=00000005 N=00000003 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 39: M=0000000b E=00000005 N=00000003 -> C=00000002 ERR=0  Expected=00000002 ERR=0 [PASSED]
+Test 40: M=0000000f E=0000000f N=0000000f -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 41: M=00000002 E=00000005 N=0000000d -> C=00000006 ERR=0  Expected=00000006 ERR=0 [PASSED]
+Test 42: M=00000004 E=00000003 N=00000011 -> C=0000000d ERR=0  Expected=0000000d ERR=0 [PASSED]
+Test 43: M=00000007 E=00000002 N=00000013 -> C=0000000b ERR=0  Expected=0000000b ERR=0 [PASSED]
+Test 44: M=12345678 E=00000000 N=00010001 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 45: M=00000000 E=00000005 N=01234567 -> C=00000000 ERR=0  Expected=00000000 ERR=0 [PASSED]
+Test 46: M=00000001 E=00000007 N=89abcdef -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 47: M=00010001 E=00000002 N=0000ffff -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 48: M=00010000 E=00000002 N=00010001 -> C=00000001 ERR=0  Expected=00000001 ERR=0 [PASSED]
+Test 49: M=12345678 E=00000001 N=00010001 -> C=00004444 ERR=0  Expected=00004444 ERR=0 [PASSED]
+Test 50: M=abcdef01 E=00000001 N=00ffffff -> C=00cdefac ERR=0  Expected=00cdefac ERR=0 [PASSED]
+Test 51: M=ffffffff E=00000001 N=fffffffb -> C=00000004 ERR=0  Expected=00000004 ERR=0 [PASSED]
+Test 52: M=12345678 E=00000002 N=ffffffff -> C=1f403f1c ERR=0  Expected=1f403f1c ERR=0 [PASSED]
+Test 53: M=80000000 E=00000002 N=ffffffff -> C=40000000 ERR=0  Expected=40000000 ERR=0 [PASSED]
+Test 54: M=deadbeef E=00000003 N=fffffffb -> C=62fbd2ea ERR=0  Expected=62fbd2ea ERR=0 [PASSED]
+Test 55: M=12345678 E=00000003 N=00000000 -> C=ffffffff ERR=1  Expected=ffffffff ERR=1 [PASSED]
+------------------------------------------------------------------------------------------------
+Tests executed : 55
+Passed         : 55
+Failed         : 0
+------------------------------------------------------------------------------------------------
+32-bit RSA Core validation: PASSED
+------------------------------------------------------------------------------------------------
+End of Simulation
+Simulation complete via $finish(1) at time 696090 NS + 0
+/home/aluno/Documents/rsa32_opt/testbenches/testbench.sv:437         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 05, 2026 at 09:27:43 -03  (total: 00:01:32)

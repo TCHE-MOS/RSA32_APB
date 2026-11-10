@@ -1,0 +1,10 @@
+DESIGN=amba_3_apb_rsa_apb_top
+PDK=tsmc28
+SYNTH_RUN=amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28
+GOLDEN=/home/aluno/Documents/RSA32_APB/src/MG/amba_3_apb
+REVISED=/home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-10_09-21-01_905568368_tsmc28.v
+RESULT=PASS
+UNMAPPED_EXIT_BIT=0
+UNMAPPED_REPORT=/home/aluno/Documents/RSA32_APB/reports/amba_3_apb_rsa_apb_top_tsmc28/lec/amba_3_apb_rsa_apb_top_2026-11-10_10-45-43_868853564_tsmc28/lec_unmapped_tsmc28.rpt (inclui flops unreachable removidos pela sintese, que nao ativam o bit)
+CONFORMAL_EXIT_CODE=0
+CONFORMAL_EXIT_CODE_HEX=0x0

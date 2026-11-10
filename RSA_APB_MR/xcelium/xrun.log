@@ -1,0 +1,12 @@
+xrun(64): 24.03-s013: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s013: Started on Nov 09, 2026 at 15:46:48 -03
+xrun
+	-64bit
+	-sv
+	-makelib svlib
+	../rtl/rsa_core_32bits.sv
+	../rtl/rsa_apb_top.sv
+	../rtl/rsa_apb_tb.sv
+	-end
+xrun: *E,NODSN: There are no design files being compiled.
+TOOL:	xrun(64)	24.03-s013: Exiting on Nov 09, 2026 at 15:46:48 -03  (total: 00:00:00)

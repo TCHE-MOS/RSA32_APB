@@ -1,0 +1,77 @@
+Diagnosis for key points:
+  (G) + 83   PO   /pslverr_o
+  (R) + 83   PO   /pslverr_o
+Diagnosis point:
+  (G)   83   PO   /pslverr_o
+  (R)   83   PO   /pslverr_o
+
+There are 21 corresponding supports.
+There is one non-corresponding support in Golden.
+There is no non-corresponding support in Revised.
+
+Corresponding supports:
+(G) + 3     'PI'                /psel_i
+(R) + 3     'PI'                /psel_i
+
+(G) + 4     'PI'                /penable_i
+(R) + 4     'PI'                /penable_i
+
+(G) + 5     'PI'                /pwrite_i
+(R) + 5     'PI'                /pwrite_i
+
+(G) + 6     'PI'                /paddr_i[11]
+(R) + 6     'PI'                /paddr_i[11]
+
+(G) + 7     'PI'                /paddr_i[10]
+(R) + 7     'PI'                /paddr_i[10]
+
+(G) + 8     'PI'                /paddr_i[9]
+(R) + 8     'PI'                /paddr_i[9]
+
+(G) + 9     'PI'                /paddr_i[8]
+(R) + 9     'PI'                /paddr_i[8]
+
+(G) + 10    'PI'                /paddr_i[7]
+(R) + 10    'PI'                /paddr_i[7]
+
+(G) + 11    'PI'                /paddr_i[6]
+(R) + 11    'PI'                /paddr_i[6]
+
+(G) + 12    'PI'                /paddr_i[5]
+(R) + 12    'PI'                /paddr_i[5]
+
+(G) + 13    'PI'                /paddr_i[4]
+(R) + 13    'PI'                /paddr_i[4]
+
+(G) + 14    'PI'                /paddr_i[3]
+(R) + 14    'PI'                /paddr_i[3]
+
+(G) + 15    'PI'                /paddr_i[2]
+(R) + 15    'PI'                /paddr_i[2]
+
+(G) + 48    'PI'                /pwdata_i[1]
+(R) + 48    'PI'                /pwdata_i[1]
+
+(G) + 217   'DFF'               /reset_inst/reset_sync_reg_reg[1]
+(R) + 759   DFCNQD1BWP30P140    /reset_inst_reset_sync_reg_reg[1]/U$1
+
+(G) + 221   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[5]
+(R) + 766   DFCND1BWP30P140     /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[5]/U$1
+
+(G) + 222   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[4]
+(R) + 770   DFCND1BWP30P140     /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[4]/U$1
+
+(G) + 223   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[3]
+(R) + 455   DFCNQD1BWP30P140    /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[3]/U$1
+
+(G) + 224   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[2]
+(R) + 448   DFCNQD1BWP30P140    /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[2]/U$1
+
+(G) + 225   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[1]
+(R) + 765   DFCND1BWP30P140     /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[1]/U$1
+
+(G) + 226   'DFF'               /rsa_wrapper_inst/rsa_wrapper_control_inst/c_state_reg[0]
+(R) + 762   DFCND1BWP30P140     /rsa_wrapper_inst_rsa_wrapper_control_inst_c_state_reg[0]/U$1
+
+Non-corresponding support in Golden:
+(G) + 49    'PI'                /pwdata_i[0]

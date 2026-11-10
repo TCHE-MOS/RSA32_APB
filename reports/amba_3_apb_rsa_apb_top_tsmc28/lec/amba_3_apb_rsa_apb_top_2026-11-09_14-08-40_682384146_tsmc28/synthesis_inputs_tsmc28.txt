@@ -1,0 +1,3 @@
+Synthesis: amba_3_apb_rsa_apb_top_2026-11-05_14-36-09_068054729_tsmc28
+Netlist: /home/aluno/Documents/RSA32_APB/ps_files/rsa_apb_top_tsmc28/netlist/synth_amba_3_apb_rsa_apb_top_2026-11-05_14-36-09_068054729_tsmc28.v
+Liberty: /tsmc28/tcbn28hpcplusbwp30p140tt1v25c.lib

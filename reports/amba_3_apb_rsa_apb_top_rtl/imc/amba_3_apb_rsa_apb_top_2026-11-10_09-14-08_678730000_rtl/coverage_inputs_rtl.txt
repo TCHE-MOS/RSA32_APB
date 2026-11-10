@@ -1,0 +1,1 @@
+Coverage database: /home/aluno/Documents/RSA32_APB/coverage/amba_3_apb_rsa_apb_top/uvm/scope/amba_3_apb_rsa_apb_top_uvm_2026-11-10_09-13-21
